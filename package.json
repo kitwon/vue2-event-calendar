@@ -1,12 +1,12 @@
 {
-  "name": "vue-calendar",
-  "version": "0.0.1",
+  "name": "vue2-event-calendar",
+  "version": "0.1.0",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "index.js",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html --public-url /",
-    "develop": "parcel build src/index.js",
+    "build": "parcel build index.html --public-url",
+    "deploy": "yarn test && yarn build && parcel build src/index.js && parcel build src/index.js --no-minify",
     "lint": "eslint src test",
     "unit": "jest",
     "test": "npm run lint && npm run unit"
@@ -15,8 +15,9 @@
     "vue",
     "calendar"
   ],
-  "author": "kit",
+  "author": "kitwang chan",
   "license": "MIT",
+  "repository": "https://github.com/kitwon/vue2-calendar",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-eslint": "^8.2.2",

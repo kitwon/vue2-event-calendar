@@ -1,7 +1,7 @@
 import moment from 'moment';
 import dateFunc from './date-func';
-import genBody from './gen-body';
-import genHeader from './gen-header';
+import genBody from './components/body';
+import genHeader from './components/header';
 
 const prefixCls = 'vue-calendar';
 
