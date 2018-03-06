@@ -56,7 +56,7 @@ Vue.component('Calendar', Calendar);
 ## Event Props
 
 | parameter     | description                            | params                                                               |
-| ------------- | -------------------------------------- | -------------------------------------------------------------------- |  |
+| ------------- | -------------------------------------- | -------------------------------------------------------------------- |
 | onMonthChange | trigger when calendar date change      | `(date)` parameter has two key startDay and endDay of selected month |
 | onPrev        | trigger after clicking the prev button | same as `onMonthChange` param                                        |
 | onNext        | trigger after clicking the next button | same as `onMonthChange` param                                        |
