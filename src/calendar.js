@@ -118,11 +118,14 @@ export default {
     }
   },
   watch: {
-    value(val) {
-      this.currentDate = this.moment(val);
+    value: {
+      immediate: true,
+      handler(val) {
+        this.currentDate = this.moment(val);
 
-      if (!this.today) {
-        this.today = val;
+        if (!this.today) {
+          this.today = val;
+        }
       }
     },
     currentDate(val, oval) {
@@ -138,7 +141,7 @@ export default {
   created() {
     // this.moment = moment.locale(this.locale);
     this.moment.locale(this.locale);
-    this.currentDate = this.value || new Date();
+    // this.currentDate = this.value || new Date();
   },
   data() {
     return {

@@ -1,10 +1,13 @@
-import { mount, shallow } from '@vue/test-utils';
+import { shallow } from '@vue/test-utils';
 import Calendar from '../src/index';
 import data from '../dev/data';
 
+// todo
+// 1. test scope slots
+
 describe('Calendar component', () => {
-  test('component snapshot', () => {
-    const wrapper = mount(Calendar, {
+  test('component should match snapshot', () => {
+    const wrapper = shallow(Calendar, {
       propsData: {
         value: new Date('2018-01-01'),
         dateData: data
@@ -15,13 +18,13 @@ describe('Calendar component', () => {
   });
 
   test('mode is work', () => {
-    const wrapper = mount(Calendar, {
+    const wrapper = shallow(Calendar, {
       propsData: {
         value: new Date('2018-01-01')
       }
     });
 
-    const weekWrapper = mount(Calendar, {
+    const weekWrapper = shallow(Calendar, {
       propsData: {
         mode: 'week',
         value: new Date('2018-01-01')
@@ -48,7 +51,7 @@ describe('Calendar component', () => {
     const prefixCls = 'kit-calendar';
     const wrapper = shallow(Calendar, {
       propsData: {
-        value: new Date('2018-01-01'),
+        value: '2018-01-01',
         prefixCls
       }
     });
@@ -58,12 +61,12 @@ describe('Calendar component', () => {
     const title = wrapper.find(`.${prefixCls}-header-date`);
 
     next.trigger('click');
-    wrapper.vm.$nextTick(() => {
+    wrapper.vm.$nextTick().then(() => {
       expect(title.text()).toBe('2018-02');
-    });
 
-    prev.trigger('click');
-    wrapper.vm.$nextTick(() => {
+      prev.trigger('click');
+      return wrapper.vm.$nextTick();
+    }).then(() => {
       expect(title.text()).toBe('2018-01');
     });
   });

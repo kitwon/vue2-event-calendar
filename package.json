@@ -2,11 +2,11 @@
   "name": "vue2-event-calendar",
   "version": "0.1.0",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
-  "main": "index.js",
+  "main": "dist/vue2-event-calendar.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html --public-url",
-    "deploy": "yarn test && yarn build && parcel build src/index.js && parcel build src/index.js --no-minify",
+    "dev": "parcel index.html -d demo",
+    "build": "parcel build index.html -d demo",
+    "deploy": "yarn test && yarn build && parcel build src/index.js -o vue2-event-calendar.min.js && parcel build src/index.js -o vue2-event-calendar.js --no-minify",
     "lint": "eslint src test",
     "unit": "jest",
     "test": "npm run lint && npm run unit"
