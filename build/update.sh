@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yarn deploy
+#yarn deploy
 git add -A
 git commit -am 'oridinary update'
 git push origin dev
