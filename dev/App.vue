@@ -23,7 +23,7 @@
 
 <script>
 // require('moment/src/locale/zh-cn');
-import Calendar from '../dist/vue2-event-calendar';
+import Calendar from '../vue2-event-calendar';
 import data from './data';
 
 export default {
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../dist/vue2-event-calendar.css';
+@import '../default.css';
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;

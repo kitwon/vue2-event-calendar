@@ -20,7 +20,8 @@ async function build(params) {
     input: 'src/calendar.js',
     plugins: [
       less({
-        output: 'dist/' + name + '.css'
+        // output: '' + name + '.css'
+        output: 'default.css'
       }),
       resolve({
         jsnext: true,
@@ -35,13 +36,13 @@ async function build(params) {
   })
 
   await bundle.write({
-    file: `dist/${name}.js`,
+    file: `${name}.js`,
     format: 'cjs'
   })
 
   const { code } = await bundle.generate({ format: 'cjs' })
   const minify = banner + '\n' + uglify.minify(code).code
-  write(`dist/${name}.min.js`, minify)
+  write(`${name}.min.js`, minify)
 }
 
 function write(dest, content) {

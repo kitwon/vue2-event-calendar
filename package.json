@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel index.html -d demo",
     "build": "parcel build index.html -d demo",
-    "deploy": "yarn test && yarn build && node build/build",
+    "deploy": "yarn test && node build/build && yarn build",
     "lint": "eslint src test",
     "unit": "jest",
     "test": "npm run lint && npm run unit"
