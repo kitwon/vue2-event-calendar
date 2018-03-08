@@ -6,7 +6,7 @@
       :dateData="dateData"
       class="ui-calendar"
       v-model="currMonth"
-      locale="en"
+      locale="zh-cn"
     >
       <div
         :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
@@ -22,8 +22,9 @@
 </template>
 
 <script>
-// require('moment/src/locale/zh-cn');
+require('moment/src/locale/zh-cn');
 import Calendar from '../vue2-event-calendar';
+import '../default.css';
 import data from './data';
 
 export default {
@@ -41,8 +42,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../default.css';
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
