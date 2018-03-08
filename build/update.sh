@@ -2,6 +2,5 @@
 
 yarn deploy
 git add -A
-git commit -m 'oridinary update'
+git commit -am 'oridinary update'
 git push origin dev
-npm deploy
