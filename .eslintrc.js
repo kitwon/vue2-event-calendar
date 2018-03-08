@@ -22,7 +22,7 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
-    semi: ['error', 'always'],
+    // semi: ['error', 'always'],
     camelcase: ['error', { 'properties': 'never' }],
     // allow paren-less arrow functions
     'arrow-parens': 0,

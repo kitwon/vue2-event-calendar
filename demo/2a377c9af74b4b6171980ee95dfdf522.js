@@ -68,239 +68,12394 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({12:[function(require,module,exports) {
+})({9:[function(require,module,exports) {
 var global = (1,eval)("this");
-var t=(0,eval)("this");Object.defineProperty(exports,"__esModule",{value:!0});var e=Object.freeze({});function n(t){return void 0===t||null===t}function r(t){return void 0!==t&&null!==t}function o(t){return!0===t}function i(t){return!1===t}function a(t){return"string"==typeof t||"number"==typeof t||"symbol"==typeof t||"boolean"==typeof t}function s(t){return null!==t&&"object"==typeof t}var c=Object.prototype.toString;function u(t){return c.call(t).slice(8,-1)}function l(t){return"[object Object]"===c.call(t)}function f(t){return"[object RegExp]"===c.call(t)}function p(t){var e=parseFloat(String(t));return e>=0&&Math.floor(e)===e&&isFinite(t)}function d(t){return null==t?"":"object"==typeof t?JSON.stringify(t,null,2):String(t)}function v(t){var e=parseFloat(t);return isNaN(e)?t:e}function h(t,e){for(var n=Object.create(null),r=t.split(","),o=0;o<r.length;o++)n[r[o]]=!0;return e?function(t){return n[t.toLowerCase()]}:function(t){return n[t]}}var m=h("slot,component",!0),y=h("key,ref,slot,slot-scope,is");function g(t,e){if(t.length){var n=t.indexOf(e);if(n>-1)return t.splice(n,1)}}var _=Object.prototype.hasOwnProperty;function b(t,e){return _.call(t,e)}function C(t){var e=Object.create(null);return function(n){return e[n]||(e[n]=t(n))}}var A=/-(\w)/g,w=C(function(t){return t.replace(A,function(t,e){return e?e.toUpperCase():""})}),$=C(function(t){return t.charAt(0).toUpperCase()+t.slice(1)}),x=/\B([A-Z])/g,k=C(function(t){return t.replace(x,"-$1").toLowerCase()});function O(t,e){function n(n){var r=arguments.length;return r?r>1?t.apply(e,arguments):t.call(e,n):t.call(e)}return n._length=t.length,n}function S(t,e){e=e||0;for(var n=t.length-e,r=new Array(n);n--;)r[n]=t[n+e];return r}function E(t,e){for(var n in e)t[n]=e[n];return t}function j(t){for(var e={},n=0;n<t.length;n++)t[n]&&E(e,t[n]);return e}function I(t,e,n){}var T=function(t,e,n){return!1},N=function(t){return t};function D(t,e){if(t===e)return!0;var n=s(t),r=s(e);if(!n||!r)return!n&&!r&&String(t)===String(e);try{var o=Array.isArray(t),i=Array.isArray(e);if(o&&i)return t.length===e.length&&t.every(function(t,n){return D(t,e[n])});if(o||i)return!1;var a=Object.keys(t),c=Object.keys(e);return a.length===c.length&&a.every(function(n){return D(t[n],e[n])})}catch(t){return!1}}function L(t,e){for(var n=0;n<t.length;n++)if(D(t[n],e))return n;return-1}function P(t){var e=!1;return function(){e||(e=!0,t.apply(this,arguments))}}var M="data-server-rendered",F=["component","directive","filter"],R=["beforeCreate","created","beforeMount","mounted","beforeUpdate","updated","beforeDestroy","destroyed","activated","deactivated","errorCaptured"],U={optionMergeStrategies:Object.create(null),silent:!1,productionTip:!1,devtools:!1,performance:!1,errorHandler:null,warnHandler:null,ignoredElements:[],keyCodes:Object.create(null),isReservedTag:T,isReservedAttr:T,isUnknownElement:T,getTagNamespace:I,parsePlatformTagName:N,mustUseProp:T,_lifecycleHooks:R};function B(t){var e=(t+"").charCodeAt(0);return 36===e||95===e}function H(t,e,n,r){Object.defineProperty(t,e,{value:n,enumerable:!!r,writable:!0,configurable:!0})}var V=/[^\w.$]/;function z(t){if(!V.test(t)){var e=t.split(".");return function(t){for(var n=0;n<e.length;n++){if(!t)return;t=t[e[n]]}return t}}}var W,q="__proto__"in{},K="undefined"!=typeof window,X="undefined"!=typeof WXEnvironment&&!!WXEnvironment.platform,G=X&&WXEnvironment.platform.toLowerCase(),J=K&&window.navigator.userAgent.toLowerCase(),Z=J&&/msie|trident/.test(J),Q=J&&J.indexOf("msie 9.0")>0,Y=J&&J.indexOf("edge/")>0,tt=J&&J.indexOf("android")>0||"android"===G,et=J&&/iphone|ipad|ipod|ios/.test(J)||"ios"===G,nt=J&&/chrome\/\d+/.test(J)&&!Y,rt={}.watch,ot=!1;if(K)try{var it={};Object.defineProperty(it,"passive",{get:function(){ot=!0}}),window.addEventListener("test-passive",null,it)}catch(t){}var at=function(){return void 0===W&&(W=!K&&void 0!==t&&"server"===t.process.env.VUE_ENV),W},st=K&&window.__VUE_DEVTOOLS_GLOBAL_HOOK__;function ct(t){return"function"==typeof t&&/native code/.test(t.toString())}var ut,lt="undefined"!=typeof Symbol&&ct(Symbol)&&"undefined"!=typeof Reflect&&ct(Reflect.ownKeys);ut="undefined"!=typeof Set&&ct(Set)?Set:function(){function t(){this.set=Object.create(null)}return t.prototype.has=function(t){return!0===this.set[t]},t.prototype.add=function(t){this.set[t]=!0},t.prototype.clear=function(){this.set=Object.create(null)},t}();var ft,pt,dt,vt,ht=I,mt=I,yt=I,gt=I,_t=0,bt=function(){this.id=_t++,this.subs=[]};bt.prototype.addSub=function(t){this.subs.push(t)},bt.prototype.removeSub=function(t){g(this.subs,t)},bt.prototype.depend=function(){bt.target&&bt.target.addDep(this)},bt.prototype.notify=function(){for(var t=this.subs.slice(),e=0,n=t.length;e<n;e++)t[e].update()},bt.target=null;var Ct=[];function At(t){bt.target&&Ct.push(bt.target),bt.target=t}function wt(){bt.target=Ct.pop()}var $t=function(t,e,n,r,o,i,a,s){this.tag=t,this.data=e,this.children=n,this.text=r,this.elm=o,this.ns=void 0,this.context=i,this.fnContext=void 0,this.fnOptions=void 0,this.fnScopeId=void 0,this.key=e&&e.key,this.componentOptions=a,this.componentInstance=void 0,this.parent=void 0,this.raw=!1,this.isStatic=!1,this.isRootInsert=!0,this.isComment=!1,this.isCloned=!1,this.isOnce=!1,this.asyncFactory=s,this.asyncMeta=void 0,this.isAsyncPlaceholder=!1},xt={child:{configurable:!0}};xt.child.get=function(){return this.componentInstance},Object.defineProperties($t.prototype,xt);var kt=function(t){void 0===t&&(t="");var e=new $t;return e.text=t,e.isComment=!0,e};function Ot(t){return new $t(void 0,void 0,void 0,String(t))}function St(t,e){var n=t.componentOptions,r=new $t(t.tag,t.data,t.children,t.text,t.elm,t.context,n,t.asyncFactory);return r.ns=t.ns,r.isStatic=t.isStatic,r.key=t.key,r.isComment=t.isComment,r.fnContext=t.fnContext,r.fnOptions=t.fnOptions,r.fnScopeId=t.fnScopeId,r.isCloned=!0,e&&(t.children&&(r.children=Et(t.children,!0)),n&&n.children&&(n.children=Et(n.children,!0))),r}function Et(t,e){for(var n=t.length,r=new Array(n),o=0;o<n;o++)r[o]=St(t[o],e);return r}var jt=Array.prototype,It=Object.create(jt);["push","pop","shift","unshift","splice","sort","reverse"].forEach(function(t){var e=jt[t];H(It,t,function(){for(var n=[],r=arguments.length;r--;)n[r]=arguments[r];var o,i=e.apply(this,n),a=this.__ob__;switch(t){case"push":case"unshift":o=n;break;case"splice":o=n.slice(2)}return o&&a.observeArray(o),a.dep.notify(),i})});var Tt=Object.getOwnPropertyNames(It),Nt={shouldConvert:!0},Dt=function(t){(this.value=t,this.dep=new bt,this.vmCount=0,H(t,"__ob__",this),Array.isArray(t))?((q?Lt:Pt)(t,It,Tt),this.observeArray(t)):this.walk(t)};function Lt(t,e,n){t.__proto__=e}function Pt(t,e,n){for(var r=0,o=n.length;r<o;r++){var i=n[r];H(t,i,e[i])}}function Mt(t,e){var n;if(s(t)&&!(t instanceof $t))return b(t,"__ob__")&&t.__ob__ instanceof Dt?n=t.__ob__:Nt.shouldConvert&&!at()&&(Array.isArray(t)||l(t))&&Object.isExtensible(t)&&!t._isVue&&(n=new Dt(t)),e&&n&&n.vmCount++,n}function Ft(t,e,n,r,o){var i=new bt,a=Object.getOwnPropertyDescriptor(t,e);if(!a||!1!==a.configurable){var s=a&&a.get,c=a&&a.set,u=!o&&Mt(n);Object.defineProperty(t,e,{enumerable:!0,configurable:!0,get:function(){var e=s?s.call(t):n;return bt.target&&(i.depend(),u&&(u.dep.depend(),Array.isArray(e)&&Bt(e))),e},set:function(e){var r=s?s.call(t):n;e===r||e!=e&&r!=r||(c?c.call(t,e):n=e,u=!o&&Mt(e),i.notify())}})}}function Rt(t,e,n){if(Array.isArray(t)&&p(e))return t.length=Math.max(t.length,e),t.splice(e,1,n),n;if(e in t&&!(e in Object.prototype))return t[e]=n,n;var r=t.__ob__;return t._isVue||r&&r.vmCount?n:r?(Ft(r.value,e,n),r.dep.notify(),n):(t[e]=n,n)}function Ut(t,e){if(Array.isArray(t)&&p(e))t.splice(e,1);else{var n=t.__ob__;t._isVue||n&&n.vmCount||b(t,e)&&(delete t[e],n&&n.dep.notify())}}function Bt(t){for(var e=void 0,n=0,r=t.length;n<r;n++)(e=t[n])&&e.__ob__&&e.__ob__.dep.depend(),Array.isArray(e)&&Bt(e)}Dt.prototype.walk=function(t){for(var e=Object.keys(t),n=0;n<e.length;n++)Ft(t,e[n],t[e[n]])},Dt.prototype.observeArray=function(t){for(var e=0,n=t.length;e<n;e++)Mt(t[e])};var Ht=U.optionMergeStrategies;function Vt(t,e){if(!e)return t;for(var n,r,o,i=Object.keys(e),a=0;a<i.length;a++)r=t[n=i[a]],o=e[n],b(t,n)?l(r)&&l(o)&&Vt(r,o):Rt(t,n,o);return t}function zt(t,e,n){return n?function(){var r="function"==typeof e?e.call(n,n):e,o="function"==typeof t?t.call(n,n):t;return r?Vt(r,o):o}:e?t?function(){return Vt("function"==typeof e?e.call(this,this):e,"function"==typeof t?t.call(this,this):t)}:e:t}function Wt(t,e){return e?t?t.concat(e):Array.isArray(e)?e:[e]:t}function qt(t,e,n,r){var o=Object.create(t||null);return e?E(o,e):o}Ht.data=function(t,e,n){return n?zt(t,e,n):e&&"function"!=typeof e?t:zt(t,e)},R.forEach(function(t){Ht[t]=Wt}),F.forEach(function(t){Ht[t+"s"]=qt}),Ht.watch=function(t,e,n,r){if(t===rt&&(t=void 0),e===rt&&(e=void 0),!e)return Object.create(t||null);if(!t)return e;var o={};for(var i in E(o,t),e){var a=o[i],s=e[i];a&&!Array.isArray(a)&&(a=[a]),o[i]=a?a.concat(s):Array.isArray(s)?s:[s]}return o},Ht.props=Ht.methods=Ht.inject=Ht.computed=function(t,e,n,r){if(!t)return e;var o=Object.create(null);return E(o,t),e&&E(o,e),o},Ht.provide=zt;var Kt=function(t,e){return void 0===e?t:e};function Xt(t){for(var e in t.components)Gt(e)}function Gt(t){/^[a-zA-Z][\w-]*$/.test(t)||ht('Invalid component name: "'+t+'". Component names can only contain alphanumeric characters and the hyphen, and must start with a letter.'),(m(t)||U.isReservedTag(t))&&ht("Do not use built-in or reserved HTML elements as component id: "+t)}function Jt(t,e){var n=t.props;if(n){var r,o,i={};if(Array.isArray(n))for(r=n.length;r--;)"string"==typeof(o=n[r])&&(i[w(o)]={type:null});else if(l(n))for(var a in n)o=n[a],i[w(a)]=l(o)?o:{type:o};else 0;t.props=i}}function Zt(t,e){var n=t.inject;if(n){var r=t.inject={};if(Array.isArray(n))for(var o=0;o<n.length;o++)r[n[o]]={from:n[o]};else if(l(n))for(var i in n){var a=n[i];r[i]=l(a)?E({from:i},a):{from:a}}else 0}}function Qt(t){var e=t.directives;if(e)for(var n in e){var r=e[n];"function"==typeof r&&(e[n]={bind:r,update:r})}}function Yt(t,e,n){l(e)||ht('Invalid value for option "'+t+'": expected an Object, but got '+u(e)+".",n)}function te(t,e,n){"function"==typeof e&&(e=e.options),Jt(e,n),Zt(e,n),Qt(e);var r=e.extends;if(r&&(t=te(t,r,n)),e.mixins)for(var o=0,i=e.mixins.length;o<i;o++)t=te(t,e.mixins[o],n);var a,s={};for(a in t)c(a);for(a in e)b(t,a)||c(a);function c(r){var o=Ht[r]||Kt;s[r]=o(t[r],e[r],n,r)}return s}function ee(t,e,n,r){if("string"==typeof n){var o=t[e];if(b(o,n))return o[n];var i=w(n);if(b(o,i))return o[i];var a=$(i);if(b(o,a))return o[a];var s=o[n]||o[i]||o[a];return s}}function ne(t,e,n,r){var o=e[t],i=!b(n,t),a=n[t];if(ce(Boolean,o.type)&&(i&&!b(o,"default")?a=!1:ce(String,o.type)||""!==a&&a!==k(t)||(a=!0)),void 0===a){a=re(r,o,t);var s=Nt.shouldConvert;Nt.shouldConvert=!0,Mt(a),Nt.shouldConvert=s}return a}function re(t,e,n){if(b(e,"default")){var r=e.default;return t&&t.$options.propsData&&void 0===t.$options.propsData[n]&&void 0!==t._props[n]?t._props[n]:"function"==typeof r&&"Function"!==se(e.type)?r.call(t):r}}function oe(t,e,n,r,o){if(t.required&&o)ht('Missing required prop: "'+e+'"',r);else if(null!=n||t.required){var i=t.type,a=!i||!0===i,s=[];if(i){Array.isArray(i)||(i=[i]);for(var c=0;c<i.length&&!a;c++){var l=ae(n,i[c]);s.push(l.expectedType||""),a=l.valid}}if(a){var f=t.validator;f&&(f(n)||ht('Invalid prop: custom validator check failed for prop "'+e+'".',r))}else ht('Invalid prop: type check failed for prop "'+e+'". Expected '+s.map($).join(", ")+", got "+u(n)+".",r)}}var ie=/^(String|Number|Boolean|Function|Symbol)$/;function ae(t,e){var n,r=se(e);if(ie.test(r)){var o=typeof t;(n=o===r.toLowerCase())||"object"!==o||(n=t instanceof e)}else n="Object"===r?l(t):"Array"===r?Array.isArray(t):t instanceof e;return{valid:n,expectedType:r}}function se(t){var e=t&&t.toString().match(/^\s*function (\w+)/);return e?e[1]:""}function ce(t,e){if(!Array.isArray(e))return se(e)===se(t);for(var n=0,r=e.length;n<r;n++)if(se(e[n])===se(t))return!0;return!1}function ue(t,e,n){if(e)for(var r=e;r=r.$parent;){var o=r.$options.errorCaptured;if(o)for(var i=0;i<o.length;i++)try{if(!1===o[i].call(r,t,e,n))return}catch(t){le(t,r,"errorCaptured hook")}}le(t,e,n)}function le(t,e,n){if(U.errorHandler)try{return U.errorHandler.call(null,t,e,n)}catch(t){fe(t,null,"config.errorHandler")}fe(t,e,n)}function fe(t,e,n){if(!K&&!X||"undefined"==typeof console)throw t;console.error(t)}var pe,de,ve=[],he=!1;function me(){he=!1;var t=ve.slice(0);ve.length=0;for(var e=0;e<t.length;e++)t[e]()}var ye,ge,_e,be,Ce,Ae,we,$e=!1;if("undefined"!=typeof setImmediate&&ct(setImmediate))de=function(){setImmediate(me)};else if("undefined"==typeof MessageChannel||!ct(MessageChannel)&&"[object MessageChannelConstructor]"!==MessageChannel.toString())de=function(){setTimeout(me,0)};else{var xe=new MessageChannel,ke=xe.port2;xe.port1.onmessage=me,de=function(){ke.postMessage(1)}}if("undefined"!=typeof Promise&&ct(Promise)){var Oe=Promise.resolve();pe=function(){Oe.then(me),et&&setTimeout(I)}}else pe=de;function Se(t){return t._withTask||(t._withTask=function(){$e=!0;var e=t.apply(null,arguments);return $e=!1,e})}function Ee(t,e){var n;if(ve.push(function(){if(t)try{t.call(e)}catch(t){ue(t,e,"nextTick")}else n&&n(e)}),he||(he=!0,$e?de():pe()),!t&&"undefined"!=typeof Promise)return new Promise(function(t){n=t})}var je,Ie,Te,Ne=new ut;function De(t){Le(t,Ne),Ne.clear()}function Le(t,e){var n,r,o=Array.isArray(t);if((o||s(t))&&!Object.isFrozen(t)){if(t.__ob__){var i=t.__ob__.dep.id;if(e.has(i))return;e.add(i)}if(o)for(n=t.length;n--;)Le(t[n],e);else for(n=(r=Object.keys(t)).length;n--;)Le(t[r[n]],e)}}var Pe,Me=C(function(t){var e="&"===t.charAt(0),n="~"===(t=e?t.slice(1):t).charAt(0),r="!"===(t=n?t.slice(1):t).charAt(0);return{name:t=r?t.slice(1):t,once:n,capture:r,passive:e}});function Fe(t){function e(){var t=arguments,n=e.fns;if(!Array.isArray(n))return n.apply(null,arguments);for(var r=n.slice(),o=0;o<r.length;o++)r[o].apply(null,t)}return e.fns=t,e}function Re(t,e,r,o,i){var a,s,c,u;for(a in t)s=t[a],c=e[a],u=Me(a),n(s)||(n(c)?(n(s.fns)&&(s=t[a]=Fe(s)),r(u.name,s,u.once,u.capture,u.passive,u.params)):s!==c&&(c.fns=s,t[a]=c));for(a in e)n(t[a])&&o((u=Me(a)).name,e[a],u.capture)}function Ue(t,e,i){var a;t instanceof $t&&(t=t.data.hook||(t.data.hook={}));var s=t[e];function c(){i.apply(this,arguments),g(a.fns,c)}n(s)?a=Fe([c]):r(s.fns)&&o(s.merged)?(a=s).fns.push(c):a=Fe([s,c]),a.merged=!0,t[e]=a}function Be(t,e,o){var i=e.options.props;if(!n(i)){var a={},s=t.attrs,c=t.props;if(r(s)||r(c))for(var u in i){var l=k(u);He(a,c,u,l,!0)||He(a,s,u,l,!1)}return a}}function He(t,e,n,o,i){if(r(e)){if(b(e,n))return t[n]=e[n],i||delete e[n],!0;if(b(e,o))return t[n]=e[o],i||delete e[o],!0}return!1}function Ve(t){for(var e=0;e<t.length;e++)if(Array.isArray(t[e]))return Array.prototype.concat.apply([],t);return t}function ze(t){return a(t)?[Ot(t)]:Array.isArray(t)?qe(t):void 0}function We(t){return r(t)&&r(t.text)&&i(t.isComment)}function qe(t,e){var i,s,c,u,l=[];for(i=0;i<t.length;i++)n(s=t[i])||"boolean"==typeof s||(u=l[c=l.length-1],Array.isArray(s)?s.length>0&&(We((s=qe(s,(e||"")+"_"+i))[0])&&We(u)&&(l[c]=Ot(u.text+s[0].text),s.shift()),l.push.apply(l,s)):a(s)?We(u)?l[c]=Ot(u.text+s):""!==s&&l.push(Ot(s)):We(s)&&We(u)?l[c]=Ot(u.text+s.text):(o(t._isVList)&&r(s.tag)&&n(s.key)&&r(e)&&(s.key="__vlist"+e+"_"+i+"__"),l.push(s)));return l}function Ke(t,e){return(t.__esModule||lt&&"Module"===t[Symbol.toStringTag])&&(t=t.default),s(t)?e.extend(t):t}function Xe(t,e,n,r,o){var i=kt();return i.asyncFactory=t,i.asyncMeta={data:e,context:n,children:r,tag:o},i}function Ge(t,e,i){if(o(t.error)&&r(t.errorComp))return t.errorComp;if(r(t.resolved))return t.resolved;if(o(t.loading)&&r(t.loadingComp))return t.loadingComp;if(!r(t.contexts)){var a=t.contexts=[i],c=!0,u=function(){for(var t=0,e=a.length;t<e;t++)a[t].$forceUpdate()},l=P(function(n){t.resolved=Ke(n,e),c||u()}),f=P(function(e){r(t.errorComp)&&(t.error=!0,u())}),p=t(l,f);return s(p)&&("function"==typeof p.then?n(t.resolved)&&p.then(l,f):r(p.component)&&"function"==typeof p.component.then&&(p.component.then(l,f),r(p.error)&&(t.errorComp=Ke(p.error,e)),r(p.loading)&&(t.loadingComp=Ke(p.loading,e),0===p.delay?t.loading=!0:setTimeout(function(){n(t.resolved)&&n(t.error)&&(t.loading=!0,u())},p.delay||200)),r(p.timeout)&&setTimeout(function(){n(t.resolved)&&f(null)},p.timeout))),c=!1,t.loading?t.loadingComp:t.resolved}t.contexts.push(i)}function Je(t){return t.isComment&&t.asyncFactory}function Ze(t){if(Array.isArray(t))for(var e=0;e<t.length;e++){var n=t[e];if(r(n)&&(r(n.componentOptions)||Je(n)))return n}}function Qe(t){t._events=Object.create(null),t._hasHookEvent=!1;var e=t.$options._parentListeners;e&&en(t,e)}function Ye(t,e,n){n?Pe.$once(t,e):Pe.$on(t,e)}function tn(t,e){Pe.$off(t,e)}function en(t,e,n){Pe=t,Re(e,n||{},Ye,tn,t),Pe=void 0}function nn(t){var e=/^hook:/;t.prototype.$on=function(t,n){if(Array.isArray(t))for(var r=0,o=t.length;r<o;r++)this.$on(t[r],n);else(this._events[t]||(this._events[t]=[])).push(n),e.test(t)&&(this._hasHookEvent=!0);return this},t.prototype.$once=function(t,e){var n=this;function r(){n.$off(t,r),e.apply(n,arguments)}return r.fn=e,n.$on(t,r),n},t.prototype.$off=function(t,e){var n=this;if(!arguments.length)return n._events=Object.create(null),n;if(Array.isArray(t)){for(var r=0,o=t.length;r<o;r++)this.$off(t[r],e);return n}var i=n._events[t];if(!i)return n;if(!e)return n._events[t]=null,n;if(e)for(var a,s=i.length;s--;)if((a=i[s])===e||a.fn===e){i.splice(s,1);break}return n},t.prototype.$emit=function(t){var e=this,n=e._events[t];if(n){n=n.length>1?S(n):n;for(var r=S(arguments,1),o=0,i=n.length;o<i;o++)try{n[o].apply(e,r)}catch(n){ue(n,e,'event handler for "'+t+'"')}}return e}}function rn(t,e){var n={};if(!t)return n;for(var r=0,o=t.length;r<o;r++){var i=t[r],a=i.data;if(a&&a.attrs&&a.attrs.slot&&delete a.attrs.slot,i.context!==e&&i.fnContext!==e||!a||null==a.slot)(n.default||(n.default=[])).push(i);else{var s=a.slot,c=n[s]||(n[s]=[]);"template"===i.tag?c.push.apply(c,i.children||[]):c.push(i)}}for(var u in n)n[u].every(on)&&delete n[u];return n}function on(t){return t.isComment&&!t.asyncFactory||" "===t.text}function an(t,e){e=e||{};for(var n=0;n<t.length;n++)Array.isArray(t[n])?an(t[n],e):e[t[n].key]=t[n].fn;return e}var sn=null,cn=!1;function un(t){var e=t.$options,n=e.parent;if(n&&!e.abstract){for(;n.$options.abstract&&n.$parent;)n=n.$parent;n.$children.push(t)}t.$parent=n,t.$root=n?n.$root:t,t.$children=[],t.$refs={},t._watcher=null,t._inactive=null,t._directInactive=!1,t._isMounted=!1,t._isDestroyed=!1,t._isBeingDestroyed=!1}function ln(t){t.prototype._update=function(t,e){var n=this;n._isMounted&&mn(n,"beforeUpdate");var r=n.$el,o=n._vnode,i=sn;sn=n,n._vnode=t,o?n.$el=n.__patch__(o,t):(n.$el=n.__patch__(n.$el,t,e,!1,n.$options._parentElm,n.$options._refElm),n.$options._parentElm=n.$options._refElm=null),sn=i,r&&(r.__vue__=null),n.$el&&(n.$el.__vue__=n),n.$vnode&&n.$parent&&n.$vnode===n.$parent._vnode&&(n.$parent.$el=n.$el)},t.prototype.$forceUpdate=function(){this._watcher&&this._watcher.update()},t.prototype.$destroy=function(){var t=this;if(!t._isBeingDestroyed){mn(t,"beforeDestroy"),t._isBeingDestroyed=!0;var e=t.$parent;!e||e._isBeingDestroyed||t.$options.abstract||g(e.$children,t),t._watcher&&t._watcher.teardown();for(var n=t._watchers.length;n--;)t._watchers[n].teardown();t._data.__ob__&&t._data.__ob__.vmCount--,t._isDestroyed=!0,t.__patch__(t._vnode,null),mn(t,"destroyed"),t.$off(),t.$el&&(t.$el.__vue__=null),t.$vnode&&(t.$vnode.parent=null)}}}function fn(t,e,n){return t.$el=e,t.$options.render||(t.$options.render=kt),mn(t,"beforeMount"),new Tn(t,function(){t._update(t._render(),n)},I,null,!0),n=!1,null==t.$vnode&&(t._isMounted=!0,mn(t,"mounted")),t}function pn(t,n,r,o,i){var a=!!(i||t.$options._renderChildren||o.data.scopedSlots||t.$scopedSlots!==e);if(t.$options._parentVnode=o,t.$vnode=o,t._vnode&&(t._vnode.parent=o),t.$options._renderChildren=i,t.$attrs=o.data&&o.data.attrs||e,t.$listeners=r||e,n&&t.$options.props){Nt.shouldConvert=!1;for(var s=t._props,c=t.$options._propKeys||[],u=0;u<c.length;u++){var l=c[u];s[l]=ne(l,t.$options.props,n,t)}Nt.shouldConvert=!0,t.$options.propsData=n}if(r){var f=t.$options._parentListeners;t.$options._parentListeners=r,en(t,r,f)}a&&(t.$slots=rn(i,o.context),t.$forceUpdate())}function dn(t){for(;t&&(t=t.$parent);)if(t._inactive)return!0;return!1}function vn(t,e){if(e){if(t._directInactive=!1,dn(t))return}else if(t._directInactive)return;if(t._inactive||null===t._inactive){t._inactive=!1;for(var n=0;n<t.$children.length;n++)vn(t.$children[n]);mn(t,"activated")}}function hn(t,e){if(!(e&&(t._directInactive=!0,dn(t))||t._inactive)){t._inactive=!0;for(var n=0;n<t.$children.length;n++)hn(t.$children[n]);mn(t,"deactivated")}}function mn(t,e){var n=t.$options[e];if(n)for(var r=0,o=n.length;r<o;r++)try{n[r].call(t)}catch(n){ue(n,t,e+" hook")}t._hasHookEvent&&t.$emit("hook:"+e)}var yn=100,gn=[],_n=[],bn={},Cn={},An=!1,wn=!1,$n=0;function xn(){$n=gn.length=_n.length=0,bn={},An=wn=!1}function kn(){var t,e;for(wn=!0,gn.sort(function(t,e){return t.id-e.id}),$n=0;$n<gn.length;$n++)e=(t=gn[$n]).id,bn[e]=null,t.run();var n=_n.slice(),r=gn.slice();xn(),En(n),On(r),st&&U.devtools&&st.emit("flush")}function On(t){for(var e=t.length;e--;){var n=t[e],r=n.vm;r._watcher===n&&r._isMounted&&mn(r,"updated")}}function Sn(t){t._inactive=!1,_n.push(t)}function En(t){for(var e=0;e<t.length;e++)t[e]._inactive=!0,vn(t[e],!0)}function jn(t){var e=t.id;if(null==bn[e]){if(bn[e]=!0,wn){for(var n=gn.length-1;n>$n&&gn[n].id>t.id;)n--;gn.splice(n+1,0,t)}else gn.push(t);An||(An=!0,Ee(kn))}}var In=0,Tn=function(t,e,n,r,o){this.vm=t,o&&(t._watcher=this),t._watchers.push(this),r?(this.deep=!!r.deep,this.user=!!r.user,this.lazy=!!r.lazy,this.sync=!!r.sync):this.deep=this.user=this.lazy=this.sync=!1,this.cb=n,this.id=++In,this.active=!0,this.dirty=this.lazy,this.deps=[],this.newDeps=[],this.depIds=new ut,this.newDepIds=new ut,this.expression="","function"==typeof e?this.getter=e:(this.getter=z(e),this.getter||(this.getter=function(){})),this.value=this.lazy?void 0:this.get()};Tn.prototype.get=function(){var t;At(this);var e=this.vm;try{t=this.getter.call(e,e)}catch(t){if(!this.user)throw t;ue(t,e,'getter for watcher "'+this.expression+'"')}finally{this.deep&&De(t),wt(),this.cleanupDeps()}return t},Tn.prototype.addDep=function(t){var e=t.id;this.newDepIds.has(e)||(this.newDepIds.add(e),this.newDeps.push(t),this.depIds.has(e)||t.addSub(this))},Tn.prototype.cleanupDeps=function(){for(var t=this.deps.length;t--;){var e=this.deps[t];this.newDepIds.has(e.id)||e.removeSub(this)}var n=this.depIds;this.depIds=this.newDepIds,this.newDepIds=n,this.newDepIds.clear(),n=this.deps,this.deps=this.newDeps,this.newDeps=n,this.newDeps.length=0},Tn.prototype.update=function(){this.lazy?this.dirty=!0:this.sync?this.run():jn(this)},Tn.prototype.run=function(){if(this.active){var t=this.get();if(t!==this.value||s(t)||this.deep){var e=this.value;if(this.value=t,this.user)try{this.cb.call(this.vm,t,e)}catch(t){ue(t,this.vm,'callback for watcher "'+this.expression+'"')}else this.cb.call(this.vm,t,e)}}},Tn.prototype.evaluate=function(){this.value=this.get(),this.dirty=!1},Tn.prototype.depend=function(){for(var t=this.deps.length;t--;)this.deps[t].depend()},Tn.prototype.teardown=function(){if(this.active){this.vm._isBeingDestroyed||g(this.vm._watchers,this);for(var t=this.deps.length;t--;)this.deps[t].removeSub(this);this.active=!1}};var Nn={enumerable:!0,configurable:!0,get:I,set:I};function Dn(t,e,n){Nn.get=function(){return this[e][n]},Nn.set=function(t){this[e][n]=t},Object.defineProperty(t,n,Nn)}function Ln(t){t._watchers=[];var e=t.$options;e.props&&Pn(t,e.props),e.methods&&Vn(t,e.methods),e.data?Mn(t):Mt(t._data={},!0),e.computed&&Un(t,e.computed),e.watch&&e.watch!==rt&&zn(t,e.watch)}function Pn(t,e){var n=t.$options.propsData||{},r=t._props={},o=t.$options._propKeys=[],i=!t.$parent;Nt.shouldConvert=i;var a=function(i){o.push(i);var a=ne(i,e,n,t);Ft(r,i,a),i in t||Dn(t,"_props",i)};for(var s in e)a(s);Nt.shouldConvert=!0}function Mn(t){var e=t.$options.data;l(e=t._data="function"==typeof e?Fn(e,t):e||{})||(e={});for(var n=Object.keys(e),r=t.$options.props,o=(t.$options.methods,n.length);o--;){var i=n[o];0,r&&b(r,i)||B(i)||Dn(t,"_data",i)}Mt(e,!0)}function Fn(t,e){try{return t.call(e,e)}catch(t){return ue(t,e,"data()"),{}}}var Rn={lazy:!0};function Un(t,e){var n=t._computedWatchers=Object.create(null),r=at();for(var o in e){var i=e[o],a="function"==typeof i?i:i.get;0,r||(n[o]=new Tn(t,a||I,I,Rn)),o in t||Bn(t,o,i)}}function Bn(t,e,n){var r=!at();"function"==typeof n?(Nn.get=r?Hn(e):n,Nn.set=I):(Nn.get=n.get?r&&!1!==n.cache?Hn(e):n.get:I,Nn.set=n.set?n.set:I),Object.defineProperty(t,e,Nn)}function Hn(t){return function(){var e=this._computedWatchers&&this._computedWatchers[t];if(e)return e.dirty&&e.evaluate(),bt.target&&e.depend(),e.value}}function Vn(t,e){t.$options.props;for(var n in e)t[n]=null==e[n]?I:O(e[n],t)}function zn(t,e){for(var n in e){var r=e[n];if(Array.isArray(r))for(var o=0;o<r.length;o++)Wn(t,n,r[o]);else Wn(t,n,r)}}function Wn(t,e,n,r){return l(n)&&(r=n,n=n.handler),"string"==typeof n&&(n=t[n]),t.$watch(e,n,r)}function qn(t){var e={get:function(){return this._data}},n={get:function(){return this._props}};Object.defineProperty(t.prototype,"$data",e),Object.defineProperty(t.prototype,"$props",n),t.prototype.$set=Rt,t.prototype.$delete=Ut,t.prototype.$watch=function(t,e,n){if(l(e))return Wn(this,t,e,n);(n=n||{}).user=!0;var r=new Tn(this,t,e,n);return n.immediate&&e.call(this,r.value),function(){r.teardown()}}}function Kn(t){var e=t.$options.provide;e&&(t._provided="function"==typeof e?e.call(t):e)}function Xn(t){var e=Gn(t.$options.inject,t);e&&(Nt.shouldConvert=!1,Object.keys(e).forEach(function(n){Ft(t,n,e[n])}),Nt.shouldConvert=!0)}function Gn(t,e){if(t){for(var n=Object.create(null),r=lt?Reflect.ownKeys(t).filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable}):Object.keys(t),o=0;o<r.length;o++){for(var i=r[o],a=t[i].from,s=e;s;){if(s._provided&&a in s._provided){n[i]=s._provided[a];break}s=s.$parent}if(!s)if("default"in t[i]){var c=t[i].default;n[i]="function"==typeof c?c.call(e):c}else 0}return n}}function Jn(t,e){var n,o,i,a,c;if(Array.isArray(t)||"string"==typeof t)for(n=new Array(t.length),o=0,i=t.length;o<i;o++)n[o]=e(t[o],o);else if("number"==typeof t)for(n=new Array(t),o=0;o<t;o++)n[o]=e(o+1,o);else if(s(t))for(a=Object.keys(t),n=new Array(a.length),o=0,i=a.length;o<i;o++)c=a[o],n[o]=e(t[c],c,o);return r(n)&&(n._isVList=!0),n}function Zn(t,e,n,r){var o,i=this.$scopedSlots[t];if(i)n=n||{},r&&(n=E(E({},r),n)),o=i(n)||e;else{var a=this.$slots[t];a&&(a._rendered=!0),o=a||e}var s=n&&n.slot;return s?this.$createElement("template",{slot:s},o):o}function Qn(t){return ee(this.$options,"filters",t,!0)||N}function Yn(t,e,n,r){var o=U.keyCodes[e]||n;return o?Array.isArray(o)?-1===o.indexOf(t):o!==t:r?k(r)!==e:void 0}function tr(t,e,n,r,o){if(n)if(s(n)){var i;Array.isArray(n)&&(n=j(n));var a=function(a){if("class"===a||"style"===a||y(a))i=t;else{var s=t.attrs&&t.attrs.type;i=r||U.mustUseProp(e,s,a)?t.domProps||(t.domProps={}):t.attrs||(t.attrs={})}a in i||(i[a]=n[a],o&&((t.on||(t.on={}))["update:"+a]=function(t){n[a]=t}))};for(var c in n)a(c)}else;return t}function er(t,e){var n=this._staticTrees||(this._staticTrees=[]),r=n[t];return r&&!e?Array.isArray(r)?Et(r):St(r):(rr(r=n[t]=this.$options.staticRenderFns[t].call(this._renderProxy,null,this),"__static__"+t,!1),r)}function nr(t,e,n){return rr(t,"__once__"+e+(n?"_"+n:""),!0),t}function rr(t,e,n){if(Array.isArray(t))for(var r=0;r<t.length;r++)t[r]&&"string"!=typeof t[r]&&or(t[r],e+"_"+r,n);else or(t,e,n)}function or(t,e,n){t.isStatic=!0,t.key=e,t.isOnce=n}function ir(t,e){if(e)if(l(e)){var n=t.on=t.on?E({},t.on):{};for(var r in e){var o=n[r],i=e[r];n[r]=o?[].concat(o,i):i}}else;return t}function ar(t){t._o=nr,t._n=v,t._s=d,t._l=Jn,t._t=Zn,t._q=D,t._i=L,t._m=er,t._f=Qn,t._k=Yn,t._b=tr,t._v=Ot,t._e=kt,t._u=an,t._g=ir}function sr(t,n,r,i,a){var s=a.options;this.data=t,this.props=n,this.children=r,this.parent=i,this.listeners=t.on||e,this.injections=Gn(s.inject,i),this.slots=function(){return rn(r,i)};var c=Object.create(i),u=o(s._compiled),l=!u;u&&(this.$options=s,this.$slots=this.slots(),this.$scopedSlots=t.scopedSlots||e),s._scopeId?this._c=function(t,e,n,r){var o=_r(c,t,e,n,r,l);return o&&(o.fnScopeId=s._scopeId,o.fnContext=i),o}:this._c=function(t,e,n,r){return _r(c,t,e,n,r,l)}}function cr(t,n,o,i,a){var s=t.options,c={},u=s.props;if(r(u))for(var l in u)c[l]=ne(l,u,n||e);else r(o.attrs)&&ur(c,o.attrs),r(o.props)&&ur(c,o.props);var f=new sr(o,c,a,i,t),p=s.render.call(null,f._c,f);return p instanceof $t&&(p.fnContext=i,p.fnOptions=s,o.slot&&((p.data||(p.data={})).slot=o.slot)),p}function ur(t,e){for(var n in e)t[w(n)]=e[n]}ar(sr.prototype);var lr={init:function(t,e,n,r){if(!t.componentInstance||t.componentInstance._isDestroyed)(t.componentInstance=dr(t,sn,n,r)).$mount(e?t.elm:void 0,e);else if(t.data.keepAlive){var o=t;lr.prepatch(o,o)}},prepatch:function(t,e){var n=e.componentOptions;pn(e.componentInstance=t.componentInstance,n.propsData,n.listeners,e,n.children)},insert:function(t){var e=t.context,n=t.componentInstance;n._isMounted||(n._isMounted=!0,mn(n,"mounted")),t.data.keepAlive&&(e._isMounted?Sn(n):vn(n,!0))},destroy:function(t){var e=t.componentInstance;e._isDestroyed||(t.data.keepAlive?hn(e,!0):e.$destroy())}},fr=Object.keys(lr);function pr(t,e,i,a,c){if(!n(t)){var u=i.$options._base;if(s(t)&&(t=u.extend(t)),"function"==typeof t){var l;if(n(t.cid)&&void 0===(t=Ge(l=t,u,i)))return Xe(l,e,i,a,c);e=e||{},Or(t),r(e.model)&&mr(t.options,e);var f=Be(e,t,c);if(o(t.options.functional))return cr(t,f,e,i,a);var p=e.on;if(e.on=e.nativeOn,o(t.options.abstract)){var d=e.slot;e={},d&&(e.slot=d)}vr(e);var v=t.options.name||c;return new $t("vue-component-"+t.cid+(v?"-"+v:""),e,void 0,void 0,void 0,i,{Ctor:t,propsData:f,listeners:p,tag:c,children:a},l)}}}function dr(t,e,n,o){var i={_isComponent:!0,parent:e,_parentVnode:t,_parentElm:n||null,_refElm:o||null},a=t.data.inlineTemplate;return r(a)&&(i.render=a.render,i.staticRenderFns=a.staticRenderFns),new t.componentOptions.Ctor(i)}function vr(t){t.hook||(t.hook={});for(var e=0;e<fr.length;e++){var n=fr[e],r=t.hook[n],o=lr[n];t.hook[n]=r?hr(o,r):o}}function hr(t,e){return function(n,r,o,i){t(n,r,o,i),e(n,r,o,i)}}function mr(t,e){var n=t.model&&t.model.prop||"value",o=t.model&&t.model.event||"input";(e.props||(e.props={}))[n]=e.model.value;var i=e.on||(e.on={});r(i[o])?i[o]=[e.model.callback].concat(i[o]):i[o]=e.model.callback}var yr=1,gr=2;function _r(t,e,n,r,i,s){return(Array.isArray(n)||a(n))&&(i=r,r=n,n=void 0),o(s)&&(i=gr),br(t,e,n,r,i)}function br(t,e,n,o,i){if(r(n)&&r(n.__ob__))return kt();if(r(n)&&r(n.is)&&(e=n.is),!e)return kt();var a,s,c;(Array.isArray(o)&&"function"==typeof o[0]&&((n=n||{}).scopedSlots={default:o[0]},o.length=0),i===gr?o=ze(o):i===yr&&(o=Ve(o)),"string"==typeof e)?(s=t.$vnode&&t.$vnode.ns||U.getTagNamespace(e),a=U.isReservedTag(e)?new $t(U.parsePlatformTagName(e),n,o,void 0,void 0,t):r(c=ee(t.$options,"components",e))?pr(c,n,t,o,e):new $t(e,n,o,void 0,void 0,t)):a=pr(e,n,t,o);return r(a)?(s&&Cr(a,s),a):kt()}function Cr(t,e,i){if(t.ns=e,"foreignObject"===t.tag&&(e=void 0,i=!0),r(t.children))for(var a=0,s=t.children.length;a<s;a++){var c=t.children[a];r(c.tag)&&(n(c.ns)||o(i))&&Cr(c,e,i)}}function Ar(t){t._vnode=null,t._staticTrees=null;var n=t.$options,r=t.$vnode=n._parentVnode,o=r&&r.context;t.$slots=rn(n._renderChildren,o),t.$scopedSlots=e,t._c=function(e,n,r,o){return _r(t,e,n,r,o,!1)},t.$createElement=function(e,n,r,o){return _r(t,e,n,r,o,!0)};var i=r&&r.data;Ft(t,"$attrs",i&&i.attrs||e,null,!0),Ft(t,"$listeners",n._parentListeners||e,null,!0)}function wr(t){ar(t.prototype),t.prototype.$nextTick=function(t){return Ee(t,this)},t.prototype._render=function(){var t,n=this,r=n.$options,o=r.render,i=r._parentVnode;if(n._isMounted)for(var a in n.$slots){var s=n.$slots[a];(s._rendered||s[0]&&s[0].elm)&&(n.$slots[a]=Et(s,!0))}n.$scopedSlots=i&&i.data.scopedSlots||e,n.$vnode=i;try{t=o.call(n._renderProxy,n.$createElement)}catch(e){ue(e,n,"render"),t=n._vnode}return t instanceof $t||(t=kt()),t.parent=i,t}}var $r=0;function xr(t){t.prototype._init=function(t){var e=this;e._uid=$r++,e._isVue=!0,t&&t._isComponent?kr(e,t):e.$options=te(Or(e.constructor),t||{},e),e._renderProxy=e,e._self=e,un(e),Qe(e),Ar(e),mn(e,"beforeCreate"),Xn(e),Ln(e),Kn(e),mn(e,"created"),e.$options.el&&e.$mount(e.$options.el)}}function kr(t,e){var n=t.$options=Object.create(t.constructor.options),r=e._parentVnode;n.parent=e.parent,n._parentVnode=r,n._parentElm=e._parentElm,n._refElm=e._refElm;var o=r.componentOptions;n.propsData=o.propsData,n._parentListeners=o.listeners,n._renderChildren=o.children,n._componentTag=o.tag,e.render&&(n.render=e.render,n.staticRenderFns=e.staticRenderFns)}function Or(t){var e=t.options;if(t.super){var n=Or(t.super);if(n!==t.superOptions){t.superOptions=n;var r=Sr(t);r&&E(t.extendOptions,r),(e=t.options=te(n,t.extendOptions)).name&&(e.components[e.name]=t)}}return e}function Sr(t){var e,n=t.options,r=t.extendOptions,o=t.sealedOptions;for(var i in n)n[i]!==o[i]&&(e||(e={}),e[i]=Er(n[i],r[i],o[i]));return e}function Er(t,e,n){if(Array.isArray(t)){var r=[];n=Array.isArray(n)?n:[n],e=Array.isArray(e)?e:[e];for(var o=0;o<t.length;o++)(e.indexOf(t[o])>=0||n.indexOf(t[o])<0)&&r.push(t[o]);return r}return t}function jr(t){this._init(t)}function Ir(t){t.use=function(t){var e=this._installedPlugins||(this._installedPlugins=[]);if(e.indexOf(t)>-1)return this;var n=S(arguments,1);return n.unshift(this),"function"==typeof t.install?t.install.apply(t,n):"function"==typeof t&&t.apply(null,n),e.push(t),this}}function Tr(t){t.mixin=function(t){return this.options=te(this.options,t),this}}function Nr(t){t.cid=0;var e=1;t.extend=function(t){t=t||{};var n=this,r=n.cid,o=t._Ctor||(t._Ctor={});if(o[r])return o[r];var i=t.name||n.options.name;var a=function(t){this._init(t)};return(a.prototype=Object.create(n.prototype)).constructor=a,a.cid=e++,a.options=te(n.options,t),a.super=n,a.options.props&&Dr(a),a.options.computed&&Lr(a),a.extend=n.extend,a.mixin=n.mixin,a.use=n.use,F.forEach(function(t){a[t]=n[t]}),i&&(a.options.components[i]=a),a.superOptions=n.options,a.extendOptions=t,a.sealedOptions=E({},a.options),o[r]=a,a}}function Dr(t){var e=t.options.props;for(var n in e)Dn(t.prototype,"_props",n)}function Lr(t){var e=t.options.computed;for(var n in e)Bn(t.prototype,n,e[n])}function Pr(t){F.forEach(function(e){t[e]=function(t,n){return n?("component"===e&&l(n)&&(n.name=n.name||t,n=this.options._base.extend(n)),"directive"===e&&"function"==typeof n&&(n={bind:n,update:n}),this.options[e+"s"][t]=n,n):this.options[e+"s"][t]}})}function Mr(t){return t&&(t.Ctor.options.name||t.tag)}function Fr(t,e){return Array.isArray(t)?t.indexOf(e)>-1:"string"==typeof t?t.split(",").indexOf(e)>-1:!!f(t)&&t.test(e)}function Rr(t,e){var n=t.cache,r=t.keys,o=t._vnode;for(var i in n){var a=n[i];if(a){var s=Mr(a.componentOptions);s&&!e(s)&&Ur(n,i,r,o)}}}function Ur(t,e,n,r){var o=t[e];!o||r&&o.tag===r.tag||o.componentInstance.$destroy(),t[e]=null,g(n,e)}xr(jr),qn(jr),nn(jr),ln(jr),wr(jr);var Br=[String,RegExp,Array],Hr={name:"keep-alive",abstract:!0,props:{include:Br,exclude:Br,max:[String,Number]},created:function(){this.cache=Object.create(null),this.keys=[]},destroyed:function(){for(var t in this.cache)Ur(this.cache,t,this.keys)},watch:{include:function(t){Rr(this,function(e){return Fr(t,e)})},exclude:function(t){Rr(this,function(e){return!Fr(t,e)})}},render:function(){var t=this.$slots.default,e=Ze(t),n=e&&e.componentOptions;if(n){var r=Mr(n),o=this.include,i=this.exclude;if(o&&(!r||!Fr(o,r))||i&&r&&Fr(i,r))return e;var a=this.cache,s=this.keys,c=null==e.key?n.Ctor.cid+(n.tag?"::"+n.tag:""):e.key;a[c]?(e.componentInstance=a[c].componentInstance,g(s,c),s.push(c)):(a[c]=e,s.push(c),this.max&&s.length>parseInt(this.max)&&Ur(a,s[0],s,this._vnode)),e.data.keepAlive=!0}return e||t&&t[0]}},Vr={KeepAlive:Hr};function zr(t){var e={get:function(){return U}};Object.defineProperty(t,"config",e),t.util={warn:ht,extend:E,mergeOptions:te,defineReactive:Ft},t.set=Rt,t.delete=Ut,t.nextTick=Ee,t.options=Object.create(null),F.forEach(function(e){t.options[e+"s"]=Object.create(null)}),t.options._base=t,E(t.options.components,Vr),Ir(t),Tr(t),Nr(t),Pr(t)}zr(jr),Object.defineProperty(jr.prototype,"$isServer",{get:at}),Object.defineProperty(jr.prototype,"$ssrContext",{get:function(){return this.$vnode&&this.$vnode.ssrContext}}),jr.version="2.5.13";var Wr=h("style,class"),qr=h("input,textarea,option,select,progress"),Kr=function(t,e,n){return"value"===n&&qr(t)&&"button"!==e||"selected"===n&&"option"===t||"checked"===n&&"input"===t||"muted"===n&&"video"===t},Xr=h("contenteditable,draggable,spellcheck"),Gr=h("allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,default,defaultchecked,defaultmuted,defaultselected,defer,disabled,enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,required,reversed,scoped,seamless,selected,sortable,translate,truespeed,typemustmatch,visible"),Jr="http://www.w3.org/1999/xlink",Zr=function(t){return":"===t.charAt(5)&&"xlink"===t.slice(0,5)},Qr=function(t){return Zr(t)?t.slice(6,t.length):""},Yr=function(t){return null==t||!1===t};function to(t){for(var e=t.data,n=t,o=t;r(o.componentInstance);)(o=o.componentInstance._vnode)&&o.data&&(e=eo(o.data,e));for(;r(n=n.parent);)n&&n.data&&(e=eo(e,n.data));return no(e.staticClass,e.class)}function eo(t,e){return{staticClass:ro(t.staticClass,e.staticClass),class:r(t.class)?[t.class,e.class]:e.class}}function no(t,e){return r(t)||r(e)?ro(t,oo(e)):""}function ro(t,e){return t?e?t+" "+e:t:e||""}function oo(t){return Array.isArray(t)?io(t):s(t)?ao(t):"string"==typeof t?t:""}function io(t){for(var e,n="",o=0,i=t.length;o<i;o++)r(e=oo(t[o]))&&""!==e&&(n&&(n+=" "),n+=e);return n}function ao(t){var e="";for(var n in t)t[n]&&(e&&(e+=" "),e+=n);return e}var so={svg:"http://www.w3.org/2000/svg",math:"http://www.w3.org/1998/Math/MathML"},co=h("html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,menuitem,summary,content,element,shadow,template,blockquote,iframe,tfoot"),uo=h("svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view",!0),lo=function(t){return co(t)||uo(t)};function fo(t){return uo(t)?"svg":"math"===t?"math":void 0}var po=Object.create(null);function vo(t){if(!K)return!0;if(lo(t))return!1;if(t=t.toLowerCase(),null!=po[t])return po[t];var e=document.createElement(t);return t.indexOf("-")>-1?po[t]=e.constructor===window.HTMLUnknownElement||e.constructor===window.HTMLElement:po[t]=/HTMLUnknownElement/.test(e.toString())}var ho=h("text,number,password,search,email,tel,url");function mo(t){if("string"==typeof t){var e=document.querySelector(t);return e||document.createElement("div")}return t}function yo(t,e){var n=document.createElement(t);return"select"!==t?n:(e.data&&e.data.attrs&&void 0!==e.data.attrs.multiple&&n.setAttribute("multiple","multiple"),n)}function go(t,e){return document.createElementNS(so[t],e)}function _o(t){return document.createTextNode(t)}function bo(t){return document.createComment(t)}function Co(t,e,n){t.insertBefore(e,n)}function Ao(t,e){t.removeChild(e)}function wo(t,e){t.appendChild(e)}function $o(t){return t.parentNode}function xo(t){return t.nextSibling}function ko(t){return t.tagName}function Oo(t,e){t.textContent=e}function So(t,e,n){t.setAttribute(e,n)}var Eo=Object.freeze({createElement:yo,createElementNS:go,createTextNode:_o,createComment:bo,insertBefore:Co,removeChild:Ao,appendChild:wo,parentNode:$o,nextSibling:xo,tagName:ko,setTextContent:Oo,setAttribute:So}),jo={create:function(t,e){Io(e)},update:function(t,e){t.data.ref!==e.data.ref&&(Io(t,!0),Io(e))},destroy:function(t){Io(t,!0)}};function Io(t,e){var n=t.data.ref;if(n){var r=t.context,o=t.componentInstance||t.elm,i=r.$refs;e?Array.isArray(i[n])?g(i[n],o):i[n]===o&&(i[n]=void 0):t.data.refInFor?Array.isArray(i[n])?i[n].indexOf(o)<0&&i[n].push(o):i[n]=[o]:i[n]=o}}var To=new $t("",{},[]),No=["create","activate","update","remove","destroy"];function Do(t,e){return t.key===e.key&&(t.tag===e.tag&&t.isComment===e.isComment&&r(t.data)===r(e.data)&&Lo(t,e)||o(t.isAsyncPlaceholder)&&t.asyncFactory===e.asyncFactory&&n(e.asyncFactory.error))}function Lo(t,e){if("input"!==t.tag)return!0;var n,o=r(n=t.data)&&r(n=n.attrs)&&n.type,i=r(n=e.data)&&r(n=n.attrs)&&n.type;return o===i||ho(o)&&ho(i)}function Po(t,e,n){var o,i,a={};for(o=e;o<=n;++o)r(i=t[o].key)&&(a[i]=o);return a}function Mo(t){var e,i,s={},c=t.modules,u=t.nodeOps;for(e=0;e<No.length;++e)for(s[No[e]]=[],i=0;i<c.length;++i)r(c[i][No[e]])&&s[No[e]].push(c[i][No[e]]);function l(t){var e=u.parentNode(t);r(e)&&u.removeChild(e,t)}function f(t,e,n,i,a){if(t.isRootInsert=!a,!function(t,e,n,i){var a=t.data;if(r(a)){var c=r(t.componentInstance)&&a.keepAlive;if(r(a=a.hook)&&r(a=a.init)&&a(t,!1,n,i),r(t.componentInstance))return p(t,e),o(c)&&function(t,e,n,o){var i,a=t;for(;a.componentInstance;)if(a=a.componentInstance._vnode,r(i=a.data)&&r(i=i.transition)){for(i=0;i<s.activate.length;++i)s.activate[i](To,a);e.push(a);break}d(n,t.elm,o)}(t,e,n,i),!0}}(t,e,n,i)){var c=t.data,l=t.children,f=t.tag;r(f)?(t.elm=t.ns?u.createElementNS(t.ns,f):u.createElement(f,t),g(t),v(t,l,e),r(c)&&y(t,e),d(n,t.elm,i)):o(t.isComment)?(t.elm=u.createComment(t.text),d(n,t.elm,i)):(t.elm=u.createTextNode(t.text),d(n,t.elm,i))}}function p(t,e){r(t.data.pendingInsert)&&(e.push.apply(e,t.data.pendingInsert),t.data.pendingInsert=null),t.elm=t.componentInstance.$el,m(t)?(y(t,e),g(t)):(Io(t),e.push(t))}function d(t,e,n){r(t)&&(r(n)?n.parentNode===t&&u.insertBefore(t,e,n):u.appendChild(t,e))}function v(t,e,n){if(Array.isArray(e)){0;for(var r=0;r<e.length;++r)f(e[r],n,t.elm,null,!0)}else a(t.text)&&u.appendChild(t.elm,u.createTextNode(String(t.text)))}function m(t){for(;t.componentInstance;)t=t.componentInstance._vnode;return r(t.tag)}function y(t,n){for(var o=0;o<s.create.length;++o)s.create[o](To,t);r(e=t.data.hook)&&(r(e.create)&&e.create(To,t),r(e.insert)&&n.push(t))}function g(t){var e;if(r(e=t.fnScopeId))u.setAttribute(t.elm,e,"");else for(var n=t;n;)r(e=n.context)&&r(e=e.$options._scopeId)&&u.setAttribute(t.elm,e,""),n=n.parent;r(e=sn)&&e!==t.context&&e!==t.fnContext&&r(e=e.$options._scopeId)&&u.setAttribute(t.elm,e,"")}function _(t,e,n,r,o,i){for(;r<=o;++r)f(n[r],i,t,e)}function b(t){var e,n,o=t.data;if(r(o))for(r(e=o.hook)&&r(e=e.destroy)&&e(t),e=0;e<s.destroy.length;++e)s.destroy[e](t);if(r(e=t.children))for(n=0;n<t.children.length;++n)b(t.children[n])}function C(t,e,n,o){for(;n<=o;++n){var i=e[n];r(i)&&(r(i.tag)?(A(i),b(i)):l(i.elm))}}function A(t,e){if(r(e)||r(t.data)){var n,o=s.remove.length+1;for(r(e)?e.listeners+=o:e=function(t,e){function n(){0==--n.listeners&&l(t)}return n.listeners=e,n}(t.elm,o),r(n=t.componentInstance)&&r(n=n._vnode)&&r(n.data)&&A(n,e),n=0;n<s.remove.length;++n)s.remove[n](t,e);r(n=t.data.hook)&&r(n=n.remove)?n(t,e):e()}else l(t.elm)}function w(t,e,n,o){for(var i=n;i<o;i++){var a=e[i];if(r(a)&&Do(t,a))return i}}function $(t,e,i,a){if(t!==e){var c=e.elm=t.elm;if(o(t.isAsyncPlaceholder))r(e.asyncFactory.resolved)?O(t.elm,e,i):e.isAsyncPlaceholder=!0;else if(o(e.isStatic)&&o(t.isStatic)&&e.key===t.key&&(o(e.isCloned)||o(e.isOnce)))e.componentInstance=t.componentInstance;else{var l,p=e.data;r(p)&&r(l=p.hook)&&r(l=l.prepatch)&&l(t,e);var d=t.children,v=e.children;if(r(p)&&m(e)){for(l=0;l<s.update.length;++l)s.update[l](t,e);r(l=p.hook)&&r(l=l.update)&&l(t,e)}n(e.text)?r(d)&&r(v)?d!==v&&function(t,e,o,i,a){var s,c,l,p=0,d=0,v=e.length-1,h=e[0],m=e[v],y=o.length-1,g=o[0],b=o[y],A=!a;for(;p<=v&&d<=y;)n(h)?h=e[++p]:n(m)?m=e[--v]:Do(h,g)?($(h,g,i),h=e[++p],g=o[++d]):Do(m,b)?($(m,b,i),m=e[--v],b=o[--y]):Do(h,b)?($(h,b,i),A&&u.insertBefore(t,h.elm,u.nextSibling(m.elm)),h=e[++p],b=o[--y]):Do(m,g)?($(m,g,i),A&&u.insertBefore(t,m.elm,h.elm),m=e[--v],g=o[++d]):(n(s)&&(s=Po(e,p,v)),n(c=r(g.key)?s[g.key]:w(g,e,p,v))?f(g,i,t,h.elm):Do(l=e[c],g)?($(l,g,i),e[c]=void 0,A&&u.insertBefore(t,l.elm,h.elm)):f(g,i,t,h.elm),g=o[++d]);p>v?_(t,n(o[y+1])?null:o[y+1].elm,o,d,y,i):d>y&&C(0,e,p,v)}(c,d,v,i,a):r(v)?(r(t.text)&&u.setTextContent(c,""),_(c,null,v,0,v.length-1,i)):r(d)?C(0,d,0,d.length-1):r(t.text)&&u.setTextContent(c,""):t.text!==e.text&&u.setTextContent(c,e.text),r(p)&&r(l=p.hook)&&r(l=l.postpatch)&&l(t,e)}}}function x(t,e,n){if(o(n)&&r(t.parent))t.parent.data.pendingInsert=e;else for(var i=0;i<e.length;++i)e[i].data.hook.insert(e[i])}var k=h("attrs,class,staticClass,staticStyle,key");function O(t,e,n,i){var a,s=e.tag,c=e.data,u=e.children;if(i=i||c&&c.pre,e.elm=t,o(e.isComment)&&r(e.asyncFactory))return e.isAsyncPlaceholder=!0,!0;if(r(c)&&(r(a=c.hook)&&r(a=a.init)&&a(e,!0),r(a=e.componentInstance)))return p(e,n),!0;if(r(s)){if(r(u))if(t.hasChildNodes())if(r(a=c)&&r(a=a.domProps)&&r(a=a.innerHTML)){if(a!==t.innerHTML)return!1}else{for(var l=!0,f=t.firstChild,d=0;d<u.length;d++){if(!f||!O(f,u[d],n,i)){l=!1;break}f=f.nextSibling}if(!l||f)return!1}else v(e,u,n);if(r(c)){var h=!1;for(var m in c)if(!k(m)){h=!0,y(e,n);break}!h&&c.class&&De(c.class)}}else t.data!==e.text&&(t.data=e.text);return!0}return function(t,e,i,a,c,l){if(!n(e)){var p,d=!1,v=[];if(n(t))d=!0,f(e,v,c,l);else{var h=r(t.nodeType);if(!h&&Do(t,e))$(t,e,v,a);else{if(h){if(1===t.nodeType&&t.hasAttribute(M)&&(t.removeAttribute(M),i=!0),o(i)&&O(t,e,v))return x(e,v,!0),t;p=t,t=new $t(u.tagName(p).toLowerCase(),{},[],void 0,p)}var y=t.elm,g=u.parentNode(y);if(f(e,v,y._leaveCb?null:g,u.nextSibling(y)),r(e.parent))for(var _=e.parent,A=m(e);_;){for(var w=0;w<s.destroy.length;++w)s.destroy[w](_);if(_.elm=e.elm,A){for(var k=0;k<s.create.length;++k)s.create[k](To,_);var S=_.data.hook.insert;if(S.merged)for(var E=1;E<S.fns.length;E++)S.fns[E]()}else Io(_);_=_.parent}r(g)?C(0,[t],0,0):r(t.tag)&&b(t)}}return x(e,v,d),e.elm}r(t)&&b(t)}}var Fo={create:Ro,update:Ro,destroy:function(t){Ro(t,To)}};function Ro(t,e){(t.data.directives||e.data.directives)&&Uo(t,e)}function Uo(t,e){var n,r,o,i=t===To,a=e===To,s=Ho(t.data.directives,t.context),c=Ho(e.data.directives,e.context),u=[],l=[];for(n in c)r=s[n],o=c[n],r?(o.oldValue=r.value,zo(o,"update",e,t),o.def&&o.def.componentUpdated&&l.push(o)):(zo(o,"bind",e,t),o.def&&o.def.inserted&&u.push(o));if(u.length){var f=function(){for(var n=0;n<u.length;n++)zo(u[n],"inserted",e,t)};i?Ue(e,"insert",f):f()}if(l.length&&Ue(e,"postpatch",function(){for(var n=0;n<l.length;n++)zo(l[n],"componentUpdated",e,t)}),!i)for(n in s)c[n]||zo(s[n],"unbind",t,t,a)}var Bo=Object.create(null);function Ho(t,e){var n,r,o=Object.create(null);if(!t)return o;for(n=0;n<t.length;n++)(r=t[n]).modifiers||(r.modifiers=Bo),o[Vo(r)]=r,r.def=ee(e.$options,"directives",r.name,!0);return o}function Vo(t){return t.rawName||t.name+"."+Object.keys(t.modifiers||{}).join(".")}function zo(t,e,n,r,o){var i=t.def&&t.def[e];if(i)try{i(n.elm,t,n,r,o)}catch(r){ue(r,n.context,"directive "+t.name+" "+e+" hook")}}var Wo=[jo,Fo];function qo(t,e){var o=e.componentOptions;if(!(r(o)&&!1===o.Ctor.options.inheritAttrs||n(t.data.attrs)&&n(e.data.attrs))){var i,a,s=e.elm,c=t.data.attrs||{},u=e.data.attrs||{};for(i in r(u.__ob__)&&(u=e.data.attrs=E({},u)),u)a=u[i],c[i]!==a&&Ko(s,i,a);for(i in(Z||Y)&&u.value!==c.value&&Ko(s,"value",u.value),c)n(u[i])&&(Zr(i)?s.removeAttributeNS(Jr,Qr(i)):Xr(i)||s.removeAttribute(i))}}function Ko(t,e,n){if(Gr(e))Yr(n)?t.removeAttribute(e):(n="allowfullscreen"===e&&"EMBED"===t.tagName?"true":e,t.setAttribute(e,n));else if(Xr(e))t.setAttribute(e,Yr(n)||"false"===n?"false":"true");else if(Zr(e))Yr(n)?t.removeAttributeNS(Jr,Qr(e)):t.setAttributeNS(Jr,e,n);else if(Yr(n))t.removeAttribute(e);else{if(Z&&!Q&&"TEXTAREA"===t.tagName&&"placeholder"===e&&!t.__ieph){var r=function(e){e.stopImmediatePropagation(),t.removeEventListener("input",r)};t.addEventListener("input",r),t.__ieph=!0}t.setAttribute(e,n)}}var Xo={create:qo,update:qo};function Go(t,e){var o=e.elm,i=e.data,a=t.data;if(!(n(i.staticClass)&&n(i.class)&&(n(a)||n(a.staticClass)&&n(a.class)))){var s=to(e),c=o._transitionClasses;r(c)&&(s=ro(s,oo(c))),s!==o._prevClass&&(o.setAttribute("class",s),o._prevClass=s)}}var Jo,Zo={create:Go,update:Go},Qo="__r",Yo="__c";function ti(t){if(r(t[Qo])){var e=Z?"change":"input";t[e]=[].concat(t[Qo],t[e]||[]),delete t[Qo]}r(t[Yo])&&(t.change=[].concat(t[Yo],t.change||[]),delete t[Yo])}function ei(t,e,n){var r=Jo;return function o(){null!==t.apply(null,arguments)&&ri(e,o,n,r)}}function ni(t,e,n,r,o){e=Se(e),n&&(e=ei(e,t,r)),Jo.addEventListener(t,e,ot?{capture:r,passive:o}:r)}function ri(t,e,n,r){(r||Jo).removeEventListener(t,e._withTask||e,n)}function oi(t,e){if(!n(t.data.on)||!n(e.data.on)){var r=e.data.on||{},o=t.data.on||{};Jo=e.elm,ti(r),Re(r,o,ni,ri,e.context),Jo=void 0}}var ii={create:oi,update:oi};function ai(t,e){if(!n(t.data.domProps)||!n(e.data.domProps)){var o,i,a=e.elm,s=t.data.domProps||{},c=e.data.domProps||{};for(o in r(c.__ob__)&&(c=e.data.domProps=E({},c)),s)n(c[o])&&(a[o]="");for(o in c){if(i=c[o],"textContent"===o||"innerHTML"===o){if(e.children&&(e.children.length=0),i===s[o])continue;1===a.childNodes.length&&a.removeChild(a.childNodes[0])}if("value"===o){a._value=i;var u=n(i)?"":String(i);si(a,u)&&(a.value=u)}else a[o]=i}}}function si(t,e){return!t.composing&&("OPTION"===t.tagName||ci(t,e)||ui(t,e))}function ci(t,e){var n=!0;try{n=document.activeElement!==t}catch(t){}return n&&t.value!==e}function ui(t,e){var n=t.value,o=t._vModifiers;if(r(o)){if(o.lazy)return!1;if(o.number)return v(n)!==v(e);if(o.trim)return n.trim()!==e.trim()}return n!==e}var li={create:ai,update:ai},fi=C(function(t){var e={},n=/:(.+)/;return t.split(/;(?![^(]*\))/g).forEach(function(t){if(t){var r=t.split(n);r.length>1&&(e[r[0].trim()]=r[1].trim())}}),e});function pi(t){var e=di(t.style);return t.staticStyle?E(t.staticStyle,e):e}function di(t){return Array.isArray(t)?j(t):"string"==typeof t?fi(t):t}function vi(t,e){var n,r={};if(e)for(var o=t;o.componentInstance;)(o=o.componentInstance._vnode)&&o.data&&(n=pi(o.data))&&E(r,n);(n=pi(t.data))&&E(r,n);for(var i=t;i=i.parent;)i.data&&(n=pi(i.data))&&E(r,n);return r}var hi,mi=/^--/,yi=/\s*!important$/,gi=function(t,e,n){if(mi.test(e))t.style.setProperty(e,n);else if(yi.test(n))t.style.setProperty(e,n.replace(yi,""),"important");else{var r=bi(e);if(Array.isArray(n))for(var o=0,i=n.length;o<i;o++)t.style[r]=n[o];else t.style[r]=n}},_i=["Webkit","Moz","ms"],bi=C(function(t){if(hi=hi||document.createElement("div").style,"filter"!==(t=w(t))&&t in hi)return t;for(var e=t.charAt(0).toUpperCase()+t.slice(1),n=0;n<_i.length;n++){var r=_i[n]+e;if(r in hi)return r}});function Ci(t,e){var o=e.data,i=t.data;if(!(n(o.staticStyle)&&n(o.style)&&n(i.staticStyle)&&n(i.style))){var a,s,c=e.elm,u=i.staticStyle,l=i.normalizedStyle||i.style||{},f=u||l,p=di(e.data.style)||{};e.data.normalizedStyle=r(p.__ob__)?E({},p):p;var d=vi(e,!0);for(s in f)n(d[s])&&gi(c,s,"");for(s in d)(a=d[s])!==f[s]&&gi(c,s,null==a?"":a)}}var Ai={create:Ci,update:Ci};function wi(t,e){if(e&&(e=e.trim()))if(t.classList)e.indexOf(" ")>-1?e.split(/\s+/).forEach(function(e){return t.classList.add(e)}):t.classList.add(e);else{var n=" "+(t.getAttribute("class")||"")+" ";n.indexOf(" "+e+" ")<0&&t.setAttribute("class",(n+e).trim())}}function $i(t,e){if(e&&(e=e.trim()))if(t.classList)e.indexOf(" ")>-1?e.split(/\s+/).forEach(function(e){return t.classList.remove(e)}):t.classList.remove(e),t.classList.length||t.removeAttribute("class");else{for(var n=" "+(t.getAttribute("class")||"")+" ",r=" "+e+" ";n.indexOf(r)>=0;)n=n.replace(r," ");(n=n.trim())?t.setAttribute("class",n):t.removeAttribute("class")}}function xi(t){if(t){if("object"==typeof t){var e={};return!1!==t.css&&E(e,ki(t.name||"v")),E(e,t),e}return"string"==typeof t?ki(t):void 0}}var ki=C(function(t){return{enterClass:t+"-enter",enterToClass:t+"-enter-to",enterActiveClass:t+"-enter-active",leaveClass:t+"-leave",leaveToClass:t+"-leave-to",leaveActiveClass:t+"-leave-active"}}),Oi=K&&!Q,Si="transition",Ei="animation",ji="transition",Ii="transitionend",Ti="animation",Ni="animationend";Oi&&(void 0===window.ontransitionend&&void 0!==window.onwebkittransitionend&&(ji="WebkitTransition",Ii="webkitTransitionEnd"),void 0===window.onanimationend&&void 0!==window.onwebkitanimationend&&(Ti="WebkitAnimation",Ni="webkitAnimationEnd"));var Di=K?window.requestAnimationFrame?window.requestAnimationFrame.bind(window):setTimeout:function(t){return t()};function Li(t){Di(function(){Di(t)})}function Pi(t,e){var n=t._transitionClasses||(t._transitionClasses=[]);n.indexOf(e)<0&&(n.push(e),wi(t,e))}function Mi(t,e){t._transitionClasses&&g(t._transitionClasses,e),$i(t,e)}function Fi(t,e,n){var r=Ui(t,e),o=r.type,i=r.timeout,a=r.propCount;if(!o)return n();var s=o===Si?Ii:Ni,c=0,u=function(){t.removeEventListener(s,l),n()},l=function(e){e.target===t&&++c>=a&&u()};setTimeout(function(){c<a&&u()},i+1),t.addEventListener(s,l)}var Ri=/\b(transform|all)(,|$)/;function Ui(t,e){var n,r=window.getComputedStyle(t),o=r[ji+"Delay"].split(", "),i=r[ji+"Duration"].split(", "),a=Bi(o,i),s=r[Ti+"Delay"].split(", "),c=r[Ti+"Duration"].split(", "),u=Bi(s,c),l=0,f=0;return e===Si?a>0&&(n=Si,l=a,f=i.length):e===Ei?u>0&&(n=Ei,l=u,f=c.length):f=(n=(l=Math.max(a,u))>0?a>u?Si:Ei:null)?n===Si?i.length:c.length:0,{type:n,timeout:l,propCount:f,hasTransform:n===Si&&Ri.test(r[ji+"Property"])}}function Bi(t,e){for(;t.length<e.length;)t=t.concat(t);return Math.max.apply(null,e.map(function(e,n){return Hi(e)+Hi(t[n])}))}function Hi(t){return 1e3*Number(t.slice(0,-1))}function Vi(t,e){var o=t.elm;r(o._leaveCb)&&(o._leaveCb.cancelled=!0,o._leaveCb());var i=xi(t.data.transition);if(!n(i)&&!r(o._enterCb)&&1===o.nodeType){for(var a=i.css,c=i.type,u=i.enterClass,l=i.enterToClass,f=i.enterActiveClass,p=i.appearClass,d=i.appearToClass,h=i.appearActiveClass,m=i.beforeEnter,y=i.enter,g=i.afterEnter,_=i.enterCancelled,b=i.beforeAppear,C=i.appear,A=i.afterAppear,w=i.appearCancelled,$=i.duration,x=sn,k=sn.$vnode;k&&k.parent;)x=(k=k.parent).context;var O=!x._isMounted||!t.isRootInsert;if(!O||C||""===C){var S=O&&p?p:u,E=O&&h?h:f,j=O&&d?d:l,I=O&&b||m,T=O&&"function"==typeof C?C:y,N=O&&A||g,D=O&&w||_,L=v(s($)?$.enter:$);0;var M=!1!==a&&!Q,F=Ki(T),R=o._enterCb=P(function(){M&&(Mi(o,j),Mi(o,E)),R.cancelled?(M&&Mi(o,S),D&&D(o)):N&&N(o),o._enterCb=null});t.data.show||Ue(t,"insert",function(){var e=o.parentNode,n=e&&e._pending&&e._pending[t.key];n&&n.tag===t.tag&&n.elm._leaveCb&&n.elm._leaveCb(),T&&T(o,R)}),I&&I(o),M&&(Pi(o,S),Pi(o,E),Li(function(){Pi(o,j),Mi(o,S),R.cancelled||F||(qi(L)?setTimeout(R,L):Fi(o,c,R))})),t.data.show&&(e&&e(),T&&T(o,R)),M||F||R()}}}function zi(t,e){var o=t.elm;r(o._enterCb)&&(o._enterCb.cancelled=!0,o._enterCb());var i=xi(t.data.transition);if(n(i)||1!==o.nodeType)return e();if(!r(o._leaveCb)){var a=i.css,c=i.type,u=i.leaveClass,l=i.leaveToClass,f=i.leaveActiveClass,p=i.beforeLeave,d=i.leave,h=i.afterLeave,m=i.leaveCancelled,y=i.delayLeave,g=i.duration,_=!1!==a&&!Q,b=Ki(d),C=v(s(g)?g.leave:g);0;var A=o._leaveCb=P(function(){o.parentNode&&o.parentNode._pending&&(o.parentNode._pending[t.key]=null),_&&(Mi(o,l),Mi(o,f)),A.cancelled?(_&&Mi(o,u),m&&m(o)):(e(),h&&h(o)),o._leaveCb=null});y?y(w):w()}function w(){A.cancelled||(t.data.show||((o.parentNode._pending||(o.parentNode._pending={}))[t.key]=t),p&&p(o),_&&(Pi(o,u),Pi(o,f),Li(function(){Pi(o,l),Mi(o,u),A.cancelled||b||(qi(C)?setTimeout(A,C):Fi(o,c,A))})),d&&d(o,A),_||b||A())}}function Wi(t,e,n){"number"!=typeof t?ht("<transition> explicit "+e+" duration is not a valid number - got "+JSON.stringify(t)+".",n.context):isNaN(t)&&ht("<transition> explicit "+e+" duration is NaN - the duration expression might be incorrect.",n.context)}function qi(t){return"number"==typeof t&&!isNaN(t)}function Ki(t){if(n(t))return!1;var e=t.fns;return r(e)?Ki(Array.isArray(e)?e[0]:e):(t._length||t.length)>1}function Xi(t,e){!0!==e.data.show&&Vi(e)}var Gi=K?{create:Xi,activate:Xi,remove:function(t,e){!0!==t.data.show?zi(t,e):e()}}:{},Ji=[Xo,Zo,ii,li,Ai,Gi],Zi=Ji.concat(Wo),Qi=Mo({nodeOps:Eo,modules:Zi});Q&&document.addEventListener("selectionchange",function(){var t=document.activeElement;t&&t.vmodel&&aa(t,"input")});var Yi={inserted:function(t,e,n,r){"select"===n.tag?(r.elm&&!r.elm._vOptions?Ue(n,"postpatch",function(){Yi.componentUpdated(t,e,n)}):ta(t,e,n.context),t._vOptions=[].map.call(t.options,ra)):("textarea"===n.tag||ho(t.type))&&(t._vModifiers=e.modifiers,e.modifiers.lazy||(t.addEventListener("change",ia),tt||(t.addEventListener("compositionstart",oa),t.addEventListener("compositionend",ia)),Q&&(t.vmodel=!0)))},componentUpdated:function(t,e,n){if("select"===n.tag){ta(t,e,n.context);var r=t._vOptions,o=t._vOptions=[].map.call(t.options,ra);if(o.some(function(t,e){return!D(t,r[e])}))(t.multiple?e.value.some(function(t){return na(t,o)}):e.value!==e.oldValue&&na(e.value,o))&&aa(t,"change")}}};function ta(t,e,n){ea(t,e,n),(Z||Y)&&setTimeout(function(){ea(t,e,n)},0)}function ea(t,e,n){var r=e.value,o=t.multiple;if(!o||Array.isArray(r)){for(var i,a,s=0,c=t.options.length;s<c;s++)if(a=t.options[s],o)i=L(r,ra(a))>-1,a.selected!==i&&(a.selected=i);else if(D(ra(a),r))return void(t.selectedIndex!==s&&(t.selectedIndex=s));o||(t.selectedIndex=-1)}}function na(t,e){return e.every(function(e){return!D(e,t)})}function ra(t){return"_value"in t?t._value:t.value}function oa(t){t.target.composing=!0}function ia(t){t.target.composing&&(t.target.composing=!1,aa(t.target,"input"))}function aa(t,e){var n=document.createEvent("HTMLEvents");n.initEvent(e,!0,!0),t.dispatchEvent(n)}function sa(t){return!t.componentInstance||t.data&&t.data.transition?t:sa(t.componentInstance._vnode)}var ca={bind:function(t,e,n){var r=e.value,o=(n=sa(n)).data&&n.data.transition,i=t.__vOriginalDisplay="none"===t.style.display?"":t.style.display;r&&o?(n.data.show=!0,Vi(n,function(){t.style.display=i})):t.style.display=r?i:"none"},update:function(t,e,n){var r=e.value;r!==e.oldValue&&((n=sa(n)).data&&n.data.transition?(n.data.show=!0,r?Vi(n,function(){t.style.display=t.__vOriginalDisplay}):zi(n,function(){t.style.display="none"})):t.style.display=r?t.__vOriginalDisplay:"none")},unbind:function(t,e,n,r,o){o||(t.style.display=t.__vOriginalDisplay)}},ua={model:Yi,show:ca},la={name:String,appear:Boolean,css:Boolean,mode:String,type:String,enterClass:String,leaveClass:String,enterToClass:String,leaveToClass:String,enterActiveClass:String,leaveActiveClass:String,appearClass:String,appearActiveClass:String,appearToClass:String,duration:[Number,String,Object]};function fa(t){var e=t&&t.componentOptions;return e&&e.Ctor.options.abstract?fa(Ze(e.children)):t}function pa(t){var e={},n=t.$options;for(var r in n.propsData)e[r]=t[r];var o=n._parentListeners;for(var i in o)e[w(i)]=o[i];return e}function da(t,e){if(/\d-keep-alive$/.test(e.tag))return t("keep-alive",{props:e.componentOptions.propsData})}function va(t){for(;t=t.parent;)if(t.data.transition)return!0}function ha(t,e){return e.key===t.key&&e.tag===t.tag}var ma={name:"transition",props:la,abstract:!0,render:function(t){var e=this,n=this.$slots.default;if(n&&(n=n.filter(function(t){return t.tag||Je(t)})).length){0;var r=this.mode;0;var o=n[0];if(va(this.$vnode))return o;var i=fa(o);if(!i)return o;if(this._leaving)return da(t,o);var s="__transition-"+this._uid+"-";i.key=null==i.key?i.isComment?s+"comment":s+i.tag:a(i.key)?0===String(i.key).indexOf(s)?i.key:s+i.key:i.key;var c=(i.data||(i.data={})).transition=pa(this),u=this._vnode,l=fa(u);if(i.data.directives&&i.data.directives.some(function(t){return"show"===t.name})&&(i.data.show=!0),l&&l.data&&!ha(i,l)&&!Je(l)&&(!l.componentInstance||!l.componentInstance._vnode.isComment)){var f=l.data.transition=E({},c);if("out-in"===r)return this._leaving=!0,Ue(f,"afterLeave",function(){e._leaving=!1,e.$forceUpdate()}),da(t,o);if("in-out"===r){if(Je(i))return u;var p,d=function(){p()};Ue(c,"afterEnter",d),Ue(c,"enterCancelled",d),Ue(f,"delayLeave",function(t){p=t})}}return o}}},ya=E({tag:String,moveClass:String},la);delete ya.mode;var ga={props:ya,render:function(t){for(var e=this.tag||this.$vnode.data.tag||"span",n=Object.create(null),r=this.prevChildren=this.children,o=this.$slots.default||[],i=this.children=[],a=pa(this),s=0;s<o.length;s++){var c=o[s];if(c.tag)if(null!=c.key&&0!==String(c.key).indexOf("__vlist"))i.push(c),n[c.key]=c,(c.data||(c.data={})).transition=a;else;}if(r){for(var u=[],l=[],f=0;f<r.length;f++){var p=r[f];p.data.transition=a,p.data.pos=p.elm.getBoundingClientRect(),n[p.key]?u.push(p):l.push(p)}this.kept=t(e,null,u),this.removed=l}return t(e,null,i)},beforeUpdate:function(){this.__patch__(this._vnode,this.kept,!1,!0),this._vnode=this.kept},updated:function(){var t=this.prevChildren,e=this.moveClass||(this.name||"v")+"-move";t.length&&this.hasMove(t[0].elm,e)&&(t.forEach(_a),t.forEach(ba),t.forEach(Ca),this._reflow=document.body.offsetHeight,t.forEach(function(t){if(t.data.moved){var n=t.elm,r=n.style;Pi(n,e),r.transform=r.WebkitTransform=r.transitionDuration="",n.addEventListener(Ii,n._moveCb=function t(r){r&&!/transform$/.test(r.propertyName)||(n.removeEventListener(Ii,t),n._moveCb=null,Mi(n,e))})}}))},methods:{hasMove:function(t,e){if(!Oi)return!1;if(this._hasMove)return this._hasMove;var n=t.cloneNode();t._transitionClasses&&t._transitionClasses.forEach(function(t){$i(n,t)}),wi(n,e),n.style.display="none",this.$el.appendChild(n);var r=Ui(n);return this.$el.removeChild(n),this._hasMove=r.hasTransform}}};function _a(t){t.elm._moveCb&&t.elm._moveCb(),t.elm._enterCb&&t.elm._enterCb()}function ba(t){t.data.newPos=t.elm.getBoundingClientRect()}function Ca(t){var e=t.data.pos,n=t.data.newPos,r=e.left-n.left,o=e.top-n.top;if(r||o){t.data.moved=!0;var i=t.elm.style;i.transform=i.WebkitTransform="translate("+r+"px,"+o+"px)",i.transitionDuration="0s"}}var Aa={Transition:ma,TransitionGroup:ga};jr.config.mustUseProp=Kr,jr.config.isReservedTag=lo,jr.config.isReservedAttr=Wr,jr.config.getTagNamespace=fo,jr.config.isUnknownElement=vo,E(jr.options.directives,ua),E(jr.options.components,Aa),jr.prototype.__patch__=K?Qi:I,jr.prototype.$mount=function(t,e){return fn(this,t=t&&K?mo(t):void 0,e)},jr.nextTick(function(){U.devtools&&st&&st.emit("init",jr)},0),exports.default=jr;
-},{}],16:[function(require,module,exports) {
-var e=exports.cache={};function t(){}exports.insert=function(n){if(e[n])return t;e[n]=!0;var r=document.createElement("style");return r.setAttribute("type","text/css"),"textContent"in r?r.textContent=n:r.styleSheet.cssText=n,document.getElementsByTagName("head")[0].appendChild(r),function(){document.getElementsByTagName("head")[0].removeChild(r),e[n]=!1}};
-},{}],22:[function(require,module,exports) {
-"use strict";var e;function o(){return e.apply(null,arguments)}function t(o){e=o}Object.defineProperty(exports,"__esModule",{value:!0}),exports.hooks=o,exports.setHookCallback=t;
-},{}],68:[function(require,module,exports) {
-"use strict";function e(e){return e instanceof Array||"[object Array]"===Object.prototype.toString.call(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],110:[function(require,module,exports) {
-"use strict";function e(e){return null!=e&&"[object Object]"===Object.prototype.toString.call(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],111:[function(require,module,exports) {
-"use strict";function e(e){if(Object.getOwnPropertyNames)return 0===Object.getOwnPropertyNames(e).length;var r;for(r in e)if(e.hasOwnProperty(r))return!1;return!0}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],64:[function(require,module,exports) {
-"use strict";function e(e){return void 0===e}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],90:[function(require,module,exports) {
-"use strict";function e(e){return"number"==typeof e||"[object Number]"===Object.prototype.toString.call(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],28:[function(require,module,exports) {
-"use strict";function e(e){return e instanceof Date||"[object Date]"===Object.prototype.toString.call(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],112:[function(require,module,exports) {
-"use strict";function e(e,t){var r,u=[];for(r=0;r<e.length;++r)u.push(t(e[r],r));return u}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],63:[function(require,module,exports) {
-"use strict";function e(e,t){return Object.prototype.hasOwnProperty.call(e,t)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],66:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=u;var e=require("./has-own-prop"),t=r(e);function r(e){return e&&e.__esModule?e:{default:e}}function u(e,r){for(var u in r)(0,t.default)(r,u)&&(e[u]=r[u]);return(0,t.default)(r,"toString")&&(e.toString=r.toString),(0,t.default)(r,"valueOf")&&(e.valueOf=r.valueOf),e}
-},{"./has-own-prop":63}],30:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.createUTC=r;var e=require("./from-anything");function r(r,t,c,o){return(0,e.createLocalOrUTC)(r,t,c,o,!0).utc()}
-},{"./from-anything":62}],65:[function(require,module,exports) {
-"use strict";function e(){return{empty:!1,unusedTokens:[],unusedInput:[],overflow:-2,charsLeftOver:0,nullInput:!1,invalidMonth:null,invalidFormat:!1,userInvalidated:!1,iso:!1,parsedDateParts:[],meridiem:null,rfc2822:!1,weekdayMismatch:!1}}function t(t){return null==t._pf&&(t._pf=e()),t._pf}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;
-},{}],67:[function(require,module,exports) {
-"use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),Array.prototype.some?exports.default=e=Array.prototype.some:exports.default=e=function(e){for(var t=Object(this),r=t.length>>>0,o=0;o<r;o++)if(o in t&&e.call(this,t[o],o,t))return!0;return!1},exports.default=e;
-},{}],31:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isValid=d,exports.createInvalid=s;var e=require("../utils/extend"),r=n(e),t=require("./utc"),i=require("../create/parsing-flags"),a=n(i),u=require("../utils/some"),l=n(u);function n(e){return e&&e.__esModule?e:{default:e}}function d(e){if(null==e._isValid){var r=(0,a.default)(e),t=l.default.call(r.parsedDateParts,function(e){return null!=e}),i=!isNaN(e._d.getTime())&&r.overflow<0&&!r.empty&&!r.invalidMonth&&!r.invalidWeekday&&!r.weekdayMismatch&&!r.nullInput&&!r.invalidFormat&&!r.userInvalidated&&(!r.meridiem||r.meridiem&&t);if(e._strict&&(i=i&&0===r.charsLeftOver&&0===r.unusedTokens.length&&void 0===r.bigHour),null!=Object.isFrozen&&Object.isFrozen(e))return i;e._isValid=i}return e._isValid}function s(e){var i=(0,t.createUTC)(NaN);return null!=e?(0,r.default)((0,a.default)(i),e):(0,a.default)(i).userInvalidated=!0,i}
-},{"../utils/extend":66,"./utc":30,"../create/parsing-flags":65,"../utils/some":67}],32:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.copyConfig=r,exports.Moment=a,exports.isMoment=d;var e=require("../utils/hooks"),t=require("../utils/has-own-prop"),i=o(t),s=require("../utils/is-undefined"),l=o(s),_=require("../create/parsing-flags"),f=o(_);function o(e){return e&&e.__esModule?e:{default:e}}var u=e.hooks.momentProperties=[];function r(e,t){var i,s,_;if((0,l.default)(t._isAMomentObject)||(e._isAMomentObject=t._isAMomentObject),(0,l.default)(t._i)||(e._i=t._i),(0,l.default)(t._f)||(e._f=t._f),(0,l.default)(t._l)||(e._l=t._l),(0,l.default)(t._strict)||(e._strict=t._strict),(0,l.default)(t._tzm)||(e._tzm=t._tzm),(0,l.default)(t._isUTC)||(e._isUTC=t._isUTC),(0,l.default)(t._offset)||(e._offset=t._offset),(0,l.default)(t._pf)||(e._pf=(0,f.default)(t)),(0,l.default)(t._locale)||(e._locale=t._locale),u.length>0)for(i=0;i<u.length;i++)_=t[s=u[i]],(0,l.default)(_)||(e[s]=_);return e}var n=!1;function a(t){r(this,t),this._d=new Date(null!=t._d?t._d.getTime():NaN),this.isValid()||(this._d=new Date(NaN)),!1===n&&(n=!0,e.hooks.updateOffset(this),n=!1)}function d(e){return e instanceof a||null!=e&&null!=e._isAMomentObject}
-},{"../utils/hooks":22,"../utils/has-own-prop":63,"../utils/is-undefined":64,"../create/parsing-flags":65}],121:[function(require,module,exports) {
-"use strict";function e(e){return e<0?Math.ceil(e)||0:Math.floor(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],91:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=u;var e=require("./abs-floor"),r=t(e);function t(e){return e&&e.__esModule?e:{default:e}}function u(e){var t=+e,u=0;return 0!==t&&isFinite(t)&&(u=(0,r.default)(t)),u}
-},{"./abs-floor":121}],92:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=n;var e=require("./to-int"),t=r(e);function r(e){return e&&e.__esModule?e:{default:e}}function n(e,r,n){var u,l=Math.min(e.length,r.length),a=Math.abs(e.length-r.length),o=0;for(u=0;u<l;u++)(n&&e[u]!==r[u]||!n&&(0,t.default)(e[u])!==(0,t.default)(r[u]))&&o++;return o+a}
-},{"./to-int":91}],39:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.deprecate=i,exports.deprecateSimple=u;var e=require("./extend"),n=s(e),r=require("./hooks"),o=require("./is-undefined"),t=s(o);function s(e){return e&&e.__esModule?e:{default:e}}function a(e){!1===r.hooks.suppressDeprecationWarnings&&"undefined"!=typeof console&&console.warn&&console.warn("Deprecation warning: "+e)}function i(e,o){var t=!0;return(0,n.default)(function(){if(null!=r.hooks.deprecationHandler&&r.hooks.deprecationHandler(null,e),t){for(var n,s=[],i=0;i<arguments.length;i++){if(n="","object"==typeof arguments[i]){for(var l in n+="\n["+i+"] ",arguments[0])n+=l+": "+arguments[0][l]+", ";n=n.slice(0,-2)}else n=arguments[i];s.push(n)}a(e+"\nArguments: "+Array.prototype.slice.call(s).join("")+"\n"+(new Error).stack),t=!1}return o.apply(this,arguments)},o)}var l={};function u(e,n){null!=r.hooks.deprecationHandler&&r.hooks.deprecationHandler(e,n),l[e]||(a(n),l[e]=!0)}r.hooks.suppressDeprecationWarnings=!1,r.hooks.deprecationHandler=null;
-},{"./extend":66,"./hooks":22,"./is-undefined":64}],61:[function(require,module,exports) {
-"use strict";function t(t){return t instanceof Function||"[object Function]"===Object.prototype.toString.call(t)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;
-},{}],89:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.set=f,exports.mergeConfigs=o;var e=require("../utils/is-function"),t=l(e),r=require("../utils/extend"),u=l(r),i=require("../utils/is-object"),s=l(i),n=require("../utils/has-own-prop"),a=l(n);function l(e){return e&&e.__esModule?e:{default:e}}function f(e){var r,u;for(u in e)r=e[u],(0,t.default)(r)?this[u]=r:this["_"+u]=r;this._config=e,this._dayOfMonthOrdinalParseLenient=new RegExp((this._dayOfMonthOrdinalParse.source||this._ordinalParse.source)+"|"+/\d{1,2}/.source)}function o(e,t){var r,i=(0,u.default)({},e);for(r in t)(0,a.default)(t,r)&&((0,s.default)(e[r])&&(0,s.default)(t[r])?(i[r]={},(0,u.default)(i[r],e[r]),(0,u.default)(i[r],t[r])):null!=t[r]?i[r]=t[r]:delete i[r]);for(r in e)(0,a.default)(e,r)&&!(0,a.default)(t,r)&&(0,s.default)(e[r])&&(i[r]=(0,u.default)({},i[r]));return i}
-},{"../utils/is-function":61,"../utils/extend":66,"../utils/is-object":110,"../utils/has-own-prop":63}],82:[function(require,module,exports) {
-"use strict";function e(e){null!=e&&this.set(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.Locale=e;
-},{}],93:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e,t=require("./has-own-prop"),r=u(t);function u(e){return e&&e.__esModule?e:{default:e}}Object.keys?exports.default=e=Object.keys:exports.default=e=function(e){var t,u=[];for(t in e)(0,r.default)(e,t)&&u.push(t);return u},exports.default=e;
-},{"./has-own-prop":63}],83:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.defaultCalendar=void 0,exports.calendar=d;var e=require("../utils/is-function"),a=t(e);function t(e){return e&&e.__esModule?e:{default:e}}var r=exports.defaultCalendar={sameDay:"[Today at] LT",nextDay:"[Tomorrow at] LT",nextWeek:"dddd [at] LT",lastDay:"[Yesterday at] LT",lastWeek:"[Last] dddd [at] LT",sameElse:"L"};function d(e,t,r){var d=this._calendar[e]||this._calendar.sameElse;return(0,a.default)(d)?d.call(t,r):d}
-},{"../utils/is-function":61}],85:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.longDateFormat=e;var t=exports.defaultLongDateFormat={LTS:"h:mm:ss A",LT:"h:mm A",L:"MM/DD/YYYY",LL:"MMMM D, YYYY",LLL:"MMMM D, YYYY h:mm A",LLLL:"dddd, MMMM D, YYYY h:mm A"};function e(t){var e=this._longDateFormat[t],M=this._longDateFormat[t.toUpperCase()];return e||!M?e:(this._longDateFormat[t]=M.replace(/MMMM|MM|DD|dddd/g,function(t){return t.slice(1)}),this._longDateFormat[t])}
-},{}],84:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.invalidDate=t;var e=exports.defaultInvalidDate="Invalid date";function t(){return this._invalidDate}
-},{}],86:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ordinal=t;var e=exports.defaultOrdinal="%d",r=exports.defaultDayOfMonthOrdinalParse=/\d{1,2}/;function t(e){return this._ordinal.replace("%d",e)}
-},{}],88:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.defaultRelativeTime=void 0,exports.relativeTime=s,exports.pastFuture=u;var e=require("../utils/is-function"),t=r(e);function r(e){return e&&e.__esModule?e:{default:e}}var a=exports.defaultRelativeTime={future:"in %s",past:"%s ago",s:"a few seconds",ss:"%d seconds",m:"a minute",mm:"%d minutes",h:"an hour",hh:"%d hours",d:"a day",dd:"%d days",M:"a month",MM:"%d months",y:"a year",yy:"%d years"};function s(e,r,a,s){var u=this._relativeTime[a];return(0,t.default)(u)?u(e,r,a,s):u.replace(/%d/i,e)}function u(e,r){var a=this._relativeTime[e>0?"future":"past"];return(0,t.default)(a)?a(r):a.replace(/%s/i,r)}
-},{"../utils/is-function":61}],60:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.addUnitAlias=n,exports.normalizeUnits=i,exports.normalizeObjectUnits=s;var e=require("../utils/has-own-prop"),r=t(e);function t(e){return e&&e.__esModule?e:{default:e}}var o={};function n(e,r){var t=e.toLowerCase();o[t]=o[t+"s"]=o[r]=e}function i(e){return"string"==typeof e?o[e]||o[e.toLowerCase()]:void 0}function s(e){var t,o,n={};for(o in e)(0,r.default)(e,o)&&(t=i(o))&&(n[t]=e[o]);return n}
-},{"../utils/has-own-prop":63}],104:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.addUnitPriority=t,exports.getPrioritizedUnits=i;var r={};function t(t,i){r[t]=i}function i(t){var i=[];for(var e in t)i.push({unit:e,priority:r[e]});return i.sort(function(r,t){return r.priority-t.priority}),i}
-},{}],120:[function(require,module,exports) {
-"use strict";function t(t,e,r){var a=""+Math.abs(t),s=e-a.length;return(t>=0?r?"+":"":"-")+Math.pow(10,Math.max(0,s)).toString().substr(1)+a}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=t;
-},{}],103:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.formatTokenFunctions=exports.formattingTokens=void 0,exports.addFormatToken=l,exports.formatMoment=d,exports.expandFormat=p;var t=require("../utils/zero-fill"),e=n(t),r=require("../utils/is-function"),o=n(r);function n(t){return t&&t.__esModule?t:{default:t}}var a=exports.formattingTokens=/(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g,i=/(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g,u={},s=exports.formatTokenFunctions={};function l(t,r,o,n){var a=n;"string"==typeof n&&(a=function(){return this[n]()}),t&&(s[t]=a),r&&(s[r[0]]=function(){return(0,e.default)(a.apply(this,arguments),r[1],r[2])}),o&&(s[o]=function(){return this.localeData().ordinal(a.apply(this,arguments),t)})}function f(t){return t.match(/\[[\s\S]/)?t.replace(/^\[|\]$/g,""):t.replace(/\\/g,"")}function c(t){var e,r,n=t.match(a);for(e=0,r=n.length;e<r;e++)s[n[e]]?n[e]=s[n[e]]:n[e]=f(n[e]);return function(e){var a,i="";for(a=0;a<r;a++)i+=(0,o.default)(n[a])?n[a].call(e,t):n[a];return i}}function d(t,e){return t.isValid()?(e=p(e,t.localeData()),u[e]=u[e]||c(e),u[e](t)):t.localeData().invalidDate()}function p(t,e){var r=5;function o(t){return e.longDateFormat(t)||t}for(i.lastIndex=0;r>=0&&i.test(t);)t=t.replace(i,o),i.lastIndex=0,r-=1;return t}
-},{"../utils/zero-fill":120,"../utils/is-function":61}],105:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.matchWord=exports.matchTimestamp=exports.matchShortOffset=exports.matchOffset=exports.matchSigned=exports.matchUnsigned=exports.match1to6=exports.match1to4=exports.match1to3=exports.match5to6=exports.match3to4=exports.match1to2=exports.match6=exports.match4=exports.match3=exports.match2=exports.match1=void 0,exports.addRegexToken=T,exports.getParseRegexForToken=D,exports.regexEscape=R;var t=require("../utils/has-own-prop"),e=s(t),o=require("../utils/is-function"),r=s(o);function s(t){return t&&t.__esModule?t:{default:t}}var a=exports.match1=/\d/,c=exports.match2=/\d\d/,d=exports.match3=/\d{3}/,p=exports.match4=/\d{4}/,x=exports.match6=/[+-]?\d{6}/,u=exports.match1to2=/\d\d?/,m=exports.match3to4=/\d\d\d\d?/,h=exports.match5to6=/\d\d\d\d\d\d?/,n=exports.match1to3=/\d{1,3}/,i=exports.match1to4=/\d{1,4}/,F=exports.match1to6=/[+-]?\d{1,6}/,f=exports.matchUnsigned=/\d+/,g=exports.matchSigned=/[+-]?\d+/,l=exports.matchOffset=/Z|[+-]\d\d:?\d\d/gi,_=exports.matchShortOffset=/Z|[+-]\d\d(?::?\d\d)?/gi,O=exports.matchTimestamp=/[+-]?\d+(\.\d{1,3})?/,v=exports.matchWord=/[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i,S={};function T(t,e,o){S[t]=(0,r.default)(e)?e:function(t,r){return t&&o?o:e}}function D(t,o){return(0,e.default)(S,t)?S[t](o._strict,o._locale):new RegExp(E(t))}function E(t){return R(t.replace("\\","").replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g,function(t,e,o,r,s){return e||o||r||s}))}function R(t){return t.replace(/[-\/\\^$*+?.()|[\]{}]/g,"\\$&")}
-},{"../utils/has-own-prop":63,"../utils/is-function":61}],106:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.addParseToken=s,exports.addWeekParseToken=d,exports.addTimeToArrayFromToken=f;var e=require("../utils/has-own-prop"),r=i(e),t=require("../utils/is-number"),n=i(t),o=require("../utils/to-int"),u=i(o);function i(e){return e&&e.__esModule?e:{default:e}}var a={};function s(e,r){var t,o=r;for("string"==typeof e&&(e=[e]),(0,n.default)(r)&&(o=function(e,t){t[r]=(0,u.default)(e)}),t=0;t<e.length;t++)a[e[t]]=o}function d(e,r){s(e,function(e,t,n,o){n._w=n._w||{},r(e,n._w,n,o)})}function f(e,t,n){null!=t&&(0,r.default)(a,e)&&a[e](t,n._a,n,e)}
-},{"../utils/has-own-prop":63,"../utils/is-number":90,"../utils/to-int":91}],107:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=exports.YEAR=0,r=exports.MONTH=1,t=exports.DATE=2,s=exports.HOUR=3,o=exports.MINUTE=4,p=exports.SECOND=5,x=exports.MILLISECOND=6,E=exports.WEEK=7,O=exports.WEEKDAY=8;
-},{}],59:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetYear=void 0,exports.daysInYear=c,exports.isLeapYear=k,exports.getIsLeapYear=f;var e=require("../moment/get-set"),r=require("../format/format"),t=require("./aliases"),a=require("./priorities"),Y=require("../parse/regex"),o=require("../parse/token"),n=require("../utils/hooks"),i=require("./constants"),d=require("../utils/to-int"),s=u(d);function u(e){return e&&e.__esModule?e:{default:e}}function c(e){return k(e)?366:365}function k(e){return e%4==0&&e%100!=0||e%400==0}(0,r.addFormatToken)("Y",0,0,function(){var e=this.year();return e<=9999?""+e:"+"+e}),(0,r.addFormatToken)(0,["YY",2],0,function(){return this.year()%100}),(0,r.addFormatToken)(0,["YYYY",4],0,"year"),(0,r.addFormatToken)(0,["YYYYY",5],0,"year"),(0,r.addFormatToken)(0,["YYYYYY",6,!0],0,"year"),(0,t.addUnitAlias)("year","y"),(0,a.addUnitPriority)("year",1),(0,Y.addRegexToken)("Y",Y.matchSigned),(0,Y.addRegexToken)("YY",Y.match1to2,Y.match2),(0,Y.addRegexToken)("YYYY",Y.match1to4,Y.match4),(0,Y.addRegexToken)("YYYYY",Y.match1to6,Y.match6),(0,Y.addRegexToken)("YYYYYY",Y.match1to6,Y.match6),(0,o.addParseToken)(["YYYYY","YYYYYY"],i.YEAR),(0,o.addParseToken)("YYYY",function(e,r){r[i.YEAR]=2===e.length?n.hooks.parseTwoDigitYear(e):(0,s.default)(e)}),(0,o.addParseToken)("YY",function(e,r){r[i.YEAR]=n.hooks.parseTwoDigitYear(e)}),(0,o.addParseToken)("Y",function(e,r){r[i.YEAR]=parseInt(e,10)}),n.hooks.parseTwoDigitYear=function(e){return(0,s.default)(e)+((0,s.default)(e)>68?1900:2e3)};var m=exports.getSetYear=(0,e.makeGetSet)("FullYear",!0);function f(){return k(this.year())}
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"../utils/hooks":22,"./constants":107,"../utils/to-int":91}],76:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.makeGetSet=a,exports.get=l,exports.set=h,exports.stringGet=f,exports.stringSet=d;var t=require("../units/aliases"),e=require("../units/priorities"),i=require("../utils/hooks"),s=require("../utils/is-function"),r=o(s),n=require("../units/month"),u=require("../units/year");function o(t){return t&&t.__esModule?t:{default:t}}function a(t,e){return function(s){return null!=s?(h(this,t,s),i.hooks.updateOffset(this,e),this):l(this,t)}}function l(t,e){return t.isValid()?t._d["get"+(t._isUTC?"UTC":"")+e]():NaN}function h(t,e,i){t.isValid()&&!isNaN(i)&&("FullYear"===e&&(0,u.isLeapYear)(t.year())&&1===t.month()&&29===t.date()?t._d["set"+(t._isUTC?"UTC":"")+e](i,t.month(),(0,n.daysInMonth)(i,t.month())):t._d["set"+(t._isUTC?"UTC":"")+e](i))}function f(e){return e=(0,t.normalizeUnits)(e),(0,r.default)(this[e])?this[e]():this}function d(i,s){if("object"==typeof i){i=(0,t.normalizeObjectUnits)(i);for(var n=(0,e.getPrioritizedUnits)(i),u=0;u<n.length;u++)this[n[u].unit](i[n[u].unit])}else if(i=(0,t.normalizeUnits)(i),(0,r.default)(this[i]))return this[i](s);return this}
-},{"../units/aliases":60,"../units/priorities":104,"../utils/hooks":22,"../utils/is-function":61,"../units/month":51,"../units/year":59}],122:[function(require,module,exports) {
-"use strict";function e(e,t){return(e%t+t)%t}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],119:[function(require,module,exports) {
-"use strict";var e;Object.defineProperty(exports,"__esModule",{value:!0}),Array.prototype.indexOf?exports.default=e=Array.prototype.indexOf:exports.default=e=function(e){var t;for(t=0;t<this.length;++t)if(this[t]===e)return t;return-1},exports.default=e;
-},{}],51:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.defaultLocaleMonthsShort=exports.defaultLocaleMonths=void 0,exports.daysInMonth=T,exports.localeMonths=E,exports.localeMonthsShort=w,exports.localeMonthsParse=b,exports.setMonth=C,exports.getSetMonth=D,exports.getDaysInMonth=U,exports.monthsShortRegex=J,exports.monthsRegex=A;var t=require("../moment/get-set"),e=require("../utils/has-own-prop"),s=v(e),o=require("../format/format"),r=require("./aliases"),h=require("./priorities"),n=require("../parse/regex"),i=require("../parse/token"),a=require("../utils/hooks"),u=require("./constants"),l=require("../utils/to-int"),_=v(l),m=require("../utils/is-array"),M=v(m),c=require("../utils/is-number"),f=v(c),d=require("../utils/mod"),g=v(d),x=require("../utils/index-of"),p=v(x),S=require("../create/utc"),R=require("../create/parsing-flags"),P=v(R),q=require("../units/year");function v(t){return t&&t.__esModule?t:{default:t}}function T(t,e){if(isNaN(t)||isNaN(e))return NaN;var s=(0,g.default)(e,12);return t+=(e-s)/12,1===s?(0,q.isLeapYear)(t)?29:28:31-s%7%2}(0,o.addFormatToken)("M",["MM",2],"Mo",function(){return this.month()+1}),(0,o.addFormatToken)("MMM",0,0,function(t){return this.localeData().monthsShort(this,t)}),(0,o.addFormatToken)("MMMM",0,0,function(t){return this.localeData().months(this,t)}),(0,r.addUnitAlias)("month","M"),(0,h.addUnitPriority)("month",8),(0,n.addRegexToken)("M",n.match1to2),(0,n.addRegexToken)("MM",n.match1to2,n.match2),(0,n.addRegexToken)("MMM",function(t,e){return e.monthsShortRegex(t)}),(0,n.addRegexToken)("MMMM",function(t,e){return e.monthsRegex(t)}),(0,i.addParseToken)(["M","MM"],function(t,e){e[u.MONTH]=(0,_.default)(t)-1}),(0,i.addParseToken)(["MMM","MMMM"],function(t,e,s,o){var r=s._locale.monthsParse(t,o,s._strict);null!=r?e[u.MONTH]=r:(0,P.default)(s).invalidMonth=t});var y=/D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/,k=exports.defaultLocaleMonths="January_February_March_April_May_June_July_August_September_October_November_December".split("_");function E(t,e){return t?(0,M.default)(this._months)?this._months[t.month()]:this._months[(this._months.isFormat||y).test(e)?"format":"standalone"][t.month()]:(0,M.default)(this._months)?this._months:this._months.standalone}var L=exports.defaultLocaleMonthsShort="Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec".split("_");function w(t,e){return t?(0,M.default)(this._monthsShort)?this._monthsShort[t.month()]:this._monthsShort[y.test(e)?"format":"standalone"][t.month()]:(0,M.default)(this._monthsShort)?this._monthsShort:this._monthsShort.standalone}function N(t,e,s){var o,r,h,n=t.toLocaleLowerCase();if(!this._monthsParse)for(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[],o=0;o<12;++o)h=(0,S.createUTC)([2e3,o]),this._shortMonthsParse[o]=this.monthsShort(h,"").toLocaleLowerCase(),this._longMonthsParse[o]=this.months(h,"").toLocaleLowerCase();return s?"MMM"===e?-1!==(r=p.default.call(this._shortMonthsParse,n))?r:null:-1!==(r=p.default.call(this._longMonthsParse,n))?r:null:"MMM"===e?-1!==(r=p.default.call(this._shortMonthsParse,n))?r:-1!==(r=p.default.call(this._longMonthsParse,n))?r:null:-1!==(r=p.default.call(this._longMonthsParse,n))?r:-1!==(r=p.default.call(this._shortMonthsParse,n))?r:null}function b(t,e,s){var o,r,h;if(this._monthsParseExact)return N.call(this,t,e,s);for(this._monthsParse||(this._monthsParse=[],this._longMonthsParse=[],this._shortMonthsParse=[]),o=0;o<12;o++){if(r=(0,S.createUTC)([2e3,o]),s&&!this._longMonthsParse[o]&&(this._longMonthsParse[o]=new RegExp("^"+this.months(r,"").replace(".","")+"$","i"),this._shortMonthsParse[o]=new RegExp("^"+this.monthsShort(r,"").replace(".","")+"$","i")),s||this._monthsParse[o]||(h="^"+this.months(r,"")+"|^"+this.monthsShort(r,""),this._monthsParse[o]=new RegExp(h.replace(".",""),"i")),s&&"MMMM"===e&&this._longMonthsParse[o].test(t))return o;if(s&&"MMM"===e&&this._shortMonthsParse[o].test(t))return o;if(!s&&this._monthsParse[o].test(t))return o}}function C(t,e){var s;if(!t.isValid())return t;if("string"==typeof e)if(/^\d+$/.test(e))e=(0,_.default)(e);else if(e=t.localeData().monthsParse(e),!(0,f.default)(e))return t;return s=Math.min(t.date(),T(t.year(),e)),t._d["set"+(t._isUTC?"UTC":"")+"Month"](e,s),t}function D(e){return null!=e?(C(this,e),a.hooks.updateOffset(this,!0),this):(0,t.get)(this,"Month")}function U(){return T(this.year(),this.month())}var F=n.matchWord;function J(t){return this._monthsParseExact?((0,s.default)(this,"_monthsRegex")||j.call(this),t?this._monthsShortStrictRegex:this._monthsShortRegex):((0,s.default)(this,"_monthsShortRegex")||(this._monthsShortRegex=F),this._monthsShortStrictRegex&&t?this._monthsShortStrictRegex:this._monthsShortRegex)}var O=n.matchWord;function A(t){return this._monthsParseExact?((0,s.default)(this,"_monthsRegex")||j.call(this),t?this._monthsStrictRegex:this._monthsRegex):((0,s.default)(this,"_monthsRegex")||(this._monthsRegex=O),this._monthsStrictRegex&&t?this._monthsStrictRegex:this._monthsRegex)}function j(){function t(t,e){return e.length-t.length}var e,s,o=[],r=[],h=[];for(e=0;e<12;e++)s=(0,S.createUTC)([2e3,e]),o.push(this.monthsShort(s,"")),r.push(this.months(s,"")),h.push(this.months(s,"")),h.push(this.monthsShort(s,""));for(o.sort(t),r.sort(t),h.sort(t),e=0;e<12;e++)o[e]=(0,n.regexEscape)(o[e]),r[e]=(0,n.regexEscape)(r[e]);for(e=0;e<24;e++)h[e]=(0,n.regexEscape)(h[e]);this._monthsRegex=new RegExp("^("+h.join("|")+")","i"),this._monthsShortRegex=this._monthsRegex,this._monthsStrictRegex=new RegExp("^("+r.join("|")+")","i"),this._monthsShortStrictRegex=new RegExp("^("+o.join("|")+")","i")}
-},{"../moment/get-set":76,"../utils/has-own-prop":63,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"../utils/hooks":22,"./constants":107,"../utils/to-int":91,"../utils/is-array":68,"../utils/is-number":90,"../utils/mod":122,"../utils/index-of":119,"../create/utc":30,"../create/parsing-flags":65,"../units/year":59}],108:[function(require,module,exports) {
-"use strict";function e(e,t,r,a,l,n,u){var i=new Date(e,t,r,a,l,n,u);return e<100&&e>=0&&isFinite(i.getFullYear())&&i.setFullYear(e),i}function t(e){var t=new Date(Date.UTC.apply(null,arguments));return e<100&&e>=0&&isFinite(t.getUTCFullYear())&&t.setUTCFullYear(e),t}Object.defineProperty(exports,"__esModule",{value:!0}),exports.createDate=e,exports.createUTCDate=t;
-},{}],123:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.dayOfYearFromWeeks=y,exports.weekOfYear=n,exports.weeksInYear=o;var e=require("./year"),r=require("../create/local"),a=require("../create/date-from-array");function t(e,r,t){var y=7+r-t;return-((7+(0,a.createUTCDate)(e,0,y).getUTCDay()-r)%7)+y-1}function y(r,a,y,n,o){var u,s,f=1+7*(a-1)+(7+y-n)%7+t(r,n,o);return f<=0?(u=r-1,s=(0,e.daysInYear)(u)+f):f>(0,e.daysInYear)(r)?(u=r+1,s=f-(0,e.daysInYear)(r)):(u=r,s=f),{year:u,dayOfYear:s}}function n(e,r,a){var y,n,u=t(e.year(),r,a),s=Math.floor((e.dayOfYear()-u-1)/7)+1;return s<1?y=s+o(n=e.year()-1,r,a):s>o(e.year(),r,a)?(y=s-o(e.year(),r,a),n=e.year()+1):(n=e.year(),y=s),{week:y,year:n}}function o(r,a,y){var n=t(r,a,y),o=t(r+1,a,y);return((0,e.daysInYear)(r)-n+o)/7}
-},{"./year":59,"../create/local":29,"../create/date-from-array":108}],58:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.defaultLocaleWeek=void 0,exports.localeWeek=k,exports.localeFirstDayOfWeek=w,exports.localeFirstDayOfYear=c,exports.getSetWeek=W,exports.getSetISOWeek=f;var e=require("../format/format"),t=require("./aliases"),r=require("./priorities"),o=require("../parse/regex"),a=require("../parse/token"),i=require("../utils/to-int"),d=u(i),s=require("../create/local"),n=require("./week-calendar-utils");function u(e){return e&&e.__esModule?e:{default:e}}function k(e){return(0,n.weekOfYear)(e,this._week.dow,this._week.doy).week}(0,e.addFormatToken)("w",["ww",2],"wo","week"),(0,e.addFormatToken)("W",["WW",2],"Wo","isoWeek"),(0,t.addUnitAlias)("week","w"),(0,t.addUnitAlias)("isoWeek","W"),(0,r.addUnitPriority)("week",5),(0,r.addUnitPriority)("isoWeek",5),(0,o.addRegexToken)("w",o.match1to2),(0,o.addRegexToken)("ww",o.match1to2,o.match2),(0,o.addRegexToken)("W",o.match1to2),(0,o.addRegexToken)("WW",o.match1to2,o.match2),(0,a.addWeekParseToken)(["w","ww","W","WW"],function(e,t,r,o){t[o.substr(0,1)]=(0,d.default)(e)});var l=exports.defaultLocaleWeek={dow:0,doy:6};function w(){return this._week.dow}function c(){return this._week.doy}function W(e){var t=this.localeData().week(this);return null==e?t:this.add(7*(e-t),"d")}function f(e){var t=(0,n.weekOfYear)(this,1,4).week;return null==e?t:this.add(7*(e-t),"d")}
-},{"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"../utils/to-int":91,"../create/local":29,"./week-calendar-utils":123}],46:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.defaultLocaleWeekdaysMin=exports.defaultLocaleWeekdaysShort=exports.defaultLocaleWeekdays=void 0,exports.localeWeekdays=p,exports.localeWeekdaysShort=P,exports.localeWeekdaysMin=S,exports.localeWeekdaysParse=M,exports.getSetDayOfWeek=T,exports.getSetLocaleDayOfWeek=E,exports.getSetISODayOfWeek=v,exports.weekdaysRegex=q,exports.weekdaysShortRegex=U,exports.weekdaysMinRegex=N;var e=require("../format/format"),a=require("./aliases"),t=require("./priorities"),s=require("../parse/regex"),d=require("../parse/token"),i=require("../utils/to-int"),r=c(i),n=require("../utils/is-array"),h=c(n),o=require("../utils/index-of"),l=c(o),y=require("../utils/has-own-prop"),k=c(y),u=require("../create/utc"),_=require("../create/parsing-flags"),w=c(_);function c(e){return e&&e.__esModule?e:{default:e}}function f(e,a){return"string"!=typeof e?e:isNaN(e)?"number"==typeof(e=a.weekdaysParse(e))?e:null:parseInt(e,10)}function x(e,a){return"string"==typeof e?a.weekdaysParse(e)%7||7:isNaN(e)?null:e}(0,e.addFormatToken)("d",0,"do","day"),(0,e.addFormatToken)("dd",0,0,function(e){return this.localeData().weekdaysMin(this,e)}),(0,e.addFormatToken)("ddd",0,0,function(e){return this.localeData().weekdaysShort(this,e)}),(0,e.addFormatToken)("dddd",0,0,function(e){return this.localeData().weekdays(this,e)}),(0,e.addFormatToken)("e",0,0,"weekday"),(0,e.addFormatToken)("E",0,0,"isoWeekday"),(0,a.addUnitAlias)("day","d"),(0,a.addUnitAlias)("weekday","e"),(0,a.addUnitAlias)("isoWeekday","E"),(0,t.addUnitPriority)("day",11),(0,t.addUnitPriority)("weekday",11),(0,t.addUnitPriority)("isoWeekday",11),(0,s.addRegexToken)("d",s.match1to2),(0,s.addRegexToken)("e",s.match1to2),(0,s.addRegexToken)("E",s.match1to2),(0,s.addRegexToken)("dd",function(e,a){return a.weekdaysMinRegex(e)}),(0,s.addRegexToken)("ddd",function(e,a){return a.weekdaysShortRegex(e)}),(0,s.addRegexToken)("dddd",function(e,a){return a.weekdaysRegex(e)}),(0,d.addWeekParseToken)(["dd","ddd","dddd"],function(e,a,t,s){var d=t._locale.weekdaysParse(e,s,t._strict);null!=d?a.d=d:(0,w.default)(t).invalidWeekday=e}),(0,d.addWeekParseToken)(["d","e","E"],function(e,a,t,s){a[s]=(0,r.default)(e)});var g=exports.defaultLocaleWeekdays="Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_");function p(e,a){return e?(0,h.default)(this._weekdays)?this._weekdays[e.day()]:this._weekdays[this._weekdays.isFormat.test(a)?"format":"standalone"][e.day()]:(0,h.default)(this._weekdays)?this._weekdays:this._weekdays.standalone}var R=exports.defaultLocaleWeekdaysShort="Sun_Mon_Tue_Wed_Thu_Fri_Sat".split("_");function P(e){return e?this._weekdaysShort[e.day()]:this._weekdaysShort}var W=exports.defaultLocaleWeekdaysMin="Su_Mo_Tu_We_Th_Fr_Sa".split("_");function S(e){return e?this._weekdaysMin[e.day()]:this._weekdaysMin}function m(e,a,t){var s,d,i,r=e.toLocaleLowerCase();if(!this._weekdaysParse)for(this._weekdaysParse=[],this._shortWeekdaysParse=[],this._minWeekdaysParse=[],s=0;s<7;++s)i=(0,u.createUTC)([2e3,1]).day(s),this._minWeekdaysParse[s]=this.weekdaysMin(i,"").toLocaleLowerCase(),this._shortWeekdaysParse[s]=this.weekdaysShort(i,"").toLocaleLowerCase(),this._weekdaysParse[s]=this.weekdays(i,"").toLocaleLowerCase();return t?"dddd"===a?-1!==(d=l.default.call(this._weekdaysParse,r))?d:null:"ddd"===a?-1!==(d=l.default.call(this._shortWeekdaysParse,r))?d:null:-1!==(d=l.default.call(this._minWeekdaysParse,r))?d:null:"dddd"===a?-1!==(d=l.default.call(this._weekdaysParse,r))?d:-1!==(d=l.default.call(this._shortWeekdaysParse,r))?d:-1!==(d=l.default.call(this._minWeekdaysParse,r))?d:null:"ddd"===a?-1!==(d=l.default.call(this._shortWeekdaysParse,r))?d:-1!==(d=l.default.call(this._weekdaysParse,r))?d:-1!==(d=l.default.call(this._minWeekdaysParse,r))?d:null:-1!==(d=l.default.call(this._minWeekdaysParse,r))?d:-1!==(d=l.default.call(this._weekdaysParse,r))?d:-1!==(d=l.default.call(this._shortWeekdaysParse,r))?d:null}function M(e,a,t){var s,d,i;if(this._weekdaysParseExact)return m.call(this,e,a,t);for(this._weekdaysParse||(this._weekdaysParse=[],this._minWeekdaysParse=[],this._shortWeekdaysParse=[],this._fullWeekdaysParse=[]),s=0;s<7;s++){if(d=(0,u.createUTC)([2e3,1]).day(s),t&&!this._fullWeekdaysParse[s]&&(this._fullWeekdaysParse[s]=new RegExp("^"+this.weekdays(d,"").replace(".",".?")+"$","i"),this._shortWeekdaysParse[s]=new RegExp("^"+this.weekdaysShort(d,"").replace(".",".?")+"$","i"),this._minWeekdaysParse[s]=new RegExp("^"+this.weekdaysMin(d,"").replace(".",".?")+"$","i")),this._weekdaysParse[s]||(i="^"+this.weekdays(d,"")+"|^"+this.weekdaysShort(d,"")+"|^"+this.weekdaysMin(d,""),this._weekdaysParse[s]=new RegExp(i.replace(".",""),"i")),t&&"dddd"===a&&this._fullWeekdaysParse[s].test(e))return s;if(t&&"ddd"===a&&this._shortWeekdaysParse[s].test(e))return s;if(t&&"dd"===a&&this._minWeekdaysParse[s].test(e))return s;if(!t&&this._weekdaysParse[s].test(e))return s}}function T(e){if(!this.isValid())return null!=e?this:NaN;var a=this._isUTC?this._d.getUTCDay():this._d.getDay();return null!=e?(e=f(e,this.localeData()),this.add(e-a,"d")):a}function E(e){if(!this.isValid())return null!=e?this:NaN;var a=(this.day()+7-this.localeData()._week.dow)%7;return null==e?a:this.add(e-a,"d")}function v(e){if(!this.isValid())return null!=e?this:NaN;if(null!=e){var a=x(e,this.localeData());return this.day(this.day()%7?a:a-7)}return this.day()||7}var L=s.matchWord;function q(e){return this._weekdaysParseExact?((0,k.default)(this,"_weekdaysRegex")||C.call(this),e?this._weekdaysStrictRegex:this._weekdaysRegex):((0,k.default)(this,"_weekdaysRegex")||(this._weekdaysRegex=L),this._weekdaysStrictRegex&&e?this._weekdaysStrictRegex:this._weekdaysRegex)}var D=s.matchWord;function U(e){return this._weekdaysParseExact?((0,k.default)(this,"_weekdaysRegex")||C.call(this),e?this._weekdaysShortStrictRegex:this._weekdaysShortRegex):((0,k.default)(this,"_weekdaysShortRegex")||(this._weekdaysShortRegex=D),this._weekdaysShortStrictRegex&&e?this._weekdaysShortStrictRegex:this._weekdaysShortRegex)}var F=s.matchWord;function N(e){return this._weekdaysParseExact?((0,k.default)(this,"_weekdaysRegex")||C.call(this),e?this._weekdaysMinStrictRegex:this._weekdaysMinRegex):((0,k.default)(this,"_weekdaysMinRegex")||(this._weekdaysMinRegex=F),this._weekdaysMinStrictRegex&&e?this._weekdaysMinStrictRegex:this._weekdaysMinRegex)}function C(){function e(e,a){return a.length-e.length}var a,t,d,i,r,n=[],h=[],o=[],l=[];for(a=0;a<7;a++)t=(0,u.createUTC)([2e3,1]).day(a),d=this.weekdaysMin(t,""),i=this.weekdaysShort(t,""),r=this.weekdays(t,""),n.push(d),h.push(i),o.push(r),l.push(d),l.push(i),l.push(r);for(n.sort(e),h.sort(e),o.sort(e),l.sort(e),a=0;a<7;a++)h[a]=(0,s.regexEscape)(h[a]),o[a]=(0,s.regexEscape)(o[a]),l[a]=(0,s.regexEscape)(l[a]);this._weekdaysRegex=new RegExp("^("+l.join("|")+")","i"),this._weekdaysShortRegex=this._weekdaysRegex,this._weekdaysMinRegex=this._weekdaysRegex,this._weekdaysStrictRegex=new RegExp("^("+o.join("|")+")","i"),this._weekdaysShortStrictRegex=new RegExp("^("+h.join("|")+")","i"),this._weekdaysMinStrictRegex=new RegExp("^("+n.join("|")+")","i")}
-},{"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"../utils/to-int":91,"../utils/is-array":68,"../utils/index-of":119,"../utils/has-own-prop":63,"../create/utc":30,"../create/parsing-flags":65}],48:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetHour=exports.defaultLocaleMeridiemParse=void 0,exports.localeIsPM=g,exports.localeMeridiem=p;var e=require("../moment/get-set"),t=require("../format/format"),a=require("./aliases"),r=require("./priorities"),o=require("../parse/regex"),s=require("../parse/token"),n=require("./constants"),u=require("../utils/to-int"),d=f(u),i=require("../utils/zero-fill"),m=f(i),h=require("../create/parsing-flags"),l=f(h);function f(e){return e&&e.__esModule?e:{default:e}}function c(){return this.hours()%12||12}function k(){return this.hours()||24}function T(e,a){(0,t.addFormatToken)(e,0,0,function(){return this.localeData().meridiem(this.hours(),this.minutes(),a)})}function H(e,t){return t._meridiemParse}function g(e){return"p"===(e+"").toLowerCase().charAt(0)}(0,t.addFormatToken)("H",["HH",2],0,"hour"),(0,t.addFormatToken)("h",["hh",2],0,c),(0,t.addFormatToken)("k",["kk",2],0,k),(0,t.addFormatToken)("hmm",0,0,function(){return""+c.apply(this)+(0,m.default)(this.minutes(),2)}),(0,t.addFormatToken)("hmmss",0,0,function(){return""+c.apply(this)+(0,m.default)(this.minutes(),2)+(0,m.default)(this.seconds(),2)}),(0,t.addFormatToken)("Hmm",0,0,function(){return""+this.hours()+(0,m.default)(this.minutes(),2)}),(0,t.addFormatToken)("Hmmss",0,0,function(){return""+this.hours()+(0,m.default)(this.minutes(),2)+(0,m.default)(this.seconds(),2)}),T("a",!0),T("A",!1),(0,a.addUnitAlias)("hour","h"),(0,r.addUnitPriority)("hour",13),(0,o.addRegexToken)("a",H),(0,o.addRegexToken)("A",H),(0,o.addRegexToken)("H",o.match1to2),(0,o.addRegexToken)("h",o.match1to2),(0,o.addRegexToken)("k",o.match1to2),(0,o.addRegexToken)("HH",o.match1to2,o.match2),(0,o.addRegexToken)("hh",o.match1to2,o.match2),(0,o.addRegexToken)("kk",o.match1to2,o.match2),(0,o.addRegexToken)("hmm",o.match3to4),(0,o.addRegexToken)("hmmss",o.match5to6),(0,o.addRegexToken)("Hmm",o.match3to4),(0,o.addRegexToken)("Hmmss",o.match5to6),(0,s.addParseToken)(["H","HH"],n.HOUR),(0,s.addParseToken)(["k","kk"],function(e,t,a){var r=(0,d.default)(e);t[n.HOUR]=24===r?0:r}),(0,s.addParseToken)(["a","A"],function(e,t,a){a._isPm=a._locale.isPM(e),a._meridiem=e}),(0,s.addParseToken)(["h","hh"],function(e,t,a){t[n.HOUR]=(0,d.default)(e),(0,l.default)(a).bigHour=!0}),(0,s.addParseToken)("hmm",function(e,t,a){var r=e.length-2;t[n.HOUR]=(0,d.default)(e.substr(0,r)),t[n.MINUTE]=(0,d.default)(e.substr(r)),(0,l.default)(a).bigHour=!0}),(0,s.addParseToken)("hmmss",function(e,t,a){var r=e.length-4,o=e.length-2;t[n.HOUR]=(0,d.default)(e.substr(0,r)),t[n.MINUTE]=(0,d.default)(e.substr(r,2)),t[n.SECOND]=(0,d.default)(e.substr(o)),(0,l.default)(a).bigHour=!0}),(0,s.addParseToken)("Hmm",function(e,t,a){var r=e.length-2;t[n.HOUR]=(0,d.default)(e.substr(0,r)),t[n.MINUTE]=(0,d.default)(e.substr(r))}),(0,s.addParseToken)("Hmmss",function(e,t,a){var r=e.length-4,o=e.length-2;t[n.HOUR]=(0,d.default)(e.substr(0,r)),t[n.MINUTE]=(0,d.default)(e.substr(r,2)),t[n.SECOND]=(0,d.default)(e.substr(o))});var x=exports.defaultLocaleMeridiemParse=/[ap]\.?m?\.?/i;function p(e,t,a){return e>11?a?"pm":"PM":a?"am":"AM"}var R=exports.getSetHour=(0,e.makeGetSet)("Hours",!0);
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107,"../utils/to-int":91,"../utils/zero-fill":120,"../create/parsing-flags":65}],94:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.baseConfig=void 0;var e=require("./calendar"),a=require("./formats"),r=require("./invalid"),t=require("./ordinal"),i=require("./relative"),d=require("../units/month"),l=require("../units/week"),o=require("../units/day-of-week"),u=require("../units/hour"),n=exports.baseConfig={calendar:e.defaultCalendar,longDateFormat:a.defaultLongDateFormat,invalidDate:r.defaultInvalidDate,ordinal:t.defaultOrdinal,dayOfMonthOrdinalParse:t.defaultDayOfMonthOrdinalParse,relativeTime:i.defaultRelativeTime,months:d.defaultLocaleMonths,monthsShort:d.defaultLocaleMonthsShort,week:l.defaultLocaleWeek,weekdays:o.defaultLocaleWeekdays,weekdaysMin:o.defaultLocaleWeekdaysMin,weekdaysShort:o.defaultLocaleWeekdaysShort,meridiemParse:u.defaultLocaleMeridiemParse};
-},{"./calendar":83,"./formats":85,"./invalid":84,"./ordinal":86,"./relative":88,"../units/month":51,"../units/week":58,"../units/day-of-week":46,"../units/hour":48}],37:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetGlobalLocale=v,exports.defineLocale=x,exports.updateLocale=y,exports.getLocale=w,exports.listLocales=C;var e=require("../utils/is-array"),r=g(e),n=require("../utils/has-own-prop"),l=g(n),o=require("../utils/is-undefined"),t=g(o),a=require("../utils/compare-arrays"),u=g(a),i=require("../utils/deprecate"),c=require("./set"),f=require("./constructor"),s=require("../utils/keys"),p=g(s),d=require("./base-config");function g(e){return e&&e.__esModule?e:{default:e}}var L,m={},b={};function _(e){return e?e.toLowerCase().replace("_","-"):e}function h(e){for(var r,n,l,o,t=0;t<e.length;){for(r=(o=_(e[t]).split("-")).length,n=(n=_(e[t+1]))?n.split("-"):null;r>0;){if(l=q(o.slice(0,r).join("-")))return l;if(n&&n.length>=r&&(0,u.default)(o,n,!0)>=r-1)break;r--}t++}return null}function q(e){var r=null;if(!m[e]&&"undefined"!=typeof module&&module&&module.exports)try{r=L._abbr,require("./locale/"+e),v(r)}catch(e){}return m[e]}function v(e,r){var n;return e&&(n=(0,t.default)(r)?w(e):x(e,r))&&(L=n),L._abbr}function x(e,r){if(null!==r){var n=d.baseConfig;if(r.abbr=e,null!=m[e])(0,i.deprecateSimple)("defineLocaleOverride","use moment.updateLocale(localeName, config) to change an existing locale. moment.defineLocale(localeName, config) should only be used for creating a new locale See http://momentjs.com/guides/#/warnings/define-locale/ for more info."),n=m[e]._config;else if(null!=r.parentLocale){if(null==m[r.parentLocale])return b[r.parentLocale]||(b[r.parentLocale]=[]),b[r.parentLocale].push({name:e,config:r}),null;n=m[r.parentLocale]._config}return m[e]=new f.Locale((0,c.mergeConfigs)(n,r)),b[e]&&b[e].forEach(function(e){x(e.name,e.config)}),v(e),m[e]}return delete m[e],null}function y(e,r){if(null!=r){var n,l,o=d.baseConfig;null!=(l=q(e))&&(o=l._config),r=(0,c.mergeConfigs)(o,r),(n=new f.Locale(r)).parentLocale=m[e],m[e]=n,v(e)}else null!=m[e]&&(null!=m[e].parentLocale?m[e]=m[e].parentLocale:null!=m[e]&&delete m[e]);return m[e]}function w(e){var n;if(e&&e._locale&&e._locale._abbr&&(e=e._locale._abbr),!e)return L;if(!(0,r.default)(e)){if(n=q(e))return n;e=[e]}return h(e)}function C(){return(0,p.default)(m)}
-},{"../utils/is-array":68,"../utils/has-own-prop":63,"../utils/is-undefined":64,"../utils/compare-arrays":92,"../utils/deprecate":39,"./set":89,"./constructor":82,"../utils/keys":93,"./base-config":94}],113:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=u;var e=require("../units/month"),r=require("../units/constants"),t=require("../create/parsing-flags"),E=o(t);function o(e){return e&&e.__esModule?e:{default:e}}function u(t){var o,u=t._a;return u&&-2===(0,E.default)(t).overflow&&(o=u[r.MONTH]<0||u[r.MONTH]>11?r.MONTH:u[r.DATE]<1||u[r.DATE]>(0,e.daysInMonth)(u[r.YEAR],u[r.MONTH])?r.DATE:u[r.HOUR]<0||u[r.HOUR]>24||24===u[r.HOUR]&&(0!==u[r.MINUTE]||0!==u[r.SECOND]||0!==u[r.MILLISECOND])?r.HOUR:u[r.MINUTE]<0||u[r.MINUTE]>59?r.MINUTE:u[r.SECOND]<0||u[r.SECOND]>59?r.SECOND:u[r.MILLISECOND]<0||u[r.MILLISECOND]>999?r.MILLISECOND:-1,(0,E.default)(t)._overflowDayOfYear&&(o<r.YEAR||o>r.DATE)&&(o=r.DATE),(0,E.default)(t)._overflowWeeks&&-1===o&&(o=r.WEEK),(0,E.default)(t)._overflowWeekday&&-1===o&&(o=r.WEEKDAY),(0,E.default)(t).overflow=o),t}
-},{"../units/month":51,"../units/constants":107,"../create/parsing-flags":65}],125:[function(require,module,exports) {
-"use strict";function e(e,t,u){return null!=e?e:null!=t?t:u}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],117:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.configFromArray=i;var e=require("../utils/hooks"),a=require("./date-from-array"),r=require("../units/year"),t=require("../units/week-calendar-utils"),l=require("../units/constants"),u=require("./local"),_=require("../utils/defaults"),n=f(_),d=require("./parsing-flags"),o=f(d);function f(e){return e&&e.__esModule?e:{default:e}}function s(a){var r=new Date(e.hooks.now());return a._useUTC?[r.getUTCFullYear(),r.getUTCMonth(),r.getUTCDate()]:[r.getFullYear(),r.getMonth(),r.getDate()]}function i(e){var t,u,_,d,f,i=[];if(!e._d){for(_=s(e),e._w&&null==e._a[l.DATE]&&null==e._a[l.MONTH]&&y(e),null!=e._dayOfYear&&(f=(0,n.default)(e._a[l.YEAR],_[l.YEAR]),(e._dayOfYear>(0,r.daysInYear)(f)||0===e._dayOfYear)&&((0,o.default)(e)._overflowDayOfYear=!0),u=(0,a.createUTCDate)(f,0,e._dayOfYear),e._a[l.MONTH]=u.getUTCMonth(),e._a[l.DATE]=u.getUTCDate()),t=0;t<3&&null==e._a[t];++t)e._a[t]=i[t]=_[t];for(;t<7;t++)e._a[t]=i[t]=null==e._a[t]?2===t?1:0:e._a[t];24===e._a[l.HOUR]&&0===e._a[l.MINUTE]&&0===e._a[l.SECOND]&&0===e._a[l.MILLISECOND]&&(e._nextDay=!0,e._a[l.HOUR]=0),e._d=(e._useUTC?a.createUTCDate:a.createDate).apply(null,i),d=e._useUTC?e._d.getUTCDay():e._d.getDay(),null!=e._tzm&&e._d.setUTCMinutes(e._d.getUTCMinutes()-e._tzm),e._nextDay&&(e._a[l.HOUR]=24),e._w&&void 0!==e._w.d&&e._w.d!==d&&((0,o.default)(e).weekdayMismatch=!0)}}function y(e){var a,r,_,d,f,s,i,y;if(null!=(a=e._w).GG||null!=a.W||null!=a.E)f=1,s=4,r=(0,n.default)(a.GG,e._a[l.YEAR],(0,t.weekOfYear)((0,u.createLocal)(),1,4).year),_=(0,n.default)(a.W,1),((d=(0,n.default)(a.E,1))<1||d>7)&&(y=!0);else{f=e._locale._week.dow,s=e._locale._week.doy;var c=(0,t.weekOfYear)((0,u.createLocal)(),f,s);r=(0,n.default)(a.gg,e._a[l.YEAR],c.year),_=(0,n.default)(a.w,c.week),null!=a.d?((d=a.d)<0||d>6)&&(y=!0):null!=a.e?(d=a.e+f,(a.e<0||a.e>6)&&(y=!0)):d=f}_<1||_>(0,t.weeksInYear)(r,f,s)?(0,o.default)(e)._overflowWeeks=!0:null!=y?(0,o.default)(e)._overflowWeekday=!0:(i=(0,t.dayOfYearFromWeeks)(r,_,d,f,s),e._a[l.YEAR]=i.year,e._dayOfYear=i.dayOfYear)}
-},{"../utils/hooks":22,"./date-from-array":108,"../units/year":59,"../units/week-calendar-utils":123,"../units/constants":107,"./local":29,"../utils/defaults":125,"./parsing-flags":65}],116:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.configFromISO=_,exports.configFromRFC2822=G,exports.configFromString=H;var d=require("./from-string-and-format"),e=require("./date-from-array"),r=require("./from-array"),i=require("../utils/hooks"),t=require("../utils/deprecate"),a=require("./parsing-flags"),n=u(a),s=require("../units/month"),o=require("../units/day-of-week");function u(d){return d&&d.__esModule?d:{default:d}}var l=/^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/,f=/^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/,c=/Z|[+-]\d\d(?::?\d\d)?/,m=[["YYYYYY-MM-DD",/[+-]\d{6}-\d\d-\d\d/],["YYYY-MM-DD",/\d{4}-\d\d-\d\d/],["GGGG-[W]WW-E",/\d{4}-W\d\d-\d/],["GGGG-[W]WW",/\d{4}-W\d\d/,!1],["YYYY-DDD",/\d{4}-\d{3}/],["YYYY-MM",/\d{4}-\d\d/,!1],["YYYYYYMMDD",/[+-]\d{10}/],["YYYYMMDD",/\d{8}/],["GGGG[W]WWE",/\d{4}W\d{3}/],["GGGG[W]WW",/\d{4}W\d{2}/,!1],["YYYYDDD",/\d{7}/]],Y=[["HH:mm:ss.SSSS",/\d\d:\d\d:\d\d\.\d+/],["HH:mm:ss,SSSS",/\d\d:\d\d:\d\d,\d+/],["HH:mm:ss",/\d\d:\d\d:\d\d/],["HH:mm",/\d\d:\d\d/],["HHmmss.SSSS",/\d\d\d\d\d\d\.\d+/],["HHmmss,SSSS",/\d\d\d\d\d\d,\d+/],["HHmmss",/\d\d\d\d\d\d/],["HHmm",/\d\d\d\d/],["HH",/\d\d/]],S=/^\/?Date\((\-?\d+)/i;function _(e){var r,i,t,a,s,o,u=e._i,S=l.exec(u)||f.exec(u);if(S){for((0,n.default)(e).iso=!0,r=0,i=m.length;r<i;r++)if(m[r][1].exec(S[1])){a=m[r][0],t=!1!==m[r][2];break}if(null==a)return void(e._isValid=!1);if(S[3]){for(r=0,i=Y.length;r<i;r++)if(Y[r][1].exec(S[3])){s=(S[2]||" ")+Y[r][0];break}if(null==s)return void(e._isValid=!1)}if(!t&&null!=s)return void(e._isValid=!1);if(S[4]){if(!c.exec(S[4]))return void(e._isValid=!1);o="Z"}e._f=a+(s||"")+(o||""),(0,d.configFromStringAndFormat)(e)}else e._isValid=!1}var D=/^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;function p(d,e,r,i,t,a){var n=[M(d),s.defaultLocaleMonthsShort.indexOf(e),parseInt(r,10),parseInt(i,10),parseInt(t,10)];return a&&n.push(parseInt(a,10)),n}function M(d){var e=parseInt(d,10);return e<=49?2e3+e:e<=999?1900+e:e}function T(d){return d.replace(/\([^)]*\)|[\n\t]/g," ").replace(/(\s\s+)/g," ").trim()}function W(d,e,r){if(d&&o.defaultLocaleWeekdaysShort.indexOf(d)!==new Date(e[0],e[1],e[2]).getDay())return(0,n.default)(r).weekdayMismatch=!0,r._isValid=!1,!1;return!0}var g={UT:0,GMT:0,EDT:-240,EST:-300,CDT:-300,CST:-360,MDT:-360,MST:-420,PDT:-420,PST:-480};function v(d,e,r){if(d)return g[d];if(e)return 0;var i=parseInt(r,10),t=i%100;return 60*((i-t)/100)+t}function G(d){var r=D.exec(T(d._i));if(r){var i=p(r[4],r[3],r[2],r[5],r[6],r[7]);if(!W(r[1],i,d))return;d._a=i,d._tzm=v(r[8],r[9],r[10]),d._d=e.createUTCDate.apply(null,d._a),d._d.setUTCMinutes(d._d.getUTCMinutes()-d._tzm),(0,n.default)(d).rfc2822=!0}else d._isValid=!1}function H(d){var e=S.exec(d._i);null===e?(_(d),!1===d._isValid&&(delete d._isValid,G(d),!1===d._isValid&&(delete d._isValid,i.hooks.createFromInputFallback(d)))):d._d=new Date(+e[1])}i.hooks.createFromInputFallback=(0,t.deprecate)("value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged and will be removed in an upcoming major release. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.",function(d){d._d=new Date(d._i+(d._useUTC?" UTC":""))});
-},{"./from-string-and-format":115,"./date-from-array":108,"./from-array":117,"../utils/hooks":22,"../utils/deprecate":39,"./parsing-flags":65,"../units/month":51,"../units/day-of-week":46}],115:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.configFromStringAndFormat=m;var e=require("./from-string"),r=require("./from-array"),t=require("../parse/regex"),o=require("../parse/token"),u=require("../format/format"),n=require("./check-overflow"),i=d(n),a=require("../units/constants"),s=require("../utils/hooks"),f=require("./parsing-flags"),l=d(f);function d(e){return e&&e.__esModule?e:{default:e}}function m(n){if(n._f!==s.hooks.ISO_8601)if(n._f!==s.hooks.RFC_2822){n._a=[],(0,l.default)(n).empty=!0;var f,d,m,_,g,h=""+n._i,p=h.length,k=0;for(m=(0,u.expandFormat)(n._f,n._locale).match(u.formattingTokens)||[],f=0;f<m.length;f++)_=m[f],(d=(h.match((0,t.getParseRegexForToken)(_,n))||[])[0])&&((g=h.substr(0,h.indexOf(d))).length>0&&(0,l.default)(n).unusedInput.push(g),h=h.slice(h.indexOf(d)+d.length),k+=d.length),u.formatTokenFunctions[_]?(d?(0,l.default)(n).empty=!1:(0,l.default)(n).unusedTokens.push(_),(0,o.addTimeToArrayFromToken)(_,d,n)):n._strict&&!d&&(0,l.default)(n).unusedTokens.push(_);(0,l.default)(n).charsLeftOver=p-k,h.length>0&&(0,l.default)(n).unusedInput.push(h),n._a[a.HOUR]<=12&&!0===(0,l.default)(n).bigHour&&n._a[a.HOUR]>0&&((0,l.default)(n).bigHour=void 0),(0,l.default)(n).parsedDateParts=n._a.slice(0),(0,l.default)(n).meridiem=n._meridiem,n._a[a.HOUR]=c(n._locale,n._a[a.HOUR],n._meridiem),(0,r.configFromArray)(n),(0,i.default)(n)}else(0,e.configFromRFC2822)(n);else(0,e.configFromISO)(n)}function c(e,r,t){var o;return null==t?r:null!=e.meridiemHour?e.meridiemHour(r,t):null!=e.isPM?((o=e.isPM(t))&&r<12&&(r+=12),o||12!==r||(r=0),r):r}s.hooks.ISO_8601=function(){},s.hooks.RFC_2822=function(){};
-},{"./from-string":116,"./from-array":117,"../parse/regex":105,"../parse/token":106,"../format/format":103,"./check-overflow":113,"../units/constants":107,"../utils/hooks":22,"./parsing-flags":65}],114:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.configFromStringAndArray=f;var e=require("../moment/constructor"),r=require("./from-string-and-format"),t=require("./parsing-flags"),n=a(t),u=require("./valid"),i=require("../utils/extend"),o=a(i);function a(e){return e&&e.__esModule?e:{default:e}}function f(t){var i,a,f,l,d;if(0===t._f.length)return(0,n.default)(t).invalidFormat=!0,void(t._d=new Date(NaN));for(l=0;l<t._f.length;l++)d=0,i=(0,e.copyConfig)({},t),null!=t._useUTC&&(i._useUTC=t._useUTC),i._f=t._f[l],(0,r.configFromStringAndFormat)(i),(0,u.isValid)(i)&&(d+=(0,n.default)(i).charsLeftOver,d+=10*(0,n.default)(i).unusedTokens.length,(0,n.default)(i).score=d,(null==f||d<f)&&(f=d,a=i));(0,o.default)(t,a||i)}
-},{"../moment/constructor":32,"./from-string-and-format":115,"./parsing-flags":65,"./valid":31,"../utils/extend":66}],118:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.configFromObject=o;var e=require("../units/aliases"),r=require("./from-array"),t=require("../utils/map"),i=n(t);function n(e){return e&&e.__esModule?e:{default:e}}function o(t){if(!t._d){var n=(0,e.normalizeObjectUnits)(t._i);t._a=(0,i.default)([n.year,n.month,n.day||n.date,n.hour,n.minute,n.second,n.millisecond],function(e){return e&&parseInt(e,10)}),(0,r.configFromArray)(t)}}
-},{"../units/aliases":60,"./from-array":117,"../utils/map":112}],62:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.prepareConfig=x,exports.createLocalOrUTC=D;var e=require("../utils/is-array"),r=h(e),t=require("../utils/is-object"),i=h(t),u=require("../utils/is-object-empty"),o=h(u),n=require("../utils/is-undefined"),a=h(n),l=require("../utils/is-number"),f=h(l),s=require("../utils/is-date"),d=h(s),c=require("../utils/map"),_=h(c),m=require("./valid"),q=require("../moment/constructor"),g=require("../locale/locales"),p=require("../utils/hooks"),v=require("./check-overflow"),y=h(v),b=require("./from-string-and-array"),F=require("./from-string-and-format"),w=require("./from-string"),j=require("./from-array"),M=require("./from-object");function h(e){return e&&e.__esModule?e:{default:e}}function k(e){var r=new q.Moment((0,y.default)(x(e)));return r._nextDay&&(r.add(1,"d"),r._nextDay=void 0),r}function x(e){var t=e._i,i=e._f;return e._locale=e._locale||(0,g.getLocale)(e._l),null===t||void 0===i&&""===t?(0,m.createInvalid)({nullInput:!0}):("string"==typeof t&&(e._i=t=e._locale.preparse(t)),(0,q.isMoment)(t)?new q.Moment((0,y.default)(t)):((0,d.default)(t)?e._d=t:(0,r.default)(i)?(0,b.configFromStringAndArray)(e):i?(0,F.configFromStringAndFormat)(e):A(e),(0,m.isValid)(e)||(e._d=null),e))}function A(e){var t=e._i;(0,a.default)(t)?e._d=new Date(p.hooks.now()):(0,d.default)(t)?e._d=new Date(t.valueOf()):"string"==typeof t?(0,w.configFromString)(e):(0,r.default)(t)?(e._a=(0,_.default)(t.slice(0),function(e){return parseInt(e,10)}),(0,j.configFromArray)(e)):(0,i.default)(t)?(0,M.configFromObject)(e):(0,f.default)(t)?e._d=new Date(t):p.hooks.createFromInputFallback(e)}function D(e,t,u,n,a){var l={};return!0!==u&&!1!==u||(n=u,u=void 0),((0,i.default)(e)&&(0,o.default)(e)||(0,r.default)(e)&&0===e.length)&&(e=void 0),l._isAMomentObject=!0,l._useUTC=l._isUTC=a,l._l=u,l._i=e,l._f=t,l._strict=n,k(l)}
-},{"../utils/is-array":68,"../utils/is-object":110,"../utils/is-object-empty":111,"../utils/is-undefined":64,"../utils/is-number":90,"../utils/is-date":28,"../utils/map":112,"./valid":31,"../moment/constructor":32,"../locale/locales":37,"../utils/hooks":22,"./check-overflow":113,"./from-string-and-array":114,"./from-string-and-format":115,"./from-string":116,"./from-array":117,"./from-object":118}],29:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.createLocal=r;var e=require("./from-anything");function r(r,t,o,a){return(0,e.createLocalOrUTC)(r,t,o,a,!1)}
-},{"./from-anything":62}],33:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.prototypeMax=exports.prototypeMin=void 0,exports.min=u,exports.max=c;var e=require("../utils/deprecate"),t=require("../utils/is-array"),r=n(t),i=require("../create/local"),a=require("../create/valid");function n(e){return e&&e.__esModule?e:{default:e}}var s=exports.prototypeMin=(0,e.deprecate)("moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var e=i.createLocal.apply(null,arguments);return this.isValid()&&e.isValid()?e<this?this:e:(0,a.createInvalid)()}),o=exports.prototypeMax=(0,e.deprecate)("moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/",function(){var e=i.createLocal.apply(null,arguments);return this.isValid()&&e.isValid()?e>this?this:e:(0,a.createInvalid)()});function l(e,t){var a,n;if(1===t.length&&(0,r.default)(t[0])&&(t=t[0]),!t.length)return(0,i.createLocal)();for(a=t[0],n=1;n<t.length;++n)t[n].isValid()&&!t[n][e](a)||(a=t[n]);return a}function u(){return l("isBefore",[].slice.call(arguments,0))}function c(){return l("isAfter",[].slice.call(arguments,0))}
-},{"../utils/deprecate":39,"../utils/is-array":68,"../create/local":29,"../create/valid":31}],34:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=exports.now=function(){return Date.now?Date.now():+new Date};
-},{}],102:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=l,exports.isValid=s,exports.createInvalid=f;var e=require("../utils/to-int"),r=a(e),t=require("../utils/index-of"),u=a(t),i=require("./constructor"),n=require("./create");function a(e){return e&&e.__esModule?e:{default:e}}var o=["year","quarter","month","week","day","hour","minute","second","millisecond"];function l(e){for(var t in e)if(-1===u.default.call(o,t)||null!=e[t]&&isNaN(e[t]))return!1;for(var i=!1,n=0;n<o.length;++n)if(e[o[n]]){if(i)return!1;parseFloat(e[o[n]])!==(0,r.default)(e[o[n]])&&(i=!0)}return!0}function s(){return this._isValid}function f(){return(0,n.createDuration)(NaN)}
-},{"../utils/to-int":91,"../utils/index-of":119,"./constructor":43,"./create":42}],43:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.Duration=a,exports.isDuration=o;var e=require("../units/aliases"),t=require("../locale/locales"),i=require("./valid.js"),s=r(i);function r(e){return e&&e.__esModule?e:{default:e}}function a(i){var r=(0,e.normalizeObjectUnits)(i),a=r.year||0,o=r.quarter||0,n=r.month||0,l=r.week||0,u=r.day||0,c=r.hour||0,d=r.minute||0,_=r.second||0,h=r.millisecond||0;this._isValid=(0,s.default)(r),this._milliseconds=+h+1e3*_+6e4*d+1e3*c*60*60,this._days=+u+7*l,this._months=+n+3*o+12*a,this._data={},this._locale=(0,t.getLocale)(),this._bubble()}function o(e){return e instanceof a}
-},{"../units/aliases":60,"../locale/locales":37,"./valid.js":102}],109:[function(require,module,exports) {
-"use strict";function e(e){return e<0?-1*Math.round(-1*e):Math.round(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],52:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.cloneWithOffset=C,exports.getSetOffset=y,exports.getSetZone=Z,exports.setOffsetToUTC=k,exports.setOffsetToLocal=D,exports.setOffsetToParsedOffset=P,exports.hasAlignedHourOffset=L,exports.isDaylightSavingTime=V,exports.isDaylightSavingTimeShifted=b,exports.isLocal=z,exports.isUtcOffset=M,exports.isUtc=I;var t=require("../utils/zero-fill"),e=S(t),s=require("../duration/create"),i=require("../moment/add-subtract"),r=require("../moment/constructor"),f=require("../format/format"),u=require("../parse/regex"),n=require("../parse/token"),o=require("../create/local"),a=require("../create/from-anything"),h=require("../create/utc"),c=require("../utils/is-date"),l=S(c),d=require("../utils/to-int"),_=S(d),O=require("../utils/is-undefined"),m=S(O),T=require("../utils/compare-arrays"),g=S(T),p=require("../utils/hooks");function S(t){return t&&t.__esModule?t:{default:t}}function v(t,s){(0,f.addFormatToken)(t,0,0,function(){var t=this.utcOffset(),i="+";return t<0&&(t=-t,i="-"),i+(0,e.default)(~~(t/60),2)+s+(0,e.default)(~~t%60,2)})}v("Z",":"),v("ZZ",""),(0,u.addRegexToken)("Z",u.matchShortOffset),(0,u.addRegexToken)("ZZ",u.matchShortOffset),(0,n.addParseToken)(["Z","ZZ"],function(t,e,s){s._useUTC=!0,s._tzm=q(u.matchShortOffset,t)});var x=/([\+\-]|\d\d)/gi;function q(t,e){var s=(e||"").match(t);if(null===s)return null;var i=((s[s.length-1]||[])+"").match(x)||["-",0,0],r=60*i[1]+(0,_.default)(i[2]);return 0===r?0:"+"===i[0]?r:-r}function C(t,e){var s,i;return e._isUTC?(s=e.clone(),i=((0,r.isMoment)(t)||(0,l.default)(t)?t.valueOf():(0,o.createLocal)(t).valueOf())-s.valueOf(),s._d.setTime(s._d.valueOf()+i),p.hooks.updateOffset(s,!1),s):(0,o.createLocal)(t).local()}function U(t){return 15*-Math.round(t._d.getTimezoneOffset()/15)}function y(t,e,r){var f,n=this._offset||0;if(!this.isValid())return null!=t?this:NaN;if(null!=t){if("string"==typeof t){if(null===(t=q(u.matchShortOffset,t)))return this}else Math.abs(t)<16&&!r&&(t*=60);return!this._isUTC&&e&&(f=U(this)),this._offset=t,this._isUTC=!0,null!=f&&this.add(f,"m"),n!==t&&(!e||this._changeInProgress?(0,i.addSubtract)(this,(0,s.createDuration)(t-n,"m"),1,!1):this._changeInProgress||(this._changeInProgress=!0,p.hooks.updateOffset(this,!0),this._changeInProgress=null)),this}return this._isUTC?n:U(this)}function Z(t,e){return null!=t?("string"!=typeof t&&(t=-t),this.utcOffset(t,e),this):-this.utcOffset()}function k(t){return this.utcOffset(0,t)}function D(t){return this._isUTC&&(this.utcOffset(0,t),this._isUTC=!1,t&&this.subtract(U(this),"m")),this}function P(){if(null!=this._tzm)this.utcOffset(this._tzm,!1,!0);else if("string"==typeof this._i){var t=q(u.matchOffset,this._i);null!=t?this.utcOffset(t):this.utcOffset(0,!0)}return this}function L(t){return!!this.isValid()&&(t=t?(0,o.createLocal)(t).utcOffset():0,(this.utcOffset()-t)%60==0)}function V(){return this.utcOffset()>this.clone().month(0).utcOffset()||this.utcOffset()>this.clone().month(5).utcOffset()}function b(){if(!(0,m.default)(this._isDSTShifted))return this._isDSTShifted;var t={};if((0,r.copyConfig)(t,this),(t=(0,a.prepareConfig)(t))._a){var e=t._isUTC?(0,h.createUTC)(t._a):(0,o.createLocal)(t._a);this._isDSTShifted=this.isValid()&&(0,g.default)(t._a,e.toArray())>0}else this._isDSTShifted=!1;return this._isDSTShifted}function z(){return!!this.isValid()&&!this._isUTC}function M(){return!!this.isValid()&&this._isUTC}function I(){return!!this.isValid()&&(this._isUTC&&0===this._offset)}p.hooks.updateOffset=function(){};
-},{"../utils/zero-fill":120,"../duration/create":42,"../moment/add-subtract":69,"../moment/constructor":32,"../format/format":103,"../parse/regex":105,"../parse/token":106,"../create/local":29,"../create/from-anything":62,"../create/utc":30,"../utils/is-date":28,"../utils/to-int":91,"../utils/is-undefined":64,"../utils/compare-arrays":92,"../utils/hooks":22}],42:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.createDuration=p;var e=require("./constructor"),t=require("../utils/is-number"),r=f(t),o=require("../utils/to-int"),i=f(o),n=require("../utils/abs-round"),s=f(n),l=require("../utils/has-own-prop"),a=f(l),u=require("../units/constants"),d=require("../units/offset"),c=require("../create/local"),m=require("./valid");function f(e){return e&&e.__esModule?e:{default:e}}var h=/^(\-|\+)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/,M=/^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;function p(t,o){var n,l,d,m=t,f=null;return(0,e.isDuration)(t)?m={ms:t._milliseconds,d:t._days,M:t._months}:(0,r.default)(t)?(m={},o?m[o]=t:m.milliseconds=t):(f=h.exec(t))?(n="-"===f[1]?-1:1,m={y:0,d:(0,i.default)(f[u.DATE])*n,h:(0,i.default)(f[u.HOUR])*n,m:(0,i.default)(f[u.MINUTE])*n,s:(0,i.default)(f[u.SECOND])*n,ms:(0,i.default)((0,s.default)(1e3*f[u.MILLISECOND]))*n}):(f=M.exec(t))?(n="-"===f[1]?-1:(f[1],1),m={y:v(f[2],n),M:v(f[3],n),w:v(f[4],n),d:v(f[5],n),h:v(f[6],n),m:v(f[7],n),s:v(f[8],n)}):null==m?m={}:"object"==typeof m&&("from"in m||"to"in m)&&(d=q((0,c.createLocal)(m.from),(0,c.createLocal)(m.to)),(m={}).ms=d.milliseconds,m.M=d.months),l=new e.Duration(m),(0,e.isDuration)(t)&&(0,a.default)(t,"_locale")&&(l._locale=t._locale),l}function v(e,t){var r=e&&parseFloat(e.replace(",","."));return(isNaN(r)?0:r)*t}function _(e,t){var r={milliseconds:0,months:0};return r.months=t.month()-e.month()+12*(t.year()-e.year()),e.clone().add(r.months,"M").isAfter(t)&&--r.months,r.milliseconds=+t-+e.clone().add(r.months,"M"),r}function q(e,t){var r;return e.isValid()&&t.isValid()?(t=(0,d.cloneWithOffset)(t,e),e.isBefore(t)?r=_(e,t):((r=_(t,e)).milliseconds=-r.milliseconds,r.months=-r.months),r):{milliseconds:0,months:0}}p.fn=e.Duration.prototype,p.invalid=m.createInvalid;
-},{"./constructor":43,"../utils/is-number":90,"../utils/to-int":91,"../utils/abs-round":109,"../utils/has-own-prop":63,"../units/constants":107,"../units/offset":52,"../create/local":29,"./valid":102}],69:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.subtract=exports.add=void 0,exports.addSubtract=n;var e=require("./get-set"),t=require("../units/month"),r=require("../duration/create"),s=require("../utils/deprecate"),u=require("../utils/hooks"),a=require("../utils/abs-round"),i=o(a);function o(e){return e&&e.__esModule?e:{default:e}}function d(e,t){return function(u,a){var i;return null===a||isNaN(+a)||((0,s.deprecateSimple)(t,"moment()."+t+"(period, number) is deprecated. Please use moment()."+t+"(number, period). See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info."),i=u,u=a,a=i),u="string"==typeof u?+u:u,n(this,(0,r.createDuration)(u,a),e),this}}function n(r,s,a,o){var d=s._milliseconds,n=(0,i.default)(s._days),l=(0,i.default)(s._months);r.isValid()&&(o=null==o||o,l&&(0,t.setMonth)(r,(0,e.get)(r,"Month")+l*a),n&&(0,e.set)(r,"Date",(0,e.get)(r,"Date")+n*a),d&&r._d.setTime(r._d.valueOf()+d*a),o&&u.hooks.updateOffset(r,n||l))}var l=exports.add=d(1,"add"),c=exports.subtract=d(-1,"subtract");
-},{"./get-set":76,"../units/month":51,"../duration/create":42,"../utils/deprecate":39,"../utils/hooks":22,"../utils/abs-round":109}],24:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getCalendarFormat=o,exports.calendar=i;var e=require("../create/local"),t=require("../units/offset"),a=require("../utils/is-function"),r=l(a),s=require("../utils/hooks");function l(e){return e&&e.__esModule?e:{default:e}}function o(e,t){var a=e.diff(t,"days",!0);return a<-6?"sameElse":a<-1?"lastWeek":a<0?"lastDay":a<1?"sameDay":a<2?"nextDay":a<7?"nextWeek":"sameElse"}function i(a,l){var o=a||(0,e.createLocal)(),i=(0,t.cloneWithOffset)(o,this).startOf("day"),n=s.hooks.calendarFormat(this,i)||"sameElse",u=l&&((0,r.default)(l[n])?l[n].call(this,o):l[n]);return this.format(u||this.localeData().calendar(n,this,(0,e.createLocal)(o)))}
-},{"../create/local":29,"../units/offset":52,"../utils/is-function":61,"../utils/hooks":22}],70:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.clone=r;var e=require("./constructor");function r(){return new e.Moment(this)}
-},{"./constructor":32}],71:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isAfter=n,exports.isBefore=a,exports.isBetween=o,exports.isSame=u,exports.isSameOrAfter=f,exports.isSameOrBefore=c;var e=require("./constructor"),i=require("../units/aliases"),t=require("../create/local"),s=require("../utils/is-undefined"),r=l(s);function l(e){return e&&e.__esModule?e:{default:e}}function n(s,l){var n=(0,e.isMoment)(s)?s:(0,t.createLocal)(s);return!(!this.isValid()||!n.isValid())&&("millisecond"===(l=(0,i.normalizeUnits)((0,r.default)(l)?"millisecond":l))?this.valueOf()>n.valueOf():n.valueOf()<this.clone().startOf(l).valueOf())}function a(s,l){var n=(0,e.isMoment)(s)?s:(0,t.createLocal)(s);return!(!this.isValid()||!n.isValid())&&("millisecond"===(l=(0,i.normalizeUnits)((0,r.default)(l)?"millisecond":l))?this.valueOf()<n.valueOf():this.clone().endOf(l).valueOf()<n.valueOf())}function o(e,i,t,s){return("("===(s=s||"()")[0]?this.isAfter(e,t):!this.isBefore(e,t))&&(")"===s[1]?this.isBefore(i,t):!this.isAfter(i,t))}function u(s,r){var l,n=(0,e.isMoment)(s)?s:(0,t.createLocal)(s);return!(!this.isValid()||!n.isValid())&&("millisecond"===(r=(0,i.normalizeUnits)(r||"millisecond"))?this.valueOf()===n.valueOf():(l=n.valueOf(),this.clone().startOf(r).valueOf()<=l&&l<=this.clone().endOf(r).valueOf()))}function f(e,i){return this.isSame(e,i)||this.isAfter(e,i)}function c(e,i){return this.isSame(e,i)||this.isBefore(e,i)}
-},{"./constructor":32,"../units/aliases":60,"../create/local":29,"../utils/is-undefined":64}],72:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.diff=i;var e=require("../utils/abs-floor"),t=a(e),s=require("../units/offset"),r=require("../units/aliases");function a(e){return e&&e.__esModule?e:{default:e}}function i(e,a,i){var u,o,c;if(!this.isValid())return NaN;if(!(u=(0,s.cloneWithOffset)(e,this)).isValid())return NaN;switch(o=6e4*(u.utcOffset()-this.utcOffset()),a=(0,r.normalizeUnits)(a)){case"year":c=n(this,u)/12;break;case"month":c=n(this,u);break;case"quarter":c=n(this,u)/3;break;case"second":c=(this-u)/1e3;break;case"minute":c=(this-u)/6e4;break;case"hour":c=(this-u)/36e5;break;case"day":c=(this-u-o)/864e5;break;case"week":c=(this-u-o)/6048e5;break;default:c=this-u}return i?c:(0,t.default)(c)}function n(e,t){var s=12*(t.year()-e.year())+(t.month()-e.month()),r=e.clone().add(s,"months");return-(s+(t-r<0?(t-r)/(r-e.clone().add(s-1,"months")):(t-r)/(e.clone().add(s+1,"months")-r)))||0}
-},{"../utils/abs-floor":121,"../units/offset":52,"../units/aliases":60}],73:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.toString=i,exports.toISOString=a,exports.inspect=m,exports.format=Y;var t=require("../format/format"),e=require("../utils/hooks"),o=require("../utils/is-function"),r=s(o);function s(t){return t&&t.__esModule?t:{default:t}}function i(){return this.clone().locale("en").format("ddd MMM DD YYYY HH:mm:ss [GMT]ZZ")}function a(e){if(!this.isValid())return null;var o=!0!==e,s=o?this.clone().utc():this;return s.year()<0||s.year()>9999?(0,t.formatMoment)(s,o?"YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]":"YYYYYY-MM-DD[T]HH:mm:ss.SSSZ"):(0,r.default)(Date.prototype.toISOString)?o?this.toDate().toISOString():new Date(this._d.valueOf()).toISOString().replace("Z",(0,t.formatMoment)(s,"Z")):(0,t.formatMoment)(s,o?"YYYY-MM-DD[T]HH:mm:ss.SSS[Z]":"YYYY-MM-DD[T]HH:mm:ss.SSSZ")}function m(){if(!this.isValid())return"moment.invalid(/* "+this._i+" */)";var t="moment",e="";this.isLocal()||(t=0===this.utcOffset()?"moment.utc":"moment.parseZone",e="Z");var o="["+t+'("]',r=0<=this.year()&&this.year()<=9999?"YYYY":"YYYYYY",s=e+'[")]';return this.format(o+r+"-MM-DD[T]HH:mm:ss.SSS"+s)}function Y(o){o||(o=this.isUtc()?e.hooks.defaultFormatUtc:e.hooks.defaultFormat);var r=(0,t.formatMoment)(this,o);return this.localeData().postformat(r)}e.hooks.defaultFormat="YYYY-MM-DDTHH:mm:ssZ",e.hooks.defaultFormatUtc="YYYY-MM-DDTHH:mm:ss[Z]";
-},{"../format/format":103,"../utils/hooks":22,"../utils/is-function":61}],74:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.from=o,exports.fromNow=i;var e=require("../duration/create"),r=require("../create/local"),t=require("../moment/constructor");function o(o,i){return this.isValid()&&((0,t.isMoment)(o)&&o.isValid()||(0,r.createLocal)(o).isValid())?(0,e.createDuration)({to:this,from:o}).locale(this.locale()).humanize(!i):this.localeData().invalidDate()}function i(e){return this.from((0,r.createLocal)(),e)}
-},{"../duration/create":42,"../create/local":29,"../moment/constructor":32}],75:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.to=o,exports.toNow=i;var e=require("../duration/create"),t=require("../create/local"),r=require("../moment/constructor");function o(o,i){return this.isValid()&&((0,r.isMoment)(o)&&o.isValid()||(0,t.createLocal)(o).isValid())?(0,e.createDuration)({from:this,to:o}).locale(this.locale()).humanize(!i):this.localeData().invalidDate()}function i(e){return this.to((0,t.createLocal)(),e)}
-},{"../duration/create":42,"../create/local":29,"../moment/constructor":32}],77:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.lang=void 0,exports.locale=a,exports.localeData=o;var e=require("../locale/locales"),t=require("../utils/deprecate");function a(t){var a;return void 0===t?this._locale._abbr:(null!=(a=(0,e.getLocale)(t))&&(this._locale=a),this)}var l=exports.lang=(0,t.deprecate)("moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.",function(e){return void 0===e?this.localeData():this.locale(e)});function o(){return this._locale}
-},{"../locale/locales":37,"../utils/deprecate":39}],78:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.startOf=s,exports.endOf=t;var e=require("../units/aliases");function s(s){switch(s=(0,e.normalizeUnits)(s)){case"year":this.month(0);case"quarter":case"month":this.date(1);case"week":case"isoWeek":case"day":case"date":this.hours(0);case"hour":this.minutes(0);case"minute":this.seconds(0);case"second":this.milliseconds(0)}return"week"===s&&this.weekday(0),"isoWeek"===s&&this.isoWeekday(1),"quarter"===s&&this.month(3*Math.floor(this.month()/3)),this}function t(s){return void 0===(s=(0,e.normalizeUnits)(s))||"millisecond"===s?this:("date"===s&&(s="day"),this.startOf(s).add(1,"isoWeek"===s?"week":s).subtract(1,"ms"))}
-},{"../units/aliases":60}],79:[function(require,module,exports) {
-"use strict";function t(){return this._d.valueOf()-6e4*(this._offset||0)}function e(){return Math.floor(this.valueOf()/1e3)}function s(){return new Date(this.valueOf())}function n(){var t=this;return[t.year(),t.month(),t.date(),t.hour(),t.minute(),t.second(),t.millisecond()]}function o(){var t=this;return{years:t.year(),months:t.month(),date:t.date(),hours:t.hours(),minutes:t.minutes(),seconds:t.seconds(),milliseconds:t.milliseconds()}}function r(){return this.isValid()?this.toISOString():null}Object.defineProperty(exports,"__esModule",{value:!0}),exports.valueOf=t,exports.unix=e,exports.toDate=s,exports.toArray=n,exports.toObject=o,exports.toJSON=r;
-},{}],80:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isValid=n,exports.parsingFlags=a,exports.invalidAt=l;var e=require("../create/valid"),t=require("../utils/extend"),r=s(t),i=require("../create/parsing-flags"),u=s(i);function s(e){return e&&e.__esModule?e:{default:e}}function n(){return(0,e.isValid)(this)}function a(){return(0,r.default)({},(0,u.default)(this))}function l(){return(0,u.default)(this).overflow}
-},{"../create/valid":31,"../utils/extend":66,"../create/parsing-flags":65}],81:[function(require,module,exports) {
-"use strict";function t(){return{input:this._i,format:this._f,locale:this._locale,isUTC:this._isUTC,strict:this._strict}}Object.defineProperty(exports,"__esModule",{value:!0}),exports.creationData=t;
-},{}],57:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetWeekYear=h,exports.getSetISOWeekYear=G,exports.getISOWeeksInYear=l,exports.getWeeksInYear=m;var e=require("../format/format"),t=require("./aliases"),a=require("./priorities"),r=require("../parse/regex"),o=require("../parse/token"),i=require("./week-calendar-utils"),n=require("../utils/to-int"),s=u(n),g=require("../utils/hooks"),d=require("../create/local"),k=require("../create/date-from-array");function u(e){return e&&e.__esModule?e:{default:e}}function c(t,a){(0,e.addFormatToken)(0,[t,t.length],0,a)}function h(e){return Y.call(this,e,this.week(),this.weekday(),this.localeData()._week.dow,this.localeData()._week.doy)}function G(e){return Y.call(this,e,this.isoWeek(),this.isoWeekday(),1,4)}function l(){return(0,i.weeksInYear)(this.year(),1,4)}function m(){var e=this.localeData()._week;return(0,i.weeksInYear)(this.year(),e.dow,e.doy)}function Y(e,t,a,r,o){var n;return null==e?(0,i.weekOfYear)(this,r,o).year:(t>(n=(0,i.weeksInYear)(e,r,o))&&(t=n),f.call(this,e,t,a,r,o))}function f(e,t,a,r,o){var n=(0,i.dayOfYearFromWeeks)(e,t,a,r,o),s=(0,k.createUTCDate)(n.year,0,n.dayOfYear);return this.year(s.getUTCFullYear()),this.month(s.getUTCMonth()),this.date(s.getUTCDate()),this}(0,e.addFormatToken)(0,["gg",2],0,function(){return this.weekYear()%100}),(0,e.addFormatToken)(0,["GG",2],0,function(){return this.isoWeekYear()%100}),c("gggg","weekYear"),c("ggggg","weekYear"),c("GGGG","isoWeekYear"),c("GGGGG","isoWeekYear"),(0,t.addUnitAlias)("weekYear","gg"),(0,t.addUnitAlias)("isoWeekYear","GG"),(0,a.addUnitPriority)("weekYear",1),(0,a.addUnitPriority)("isoWeekYear",1),(0,r.addRegexToken)("G",r.matchSigned),(0,r.addRegexToken)("g",r.matchSigned),(0,r.addRegexToken)("GG",r.match1to2,r.match2),(0,r.addRegexToken)("gg",r.match1to2,r.match2),(0,r.addRegexToken)("GGGG",r.match1to4,r.match4),(0,r.addRegexToken)("gggg",r.match1to4,r.match4),(0,r.addRegexToken)("GGGGG",r.match1to6,r.match6),(0,r.addRegexToken)("ggggg",r.match1to6,r.match6),(0,o.addWeekParseToken)(["gggg","ggggg","GGGG","GGGGG"],function(e,t,a,r){t[r.substr(0,2)]=(0,s.default)(e)}),(0,o.addWeekParseToken)(["gg","GG"],function(e,t,a,r){t[r]=g.hooks.parseTwoDigitYear(e)});
-},{"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./week-calendar-utils":123,"../utils/to-int":91,"../utils/hooks":22,"../create/local":29,"../create/date-from-array":108}],53:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetQuarter=d;var e=require("../format/format"),r=require("./aliases"),t=require("./priorities"),i=require("../parse/regex"),a=require("../parse/token"),u=require("./constants"),o=require("../utils/to-int"),n=s(o);function s(e){return e&&e.__esModule?e:{default:e}}function d(e){return null==e?Math.ceil((this.month()+1)/3):this.month(3*(e-1)+this.month()%3)}(0,e.addFormatToken)("Q",0,"Qo","quarter"),(0,r.addUnitAlias)("quarter","Q"),(0,t.addUnitPriority)("quarter",7),(0,i.addRegexToken)("Q",i.match1),(0,a.addParseToken)("Q",function(e,r){r[u.MONTH]=3*((0,n.default)(e)-1)});
-},{"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107,"../utils/to-int":91}],45:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetDayOfMonth=void 0;var e=require("../moment/get-set"),t=require("../format/format"),r=require("./aliases"),a=require("./priorities"),o=require("../parse/regex"),n=require("../parse/token"),d=require("./constants"),i=require("../utils/to-int"),s=u(i);function u(e){return e&&e.__esModule?e:{default:e}}(0,t.addFormatToken)("D",["DD",2],"Do","date"),(0,r.addUnitAlias)("date","D"),(0,a.addUnitPriority)("date",9),(0,o.addRegexToken)("D",o.match1to2),(0,o.addRegexToken)("DD",o.match1to2,o.match2),(0,o.addRegexToken)("Do",function(e,t){return e?t._dayOfMonthOrdinalParse||t._ordinalParse:t._dayOfMonthOrdinalParseLenient}),(0,n.addParseToken)(["D","DD"],d.DATE),(0,n.addParseToken)("Do",function(e,t){t[d.DATE]=(0,s.default)(e.match(o.match1to2)[0])});var D=exports.getSetDayOfMonth=(0,e.makeGetSet)("Date",!0);
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107,"../utils/to-int":91}],47:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetDayOfYear=s;var e=require("../format/format"),r=require("./aliases"),a=require("./priorities"),t=require("../parse/regex"),D=require("./year"),d=require("../create/date-from-array"),i=require("../parse/token"),o=require("../utils/to-int"),u=n(o);function n(e){return e&&e.__esModule?e:{default:e}}function s(e){var r=Math.round((this.clone().startOf("day")-this.clone().startOf("year"))/864e5)+1;return null==e?r:this.add(e-r,"d")}(0,e.addFormatToken)("DDD",["DDDD",3],"DDDo","dayOfYear"),(0,r.addUnitAlias)("dayOfYear","DDD"),(0,a.addUnitPriority)("dayOfYear",4),(0,t.addRegexToken)("DDD",t.match1to3),(0,t.addRegexToken)("DDDD",t.match3),(0,i.addParseToken)(["DDD","DDDD"],function(e,r,a){a._dayOfYear=(0,u.default)(e)});
-},{"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"./year":59,"../create/date-from-array":108,"../parse/token":106,"../utils/to-int":91}],50:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetMinute=void 0;var e=require("../moment/get-set"),t=require("../format/format"),r=require("./aliases"),i=require("./priorities"),a=require("../parse/regex"),m=require("../parse/token"),o=require("./constants");(0,t.addFormatToken)("m",["mm",2],0,"minute"),(0,r.addUnitAlias)("minute","m"),(0,i.addUnitPriority)("minute",14),(0,a.addRegexToken)("m",a.match1to2),(0,a.addRegexToken)("mm",a.match1to2,a.match2),(0,m.addParseToken)(["m","mm"],o.MINUTE);var n=exports.getSetMinute=(0,e.makeGetSet)("Minutes",!1);
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107}],54:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetSecond=void 0;var e=require("../moment/get-set"),r=require("../format/format"),t=require("./aliases"),s=require("./priorities"),o=require("../parse/regex"),a=require("../parse/token"),d=require("./constants");(0,r.addFormatToken)("s",["ss",2],0,"second"),(0,t.addUnitAlias)("second","s"),(0,s.addUnitPriority)("second",15),(0,o.addRegexToken)("s",o.match1to2),(0,o.addRegexToken)("ss",o.match1to2,o.match2),(0,a.addParseToken)(["s","ss"],d.SECOND);var i=exports.getSetSecond=(0,e.makeGetSet)("Seconds",!1);
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107}],49:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetMillisecond=void 0;var e,t=require("../moment/get-set"),i=require("../format/format"),n=require("./aliases"),o=require("./priorities"),r=require("../parse/regex"),S=require("../parse/token"),d=require("./constants"),a=require("../utils/to-int"),s=l(a);function l(e){return e&&e.__esModule?e:{default:e}}for((0,i.addFormatToken)("S",0,0,function(){return~~(this.millisecond()/100)}),(0,i.addFormatToken)(0,["SS",2],0,function(){return~~(this.millisecond()/10)}),(0,i.addFormatToken)(0,["SSS",3],0,"millisecond"),(0,i.addFormatToken)(0,["SSSS",4],0,function(){return 10*this.millisecond()}),(0,i.addFormatToken)(0,["SSSSS",5],0,function(){return 100*this.millisecond()}),(0,i.addFormatToken)(0,["SSSSSS",6],0,function(){return 1e3*this.millisecond()}),(0,i.addFormatToken)(0,["SSSSSSS",7],0,function(){return 1e4*this.millisecond()}),(0,i.addFormatToken)(0,["SSSSSSSS",8],0,function(){return 1e5*this.millisecond()}),(0,i.addFormatToken)(0,["SSSSSSSSS",9],0,function(){return 1e6*this.millisecond()}),(0,n.addUnitAlias)("millisecond","ms"),(0,o.addUnitPriority)("millisecond",16),(0,r.addRegexToken)("S",r.match1to3,r.match1),(0,r.addRegexToken)("SS",r.match1to3,r.match2),(0,r.addRegexToken)("SSS",r.match1to3,r.match3),e="SSSS";e.length<=9;e+="S")(0,r.addRegexToken)(e,r.matchUnsigned);function c(e,t){t[d.MILLISECOND]=(0,s.default)(1e3*("0."+e))}for(e="S";e.length<=9;e+="S")(0,S.addParseToken)(e,c);var u=exports.getSetMillisecond=(0,t.makeGetSet)("Milliseconds",!1);
-},{"../moment/get-set":76,"../format/format":103,"./aliases":60,"./priorities":104,"../parse/regex":105,"../parse/token":106,"./constants":107,"../utils/to-int":91}],56:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getZoneAbbr=r,exports.getZoneName=t;var e=require("../format/format");function r(){return this._isUTC?"UTC":""}function t(){return this._isUTC?"Coordinated Universal Time":""}(0,e.addFormatToken)("z",0,0,"zoneAbbr"),(0,e.addFormatToken)("zz",0,0,"zoneName");
-},{"../format/format":103}],35:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./constructor"),t=require("./add-subtract"),r=require("./calendar"),a=require("./clone"),i=require("./compare"),s=require("./diff"),o=require("./format"),n=require("./from"),u=require("./to"),d=require("./get-set"),f=require("./locale"),c=require("./min-max"),g=require("./start-end-of"),S=require("./to-type"),l=require("./valid"),m=require("./creation-data"),O=require("../units/year"),q=require("../units/week-year"),y=require("../units/quarter"),p=require("../units/month"),h=require("../units/week"),k=require("../units/day-of-month"),D=require("../units/day-of-week"),w=require("../units/day-of-year"),W=require("../units/hour"),Y=require("../units/minute"),I=require("../units/second"),A=require("../units/millisecond"),M=require("../units/offset"),b=require("../units/timezone"),T=require("../utils/deprecate"),U=e.Moment.prototype;U.add=t.add,U.calendar=r.calendar,U.clone=a.clone,U.diff=s.diff,U.endOf=g.endOf,U.format=o.format,U.from=n.from,U.fromNow=n.fromNow,U.to=u.to,U.toNow=u.toNow,U.get=d.stringGet,U.invalidAt=l.invalidAt,U.isAfter=i.isAfter,U.isBefore=i.isBefore,U.isBetween=i.isBetween,U.isSame=i.isSame,U.isSameOrAfter=i.isSameOrAfter,U.isSameOrBefore=i.isSameOrBefore,U.isValid=l.isValid,U.lang=f.lang,U.locale=f.locale,U.localeData=f.localeData,U.max=c.prototypeMax,U.min=c.prototypeMin,U.parsingFlags=l.parsingFlags,U.set=d.stringSet,U.startOf=g.startOf,U.subtract=t.subtract,U.toArray=S.toArray,U.toObject=S.toObject,U.toDate=S.toDate,U.toISOString=o.toISOString,U.inspect=o.inspect,U.toJSON=S.toJSON,U.toString=o.toString,U.unix=S.unix,U.valueOf=S.valueOf,U.creationData=m.creationData,U.year=O.getSetYear,U.isLeapYear=O.getIsLeapYear,U.weekYear=q.getSetWeekYear,U.isoWeekYear=q.getSetISOWeekYear,U.quarter=U.quarters=y.getSetQuarter,U.month=p.getSetMonth,U.daysInMonth=p.getDaysInMonth,U.week=U.weeks=h.getSetWeek,U.isoWeek=U.isoWeeks=h.getSetISOWeek,U.weeksInYear=q.getWeeksInYear,U.isoWeeksInYear=q.getISOWeeksInYear,U.date=k.getSetDayOfMonth,U.day=U.days=D.getSetDayOfWeek,U.weekday=D.getSetLocaleDayOfWeek,U.isoWeekday=D.getSetISODayOfWeek,U.dayOfYear=w.getSetDayOfYear,U.hour=U.hours=W.getSetHour,U.minute=U.minutes=Y.getSetMinute,U.second=U.seconds=I.getSetSecond,U.millisecond=U.milliseconds=A.getSetMillisecond,U.utcOffset=M.getSetOffset,U.utc=M.setOffsetToUTC,U.local=M.setOffsetToLocal,U.parseZone=M.setOffsetToParsedOffset,U.hasAlignedHourOffset=M.hasAlignedHourOffset,U.isDST=M.isDaylightSavingTime,U.isLocal=M.isLocal,U.isUtcOffset=M.isUtcOffset,U.isUtc=M.isUtc,U.isUTC=M.isUtc,U.zoneAbbr=b.getZoneAbbr,U.zoneName=b.getZoneName,U.dates=(0,T.deprecate)("dates accessor is deprecated. Use date instead.",k.getSetDayOfMonth),U.months=(0,T.deprecate)("months accessor is deprecated. Use month instead",p.getSetMonth),U.years=(0,T.deprecate)("years accessor is deprecated. Use year instead",O.getSetYear),U.zone=(0,T.deprecate)("moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/",M.getSetZone),U.isDSTShifted=(0,T.deprecate)("isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information",M.isDaylightSavingTimeShifted),exports.default=U;
-},{"./constructor":32,"./add-subtract":69,"./calendar":24,"./clone":70,"./compare":71,"./diff":72,"./format":73,"./from":74,"./to":75,"./get-set":76,"./locale":77,"./min-max":33,"./start-end-of":78,"./to-type":79,"./valid":80,"./creation-data":81,"../units/year":59,"../units/week-year":57,"../units/quarter":53,"../units/month":51,"../units/week":58,"../units/day-of-month":45,"../units/day-of-week":46,"../units/day-of-year":47,"../units/hour":48,"../units/minute":50,"../units/second":54,"../units/millisecond":49,"../units/offset":52,"../units/timezone":56,"../utils/deprecate":39}],23:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.momentPrototype=exports.createInvalid=exports.createInZone=exports.createLocal=exports.createUnix=exports.createUTC=exports.isMoment=exports.max=exports.min=exports.now=void 0;var e=require("../create/local"),r=require("../create/utc"),t=require("../create/valid"),o=require("./constructor"),a=require("./min-max"),n=require("./now"),c=require("./prototype"),s=p(c);function p(e){return e&&e.__esModule?e:{default:e}}function x(r){return(0,e.createLocal)(1e3*r)}function i(){return e.createLocal.apply(null,arguments).parseZone()}exports.now=n.now,exports.min=a.min,exports.max=a.max,exports.isMoment=o.isMoment,exports.createUTC=r.createUTC,exports.createUnix=x,exports.createLocal=e.createLocal,exports.createInZone=i,exports.createInvalid=t.createInvalid,exports.momentPrototype=s.default;
-},{"../create/local":29,"../create/utc":30,"../create/valid":31,"./constructor":32,"./min-max":33,"./now":34,"./prototype":35}],87:[function(require,module,exports) {
-"use strict";function e(e){return e}Object.defineProperty(exports,"__esModule",{value:!0}),exports.preParsePostFormat=e;
-},{}],36:[function(require,module,exports) {
-"use strict";var e=require("./constructor"),r=require("./calendar"),a=require("./formats"),t=require("./invalid"),o=require("./ordinal"),s=require("./pre-post-format"),i=require("./relative"),l=require("./set"),n=require("../units/month"),d=require("../units/week"),u=require("../units/day-of-week"),h=require("../units/hour"),k=e.Locale.prototype;k.calendar=r.calendar,k.longDateFormat=a.longDateFormat,k.invalidDate=t.invalidDate,k.ordinal=o.ordinal,k.preparse=s.preParsePostFormat,k.postformat=s.preParsePostFormat,k.relativeTime=i.relativeTime,k.pastFuture=i.pastFuture,k.set=l.set,k.months=n.localeMonths,k.monthsShort=n.localeMonthsShort,k.monthsParse=n.localeMonthsParse,k.monthsRegex=n.monthsRegex,k.monthsShortRegex=n.monthsShortRegex,k.week=d.localeWeek,k.firstDayOfYear=d.localeFirstDayOfYear,k.firstDayOfWeek=d.localeFirstDayOfWeek,k.weekdays=u.localeWeekdays,k.weekdaysMin=u.localeWeekdaysMin,k.weekdaysShort=u.localeWeekdaysShort,k.weekdaysParse=u.localeWeekdaysParse,k.weekdaysRegex=u.weekdaysRegex,k.weekdaysShortRegex=u.weekdaysShortRegex,k.weekdaysMinRegex=u.weekdaysMinRegex,k.isPM=h.localeIsPM,k.meridiem=h.localeMeridiem;
-},{"./constructor":82,"./calendar":83,"./formats":85,"./invalid":84,"./ordinal":86,"./pre-post-format":87,"./relative":88,"./set":89,"../units/month":51,"../units/week":58,"../units/day-of-week":46,"../units/hour":48}],38:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.listMonths=a,exports.listMonthsShort=l,exports.listWeekdays=d,exports.listWeekdaysShort=f,exports.listWeekdaysMin=c;var e=require("../utils/is-number"),t=o(e),r=require("./locales"),n=require("../create/utc");function o(e){return e&&e.__esModule?e:{default:e}}function u(e,t,o,u){var s=(0,r.getLocale)(),i=(0,n.createUTC)().set(u,t);return s[o](i,e)}function s(e,r,n){if((0,t.default)(e)&&(r=e,e=void 0),e=e||"",null!=r)return u(e,r,n,"month");var o,s=[];for(o=0;o<12;o++)s[o]=u(e,o,n,"month");return s}function i(e,n,o,s){"boolean"==typeof e?((0,t.default)(n)&&(o=n,n=void 0),n=n||""):(o=n=e,e=!1,(0,t.default)(n)&&(o=n,n=void 0),n=n||"");var i,a=(0,r.getLocale)(),l=e?a._week.dow:0;if(null!=o)return u(n,(o+l)%7,s,"day");var d=[];for(i=0;i<7;i++)d[i]=u(n,(i+l)%7,s,"day");return d}function a(e,t){return s(e,t,"months")}function l(e,t){return s(e,t,"monthsShort")}function d(e,t,r){return i(e,t,r,"weekdays")}function f(e,t,r){return i(e,t,r,"weekdaysShort")}function c(e,t,r){return i(e,t,r,"weekdaysMin")}
-},{"../utils/is-number":90,"./locales":37,"../create/utc":30}],40:[function(require,module,exports) {
-"use strict";require("./prototype");var t=require("./locales"),e=require("../utils/to-int"),r=n(e);function n(t){return t&&t.__esModule?t:{default:t}}(0,t.getSetGlobalLocale)("en",{dayOfMonthOrdinalParse:/\d{1,2}(th|st|nd|rd)/,ordinal:function(t){var e=t%10;return t+(1===(0,r.default)(t%100/10)?"th":1===e?"st":2===e?"nd":3===e?"rd":"th")}});
-},{"./prototype":36,"./locales":37,"../utils/to-int":91}],25:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.listWeekdaysMin=exports.listWeekdaysShort=exports.listWeekdays=exports.listMonthsShort=exports.listMonths=exports.listLocales=exports.getLocale=exports.updateLocale=exports.defineLocale=exports.getSetGlobalLocale=void 0,require("./prototype");var e=require("./locales"),t=require("./lists"),s=require("../utils/deprecate"),o=require("../utils/hooks");require("./en"),exports.getSetGlobalLocale=e.getSetGlobalLocale,exports.defineLocale=e.defineLocale,exports.updateLocale=e.updateLocale,exports.getLocale=e.getLocale,exports.listLocales=e.listLocales,exports.listMonths=t.listMonths,exports.listMonthsShort=t.listMonthsShort,exports.listWeekdays=t.listWeekdays,exports.listWeekdaysShort=t.listWeekdaysShort,exports.listWeekdaysMin=t.listWeekdaysMin,o.hooks.lang=(0,s.deprecate)("moment.lang is deprecated. Use moment.locale instead.",e.getSetGlobalLocale),o.hooks.langData=(0,s.deprecate)("moment.langData is deprecated. Use moment.localeData instead.",e.getLocale);
-},{"./prototype":36,"./locales":37,"./lists":38,"../utils/deprecate":39,"../utils/hooks":22,"./en":40}],95:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.abs=t;var s=Math.abs;function t(){var t=this._data;return this._milliseconds=s(this._milliseconds),this._days=s(this._days),this._months=s(this._months),t.milliseconds=s(t.milliseconds),t.seconds=s(t.seconds),t.minutes=s(t.minutes),t.hours=s(t.hours),t.months=s(t.months),t.years=s(t.years),this}
-},{}],96:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.add=r,exports.subtract=s;var e=require("./create");function t(t,r,s,n){var i=(0,e.createDuration)(r,s);return t._milliseconds+=n*i._milliseconds,t._days+=n*i._days,t._months+=n*i._months,t._bubble()}function r(e,r){return t(this,e,r,1)}function s(e,r){return t(this,e,r,-1)}
-},{"./create":42}],124:[function(require,module,exports) {
-"use strict";function e(e){return e<0?Math.floor(e):Math.ceil(e)}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],98:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.bubble=o,exports.daysToMonths=i,exports.monthsToDays=l;var e=require("../utils/abs-floor"),t=a(e),s=require("../utils/abs-ceil"),r=a(s),u=require("../create/date-from-array");function a(e){return e&&e.__esModule?e:{default:e}}function o(){var e,s,u,a,o,n=this._milliseconds,d=this._days,f=this._months,c=this._data;return n>=0&&d>=0&&f>=0||n<=0&&d<=0&&f<=0||(n+=864e5*(0,r.default)(l(f)+d),d=0,f=0),c.milliseconds=n%1e3,e=(0,t.default)(n/1e3),c.seconds=e%60,s=(0,t.default)(e/60),c.minutes=s%60,u=(0,t.default)(s/60),c.hours=u%24,d+=(0,t.default)(u/24),f+=o=(0,t.default)(i(d)),d-=(0,r.default)(l(o)),a=(0,t.default)(f/12),f%=12,c.days=d,c.months=f,c.years=a,this}function i(e){return 4800*e/146097}function l(e){return 146097*e/4800}
-},{"../utils/abs-floor":121,"../utils/abs-ceil":124,"../create/date-from-array":108}],97:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.asYears=exports.asMonths=exports.asWeeks=exports.asDays=exports.asHours=exports.asMinutes=exports.asSeconds=exports.asMilliseconds=void 0,exports.as=n,exports.valueOf=a;var s=require("./bubble"),e=require("../units/aliases"),t=require("../utils/to-int"),r=o(t);function o(s){return s&&s.__esModule?s:{default:s}}function n(t){if(!this.isValid())return NaN;var r,o,n=this._milliseconds;if("month"===(t=(0,e.normalizeUnits)(t))||"year"===t)return r=this._days+n/864e5,o=this._months+(0,s.daysToMonths)(r),"month"===t?o:o/12;switch(r=this._days+Math.round((0,s.monthsToDays)(this._months)),t){case"week":return r/7+n/6048e5;case"day":return r+n/864e5;case"hour":return 24*r+n/36e5;case"minute":return 1440*r+n/6e4;case"second":return 86400*r+n/1e3;case"millisecond":return Math.floor(864e5*r)+n;default:throw new Error("Unknown unit "+t)}}function a(){return this.isValid()?this._milliseconds+864e5*this._days+this._months%12*2592e6+31536e6*(0,r.default)(this._months/12):NaN}function i(s){return function(){return this.as(s)}}var u=exports.asMilliseconds=i("ms"),h=exports.asSeconds=i("s"),d=exports.asMinutes=i("m"),l=exports.asHours=i("h"),c=exports.asDays=i("d"),p=exports.asWeeks=i("w"),x=exports.asMonths=i("M"),m=exports.asYears=i("y");
-},{"./bubble":98,"../units/aliases":60,"../utils/to-int":91}],99:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.clone=r;var e=require("./create");function r(){return(0,e.createDuration)(this)}
-},{"./create":42}],100:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.years=exports.months=exports.days=exports.hours=exports.minutes=exports.seconds=exports.milliseconds=void 0,exports.get=o,exports.weeks=c;var s=require("../units/aliases"),e=require("../utils/abs-floor"),t=r(e);function r(s){return s&&s.__esModule?s:{default:s}}function o(e){return e=(0,s.normalizeUnits)(e),this.isValid()?this[e+"s"]():NaN}function i(s){return function(){return this.isValid()?this._data[s]:NaN}}var n=exports.milliseconds=i("milliseconds"),u=exports.seconds=i("seconds"),a=exports.minutes=i("minutes"),d=exports.hours=i("hours"),p=exports.days=i("days"),l=exports.months=i("months"),x=exports.years=i("years");function c(){return(0,t.default)(this.days()/7)}
-},{"../units/aliases":60,"../utils/abs-floor":121}],44:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetRelativeTimeRounding=i,exports.getSetRelativeTimeThreshold=n,exports.humanize=o;var e=require("./create"),t=Math.round,s={ss:44,s:45,m:45,h:22,d:26,M:11};function r(e,t,s,r,a){return a.relativeTime(t||1,!!s,e,r)}function a(a,i,n){var o=(0,e.createDuration)(a).abs(),u=t(o.as("s")),d=t(o.as("m")),h=t(o.as("h")),l=t(o.as("d")),c=t(o.as("M")),m=t(o.as("y")),v=u<=s.ss&&["s",u]||u<s.s&&["ss",u]||d<=1&&["m"]||d<s.m&&["mm",d]||h<=1&&["h"]||h<s.h&&["hh",h]||l<=1&&["d"]||l<s.d&&["dd",l]||c<=1&&["M"]||c<s.M&&["MM",c]||m<=1&&["y"]||["yy",m];return v[2]=i,v[3]=+a>0,v[4]=n,r.apply(null,v)}function i(e){return void 0===e?t:"function"==typeof e&&(t=e,!0)}function n(e,t){return void 0!==s[e]&&(void 0===t?s[e]:(s[e]=t,"s"===e&&(s.ss=t-1),!0))}function o(e){if(!this.isValid())return this.localeData().invalidDate();var t=this.localeData(),s=a(this,!e,t);return e&&(s=t.pastFuture(+this,s)),t.postformat(s)}
-},{"./create":42}],101:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.toISOString=a;var t=require("../utils/abs-floor"),e=s(t);function s(t){return t&&t.__esModule?t:{default:t}}var i=Math.abs;function r(t){return(t>0)-(t<0)||+t}function a(){if(!this.isValid())return this.localeData().invalidDate();var t,s,a=i(this._milliseconds)/1e3,n=i(this._days),l=i(this._months);t=(0,e.default)(a/60),s=(0,e.default)(t/60),a%=60,t%=60;var o=(0,e.default)(l/12),u=l%=12,d=n,h=s,f=t,c=a?a.toFixed(3).replace(/\.?0+$/,""):"",_=this.asSeconds();if(!_)return"P0D";var v=_<0?"-":"",M=r(this._months)!==r(_)?"-":"",m=r(this._days)!==r(_)?"-":"",p=r(this._milliseconds)!==r(_)?"-":"";return v+"P"+(o?M+o+"Y":"")+(u?M+u+"M":"")+(d?m+d+"D":"")+(h||f||c?"T":"")+(h?p+h+"H":"")+(f?p+f+"M":"")+(c?p+c+"S":"")}
-},{"../utils/abs-floor":121}],41:[function(require,module,exports) {
-"use strict";var e=require("./constructor"),s=require("./abs"),a=require("./add-subtract"),t=require("./as"),r=require("./bubble"),i=require("./clone"),o=require("./get"),n=require("./humanize"),u=require("./iso-string"),l=require("../moment/locale"),c=require("./valid"),d=require("../utils/deprecate"),S=e.Duration.prototype;S.isValid=c.isValid,S.abs=s.abs,S.add=a.add,S.subtract=a.subtract,S.as=t.as,S.asMilliseconds=t.asMilliseconds,S.asSeconds=t.asSeconds,S.asMinutes=t.asMinutes,S.asHours=t.asHours,S.asDays=t.asDays,S.asWeeks=t.asWeeks,S.asMonths=t.asMonths,S.asYears=t.asYears,S.valueOf=t.valueOf,S._bubble=r.bubble,S.clone=i.clone,S.get=o.get,S.milliseconds=o.milliseconds,S.seconds=o.seconds,S.minutes=o.minutes,S.hours=o.hours,S.days=o.days,S.weeks=o.weeks,S.months=o.months,S.years=o.years,S.humanize=n.humanize,S.toISOString=u.toISOString,S.toString=u.toISOString,S.toJSON=u.toISOString,S.locale=l.locale,S.localeData=l.localeData,S.toIsoString=(0,d.deprecate)("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)",u.toISOString),S.lang=l.lang;
-},{"./constructor":43,"./abs":95,"./add-subtract":96,"./as":97,"./bubble":98,"./clone":99,"./get":100,"./humanize":44,"./iso-string":101,"../moment/locale":77,"./valid":102,"../utils/deprecate":39}],26:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.getSetRelativeTimeThreshold=exports.getSetRelativeTimeRounding=exports.isDuration=exports.createDuration=void 0,require("./prototype");var e=require("./create"),t=require("./constructor"),r=require("./humanize");exports.createDuration=e.createDuration,exports.isDuration=t.isDuration,exports.getSetRelativeTimeRounding=r.getSetRelativeTimeRounding,exports.getSetRelativeTimeThreshold=r.getSetRelativeTimeThreshold;
-},{"./prototype":41,"./create":42,"./constructor":43,"./humanize":44}],55:[function(require,module,exports) {
-"use strict";var e=require("../format/format"),a=require("../parse/regex"),r=require("../parse/token"),t=require("../utils/to-int"),n=d(t);function d(e){return e&&e.__esModule?e:{default:e}}(0,e.addFormatToken)("X",0,0,"unix"),(0,e.addFormatToken)("x",0,0,"valueOf"),(0,a.addRegexToken)("x",a.matchSigned),(0,a.addRegexToken)("X",a.matchTimestamp),(0,r.addParseToken)("X",function(e,a,r){r._d=new Date(1e3*parseFloat(e,10))}),(0,r.addParseToken)("x",function(e,a,r){r._d=new Date((0,n.default)(e))});
-},{"../format/format":103,"../parse/regex":105,"../parse/token":106,"../utils/to-int":91}],27:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.normalizeUnits=void 0,require("./day-of-month"),require("./day-of-week"),require("./day-of-year"),require("./hour"),require("./millisecond"),require("./minute"),require("./month"),require("./offset"),require("./quarter"),require("./second"),require("./timestamp"),require("./timezone"),require("./week-year"),require("./week"),require("./year");var e=require("./aliases");exports.normalizeUnits=e.normalizeUnits;
-},{"./day-of-month":45,"./day-of-week":46,"./day-of-year":47,"./hour":48,"./millisecond":49,"./minute":50,"./month":51,"./offset":52,"./quarter":53,"./second":54,"./timestamp":55,"./timezone":56,"./week-year":57,"./week":58,"./year":59,"./aliases":60}],21:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var o=require("./lib/utils/hooks"),e=require("./lib/moment/moment"),s=require("./lib/moment/calendar"),t=require("./lib/locale/locale"),i=require("./lib/duration/duration"),a=require("./lib/units/units"),l=require("./lib/utils/is-date"),r=n(l);function n(o){return o&&o.__esModule?o:{default:o}}o.hooks.version="2.20.1",(0,o.setHookCallback)(e.createLocal),o.hooks.fn=e.momentPrototype,o.hooks.min=e.min,o.hooks.max=e.max,o.hooks.now=e.now,o.hooks.utc=e.createUTC,o.hooks.unix=e.createUnix,o.hooks.months=t.listMonths,o.hooks.isDate=r.default,o.hooks.locale=t.getSetGlobalLocale,o.hooks.invalid=e.createInvalid,o.hooks.duration=i.createDuration,o.hooks.isMoment=e.isMoment,o.hooks.weekdays=t.listWeekdays,o.hooks.parseZone=e.createInZone,o.hooks.localeData=t.getLocale,o.hooks.isDuration=i.isDuration,o.hooks.monthsShort=t.listMonthsShort,o.hooks.weekdaysMin=t.listWeekdaysMin,o.hooks.defineLocale=t.defineLocale,o.hooks.updateLocale=t.updateLocale,o.hooks.locales=t.listLocales,o.hooks.weekdaysShort=t.listWeekdaysShort,o.hooks.normalizeUnits=a.normalizeUnits,o.hooks.relativeTimeRounding=i.getSetRelativeTimeRounding,o.hooks.relativeTimeThreshold=i.getSetRelativeTimeThreshold,o.hooks.calendarFormat=s.getCalendarFormat,o.hooks.prototype=e.momentPrototype,o.hooks.HTML5_FMT={DATETIME_LOCAL:"YYYY-MM-DDTHH:mm",DATETIME_LOCAL_SECONDS:"YYYY-MM-DDTHH:mm:ss",DATETIME_LOCAL_MS:"YYYY-MM-DDTHH:mm:ss.SSS",DATE:"YYYY-MM-DD",TIME:"HH:mm",TIME_SECONDS:"HH:mm:ss",TIME_MS:"HH:mm:ss.SSS",WEEK:"YYYY-[W]WW",MONTH:"YYYY-MM"},exports.default=o.hooks;
-},{"./lib/utils/hooks":22,"./lib/moment/moment":23,"./lib/moment/calendar":24,"./lib/locale/locale":25,"./lib/duration/duration":26,"./lib/units/units":27,"./lib/utils/is-date":28}],18:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={methods:{getMonthViewStartDay:function(t,e,a){e=parseInt(e);var s=this.moment(t),r=this.moment(s.startOf(a));return s.subtract(r.day(),"days"),r.day()<e&&s.subtract(7,"days"),s.add(e,"days"),s},getMonthViewEndDay:function(t){return this.getMonthViewStartDay().add(6,"weeks")}}};
-},{}],19:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={methods:{genWeekTitle:function(e){var t=this.prefixCls+"-week-title",s=this.moment().localeData().weekdaysShort(),i=this.firstDay-1,a=s.map(function(a){return++i>=7&&(i=0),e("div",{class:[t+"-item"]},[s[i]])});return e("div",{class:[t]},[a])},genCalendateItem:function(e){var t=this,s=this.genItemRow(e),i=[];return this.monthData.map(function(a,o){var l=e("div",{class:t.prefixCls+"-day-item"},[t.$scopedSlots.default?t.$scopedSlots.default(a):t.$slots.default]);s.children.push(l),o-1>0&&(o+1)%7==0&&(i.push(s),s=t.genItemRow(e))}),e("div",{class:[this.prefixCls+"-body"]},[i])},genItemRow:function(e){return e("div",{class:[this.prefixCls+"-body-row"]},[])}}};
-},{}],20:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default={computed:{headerDateText:function(){return"week"===this.mode?this.moment(this.currentDate).startOf("week").format("YYYY-MM-DD")+" - "+this.moment(this.currentDate).endOf("week").format("YYYY-MM-DD"):this.moment(this.currentDate).format("YYYY-MM")}},methods:{genHeaderCenter:function(e){var t=e("a",{class:[this.prefixCls+"-control",this.prefixCls+"-prev"],on:{click:this.prev}},[this.prevNode||"<"]),s=e("a",{class:[this.prefixCls+"-control",this.prefixCls+"-next"],on:{click:this.next}},[this.nextNode||">"]),r=e("span",{class:[this.prefixCls+"-header-date"]},[this.headerDateText]);return e("div",{class:[this.prefixCls+"-header-center"]},[t,r,s])},genHeader:function(e){var t=e("div",{class:[this.prefixCls+"-header-left"]},[this.$slots["header-left"]]),s=e("div",{class:[this.prefixCls+"-header-right"]},[this.$slots["header-right"]]);return e("div",{class:[this.prefixCls+"-header"]},[t,this.genHeaderCenter(e),s])}}};
-},{}],14:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var t=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var a=arguments[e];for(var n in a)Object.prototype.hasOwnProperty.call(a,n)&&(t[n]=a[n])}return t},e=require("moment"),a=u(e),n=require("./date-func"),i=u(n),r=require("./components/body"),o=u(r),s=require("./components/header"),h=u(s);function u(t){return t&&t.__esModule?t:{default:t}}var m="vue-calendar";exports.default={name:m,mixins:[o.default,h.default,i.default],props:{value:null,dateData:{type:Array,default:function(){return[]}},matchKey:{type:String,default:"date"},locale:{type:String,default:"zh-cn"},firstDay:{type:Number,default:0},mode:{type:String,default:"month",validator:function(t){return"month"===t||"week"===t}},prefixCls:{type:String,default:m},onMonthChange:Function,onPrev:Function,onNext:Function},computed:{monthData:function(){var e=this,a=this.dateData,n=this.currentDate,i=this.firstDay,r=this.mode;if(!n)return[];var o=this.getMonthViewStartDay(n,i,r),s=[],h=6;"week"===this.mode&&(h=1);for(var u=0;u<7*h;u++){var m=a.find(function(t){return o.isSame(e.moment(new Date(t[e.matchKey])),"day")});s.push(t({},this.getItemStatus(o),{data:m||{},date:{year:o.year(),month:o.month()+1,date:o.date(),day:o.day(),full:o.format("YYYY-MM-DD")}})),o.add(1,"day")}return s}},methods:{prev:function(){this.currentDate=this.moment(this.currentDate).subtract(1,this.mode+"s").startOf(this.mode),this.onPrev&&this.onPrev({startDay:this.monthData[0].date,endDay:this.monthData[this.monthData.length-1].date})},next:function(){this.currentDate=this.moment(this.currentDate).add(1,this.mode+"s").startOf(this.mode),this.onNext&&this.onNext({startDay:this.monthData[0].date,endDay:this.monthData[this.monthData.length-1].date})},getItemStatus:function(t){var e=t.isSame(this.currentDate,"month"),a=!1,n=!1,i=!e&&t.isBefore(this.currentDate,"month"),r=!e&&t.isAfter(this.currentDate,"month");return i&&(a=t.isSame(this.moment(t).endOf("month").format("YYYY-MM-DD"))),r&&(n=t.isSame(this.moment(t).startOf("month").format("YYYY-MM-DD"))),{isPrevMonth:i,isPrevLastDay:a,isNextMonth:r,isNextFirstDay:n,isToday:t.isSame(this.moment(this.today),"day"),isCurMonth:e}},viewDataChage:function(){this.onMonthChange&&this.onMonthChange({startDay:this.monthData[0].date,endDay:this.monthData[this.monthData.length-1].date})}},watch:{value:{immediate:!0,handler:function(t){this.currentDate=this.moment(t),this.today||(this.today=t)}},currentDate:function(t,e){t.isSame(e,"day")||(this.$emit("input",t.format("YYYY-MM-DD")),this.viewDataChage())},mode:function(t){this.viewDataChage()}},created:function(){this.moment.locale(this.locale)},data:function(){return{today:"",currentDate:null,moment:a.default}},render:function(t){return t("div",{class:[this.prefixCls]},[this.genHeader(t),this.genWeekTitle(t),this.genCalendateItem(t)])}};
-},{"moment":21,"./date-func":18,"./components/body":19,"./components/header":20}],15:[function(require,module,exports) {
+'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/*!
+ * Vue.js v2.5.13
+ * (c) 2014-2017 Evan You
+ * Released under the MIT License.
+ */
+/*  */
+
+var emptyObject = Object.freeze({});
+
+// these helpers produces better vm code in JS engines due to their
+// explicitness and function inlining
+function isUndef(v) {
+  return v === undefined || v === null;
+}
+
+function isDef(v) {
+  return v !== undefined && v !== null;
+}
+
+function isTrue(v) {
+  return v === true;
+}
+
+function isFalse(v) {
+  return v === false;
+}
+
+/**
+ * Check if value is primitive
+ */
+function isPrimitive(value) {
+  return typeof value === 'string' || typeof value === 'number' ||
+  // $flow-disable-line
+  typeof value === 'symbol' || typeof value === 'boolean';
+}
+
+/**
+ * Quick object check - this is primarily used to tell
+ * Objects from primitive values when we know the value
+ * is a JSON-compliant type.
+ */
+function isObject(obj) {
+  return obj !== null && typeof obj === 'object';
+}
+
+/**
+ * Get the raw type string of a value e.g. [object Object]
+ */
+var _toString = Object.prototype.toString;
+
+function toRawType(value) {
+  return _toString.call(value).slice(8, -1);
+}
+
+/**
+ * Strict object type check. Only returns true
+ * for plain JavaScript objects.
+ */
+function isPlainObject(obj) {
+  return _toString.call(obj) === '[object Object]';
+}
+
+function isRegExp(v) {
+  return _toString.call(v) === '[object RegExp]';
+}
+
+/**
+ * Check if val is a valid array index.
+ */
+function isValidArrayIndex(val) {
+  var n = parseFloat(String(val));
+  return n >= 0 && Math.floor(n) === n && isFinite(val);
+}
+
+/**
+ * Convert a value to a string that is actually rendered.
+ */
+function toString(val) {
+  return val == null ? '' : typeof val === 'object' ? JSON.stringify(val, null, 2) : String(val);
+}
+
+/**
+ * Convert a input value to a number for persistence.
+ * If the conversion fails, return original string.
+ */
+function toNumber(val) {
+  var n = parseFloat(val);
+  return isNaN(n) ? val : n;
+}
+
+/**
+ * Make a map and return a function for checking if a key
+ * is in that map.
+ */
+function makeMap(str, expectsLowerCase) {
+  var map = Object.create(null);
+  var list = str.split(',');
+  for (var i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+  return expectsLowerCase ? function (val) {
+    return map[val.toLowerCase()];
+  } : function (val) {
+    return map[val];
+  };
+}
+
+/**
+ * Check if a tag is a built-in tag.
+ */
+var isBuiltInTag = makeMap('slot,component', true);
+
+/**
+ * Check if a attribute is a reserved attribute.
+ */
+var isReservedAttribute = makeMap('key,ref,slot,slot-scope,is');
+
+/**
+ * Remove an item from an array
+ */
+function remove(arr, item) {
+  if (arr.length) {
+    var index = arr.indexOf(item);
+    if (index > -1) {
+      return arr.splice(index, 1);
+    }
+  }
+}
+
+/**
+ * Check whether the object has the property.
+ */
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+function hasOwn(obj, key) {
+  return hasOwnProperty.call(obj, key);
+}
+
+/**
+ * Create a cached version of a pure function.
+ */
+function cached(fn) {
+  var cache = Object.create(null);
+  return function cachedFn(str) {
+    var hit = cache[str];
+    return hit || (cache[str] = fn(str));
+  };
+}
+
+/**
+ * Camelize a hyphen-delimited string.
+ */
+var camelizeRE = /-(\w)/g;
+var camelize = cached(function (str) {
+  return str.replace(camelizeRE, function (_, c) {
+    return c ? c.toUpperCase() : '';
+  });
+});
+
+/**
+ * Capitalize a string.
+ */
+var capitalize = cached(function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+});
+
+/**
+ * Hyphenate a camelCase string.
+ */
+var hyphenateRE = /\B([A-Z])/g;
+var hyphenate = cached(function (str) {
+  return str.replace(hyphenateRE, '-$1').toLowerCase();
+});
+
+/**
+ * Simple bind, faster than native
+ */
+function bind(fn, ctx) {
+  function boundFn(a) {
+    var l = arguments.length;
+    return l ? l > 1 ? fn.apply(ctx, arguments) : fn.call(ctx, a) : fn.call(ctx);
+  }
+  // record original fn length
+  boundFn._length = fn.length;
+  return boundFn;
+}
+
+/**
+ * Convert an Array-like object to a real Array.
+ */
+function toArray(list, start) {
+  start = start || 0;
+  var i = list.length - start;
+  var ret = new Array(i);
+  while (i--) {
+    ret[i] = list[i + start];
+  }
+  return ret;
+}
+
+/**
+ * Mix properties into target object.
+ */
+function extend(to, _from) {
+  for (var key in _from) {
+    to[key] = _from[key];
+  }
+  return to;
+}
+
+/**
+ * Merge an Array of Objects into a single Object.
+ */
+function toObject(arr) {
+  var res = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i]) {
+      extend(res, arr[i]);
+    }
+  }
+  return res;
+}
+
+/**
+ * Perform no operation.
+ * Stubbing args to make Flow happy without leaving useless transpiled code
+ * with ...rest (https://flow.org/blog/2017/05/07/Strict-Function-Call-Arity/)
+ */
+function noop(a, b, c) {}
+
+/**
+ * Always return false.
+ */
+var no = function (a, b, c) {
+  return false;
+};
+
+/**
+ * Return same value
+ */
+var identity = function (_) {
+  return _;
+};
+
+/**
+ * Generate a static keys string from compiler modules.
+ */
+
+/**
+ * Check if two values are loosely equal - that is,
+ * if they are plain objects, do they have the same shape?
+ */
+function looseEqual(a, b) {
+  if (a === b) {
+    return true;
+  }
+  var isObjectA = isObject(a);
+  var isObjectB = isObject(b);
+  if (isObjectA && isObjectB) {
+    try {
+      var isArrayA = Array.isArray(a);
+      var isArrayB = Array.isArray(b);
+      if (isArrayA && isArrayB) {
+        return a.length === b.length && a.every(function (e, i) {
+          return looseEqual(e, b[i]);
+        });
+      } else if (!isArrayA && !isArrayB) {
+        var keysA = Object.keys(a);
+        var keysB = Object.keys(b);
+        return keysA.length === keysB.length && keysA.every(function (key) {
+          return looseEqual(a[key], b[key]);
+        });
+      } else {
+        /* istanbul ignore next */
+        return false;
+      }
+    } catch (e) {
+      /* istanbul ignore next */
+      return false;
+    }
+  } else if (!isObjectA && !isObjectB) {
+    return String(a) === String(b);
+  } else {
+    return false;
+  }
+}
+
+function looseIndexOf(arr, val) {
+  for (var i = 0; i < arr.length; i++) {
+    if (looseEqual(arr[i], val)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+/**
+ * Ensure a function is called only once.
+ */
+function once(fn) {
+  var called = false;
+  return function () {
+    if (!called) {
+      called = true;
+      fn.apply(this, arguments);
+    }
+  };
+}
+
+var SSR_ATTR = 'data-server-rendered';
+
+var ASSET_TYPES = ['component', 'directive', 'filter'];
+
+var LIFECYCLE_HOOKS = ['beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeUpdate', 'updated', 'beforeDestroy', 'destroyed', 'activated', 'deactivated', 'errorCaptured'];
+
+/*  */
+
+var config = {
+  /**
+   * Option merge strategies (used in core/util/options)
+   */
+  // $flow-disable-line
+  optionMergeStrategies: Object.create(null),
+
+  /**
+   * Whether to suppress warnings.
+   */
+  silent: false,
+
+  /**
+   * Show production mode tip message on boot?
+   */
+  productionTip: 'development' !== 'production',
+
+  /**
+   * Whether to enable devtools
+   */
+  devtools: 'development' !== 'production',
+
+  /**
+   * Whether to record perf
+   */
+  performance: false,
+
+  /**
+   * Error handler for watcher errors
+   */
+  errorHandler: null,
+
+  /**
+   * Warn handler for watcher warns
+   */
+  warnHandler: null,
+
+  /**
+   * Ignore certain custom elements
+   */
+  ignoredElements: [],
+
+  /**
+   * Custom user key aliases for v-on
+   */
+  // $flow-disable-line
+  keyCodes: Object.create(null),
+
+  /**
+   * Check if a tag is reserved so that it cannot be registered as a
+   * component. This is platform-dependent and may be overwritten.
+   */
+  isReservedTag: no,
+
+  /**
+   * Check if an attribute is reserved so that it cannot be used as a component
+   * prop. This is platform-dependent and may be overwritten.
+   */
+  isReservedAttr: no,
+
+  /**
+   * Check if a tag is an unknown element.
+   * Platform-dependent.
+   */
+  isUnknownElement: no,
+
+  /**
+   * Get the namespace of an element
+   */
+  getTagNamespace: noop,
+
+  /**
+   * Parse the real tag name for the specific platform.
+   */
+  parsePlatformTagName: identity,
+
+  /**
+   * Check if an attribute must be bound using property, e.g. value
+   * Platform-dependent.
+   */
+  mustUseProp: no,
+
+  /**
+   * Exposed for legacy reasons
+   */
+  _lifecycleHooks: LIFECYCLE_HOOKS
+};
+
+/*  */
+
+/**
+ * Check if a string starts with $ or _
+ */
+function isReserved(str) {
+  var c = (str + '').charCodeAt(0);
+  return c === 0x24 || c === 0x5F;
+}
+
+/**
+ * Define a property.
+ */
+function def(obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  });
+}
+
+/**
+ * Parse simple path.
+ */
+var bailRE = /[^\w.$]/;
+function parsePath(path) {
+  if (bailRE.test(path)) {
+    return;
+  }
+  var segments = path.split('.');
+  return function (obj) {
+    for (var i = 0; i < segments.length; i++) {
+      if (!obj) {
+        return;
+      }
+      obj = obj[segments[i]];
+    }
+    return obj;
+  };
+}
+
+/*  */
+
+// can we use __proto__?
+var hasProto = '__proto__' in {};
+
+// Browser environment sniffing
+var inBrowser = typeof window !== 'undefined';
+var inWeex = typeof WXEnvironment !== 'undefined' && !!WXEnvironment.platform;
+var weexPlatform = inWeex && WXEnvironment.platform.toLowerCase();
+var UA = inBrowser && window.navigator.userAgent.toLowerCase();
+var isIE = UA && /msie|trident/.test(UA);
+var isIE9 = UA && UA.indexOf('msie 9.0') > 0;
+var isEdge = UA && UA.indexOf('edge/') > 0;
+var isAndroid = UA && UA.indexOf('android') > 0 || weexPlatform === 'android';
+var isIOS = UA && /iphone|ipad|ipod|ios/.test(UA) || weexPlatform === 'ios';
+var isChrome = UA && /chrome\/\d+/.test(UA) && !isEdge;
+
+// Firefox has a "watch" function on Object.prototype...
+var nativeWatch = {}.watch;
+
+var supportsPassive = false;
+if (inBrowser) {
+  try {
+    var opts = {};
+    Object.defineProperty(opts, 'passive', {
+      get: function get() {
+        /* istanbul ignore next */
+        supportsPassive = true;
+      }
+    }); // https://github.com/facebook/flow/issues/285
+    window.addEventListener('test-passive', null, opts);
+  } catch (e) {}
+}
+
+// this needs to be lazy-evaled because vue may be required before
+// vue-server-renderer can set VUE_ENV
+var _isServer;
+var isServerRendering = function () {
+  if (_isServer === undefined) {
+    /* istanbul ignore if */
+    if (!inBrowser && typeof global !== 'undefined') {
+      // detect presence of vue-server-renderer and avoid
+      // Webpack shimming the process
+      _isServer = global['process'].env.VUE_ENV === 'server';
+    } else {
+      _isServer = false;
+    }
+  }
+  return _isServer;
+};
+
+// detect devtools
+var devtools = inBrowser && window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+/* istanbul ignore next */
+function isNative(Ctor) {
+  return typeof Ctor === 'function' && /native code/.test(Ctor.toString());
+}
+
+var hasSymbol = typeof Symbol !== 'undefined' && isNative(Symbol) && typeof Reflect !== 'undefined' && isNative(Reflect.ownKeys);
+
+var _Set;
+/* istanbul ignore if */ // $flow-disable-line
+if (typeof Set !== 'undefined' && isNative(Set)) {
+  // use native Set when available.
+  _Set = Set;
+} else {
+  // a non-standard Set polyfill that only works with primitive keys.
+  _Set = function () {
+    function Set() {
+      this.set = Object.create(null);
+    }
+    Set.prototype.has = function has(key) {
+      return this.set[key] === true;
+    };
+    Set.prototype.add = function add(key) {
+      this.set[key] = true;
+    };
+    Set.prototype.clear = function clear() {
+      this.set = Object.create(null);
+    };
+
+    return Set;
+  }();
+}
+
+/*  */
+
+var warn = noop;
+var tip = noop;
+var generateComponentTrace = noop; // work around flow check
+var formatComponentName = noop;
+
+if ('development' !== 'production') {
+  var hasConsole = typeof console !== 'undefined';
+  var classifyRE = /(?:^|[-_])(\w)/g;
+  var classify = function (str) {
+    return str.replace(classifyRE, function (c) {
+      return c.toUpperCase();
+    }).replace(/[-_]/g, '');
+  };
+
+  warn = function (msg, vm) {
+    var trace = vm ? generateComponentTrace(vm) : '';
+
+    if (config.warnHandler) {
+      config.warnHandler.call(null, msg, vm, trace);
+    } else if (hasConsole && !config.silent) {
+      console.error("[Vue warn]: " + msg + trace);
+    }
+  };
+
+  tip = function (msg, vm) {
+    if (hasConsole && !config.silent) {
+      console.warn("[Vue tip]: " + msg + (vm ? generateComponentTrace(vm) : ''));
+    }
+  };
+
+  formatComponentName = function (vm, includeFile) {
+    if (vm.$root === vm) {
+      return '<Root>';
+    }
+    var options = typeof vm === 'function' && vm.cid != null ? vm.options : vm._isVue ? vm.$options || vm.constructor.options : vm || {};
+    var name = options.name || options._componentTag;
+    var file = options.__file;
+    if (!name && file) {
+      var match = file.match(/([^/\\]+)\.vue$/);
+      name = match && match[1];
+    }
+
+    return (name ? "<" + classify(name) + ">" : "<Anonymous>") + (file && includeFile !== false ? " at " + file : '');
+  };
+
+  var repeat = function (str, n) {
+    var res = '';
+    while (n) {
+      if (n % 2 === 1) {
+        res += str;
+      }
+      if (n > 1) {
+        str += str;
+      }
+      n >>= 1;
+    }
+    return res;
+  };
+
+  generateComponentTrace = function (vm) {
+    if (vm._isVue && vm.$parent) {
+      var tree = [];
+      var currentRecursiveSequence = 0;
+      while (vm) {
+        if (tree.length > 0) {
+          var last = tree[tree.length - 1];
+          if (last.constructor === vm.constructor) {
+            currentRecursiveSequence++;
+            vm = vm.$parent;
+            continue;
+          } else if (currentRecursiveSequence > 0) {
+            tree[tree.length - 1] = [last, currentRecursiveSequence];
+            currentRecursiveSequence = 0;
+          }
+        }
+        tree.push(vm);
+        vm = vm.$parent;
+      }
+      return '\n\nfound in\n\n' + tree.map(function (vm, i) {
+        return "" + (i === 0 ? '---> ' : repeat(' ', 5 + i * 2)) + (Array.isArray(vm) ? formatComponentName(vm[0]) + "... (" + vm[1] + " recursive calls)" : formatComponentName(vm));
+      }).join('\n');
+    } else {
+      return "\n\n(found in " + formatComponentName(vm) + ")";
+    }
+  };
+}
+
+/*  */
+
+var uid$1 = 0;
+
+/**
+ * A dep is an observable that can have multiple
+ * directives subscribing to it.
+ */
+var Dep = function Dep() {
+  this.id = uid$1++;
+  this.subs = [];
+};
+
+Dep.prototype.addSub = function addSub(sub) {
+  this.subs.push(sub);
+};
+
+Dep.prototype.removeSub = function removeSub(sub) {
+  remove(this.subs, sub);
+};
+
+Dep.prototype.depend = function depend() {
+  if (Dep.target) {
+    Dep.target.addDep(this);
+  }
+};
+
+Dep.prototype.notify = function notify() {
+  // stabilize the subscriber list first
+  var subs = this.subs.slice();
+  for (var i = 0, l = subs.length; i < l; i++) {
+    subs[i].update();
+  }
+};
+
+// the current target watcher being evaluated.
+// this is globally unique because there could be only one
+// watcher being evaluated at any time.
+Dep.target = null;
+var targetStack = [];
+
+function pushTarget(_target) {
+  if (Dep.target) {
+    targetStack.push(Dep.target);
+  }
+  Dep.target = _target;
+}
+
+function popTarget() {
+  Dep.target = targetStack.pop();
+}
+
+/*  */
+
+var VNode = function VNode(tag, data, children, text, elm, context, componentOptions, asyncFactory) {
+  this.tag = tag;
+  this.data = data;
+  this.children = children;
+  this.text = text;
+  this.elm = elm;
+  this.ns = undefined;
+  this.context = context;
+  this.fnContext = undefined;
+  this.fnOptions = undefined;
+  this.fnScopeId = undefined;
+  this.key = data && data.key;
+  this.componentOptions = componentOptions;
+  this.componentInstance = undefined;
+  this.parent = undefined;
+  this.raw = false;
+  this.isStatic = false;
+  this.isRootInsert = true;
+  this.isComment = false;
+  this.isCloned = false;
+  this.isOnce = false;
+  this.asyncFactory = asyncFactory;
+  this.asyncMeta = undefined;
+  this.isAsyncPlaceholder = false;
+};
+
+var prototypeAccessors = { child: { configurable: true } };
+
+// DEPRECATED: alias for componentInstance for backwards compat.
+/* istanbul ignore next */
+prototypeAccessors.child.get = function () {
+  return this.componentInstance;
+};
+
+Object.defineProperties(VNode.prototype, prototypeAccessors);
+
+var createEmptyVNode = function (text) {
+  if (text === void 0) text = '';
+
+  var node = new VNode();
+  node.text = text;
+  node.isComment = true;
+  return node;
+};
+
+function createTextVNode(val) {
+  return new VNode(undefined, undefined, undefined, String(val));
+}
+
+// optimized shallow clone
+// used for static nodes and slot nodes because they may be reused across
+// multiple renders, cloning them avoids errors when DOM manipulations rely
+// on their elm reference.
+function cloneVNode(vnode, deep) {
+  var componentOptions = vnode.componentOptions;
+  var cloned = new VNode(vnode.tag, vnode.data, vnode.children, vnode.text, vnode.elm, vnode.context, componentOptions, vnode.asyncFactory);
+  cloned.ns = vnode.ns;
+  cloned.isStatic = vnode.isStatic;
+  cloned.key = vnode.key;
+  cloned.isComment = vnode.isComment;
+  cloned.fnContext = vnode.fnContext;
+  cloned.fnOptions = vnode.fnOptions;
+  cloned.fnScopeId = vnode.fnScopeId;
+  cloned.isCloned = true;
+  if (deep) {
+    if (vnode.children) {
+      cloned.children = cloneVNodes(vnode.children, true);
+    }
+    if (componentOptions && componentOptions.children) {
+      componentOptions.children = cloneVNodes(componentOptions.children, true);
+    }
+  }
+  return cloned;
+}
+
+function cloneVNodes(vnodes, deep) {
+  var len = vnodes.length;
+  var res = new Array(len);
+  for (var i = 0; i < len; i++) {
+    res[i] = cloneVNode(vnodes[i], deep);
+  }
+  return res;
+}
+
+/*
+ * not type checking this file because flow doesn't play well with
+ * dynamically accessing methods on Array prototype
+ */
+
+var arrayProto = Array.prototype;
+var arrayMethods = Object.create(arrayProto);['push', 'pop', 'shift', 'unshift', 'splice', 'sort', 'reverse'].forEach(function (method) {
+  // cache original method
+  var original = arrayProto[method];
+  def(arrayMethods, method, function mutator() {
+    var args = [],
+        len = arguments.length;
+    while (len--) args[len] = arguments[len];
+
+    var result = original.apply(this, args);
+    var ob = this.__ob__;
+    var inserted;
+    switch (method) {
+      case 'push':
+      case 'unshift':
+        inserted = args;
+        break;
+      case 'splice':
+        inserted = args.slice(2);
+        break;
+    }
+    if (inserted) {
+      ob.observeArray(inserted);
+    }
+    // notify change
+    ob.dep.notify();
+    return result;
+  });
+});
+
+/*  */
+
+var arrayKeys = Object.getOwnPropertyNames(arrayMethods);
+
+/**
+ * By default, when a reactive property is set, the new value is
+ * also converted to become reactive. However when passing down props,
+ * we don't want to force conversion because the value may be a nested value
+ * under a frozen data structure. Converting it would defeat the optimization.
+ */
+var observerState = {
+  shouldConvert: true
+};
+
+/**
+ * Observer class that are attached to each observed
+ * object. Once attached, the observer converts target
+ * object's property keys into getter/setters that
+ * collect dependencies and dispatches updates.
+ */
+var Observer = function Observer(value) {
+  this.value = value;
+  this.dep = new Dep();
+  this.vmCount = 0;
+  def(value, '__ob__', this);
+  if (Array.isArray(value)) {
+    var augment = hasProto ? protoAugment : copyAugment;
+    augment(value, arrayMethods, arrayKeys);
+    this.observeArray(value);
+  } else {
+    this.walk(value);
+  }
+};
+
+/**
+ * Walk through each property and convert them into
+ * getter/setters. This method should only be called when
+ * value type is Object.
+ */
+Observer.prototype.walk = function walk(obj) {
+  var keys = Object.keys(obj);
+  for (var i = 0; i < keys.length; i++) {
+    defineReactive(obj, keys[i], obj[keys[i]]);
+  }
+};
+
+/**
+ * Observe a list of Array items.
+ */
+Observer.prototype.observeArray = function observeArray(items) {
+  for (var i = 0, l = items.length; i < l; i++) {
+    observe(items[i]);
+  }
+};
+
+// helpers
+
+/**
+ * Augment an target Object or Array by intercepting
+ * the prototype chain using __proto__
+ */
+function protoAugment(target, src, keys) {
+  /* eslint-disable no-proto */
+  target.__proto__ = src;
+  /* eslint-enable no-proto */
+}
+
+/**
+ * Augment an target Object or Array by defining
+ * hidden properties.
+ */
+/* istanbul ignore next */
+function copyAugment(target, src, keys) {
+  for (var i = 0, l = keys.length; i < l; i++) {
+    var key = keys[i];
+    def(target, key, src[key]);
+  }
+}
+
+/**
+ * Attempt to create an observer instance for a value,
+ * returns the new observer if successfully observed,
+ * or the existing observer if the value already has one.
+ */
+function observe(value, asRootData) {
+  if (!isObject(value) || value instanceof VNode) {
+    return;
+  }
+  var ob;
+  if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer) {
+    ob = value.__ob__;
+  } else if (observerState.shouldConvert && !isServerRendering() && (Array.isArray(value) || isPlainObject(value)) && Object.isExtensible(value) && !value._isVue) {
+    ob = new Observer(value);
+  }
+  if (asRootData && ob) {
+    ob.vmCount++;
+  }
+  return ob;
+}
+
+/**
+ * Define a reactive property on an Object.
+ */
+function defineReactive(obj, key, val, customSetter, shallow) {
+  var dep = new Dep();
+
+  var property = Object.getOwnPropertyDescriptor(obj, key);
+  if (property && property.configurable === false) {
+    return;
+  }
+
+  // cater for pre-defined getter/setters
+  var getter = property && property.get;
+  var setter = property && property.set;
+
+  var childOb = !shallow && observe(val);
+  Object.defineProperty(obj, key, {
+    enumerable: true,
+    configurable: true,
+    get: function reactiveGetter() {
+      var value = getter ? getter.call(obj) : val;
+      if (Dep.target) {
+        dep.depend();
+        if (childOb) {
+          childOb.dep.depend();
+          if (Array.isArray(value)) {
+            dependArray(value);
+          }
+        }
+      }
+      return value;
+    },
+    set: function reactiveSetter(newVal) {
+      var value = getter ? getter.call(obj) : val;
+      /* eslint-disable no-self-compare */
+      if (newVal === value || newVal !== newVal && value !== value) {
+        return;
+      }
+      /* eslint-enable no-self-compare */
+      if ('development' !== 'production' && customSetter) {
+        customSetter();
+      }
+      if (setter) {
+        setter.call(obj, newVal);
+      } else {
+        val = newVal;
+      }
+      childOb = !shallow && observe(newVal);
+      dep.notify();
+    }
+  });
+}
+
+/**
+ * Set a property on an object. Adds the new property and
+ * triggers change notification if the property doesn't
+ * already exist.
+ */
+function set(target, key, val) {
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.length = Math.max(target.length, key);
+    target.splice(key, 1, val);
+    return val;
+  }
+  if (key in target && !(key in Object.prototype)) {
+    target[key] = val;
+    return val;
+  }
+  var ob = target.__ob__;
+  if (target._isVue || ob && ob.vmCount) {
+    'development' !== 'production' && warn('Avoid adding reactive properties to a Vue instance or its root $data ' + 'at runtime - declare it upfront in the data option.');
+    return val;
+  }
+  if (!ob) {
+    target[key] = val;
+    return val;
+  }
+  defineReactive(ob.value, key, val);
+  ob.dep.notify();
+  return val;
+}
+
+/**
+ * Delete a property and trigger change if necessary.
+ */
+function del(target, key) {
+  if (Array.isArray(target) && isValidArrayIndex(key)) {
+    target.splice(key, 1);
+    return;
+  }
+  var ob = target.__ob__;
+  if (target._isVue || ob && ob.vmCount) {
+    'development' !== 'production' && warn('Avoid deleting properties on a Vue instance or its root $data ' + '- just set it to null.');
+    return;
+  }
+  if (!hasOwn(target, key)) {
+    return;
+  }
+  delete target[key];
+  if (!ob) {
+    return;
+  }
+  ob.dep.notify();
+}
+
+/**
+ * Collect dependencies on array elements when the array is touched, since
+ * we cannot intercept array element access like property getters.
+ */
+function dependArray(value) {
+  for (var e = void 0, i = 0, l = value.length; i < l; i++) {
+    e = value[i];
+    e && e.__ob__ && e.__ob__.dep.depend();
+    if (Array.isArray(e)) {
+      dependArray(e);
+    }
+  }
+}
+
+/*  */
+
+/**
+ * Option overwriting strategies are functions that handle
+ * how to merge a parent option value and a child option
+ * value into the final value.
+ */
+var strats = config.optionMergeStrategies;
+
+/**
+ * Options with restrictions
+ */
+if ('development' !== 'production') {
+  strats.el = strats.propsData = function (parent, child, vm, key) {
+    if (!vm) {
+      warn("option \"" + key + "\" can only be used during instance " + 'creation with the `new` keyword.');
+    }
+    return defaultStrat(parent, child);
+  };
+}
+
+/**
+ * Helper that recursively merges two data objects together.
+ */
+function mergeData(to, from) {
+  if (!from) {
+    return to;
+  }
+  var key, toVal, fromVal;
+  var keys = Object.keys(from);
+  for (var i = 0; i < keys.length; i++) {
+    key = keys[i];
+    toVal = to[key];
+    fromVal = from[key];
+    if (!hasOwn(to, key)) {
+      set(to, key, fromVal);
+    } else if (isPlainObject(toVal) && isPlainObject(fromVal)) {
+      mergeData(toVal, fromVal);
+    }
+  }
+  return to;
+}
+
+/**
+ * Data
+ */
+function mergeDataOrFn(parentVal, childVal, vm) {
+  if (!vm) {
+    // in a Vue.extend merge, both should be functions
+    if (!childVal) {
+      return parentVal;
+    }
+    if (!parentVal) {
+      return childVal;
+    }
+    // when parentVal & childVal are both present,
+    // we need to return a function that returns the
+    // merged result of both functions... no need to
+    // check if parentVal is a function here because
+    // it has to be a function to pass previous merges.
+    return function mergedDataFn() {
+      return mergeData(typeof childVal === 'function' ? childVal.call(this, this) : childVal, typeof parentVal === 'function' ? parentVal.call(this, this) : parentVal);
+    };
+  } else {
+    return function mergedInstanceDataFn() {
+      // instance merge
+      var instanceData = typeof childVal === 'function' ? childVal.call(vm, vm) : childVal;
+      var defaultData = typeof parentVal === 'function' ? parentVal.call(vm, vm) : parentVal;
+      if (instanceData) {
+        return mergeData(instanceData, defaultData);
+      } else {
+        return defaultData;
+      }
+    };
+  }
+}
+
+strats.data = function (parentVal, childVal, vm) {
+  if (!vm) {
+    if (childVal && typeof childVal !== 'function') {
+      'development' !== 'production' && warn('The "data" option should be a function ' + 'that returns a per-instance value in component ' + 'definitions.', vm);
+
+      return parentVal;
+    }
+    return mergeDataOrFn(parentVal, childVal);
+  }
+
+  return mergeDataOrFn(parentVal, childVal, vm);
+};
+
+/**
+ * Hooks and props are merged as arrays.
+ */
+function mergeHook(parentVal, childVal) {
+  return childVal ? parentVal ? parentVal.concat(childVal) : Array.isArray(childVal) ? childVal : [childVal] : parentVal;
+}
+
+LIFECYCLE_HOOKS.forEach(function (hook) {
+  strats[hook] = mergeHook;
+});
+
+/**
+ * Assets
+ *
+ * When a vm is present (instance creation), we need to do
+ * a three-way merge between constructor options, instance
+ * options and parent options.
+ */
+function mergeAssets(parentVal, childVal, vm, key) {
+  var res = Object.create(parentVal || null);
+  if (childVal) {
+    'development' !== 'production' && assertObjectType(key, childVal, vm);
+    return extend(res, childVal);
+  } else {
+    return res;
+  }
+}
+
+ASSET_TYPES.forEach(function (type) {
+  strats[type + 's'] = mergeAssets;
+});
+
+/**
+ * Watchers.
+ *
+ * Watchers hashes should not overwrite one
+ * another, so we merge them as arrays.
+ */
+strats.watch = function (parentVal, childVal, vm, key) {
+  // work around Firefox's Object.prototype.watch...
+  if (parentVal === nativeWatch) {
+    parentVal = undefined;
+  }
+  if (childVal === nativeWatch) {
+    childVal = undefined;
+  }
+  /* istanbul ignore if */
+  if (!childVal) {
+    return Object.create(parentVal || null);
+  }
+  if ('development' !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) {
+    return childVal;
+  }
+  var ret = {};
+  extend(ret, parentVal);
+  for (var key$1 in childVal) {
+    var parent = ret[key$1];
+    var child = childVal[key$1];
+    if (parent && !Array.isArray(parent)) {
+      parent = [parent];
+    }
+    ret[key$1] = parent ? parent.concat(child) : Array.isArray(child) ? child : [child];
+  }
+  return ret;
+};
+
+/**
+ * Other object hashes.
+ */
+strats.props = strats.methods = strats.inject = strats.computed = function (parentVal, childVal, vm, key) {
+  if (childVal && 'development' !== 'production') {
+    assertObjectType(key, childVal, vm);
+  }
+  if (!parentVal) {
+    return childVal;
+  }
+  var ret = Object.create(null);
+  extend(ret, parentVal);
+  if (childVal) {
+    extend(ret, childVal);
+  }
+  return ret;
+};
+strats.provide = mergeDataOrFn;
+
+/**
+ * Default strategy.
+ */
+var defaultStrat = function (parentVal, childVal) {
+  return childVal === undefined ? parentVal : childVal;
+};
+
+/**
+ * Validate component names
+ */
+function checkComponents(options) {
+  for (var key in options.components) {
+    validateComponentName(key);
+  }
+}
+
+function validateComponentName(name) {
+  if (!/^[a-zA-Z][\w-]*$/.test(name)) {
+    warn('Invalid component name: "' + name + '". Component names ' + 'can only contain alphanumeric characters and the hyphen, ' + 'and must start with a letter.');
+  }
+  if (isBuiltInTag(name) || config.isReservedTag(name)) {
+    warn('Do not use built-in or reserved HTML elements as component ' + 'id: ' + name);
+  }
+}
+
+/**
+ * Ensure all props option syntax are normalized into the
+ * Object-based format.
+ */
+function normalizeProps(options, vm) {
+  var props = options.props;
+  if (!props) {
+    return;
+  }
+  var res = {};
+  var i, val, name;
+  if (Array.isArray(props)) {
+    i = props.length;
+    while (i--) {
+      val = props[i];
+      if (typeof val === 'string') {
+        name = camelize(val);
+        res[name] = { type: null };
+      } else if ('development' !== 'production') {
+        warn('props must be strings when using array syntax.');
+      }
+    }
+  } else if (isPlainObject(props)) {
+    for (var key in props) {
+      val = props[key];
+      name = camelize(key);
+      res[name] = isPlainObject(val) ? val : { type: val };
+    }
+  } else if ('development' !== 'production') {
+    warn("Invalid value for option \"props\": expected an Array or an Object, " + "but got " + toRawType(props) + ".", vm);
+  }
+  options.props = res;
+}
+
+/**
+ * Normalize all injections into Object-based format
+ */
+function normalizeInject(options, vm) {
+  var inject = options.inject;
+  if (!inject) {
+    return;
+  }
+  var normalized = options.inject = {};
+  if (Array.isArray(inject)) {
+    for (var i = 0; i < inject.length; i++) {
+      normalized[inject[i]] = { from: inject[i] };
+    }
+  } else if (isPlainObject(inject)) {
+    for (var key in inject) {
+      var val = inject[key];
+      normalized[key] = isPlainObject(val) ? extend({ from: key }, val) : { from: val };
+    }
+  } else if ('development' !== 'production') {
+    warn("Invalid value for option \"inject\": expected an Array or an Object, " + "but got " + toRawType(inject) + ".", vm);
+  }
+}
+
+/**
+ * Normalize raw function directives into object format.
+ */
+function normalizeDirectives(options) {
+  var dirs = options.directives;
+  if (dirs) {
+    for (var key in dirs) {
+      var def = dirs[key];
+      if (typeof def === 'function') {
+        dirs[key] = { bind: def, update: def };
+      }
+    }
+  }
+}
+
+function assertObjectType(name, value, vm) {
+  if (!isPlainObject(value)) {
+    warn("Invalid value for option \"" + name + "\": expected an Object, " + "but got " + toRawType(value) + ".", vm);
+  }
+}
+
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */
+function mergeOptions(parent, child, vm) {
+  if ('development' !== 'production') {
+    checkComponents(child);
+  }
+
+  if (typeof child === 'function') {
+    child = child.options;
+  }
+
+  normalizeProps(child, vm);
+  normalizeInject(child, vm);
+  normalizeDirectives(child);
+  var extendsFrom = child.extends;
+  if (extendsFrom) {
+    parent = mergeOptions(parent, extendsFrom, vm);
+  }
+  if (child.mixins) {
+    for (var i = 0, l = child.mixins.length; i < l; i++) {
+      parent = mergeOptions(parent, child.mixins[i], vm);
+    }
+  }
+  var options = {};
+  var key;
+  for (key in parent) {
+    mergeField(key);
+  }
+  for (key in child) {
+    if (!hasOwn(parent, key)) {
+      mergeField(key);
+    }
+  }
+  function mergeField(key) {
+    var strat = strats[key] || defaultStrat;
+    options[key] = strat(parent[key], child[key], vm, key);
+  }
+  return options;
+}
+
+/**
+ * Resolve an asset.
+ * This function is used because child instances need access
+ * to assets defined in its ancestor chain.
+ */
+function resolveAsset(options, type, id, warnMissing) {
+  /* istanbul ignore if */
+  if (typeof id !== 'string') {
+    return;
+  }
+  var assets = options[type];
+  // check local registration variations first
+  if (hasOwn(assets, id)) {
+    return assets[id];
+  }
+  var camelizedId = camelize(id);
+  if (hasOwn(assets, camelizedId)) {
+    return assets[camelizedId];
+  }
+  var PascalCaseId = capitalize(camelizedId);
+  if (hasOwn(assets, PascalCaseId)) {
+    return assets[PascalCaseId];
+  }
+  // fallback to prototype chain
+  var res = assets[id] || assets[camelizedId] || assets[PascalCaseId];
+  if ('development' !== 'production' && warnMissing && !res) {
+    warn('Failed to resolve ' + type.slice(0, -1) + ': ' + id, options);
+  }
+  return res;
+}
+
+/*  */
+
+function validateProp(key, propOptions, propsData, vm) {
+  var prop = propOptions[key];
+  var absent = !hasOwn(propsData, key);
+  var value = propsData[key];
+  // handle boolean props
+  if (isType(Boolean, prop.type)) {
+    if (absent && !hasOwn(prop, 'default')) {
+      value = false;
+    } else if (!isType(String, prop.type) && (value === '' || value === hyphenate(key))) {
+      value = true;
+    }
+  }
+  // check default value
+  if (value === undefined) {
+    value = getPropDefaultValue(vm, prop, key);
+    // since the default value is a fresh copy,
+    // make sure to observe it.
+    var prevShouldConvert = observerState.shouldConvert;
+    observerState.shouldConvert = true;
+    observe(value);
+    observerState.shouldConvert = prevShouldConvert;
+  }
+  if ('development' !== 'production' &&
+  // skip validation for weex recycle-list child component props
+  !(false && isObject(value) && '@binding' in value)) {
+    assertProp(prop, key, value, vm, absent);
+  }
+  return value;
+}
+
+/**
+ * Get the default value of a prop.
+ */
+function getPropDefaultValue(vm, prop, key) {
+  // no default, return undefined
+  if (!hasOwn(prop, 'default')) {
+    return undefined;
+  }
+  var def = prop.default;
+  // warn against non-factory defaults for Object & Array
+  if ('development' !== 'production' && isObject(def)) {
+    warn('Invalid default value for prop "' + key + '": ' + 'Props with type Object/Array must use a factory function ' + 'to return the default value.', vm);
+  }
+  // the raw prop value was also undefined from previous render,
+  // return previous default value to avoid unnecessary watcher trigger
+  if (vm && vm.$options.propsData && vm.$options.propsData[key] === undefined && vm._props[key] !== undefined) {
+    return vm._props[key];
+  }
+  // call factory function for non-Function types
+  // a value is Function if its prototype is function even across different execution context
+  return typeof def === 'function' && getType(prop.type) !== 'Function' ? def.call(vm) : def;
+}
+
+/**
+ * Assert whether a prop is valid.
+ */
+function assertProp(prop, name, value, vm, absent) {
+  if (prop.required && absent) {
+    warn('Missing required prop: "' + name + '"', vm);
+    return;
+  }
+  if (value == null && !prop.required) {
+    return;
+  }
+  var type = prop.type;
+  var valid = !type || type === true;
+  var expectedTypes = [];
+  if (type) {
+    if (!Array.isArray(type)) {
+      type = [type];
+    }
+    for (var i = 0; i < type.length && !valid; i++) {
+      var assertedType = assertType(value, type[i]);
+      expectedTypes.push(assertedType.expectedType || '');
+      valid = assertedType.valid;
+    }
+  }
+  if (!valid) {
+    warn("Invalid prop: type check failed for prop \"" + name + "\"." + " Expected " + expectedTypes.map(capitalize).join(', ') + ", got " + toRawType(value) + ".", vm);
+    return;
+  }
+  var validator = prop.validator;
+  if (validator) {
+    if (!validator(value)) {
+      warn('Invalid prop: custom validator check failed for prop "' + name + '".', vm);
+    }
+  }
+}
+
+var simpleCheckRE = /^(String|Number|Boolean|Function|Symbol)$/;
+
+function assertType(value, type) {
+  var valid;
+  var expectedType = getType(type);
+  if (simpleCheckRE.test(expectedType)) {
+    var t = typeof value;
+    valid = t === expectedType.toLowerCase();
+    // for primitive wrapper objects
+    if (!valid && t === 'object') {
+      valid = value instanceof type;
+    }
+  } else if (expectedType === 'Object') {
+    valid = isPlainObject(value);
+  } else if (expectedType === 'Array') {
+    valid = Array.isArray(value);
+  } else {
+    valid = value instanceof type;
+  }
+  return {
+    valid: valid,
+    expectedType: expectedType
+  };
+}
+
+/**
+ * Use function string name to check built-in types,
+ * because a simple equality check will fail when running
+ * across different vms / iframes.
+ */
+function getType(fn) {
+  var match = fn && fn.toString().match(/^\s*function (\w+)/);
+  return match ? match[1] : '';
+}
+
+function isType(type, fn) {
+  if (!Array.isArray(fn)) {
+    return getType(fn) === getType(type);
+  }
+  for (var i = 0, len = fn.length; i < len; i++) {
+    if (getType(fn[i]) === getType(type)) {
+      return true;
+    }
+  }
+  /* istanbul ignore next */
+  return false;
+}
+
+/*  */
+
+function handleError(err, vm, info) {
+  if (vm) {
+    var cur = vm;
+    while (cur = cur.$parent) {
+      var hooks = cur.$options.errorCaptured;
+      if (hooks) {
+        for (var i = 0; i < hooks.length; i++) {
+          try {
+            var capture = hooks[i].call(cur, err, vm, info) === false;
+            if (capture) {
+              return;
+            }
+          } catch (e) {
+            globalHandleError(e, cur, 'errorCaptured hook');
+          }
+        }
+      }
+    }
+  }
+  globalHandleError(err, vm, info);
+}
+
+function globalHandleError(err, vm, info) {
+  if (config.errorHandler) {
+    try {
+      return config.errorHandler.call(null, err, vm, info);
+    } catch (e) {
+      logError(e, null, 'config.errorHandler');
+    }
+  }
+  logError(err, vm, info);
+}
+
+function logError(err, vm, info) {
+  if ('development' !== 'production') {
+    warn("Error in " + info + ": \"" + err.toString() + "\"", vm);
+  }
+  /* istanbul ignore else */
+  if ((inBrowser || inWeex) && typeof console !== 'undefined') {
+    console.error(err);
+  } else {
+    throw err;
+  }
+}
+
+/*  */
+/* globals MessageChannel */
+
+var callbacks = [];
+var pending = false;
+
+function flushCallbacks() {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+
+// Here we have async deferring wrappers using both micro and macro tasks.
+// In < 2.4 we used micro tasks everywhere, but there are some scenarios where
+// micro tasks have too high a priority and fires in between supposedly
+// sequential events (e.g. #4521, #6690) or even between bubbling of the same
+// event (#6566). However, using macro tasks everywhere also has subtle problems
+// when state is changed right before repaint (e.g. #6813, out-in transitions).
+// Here we use micro task by default, but expose a way to force macro task when
+// needed (e.g. in event handlers attached by v-on).
+var microTimerFunc;
+var macroTimerFunc;
+var useMacroTask = false;
+
+// Determine (macro) Task defer implementation.
+// Technically setImmediate should be the ideal choice, but it's only available
+// in IE. The only polyfill that consistently queues the callback after all DOM
+// events triggered in the same loop is by using MessageChannel.
+/* istanbul ignore if */
+if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
+  macroTimerFunc = function () {
+    setImmediate(flushCallbacks);
+  };
+} else if (typeof MessageChannel !== 'undefined' && (isNative(MessageChannel) ||
+// PhantomJS
+MessageChannel.toString() === '[object MessageChannelConstructor]')) {
+  var channel = new MessageChannel();
+  var port = channel.port2;
+  channel.port1.onmessage = flushCallbacks;
+  macroTimerFunc = function () {
+    port.postMessage(1);
+  };
+} else {
+  /* istanbul ignore next */
+  macroTimerFunc = function () {
+    setTimeout(flushCallbacks, 0);
+  };
+}
+
+// Determine MicroTask defer implementation.
+/* istanbul ignore next, $flow-disable-line */
+if (typeof Promise !== 'undefined' && isNative(Promise)) {
+  var p = Promise.resolve();
+  microTimerFunc = function () {
+    p.then(flushCallbacks);
+    // in problematic UIWebViews, Promise.then doesn't completely break, but
+    // it can get stuck in a weird state where callbacks are pushed into the
+    // microtask queue but the queue isn't being flushed, until the browser
+    // needs to do some other work, e.g. handle a timer. Therefore we can
+    // "force" the microtask queue to be flushed by adding an empty timer.
+    if (isIOS) {
+      setTimeout(noop);
+    }
+  };
+} else {
+  // fallback to macro
+  microTimerFunc = macroTimerFunc;
+}
+
+/**
+ * Wrap a function so that if any code inside triggers state change,
+ * the changes are queued using a Task instead of a MicroTask.
+ */
+function withMacroTask(fn) {
+  return fn._withTask || (fn._withTask = function () {
+    useMacroTask = true;
+    var res = fn.apply(null, arguments);
+    useMacroTask = false;
+    return res;
+  });
+}
+
+function nextTick(cb, ctx) {
+  var _resolve;
+  callbacks.push(function () {
+    if (cb) {
+      try {
+        cb.call(ctx);
+      } catch (e) {
+        handleError(e, ctx, 'nextTick');
+      }
+    } else if (_resolve) {
+      _resolve(ctx);
+    }
+  });
+  if (!pending) {
+    pending = true;
+    if (useMacroTask) {
+      macroTimerFunc();
+    } else {
+      microTimerFunc();
+    }
+  }
+  // $flow-disable-line
+  if (!cb && typeof Promise !== 'undefined') {
+    return new Promise(function (resolve) {
+      _resolve = resolve;
+    });
+  }
+}
+
+/*  */
+
+/* not type checking this file because flow doesn't play well with Proxy */
+
+var initProxy;
+
+if ('development' !== 'production') {
+  var allowedGlobals = makeMap('Infinity,undefined,NaN,isFinite,isNaN,' + 'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' + 'Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,' + 'require' // for Webpack/Browserify
+  );
+
+  var warnNonPresent = function (target, key) {
+    warn("Property or method \"" + key + "\" is not defined on the instance but " + 'referenced during render. Make sure that this property is reactive, ' + 'either in the data option, or for class-based components, by ' + 'initializing the property. ' + 'See: https://vuejs.org/v2/guide/reactivity.html#Declaring-Reactive-Properties.', target);
+  };
+
+  var hasProxy = typeof Proxy !== 'undefined' && Proxy.toString().match(/native code/);
+
+  if (hasProxy) {
+    var isBuiltInModifier = makeMap('stop,prevent,self,ctrl,shift,alt,meta,exact');
+    config.keyCodes = new Proxy(config.keyCodes, {
+      set: function set(target, key, value) {
+        if (isBuiltInModifier(key)) {
+          warn("Avoid overwriting built-in modifier in config.keyCodes: ." + key);
+          return false;
+        } else {
+          target[key] = value;
+          return true;
+        }
+      }
+    });
+  }
+
+  var hasHandler = {
+    has: function has(target, key) {
+      var has = key in target;
+      var isAllowed = allowedGlobals(key) || key.charAt(0) === '_';
+      if (!has && !isAllowed) {
+        warnNonPresent(target, key);
+      }
+      return has || !isAllowed;
+    }
+  };
+
+  var getHandler = {
+    get: function get(target, key) {
+      if (typeof key === 'string' && !(key in target)) {
+        warnNonPresent(target, key);
+      }
+      return target[key];
+    }
+  };
+
+  initProxy = function initProxy(vm) {
+    if (hasProxy) {
+      // determine which proxy handler to use
+      var options = vm.$options;
+      var handlers = options.render && options.render._withStripped ? getHandler : hasHandler;
+      vm._renderProxy = new Proxy(vm, handlers);
+    } else {
+      vm._renderProxy = vm;
+    }
+  };
+}
+
+/*  */
+
+var seenObjects = new _Set();
+
+/**
+ * Recursively traverse an object to evoke all converted
+ * getters, so that every nested property inside the object
+ * is collected as a "deep" dependency.
+ */
+function traverse(val) {
+  _traverse(val, seenObjects);
+  seenObjects.clear();
+}
+
+function _traverse(val, seen) {
+  var i, keys;
+  var isA = Array.isArray(val);
+  if (!isA && !isObject(val) || Object.isFrozen(val)) {
+    return;
+  }
+  if (val.__ob__) {
+    var depId = val.__ob__.dep.id;
+    if (seen.has(depId)) {
+      return;
+    }
+    seen.add(depId);
+  }
+  if (isA) {
+    i = val.length;
+    while (i--) {
+      _traverse(val[i], seen);
+    }
+  } else {
+    keys = Object.keys(val);
+    i = keys.length;
+    while (i--) {
+      _traverse(val[keys[i]], seen);
+    }
+  }
+}
+
+var mark;
+var measure;
+
+if ('development' !== 'production') {
+  var perf = inBrowser && window.performance;
+  /* istanbul ignore if */
+  if (perf && perf.mark && perf.measure && perf.clearMarks && perf.clearMeasures) {
+    mark = function (tag) {
+      return perf.mark(tag);
+    };
+    measure = function (name, startTag, endTag) {
+      perf.measure(name, startTag, endTag);
+      perf.clearMarks(startTag);
+      perf.clearMarks(endTag);
+      perf.clearMeasures(name);
+    };
+  }
+}
+
+/*  */
+
+var normalizeEvent = cached(function (name) {
+  var passive = name.charAt(0) === '&';
+  name = passive ? name.slice(1) : name;
+  var once$$1 = name.charAt(0) === '~'; // Prefixed last, checked first
+  name = once$$1 ? name.slice(1) : name;
+  var capture = name.charAt(0) === '!';
+  name = capture ? name.slice(1) : name;
+  return {
+    name: name,
+    once: once$$1,
+    capture: capture,
+    passive: passive
+  };
+});
+
+function createFnInvoker(fns) {
+  function invoker() {
+    var arguments$1 = arguments;
+
+    var fns = invoker.fns;
+    if (Array.isArray(fns)) {
+      var cloned = fns.slice();
+      for (var i = 0; i < cloned.length; i++) {
+        cloned[i].apply(null, arguments$1);
+      }
+    } else {
+      // return handler return value for single handlers
+      return fns.apply(null, arguments);
+    }
+  }
+  invoker.fns = fns;
+  return invoker;
+}
+
+function updateListeners(on, oldOn, add, remove$$1, vm) {
+  var name, def, cur, old, event;
+  for (name in on) {
+    def = cur = on[name];
+    old = oldOn[name];
+    event = normalizeEvent(name);
+    /* istanbul ignore if */
+    if (isUndef(cur)) {
+      'development' !== 'production' && warn("Invalid handler for event \"" + event.name + "\": got " + String(cur), vm);
+    } else if (isUndef(old)) {
+      if (isUndef(cur.fns)) {
+        cur = on[name] = createFnInvoker(cur);
+      }
+      add(event.name, cur, event.once, event.capture, event.passive, event.params);
+    } else if (cur !== old) {
+      old.fns = cur;
+      on[name] = old;
+    }
+  }
+  for (name in oldOn) {
+    if (isUndef(on[name])) {
+      event = normalizeEvent(name);
+      remove$$1(event.name, oldOn[name], event.capture);
+    }
+  }
+}
+
+/*  */
+
+function mergeVNodeHook(def, hookKey, hook) {
+  if (def instanceof VNode) {
+    def = def.data.hook || (def.data.hook = {});
+  }
+  var invoker;
+  var oldHook = def[hookKey];
+
+  function wrappedHook() {
+    hook.apply(this, arguments);
+    // important: remove merged hook to ensure it's called only once
+    // and prevent memory leak
+    remove(invoker.fns, wrappedHook);
+  }
+
+  if (isUndef(oldHook)) {
+    // no existing hook
+    invoker = createFnInvoker([wrappedHook]);
+  } else {
+    /* istanbul ignore if */
+    if (isDef(oldHook.fns) && isTrue(oldHook.merged)) {
+      // already a merged invoker
+      invoker = oldHook;
+      invoker.fns.push(wrappedHook);
+    } else {
+      // existing plain hook
+      invoker = createFnInvoker([oldHook, wrappedHook]);
+    }
+  }
+
+  invoker.merged = true;
+  def[hookKey] = invoker;
+}
+
+/*  */
+
+function extractPropsFromVNodeData(data, Ctor, tag) {
+  // we are only extracting raw values here.
+  // validation and default values are handled in the child
+  // component itself.
+  var propOptions = Ctor.options.props;
+  if (isUndef(propOptions)) {
+    return;
+  }
+  var res = {};
+  var attrs = data.attrs;
+  var props = data.props;
+  if (isDef(attrs) || isDef(props)) {
+    for (var key in propOptions) {
+      var altKey = hyphenate(key);
+      if ('development' !== 'production') {
+        var keyInLowerCase = key.toLowerCase();
+        if (key !== keyInLowerCase && attrs && hasOwn(attrs, keyInLowerCase)) {
+          tip("Prop \"" + keyInLowerCase + "\" is passed to component " + formatComponentName(tag || Ctor) + ", but the declared prop name is" + " \"" + key + "\". " + "Note that HTML attributes are case-insensitive and camelCased " + "props need to use their kebab-case equivalents when using in-DOM " + "templates. You should probably use \"" + altKey + "\" instead of \"" + key + "\".");
+        }
+      }
+      checkProp(res, props, key, altKey, true) || checkProp(res, attrs, key, altKey, false);
+    }
+  }
+  return res;
+}
+
+function checkProp(res, hash, key, altKey, preserve) {
+  if (isDef(hash)) {
+    if (hasOwn(hash, key)) {
+      res[key] = hash[key];
+      if (!preserve) {
+        delete hash[key];
+      }
+      return true;
+    } else if (hasOwn(hash, altKey)) {
+      res[key] = hash[altKey];
+      if (!preserve) {
+        delete hash[altKey];
+      }
+      return true;
+    }
+  }
+  return false;
+}
+
+/*  */
+
+// The template compiler attempts to minimize the need for normalization by
+// statically analyzing the template at compile time.
+//
+// For plain HTML markup, normalization can be completely skipped because the
+// generated render function is guaranteed to return Array<VNode>. There are
+// two cases where extra normalization is needed:
+
+// 1. When the children contains components - because a functional component
+// may return an Array instead of a single root. In this case, just a simple
+// normalization is needed - if any child is an Array, we flatten the whole
+// thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
+// because functional components already normalize their own children.
+function simpleNormalizeChildren(children) {
+  for (var i = 0; i < children.length; i++) {
+    if (Array.isArray(children[i])) {
+      return Array.prototype.concat.apply([], children);
+    }
+  }
+  return children;
+}
+
+// 2. When the children contains constructs that always generated nested Arrays,
+// e.g. <template>, <slot>, v-for, or when the children is provided by user
+// with hand-written render functions / JSX. In such cases a full normalization
+// is needed to cater to all possible types of children values.
+function normalizeChildren(children) {
+  return isPrimitive(children) ? [createTextVNode(children)] : Array.isArray(children) ? normalizeArrayChildren(children) : undefined;
+}
+
+function isTextNode(node) {
+  return isDef(node) && isDef(node.text) && isFalse(node.isComment);
+}
+
+function normalizeArrayChildren(children, nestedIndex) {
+  var res = [];
+  var i, c, lastIndex, last;
+  for (i = 0; i < children.length; i++) {
+    c = children[i];
+    if (isUndef(c) || typeof c === 'boolean') {
+      continue;
+    }
+    lastIndex = res.length - 1;
+    last = res[lastIndex];
+    //  nested
+    if (Array.isArray(c)) {
+      if (c.length > 0) {
+        c = normalizeArrayChildren(c, (nestedIndex || '') + "_" + i);
+        // merge adjacent text nodes
+        if (isTextNode(c[0]) && isTextNode(last)) {
+          res[lastIndex] = createTextVNode(last.text + c[0].text);
+          c.shift();
+        }
+        res.push.apply(res, c);
+      }
+    } else if (isPrimitive(c)) {
+      if (isTextNode(last)) {
+        // merge adjacent text nodes
+        // this is necessary for SSR hydration because text nodes are
+        // essentially merged when rendered to HTML strings
+        res[lastIndex] = createTextVNode(last.text + c);
+      } else if (c !== '') {
+        // convert primitive to vnode
+        res.push(createTextVNode(c));
+      }
+    } else {
+      if (isTextNode(c) && isTextNode(last)) {
+        // merge adjacent text nodes
+        res[lastIndex] = createTextVNode(last.text + c.text);
+      } else {
+        // default key for nested array children (likely generated by v-for)
+        if (isTrue(children._isVList) && isDef(c.tag) && isUndef(c.key) && isDef(nestedIndex)) {
+          c.key = "__vlist" + nestedIndex + "_" + i + "__";
+        }
+        res.push(c);
+      }
+    }
+  }
+  return res;
+}
+
+/*  */
+
+function ensureCtor(comp, base) {
+  if (comp.__esModule || hasSymbol && comp[Symbol.toStringTag] === 'Module') {
+    comp = comp.default;
+  }
+  return isObject(comp) ? base.extend(comp) : comp;
+}
+
+function createAsyncPlaceholder(factory, data, context, children, tag) {
+  var node = createEmptyVNode();
+  node.asyncFactory = factory;
+  node.asyncMeta = { data: data, context: context, children: children, tag: tag };
+  return node;
+}
+
+function resolveAsyncComponent(factory, baseCtor, context) {
+  if (isTrue(factory.error) && isDef(factory.errorComp)) {
+    return factory.errorComp;
+  }
+
+  if (isDef(factory.resolved)) {
+    return factory.resolved;
+  }
+
+  if (isTrue(factory.loading) && isDef(factory.loadingComp)) {
+    return factory.loadingComp;
+  }
+
+  if (isDef(factory.contexts)) {
+    // already pending
+    factory.contexts.push(context);
+  } else {
+    var contexts = factory.contexts = [context];
+    var sync = true;
+
+    var forceRender = function () {
+      for (var i = 0, l = contexts.length; i < l; i++) {
+        contexts[i].$forceUpdate();
+      }
+    };
+
+    var resolve = once(function (res) {
+      // cache resolved
+      factory.resolved = ensureCtor(res, baseCtor);
+      // invoke callbacks only if this is not a synchronous resolve
+      // (async resolves are shimmed as synchronous during SSR)
+      if (!sync) {
+        forceRender();
+      }
+    });
+
+    var reject = once(function (reason) {
+      'development' !== 'production' && warn("Failed to resolve async component: " + String(factory) + (reason ? "\nReason: " + reason : ''));
+      if (isDef(factory.errorComp)) {
+        factory.error = true;
+        forceRender();
+      }
+    });
+
+    var res = factory(resolve, reject);
+
+    if (isObject(res)) {
+      if (typeof res.then === 'function') {
+        // () => Promise
+        if (isUndef(factory.resolved)) {
+          res.then(resolve, reject);
+        }
+      } else if (isDef(res.component) && typeof res.component.then === 'function') {
+        res.component.then(resolve, reject);
+
+        if (isDef(res.error)) {
+          factory.errorComp = ensureCtor(res.error, baseCtor);
+        }
+
+        if (isDef(res.loading)) {
+          factory.loadingComp = ensureCtor(res.loading, baseCtor);
+          if (res.delay === 0) {
+            factory.loading = true;
+          } else {
+            setTimeout(function () {
+              if (isUndef(factory.resolved) && isUndef(factory.error)) {
+                factory.loading = true;
+                forceRender();
+              }
+            }, res.delay || 200);
+          }
+        }
+
+        if (isDef(res.timeout)) {
+          setTimeout(function () {
+            if (isUndef(factory.resolved)) {
+              reject('development' !== 'production' ? "timeout (" + res.timeout + "ms)" : null);
+            }
+          }, res.timeout);
+        }
+      }
+    }
+
+    sync = false;
+    // return in case resolved synchronously
+    return factory.loading ? factory.loadingComp : factory.resolved;
+  }
+}
+
+/*  */
+
+function isAsyncPlaceholder(node) {
+  return node.isComment && node.asyncFactory;
+}
+
+/*  */
+
+function getFirstComponentChild(children) {
+  if (Array.isArray(children)) {
+    for (var i = 0; i < children.length; i++) {
+      var c = children[i];
+      if (isDef(c) && (isDef(c.componentOptions) || isAsyncPlaceholder(c))) {
+        return c;
+      }
+    }
+  }
+}
+
+/*  */
+
+/*  */
+
+function initEvents(vm) {
+  vm._events = Object.create(null);
+  vm._hasHookEvent = false;
+  // init parent attached events
+  var listeners = vm.$options._parentListeners;
+  if (listeners) {
+    updateComponentListeners(vm, listeners);
+  }
+}
+
+var target;
+
+function add(event, fn, once) {
+  if (once) {
+    target.$once(event, fn);
+  } else {
+    target.$on(event, fn);
+  }
+}
+
+function remove$1(event, fn) {
+  target.$off(event, fn);
+}
+
+function updateComponentListeners(vm, listeners, oldListeners) {
+  target = vm;
+  updateListeners(listeners, oldListeners || {}, add, remove$1, vm);
+  target = undefined;
+}
+
+function eventsMixin(Vue) {
+  var hookRE = /^hook:/;
+  Vue.prototype.$on = function (event, fn) {
+    var this$1 = this;
+
+    var vm = this;
+    if (Array.isArray(event)) {
+      for (var i = 0, l = event.length; i < l; i++) {
+        this$1.$on(event[i], fn);
+      }
+    } else {
+      (vm._events[event] || (vm._events[event] = [])).push(fn);
+      // optimize hook:event cost by using a boolean flag marked at registration
+      // instead of a hash lookup
+      if (hookRE.test(event)) {
+        vm._hasHookEvent = true;
+      }
+    }
+    return vm;
+  };
+
+  Vue.prototype.$once = function (event, fn) {
+    var vm = this;
+    function on() {
+      vm.$off(event, on);
+      fn.apply(vm, arguments);
+    }
+    on.fn = fn;
+    vm.$on(event, on);
+    return vm;
+  };
+
+  Vue.prototype.$off = function (event, fn) {
+    var this$1 = this;
+
+    var vm = this;
+    // all
+    if (!arguments.length) {
+      vm._events = Object.create(null);
+      return vm;
+    }
+    // array of events
+    if (Array.isArray(event)) {
+      for (var i = 0, l = event.length; i < l; i++) {
+        this$1.$off(event[i], fn);
+      }
+      return vm;
+    }
+    // specific event
+    var cbs = vm._events[event];
+    if (!cbs) {
+      return vm;
+    }
+    if (!fn) {
+      vm._events[event] = null;
+      return vm;
+    }
+    if (fn) {
+      // specific handler
+      var cb;
+      var i$1 = cbs.length;
+      while (i$1--) {
+        cb = cbs[i$1];
+        if (cb === fn || cb.fn === fn) {
+          cbs.splice(i$1, 1);
+          break;
+        }
+      }
+    }
+    return vm;
+  };
+
+  Vue.prototype.$emit = function (event) {
+    var vm = this;
+    if ('development' !== 'production') {
+      var lowerCaseEvent = event.toLowerCase();
+      if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
+        tip("Event \"" + lowerCaseEvent + "\" is emitted in component " + formatComponentName(vm) + " but the handler is registered for \"" + event + "\". " + "Note that HTML attributes are case-insensitive and you cannot use " + "v-on to listen to camelCase events when using in-DOM templates. " + "You should probably use \"" + hyphenate(event) + "\" instead of \"" + event + "\".");
+      }
+    }
+    var cbs = vm._events[event];
+    if (cbs) {
+      cbs = cbs.length > 1 ? toArray(cbs) : cbs;
+      var args = toArray(arguments, 1);
+      for (var i = 0, l = cbs.length; i < l; i++) {
+        try {
+          cbs[i].apply(vm, args);
+        } catch (e) {
+          handleError(e, vm, "event handler for \"" + event + "\"");
+        }
+      }
+    }
+    return vm;
+  };
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving raw children VNodes into a slot object.
+ */
+function resolveSlots(children, context) {
+  var slots = {};
+  if (!children) {
+    return slots;
+  }
+  for (var i = 0, l = children.length; i < l; i++) {
+    var child = children[i];
+    var data = child.data;
+    // remove slot attribute if the node is resolved as a Vue slot node
+    if (data && data.attrs && data.attrs.slot) {
+      delete data.attrs.slot;
+    }
+    // named slots should only be respected if the vnode was rendered in the
+    // same context.
+    if ((child.context === context || child.fnContext === context) && data && data.slot != null) {
+      var name = data.slot;
+      var slot = slots[name] || (slots[name] = []);
+      if (child.tag === 'template') {
+        slot.push.apply(slot, child.children || []);
+      } else {
+        slot.push(child);
+      }
+    } else {
+      (slots.default || (slots.default = [])).push(child);
+    }
+  }
+  // ignore slots that contains only whitespace
+  for (var name$1 in slots) {
+    if (slots[name$1].every(isWhitespace)) {
+      delete slots[name$1];
+    }
+  }
+  return slots;
+}
+
+function isWhitespace(node) {
+  return node.isComment && !node.asyncFactory || node.text === ' ';
+}
+
+function resolveScopedSlots(fns, // see flow/vnode
+res) {
+  res = res || {};
+  for (var i = 0; i < fns.length; i++) {
+    if (Array.isArray(fns[i])) {
+      resolveScopedSlots(fns[i], res);
+    } else {
+      res[fns[i].key] = fns[i].fn;
+    }
+  }
+  return res;
+}
+
+/*  */
+
+var activeInstance = null;
+var isUpdatingChildComponent = false;
+
+function initLifecycle(vm) {
+  var options = vm.$options;
+
+  // locate first non-abstract parent
+  var parent = options.parent;
+  if (parent && !options.abstract) {
+    while (parent.$options.abstract && parent.$parent) {
+      parent = parent.$parent;
+    }
+    parent.$children.push(vm);
+  }
+
+  vm.$parent = parent;
+  vm.$root = parent ? parent.$root : vm;
+
+  vm.$children = [];
+  vm.$refs = {};
+
+  vm._watcher = null;
+  vm._inactive = null;
+  vm._directInactive = false;
+  vm._isMounted = false;
+  vm._isDestroyed = false;
+  vm._isBeingDestroyed = false;
+}
+
+function lifecycleMixin(Vue) {
+  Vue.prototype._update = function (vnode, hydrating) {
+    var vm = this;
+    if (vm._isMounted) {
+      callHook(vm, 'beforeUpdate');
+    }
+    var prevEl = vm.$el;
+    var prevVnode = vm._vnode;
+    var prevActiveInstance = activeInstance;
+    activeInstance = vm;
+    vm._vnode = vnode;
+    // Vue.prototype.__patch__ is injected in entry points
+    // based on the rendering backend used.
+    if (!prevVnode) {
+      // initial render
+      vm.$el = vm.__patch__(vm.$el, vnode, hydrating, false /* removeOnly */
+      , vm.$options._parentElm, vm.$options._refElm);
+      // no need for the ref nodes after initial patch
+      // this prevents keeping a detached DOM tree in memory (#5851)
+      vm.$options._parentElm = vm.$options._refElm = null;
+    } else {
+      // updates
+      vm.$el = vm.__patch__(prevVnode, vnode);
+    }
+    activeInstance = prevActiveInstance;
+    // update __vue__ reference
+    if (prevEl) {
+      prevEl.__vue__ = null;
+    }
+    if (vm.$el) {
+      vm.$el.__vue__ = vm;
+    }
+    // if parent is an HOC, update its $el as well
+    if (vm.$vnode && vm.$parent && vm.$vnode === vm.$parent._vnode) {
+      vm.$parent.$el = vm.$el;
+    }
+    // updated hook is called by the scheduler to ensure that children are
+    // updated in a parent's updated hook.
+  };
+
+  Vue.prototype.$forceUpdate = function () {
+    var vm = this;
+    if (vm._watcher) {
+      vm._watcher.update();
+    }
+  };
+
+  Vue.prototype.$destroy = function () {
+    var vm = this;
+    if (vm._isBeingDestroyed) {
+      return;
+    }
+    callHook(vm, 'beforeDestroy');
+    vm._isBeingDestroyed = true;
+    // remove self from parent
+    var parent = vm.$parent;
+    if (parent && !parent._isBeingDestroyed && !vm.$options.abstract) {
+      remove(parent.$children, vm);
+    }
+    // teardown watchers
+    if (vm._watcher) {
+      vm._watcher.teardown();
+    }
+    var i = vm._watchers.length;
+    while (i--) {
+      vm._watchers[i].teardown();
+    }
+    // remove reference from data ob
+    // frozen object may not have observer.
+    if (vm._data.__ob__) {
+      vm._data.__ob__.vmCount--;
+    }
+    // call the last hook...
+    vm._isDestroyed = true;
+    // invoke destroy hooks on current rendered tree
+    vm.__patch__(vm._vnode, null);
+    // fire destroyed hook
+    callHook(vm, 'destroyed');
+    // turn off all instance listeners.
+    vm.$off();
+    // remove __vue__ reference
+    if (vm.$el) {
+      vm.$el.__vue__ = null;
+    }
+    // release circular reference (#6759)
+    if (vm.$vnode) {
+      vm.$vnode.parent = null;
+    }
+  };
+}
+
+function mountComponent(vm, el, hydrating) {
+  vm.$el = el;
+  if (!vm.$options.render) {
+    vm.$options.render = createEmptyVNode;
+    if ('development' !== 'production') {
+      /* istanbul ignore if */
+      if (vm.$options.template && vm.$options.template.charAt(0) !== '#' || vm.$options.el || el) {
+        warn('You are using the runtime-only build of Vue where the template ' + 'compiler is not available. Either pre-compile the templates into ' + 'render functions, or use the compiler-included build.', vm);
+      } else {
+        warn('Failed to mount component: template or render function not defined.', vm);
+      }
+    }
+  }
+  callHook(vm, 'beforeMount');
+
+  var updateComponent;
+  /* istanbul ignore if */
+  if ('development' !== 'production' && config.performance && mark) {
+    updateComponent = function () {
+      var name = vm._name;
+      var id = vm._uid;
+      var startTag = "vue-perf-start:" + id;
+      var endTag = "vue-perf-end:" + id;
+
+      mark(startTag);
+      var vnode = vm._render();
+      mark(endTag);
+      measure("vue " + name + " render", startTag, endTag);
+
+      mark(startTag);
+      vm._update(vnode, hydrating);
+      mark(endTag);
+      measure("vue " + name + " patch", startTag, endTag);
+    };
+  } else {
+    updateComponent = function () {
+      vm._update(vm._render(), hydrating);
+    };
+  }
+
+  // we set this to vm._watcher inside the watcher's constructor
+  // since the watcher's initial patch may call $forceUpdate (e.g. inside child
+  // component's mounted hook), which relies on vm._watcher being already defined
+  new Watcher(vm, updateComponent, noop, null, true /* isRenderWatcher */);
+  hydrating = false;
+
+  // manually mounted instance, call mounted on self
+  // mounted is called for render-created child components in its inserted hook
+  if (vm.$vnode == null) {
+    vm._isMounted = true;
+    callHook(vm, 'mounted');
+  }
+  return vm;
+}
+
+function updateChildComponent(vm, propsData, listeners, parentVnode, renderChildren) {
+  if ('development' !== 'production') {
+    isUpdatingChildComponent = true;
+  }
+
+  // determine whether component has slot children
+  // we need to do this before overwriting $options._renderChildren
+  var hasChildren = !!(renderChildren || // has new static slots
+  vm.$options._renderChildren || // has old static slots
+  parentVnode.data.scopedSlots || // has new scoped slots
+  vm.$scopedSlots !== emptyObject // has old scoped slots
+  );
+
+  vm.$options._parentVnode = parentVnode;
+  vm.$vnode = parentVnode; // update vm's placeholder node without re-render
+
+  if (vm._vnode) {
+    // update child tree's parent
+    vm._vnode.parent = parentVnode;
+  }
+  vm.$options._renderChildren = renderChildren;
+
+  // update $attrs and $listeners hash
+  // these are also reactive so they may trigger child update if the child
+  // used them during render
+  vm.$attrs = parentVnode.data && parentVnode.data.attrs || emptyObject;
+  vm.$listeners = listeners || emptyObject;
+
+  // update props
+  if (propsData && vm.$options.props) {
+    observerState.shouldConvert = false;
+    var props = vm._props;
+    var propKeys = vm.$options._propKeys || [];
+    for (var i = 0; i < propKeys.length; i++) {
+      var key = propKeys[i];
+      props[key] = validateProp(key, vm.$options.props, propsData, vm);
+    }
+    observerState.shouldConvert = true;
+    // keep a copy of raw propsData
+    vm.$options.propsData = propsData;
+  }
+
+  // update listeners
+  if (listeners) {
+    var oldListeners = vm.$options._parentListeners;
+    vm.$options._parentListeners = listeners;
+    updateComponentListeners(vm, listeners, oldListeners);
+  }
+  // resolve slots + force update if has children
+  if (hasChildren) {
+    vm.$slots = resolveSlots(renderChildren, parentVnode.context);
+    vm.$forceUpdate();
+  }
+
+  if ('development' !== 'production') {
+    isUpdatingChildComponent = false;
+  }
+}
+
+function isInInactiveTree(vm) {
+  while (vm && (vm = vm.$parent)) {
+    if (vm._inactive) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function activateChildComponent(vm, direct) {
+  if (direct) {
+    vm._directInactive = false;
+    if (isInInactiveTree(vm)) {
+      return;
+    }
+  } else if (vm._directInactive) {
+    return;
+  }
+  if (vm._inactive || vm._inactive === null) {
+    vm._inactive = false;
+    for (var i = 0; i < vm.$children.length; i++) {
+      activateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'activated');
+  }
+}
+
+function deactivateChildComponent(vm, direct) {
+  if (direct) {
+    vm._directInactive = true;
+    if (isInInactiveTree(vm)) {
+      return;
+    }
+  }
+  if (!vm._inactive) {
+    vm._inactive = true;
+    for (var i = 0; i < vm.$children.length; i++) {
+      deactivateChildComponent(vm.$children[i]);
+    }
+    callHook(vm, 'deactivated');
+  }
+}
+
+function callHook(vm, hook) {
+  var handlers = vm.$options[hook];
+  if (handlers) {
+    for (var i = 0, j = handlers.length; i < j; i++) {
+      try {
+        handlers[i].call(vm);
+      } catch (e) {
+        handleError(e, vm, hook + " hook");
+      }
+    }
+  }
+  if (vm._hasHookEvent) {
+    vm.$emit('hook:' + hook);
+  }
+}
+
+/*  */
+
+var MAX_UPDATE_COUNT = 100;
+
+var queue = [];
+var activatedChildren = [];
+var has = {};
+var circular = {};
+var waiting = false;
+var flushing = false;
+var index = 0;
+
+/**
+ * Reset the scheduler's state.
+ */
+function resetSchedulerState() {
+  index = queue.length = activatedChildren.length = 0;
+  has = {};
+  if ('development' !== 'production') {
+    circular = {};
+  }
+  waiting = flushing = false;
+}
+
+/**
+ * Flush both queues and run the watchers.
+ */
+function flushSchedulerQueue() {
+  flushing = true;
+  var watcher, id;
+
+  // Sort queue before flush.
+  // This ensures that:
+  // 1. Components are updated from parent to child. (because parent is always
+  //    created before the child)
+  // 2. A component's user watchers are run before its render watcher (because
+  //    user watchers are created before the render watcher)
+  // 3. If a component is destroyed during a parent component's watcher run,
+  //    its watchers can be skipped.
+  queue.sort(function (a, b) {
+    return a.id - b.id;
+  });
+
+  // do not cache length because more watchers might be pushed
+  // as we run existing watchers
+  for (index = 0; index < queue.length; index++) {
+    watcher = queue[index];
+    id = watcher.id;
+    has[id] = null;
+    watcher.run();
+    // in dev build, check and stop circular updates.
+    if ('development' !== 'production' && has[id] != null) {
+      circular[id] = (circular[id] || 0) + 1;
+      if (circular[id] > MAX_UPDATE_COUNT) {
+        warn('You may have an infinite update loop ' + (watcher.user ? "in watcher with expression \"" + watcher.expression + "\"" : "in a component render function."), watcher.vm);
+        break;
+      }
+    }
+  }
+
+  // keep copies of post queues before resetting state
+  var activatedQueue = activatedChildren.slice();
+  var updatedQueue = queue.slice();
+
+  resetSchedulerState();
+
+  // call component updated and activated hooks
+  callActivatedHooks(activatedQueue);
+  callUpdatedHooks(updatedQueue);
+
+  // devtool hook
+  /* istanbul ignore if */
+  if (devtools && config.devtools) {
+    devtools.emit('flush');
+  }
+}
+
+function callUpdatedHooks(queue) {
+  var i = queue.length;
+  while (i--) {
+    var watcher = queue[i];
+    var vm = watcher.vm;
+    if (vm._watcher === watcher && vm._isMounted) {
+      callHook(vm, 'updated');
+    }
+  }
+}
+
+/**
+ * Queue a kept-alive component that was activated during patch.
+ * The queue will be processed after the entire tree has been patched.
+ */
+function queueActivatedComponent(vm) {
+  // setting _inactive to false here so that a render function can
+  // rely on checking whether it's in an inactive tree (e.g. router-view)
+  vm._inactive = false;
+  activatedChildren.push(vm);
+}
+
+function callActivatedHooks(queue) {
+  for (var i = 0; i < queue.length; i++) {
+    queue[i]._inactive = true;
+    activateChildComponent(queue[i], true /* true */);
+  }
+}
+
+/**
+ * Push a watcher into the watcher queue.
+ * Jobs with duplicate IDs will be skipped unless it's
+ * pushed when the queue is being flushed.
+ */
+function queueWatcher(watcher) {
+  var id = watcher.id;
+  if (has[id] == null) {
+    has[id] = true;
+    if (!flushing) {
+      queue.push(watcher);
+    } else {
+      // if already flushing, splice the watcher based on its id
+      // if already past its id, it will be run next immediately.
+      var i = queue.length - 1;
+      while (i > index && queue[i].id > watcher.id) {
+        i--;
+      }
+      queue.splice(i + 1, 0, watcher);
+    }
+    // queue the flush
+    if (!waiting) {
+      waiting = true;
+      nextTick(flushSchedulerQueue);
+    }
+  }
+}
+
+/*  */
+
+var uid$2 = 0;
+
+/**
+ * A watcher parses an expression, collects dependencies,
+ * and fires callback when the expression value changes.
+ * This is used for both the $watch() api and directives.
+ */
+var Watcher = function Watcher(vm, expOrFn, cb, options, isRenderWatcher) {
+  this.vm = vm;
+  if (isRenderWatcher) {
+    vm._watcher = this;
+  }
+  vm._watchers.push(this);
+  // options
+  if (options) {
+    this.deep = !!options.deep;
+    this.user = !!options.user;
+    this.lazy = !!options.lazy;
+    this.sync = !!options.sync;
+  } else {
+    this.deep = this.user = this.lazy = this.sync = false;
+  }
+  this.cb = cb;
+  this.id = ++uid$2; // uid for batching
+  this.active = true;
+  this.dirty = this.lazy; // for lazy watchers
+  this.deps = [];
+  this.newDeps = [];
+  this.depIds = new _Set();
+  this.newDepIds = new _Set();
+  this.expression = 'development' !== 'production' ? expOrFn.toString() : '';
+  // parse expression for getter
+  if (typeof expOrFn === 'function') {
+    this.getter = expOrFn;
+  } else {
+    this.getter = parsePath(expOrFn);
+    if (!this.getter) {
+      this.getter = function () {};
+      'development' !== 'production' && warn("Failed watching path: \"" + expOrFn + "\" " + 'Watcher only accepts simple dot-delimited paths. ' + 'For full control, use a function instead.', vm);
+    }
+  }
+  this.value = this.lazy ? undefined : this.get();
+};
+
+/**
+ * Evaluate the getter, and re-collect dependencies.
+ */
+Watcher.prototype.get = function get() {
+  pushTarget(this);
+  var value;
+  var vm = this.vm;
+  try {
+    value = this.getter.call(vm, vm);
+  } catch (e) {
+    if (this.user) {
+      handleError(e, vm, "getter for watcher \"" + this.expression + "\"");
+    } else {
+      throw e;
+    }
+  } finally {
+    // "touch" every property so they are all tracked as
+    // dependencies for deep watching
+    if (this.deep) {
+      traverse(value);
+    }
+    popTarget();
+    this.cleanupDeps();
+  }
+  return value;
+};
+
+/**
+ * Add a dependency to this directive.
+ */
+Watcher.prototype.addDep = function addDep(dep) {
+  var id = dep.id;
+  if (!this.newDepIds.has(id)) {
+    this.newDepIds.add(id);
+    this.newDeps.push(dep);
+    if (!this.depIds.has(id)) {
+      dep.addSub(this);
+    }
+  }
+};
+
+/**
+ * Clean up for dependency collection.
+ */
+Watcher.prototype.cleanupDeps = function cleanupDeps() {
+  var this$1 = this;
+
+  var i = this.deps.length;
+  while (i--) {
+    var dep = this$1.deps[i];
+    if (!this$1.newDepIds.has(dep.id)) {
+      dep.removeSub(this$1);
+    }
+  }
+  var tmp = this.depIds;
+  this.depIds = this.newDepIds;
+  this.newDepIds = tmp;
+  this.newDepIds.clear();
+  tmp = this.deps;
+  this.deps = this.newDeps;
+  this.newDeps = tmp;
+  this.newDeps.length = 0;
+};
+
+/**
+ * Subscriber interface.
+ * Will be called when a dependency changes.
+ */
+Watcher.prototype.update = function update() {
+  /* istanbul ignore else */
+  if (this.lazy) {
+    this.dirty = true;
+  } else if (this.sync) {
+    this.run();
+  } else {
+    queueWatcher(this);
+  }
+};
+
+/**
+ * Scheduler job interface.
+ * Will be called by the scheduler.
+ */
+Watcher.prototype.run = function run() {
+  if (this.active) {
+    var value = this.get();
+    if (value !== this.value ||
+    // Deep watchers and watchers on Object/Arrays should fire even
+    // when the value is the same, because the value may
+    // have mutated.
+    isObject(value) || this.deep) {
+      // set new value
+      var oldValue = this.value;
+      this.value = value;
+      if (this.user) {
+        try {
+          this.cb.call(this.vm, value, oldValue);
+        } catch (e) {
+          handleError(e, this.vm, "callback for watcher \"" + this.expression + "\"");
+        }
+      } else {
+        this.cb.call(this.vm, value, oldValue);
+      }
+    }
+  }
+};
+
+/**
+ * Evaluate the value of the watcher.
+ * This only gets called for lazy watchers.
+ */
+Watcher.prototype.evaluate = function evaluate() {
+  this.value = this.get();
+  this.dirty = false;
+};
+
+/**
+ * Depend on all deps collected by this watcher.
+ */
+Watcher.prototype.depend = function depend() {
+  var this$1 = this;
+
+  var i = this.deps.length;
+  while (i--) {
+    this$1.deps[i].depend();
+  }
+};
+
+/**
+ * Remove self from all dependencies' subscriber list.
+ */
+Watcher.prototype.teardown = function teardown() {
+  var this$1 = this;
+
+  if (this.active) {
+    // remove self from vm's watcher list
+    // this is a somewhat expensive operation so we skip it
+    // if the vm is being destroyed.
+    if (!this.vm._isBeingDestroyed) {
+      remove(this.vm._watchers, this);
+    }
+    var i = this.deps.length;
+    while (i--) {
+      this$1.deps[i].removeSub(this$1);
+    }
+    this.active = false;
+  }
+};
+
+/*  */
+
+var sharedPropertyDefinition = {
+  enumerable: true,
+  configurable: true,
+  get: noop,
+  set: noop
+};
+
+function proxy(target, sourceKey, key) {
+  sharedPropertyDefinition.get = function proxyGetter() {
+    return this[sourceKey][key];
+  };
+  sharedPropertyDefinition.set = function proxySetter(val) {
+    this[sourceKey][key] = val;
+  };
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function initState(vm) {
+  vm._watchers = [];
+  var opts = vm.$options;
+  if (opts.props) {
+    initProps(vm, opts.props);
+  }
+  if (opts.methods) {
+    initMethods(vm, opts.methods);
+  }
+  if (opts.data) {
+    initData(vm);
+  } else {
+    observe(vm._data = {}, true /* asRootData */);
+  }
+  if (opts.computed) {
+    initComputed(vm, opts.computed);
+  }
+  if (opts.watch && opts.watch !== nativeWatch) {
+    initWatch(vm, opts.watch);
+  }
+}
+
+function initProps(vm, propsOptions) {
+  var propsData = vm.$options.propsData || {};
+  var props = vm._props = {};
+  // cache prop keys so that future props updates can iterate using Array
+  // instead of dynamic object key enumeration.
+  var keys = vm.$options._propKeys = [];
+  var isRoot = !vm.$parent;
+  // root instance props should be converted
+  observerState.shouldConvert = isRoot;
+  var loop = function (key) {
+    keys.push(key);
+    var value = validateProp(key, propsOptions, propsData, vm);
+    /* istanbul ignore else */
+    if ('development' !== 'production') {
+      var hyphenatedKey = hyphenate(key);
+      if (isReservedAttribute(hyphenatedKey) || config.isReservedAttr(hyphenatedKey)) {
+        warn("\"" + hyphenatedKey + "\" is a reserved attribute and cannot be used as component prop.", vm);
+      }
+      defineReactive(props, key, value, function () {
+        if (vm.$parent && !isUpdatingChildComponent) {
+          warn("Avoid mutating a prop directly since the value will be " + "overwritten whenever the parent component re-renders. " + "Instead, use a data or computed property based on the prop's " + "value. Prop being mutated: \"" + key + "\"", vm);
+        }
+      });
+    } else {
+      defineReactive(props, key, value);
+    }
+    // static props are already proxied on the component's prototype
+    // during Vue.extend(). We only need to proxy props defined at
+    // instantiation here.
+    if (!(key in vm)) {
+      proxy(vm, "_props", key);
+    }
+  };
+
+  for (var key in propsOptions) loop(key);
+  observerState.shouldConvert = true;
+}
+
+function initData(vm) {
+  var data = vm.$options.data;
+  data = vm._data = typeof data === 'function' ? getData(data, vm) : data || {};
+  if (!isPlainObject(data)) {
+    data = {};
+    'development' !== 'production' && warn('data functions should return an object:\n' + 'https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function', vm);
+  }
+  // proxy data on instance
+  var keys = Object.keys(data);
+  var props = vm.$options.props;
+  var methods = vm.$options.methods;
+  var i = keys.length;
+  while (i--) {
+    var key = keys[i];
+    if ('development' !== 'production') {
+      if (methods && hasOwn(methods, key)) {
+        warn("Method \"" + key + "\" has already been defined as a data property.", vm);
+      }
+    }
+    if (props && hasOwn(props, key)) {
+      'development' !== 'production' && warn("The data property \"" + key + "\" is already declared as a prop. " + "Use prop default value instead.", vm);
+    } else if (!isReserved(key)) {
+      proxy(vm, "_data", key);
+    }
+  }
+  // observe data
+  observe(data, true /* asRootData */);
+}
+
+function getData(data, vm) {
+  try {
+    return data.call(vm, vm);
+  } catch (e) {
+    handleError(e, vm, "data()");
+    return {};
+  }
+}
+
+var computedWatcherOptions = { lazy: true };
+
+function initComputed(vm, computed) {
+  // $flow-disable-line
+  var watchers = vm._computedWatchers = Object.create(null);
+  // computed properties are just getters during SSR
+  var isSSR = isServerRendering();
+
+  for (var key in computed) {
+    var userDef = computed[key];
+    var getter = typeof userDef === 'function' ? userDef : userDef.get;
+    if ('development' !== 'production' && getter == null) {
+      warn("Getter is missing for computed property \"" + key + "\".", vm);
+    }
+
+    if (!isSSR) {
+      // create internal watcher for the computed property.
+      watchers[key] = new Watcher(vm, getter || noop, noop, computedWatcherOptions);
+    }
+
+    // component-defined computed properties are already defined on the
+    // component prototype. We only need to define computed properties defined
+    // at instantiation here.
+    if (!(key in vm)) {
+      defineComputed(vm, key, userDef);
+    } else if ('development' !== 'production') {
+      if (key in vm.$data) {
+        warn("The computed property \"" + key + "\" is already defined in data.", vm);
+      } else if (vm.$options.props && key in vm.$options.props) {
+        warn("The computed property \"" + key + "\" is already defined as a prop.", vm);
+      }
+    }
+  }
+}
+
+function defineComputed(target, key, userDef) {
+  var shouldCache = !isServerRendering();
+  if (typeof userDef === 'function') {
+    sharedPropertyDefinition.get = shouldCache ? createComputedGetter(key) : userDef;
+    sharedPropertyDefinition.set = noop;
+  } else {
+    sharedPropertyDefinition.get = userDef.get ? shouldCache && userDef.cache !== false ? createComputedGetter(key) : userDef.get : noop;
+    sharedPropertyDefinition.set = userDef.set ? userDef.set : noop;
+  }
+  if ('development' !== 'production' && sharedPropertyDefinition.set === noop) {
+    sharedPropertyDefinition.set = function () {
+      warn("Computed property \"" + key + "\" was assigned to but it has no setter.", this);
+    };
+  }
+  Object.defineProperty(target, key, sharedPropertyDefinition);
+}
+
+function createComputedGetter(key) {
+  return function computedGetter() {
+    var watcher = this._computedWatchers && this._computedWatchers[key];
+    if (watcher) {
+      if (watcher.dirty) {
+        watcher.evaluate();
+      }
+      if (Dep.target) {
+        watcher.depend();
+      }
+      return watcher.value;
+    }
+  };
+}
+
+function initMethods(vm, methods) {
+  var props = vm.$options.props;
+  for (var key in methods) {
+    if ('development' !== 'production') {
+      if (methods[key] == null) {
+        warn("Method \"" + key + "\" has an undefined value in the component definition. " + "Did you reference the function correctly?", vm);
+      }
+      if (props && hasOwn(props, key)) {
+        warn("Method \"" + key + "\" has already been defined as a prop.", vm);
+      }
+      if (key in vm && isReserved(key)) {
+        warn("Method \"" + key + "\" conflicts with an existing Vue instance method. " + "Avoid defining component methods that start with _ or $.");
+      }
+    }
+    vm[key] = methods[key] == null ? noop : bind(methods[key], vm);
+  }
+}
+
+function initWatch(vm, watch) {
+  for (var key in watch) {
+    var handler = watch[key];
+    if (Array.isArray(handler)) {
+      for (var i = 0; i < handler.length; i++) {
+        createWatcher(vm, key, handler[i]);
+      }
+    } else {
+      createWatcher(vm, key, handler);
+    }
+  }
+}
+
+function createWatcher(vm, keyOrFn, handler, options) {
+  if (isPlainObject(handler)) {
+    options = handler;
+    handler = handler.handler;
+  }
+  if (typeof handler === 'string') {
+    handler = vm[handler];
+  }
+  return vm.$watch(keyOrFn, handler, options);
+}
+
+function stateMixin(Vue) {
+  // flow somehow has problems with directly declared definition object
+  // when using Object.defineProperty, so we have to procedurally build up
+  // the object here.
+  var dataDef = {};
+  dataDef.get = function () {
+    return this._data;
+  };
+  var propsDef = {};
+  propsDef.get = function () {
+    return this._props;
+  };
+  if ('development' !== 'production') {
+    dataDef.set = function (newData) {
+      warn('Avoid replacing instance root $data. ' + 'Use nested data properties instead.', this);
+    };
+    propsDef.set = function () {
+      warn("$props is readonly.", this);
+    };
+  }
+  Object.defineProperty(Vue.prototype, '$data', dataDef);
+  Object.defineProperty(Vue.prototype, '$props', propsDef);
+
+  Vue.prototype.$set = set;
+  Vue.prototype.$delete = del;
+
+  Vue.prototype.$watch = function (expOrFn, cb, options) {
+    var vm = this;
+    if (isPlainObject(cb)) {
+      return createWatcher(vm, expOrFn, cb, options);
+    }
+    options = options || {};
+    options.user = true;
+    var watcher = new Watcher(vm, expOrFn, cb, options);
+    if (options.immediate) {
+      cb.call(vm, watcher.value);
+    }
+    return function unwatchFn() {
+      watcher.teardown();
+    };
+  };
+}
+
+/*  */
+
+function initProvide(vm) {
+  var provide = vm.$options.provide;
+  if (provide) {
+    vm._provided = typeof provide === 'function' ? provide.call(vm) : provide;
+  }
+}
+
+function initInjections(vm) {
+  var result = resolveInject(vm.$options.inject, vm);
+  if (result) {
+    observerState.shouldConvert = false;
+    Object.keys(result).forEach(function (key) {
+      /* istanbul ignore else */
+      if ('development' !== 'production') {
+        defineReactive(vm, key, result[key], function () {
+          warn("Avoid mutating an injected value directly since the changes will be " + "overwritten whenever the provided component re-renders. " + "injection being mutated: \"" + key + "\"", vm);
+        });
+      } else {
+        defineReactive(vm, key, result[key]);
+      }
+    });
+    observerState.shouldConvert = true;
+  }
+}
+
+function resolveInject(inject, vm) {
+  if (inject) {
+    // inject is :any because flow is not smart enough to figure out cached
+    var result = Object.create(null);
+    var keys = hasSymbol ? Reflect.ownKeys(inject).filter(function (key) {
+      /* istanbul ignore next */
+      return Object.getOwnPropertyDescriptor(inject, key).enumerable;
+    }) : Object.keys(inject);
+
+    for (var i = 0; i < keys.length; i++) {
+      var key = keys[i];
+      var provideKey = inject[key].from;
+      var source = vm;
+      while (source) {
+        if (source._provided && provideKey in source._provided) {
+          result[key] = source._provided[provideKey];
+          break;
+        }
+        source = source.$parent;
+      }
+      if (!source) {
+        if ('default' in inject[key]) {
+          var provideDefault = inject[key].default;
+          result[key] = typeof provideDefault === 'function' ? provideDefault.call(vm) : provideDefault;
+        } else if ('development' !== 'production') {
+          warn("Injection \"" + key + "\" not found", vm);
+        }
+      }
+    }
+    return result;
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering v-for lists.
+ */
+function renderList(val, render) {
+  var ret, i, l, keys, key;
+  if (Array.isArray(val) || typeof val === 'string') {
+    ret = new Array(val.length);
+    for (i = 0, l = val.length; i < l; i++) {
+      ret[i] = render(val[i], i);
+    }
+  } else if (typeof val === 'number') {
+    ret = new Array(val);
+    for (i = 0; i < val; i++) {
+      ret[i] = render(i + 1, i);
+    }
+  } else if (isObject(val)) {
+    keys = Object.keys(val);
+    ret = new Array(keys.length);
+    for (i = 0, l = keys.length; i < l; i++) {
+      key = keys[i];
+      ret[i] = render(val[key], key, i);
+    }
+  }
+  if (isDef(ret)) {
+    ret._isVList = true;
+  }
+  return ret;
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering <slot>
+ */
+function renderSlot(name, fallback, props, bindObject) {
+  var scopedSlotFn = this.$scopedSlots[name];
+  var nodes;
+  if (scopedSlotFn) {
+    // scoped slot
+    props = props || {};
+    if (bindObject) {
+      if ('development' !== 'production' && !isObject(bindObject)) {
+        warn('slot v-bind without argument expects an Object', this);
+      }
+      props = extend(extend({}, bindObject), props);
+    }
+    nodes = scopedSlotFn(props) || fallback;
+  } else {
+    var slotNodes = this.$slots[name];
+    // warn duplicate slot usage
+    if (slotNodes) {
+      if ('development' !== 'production' && slotNodes._rendered) {
+        warn("Duplicate presence of slot \"" + name + "\" found in the same render tree " + "- this will likely cause render errors.", this);
+      }
+      slotNodes._rendered = true;
+    }
+    nodes = slotNodes || fallback;
+  }
+
+  var target = props && props.slot;
+  if (target) {
+    return this.$createElement('template', { slot: target }, nodes);
+  } else {
+    return nodes;
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for resolving filters
+ */
+function resolveFilter(id) {
+  return resolveAsset(this.$options, 'filters', id, true) || identity;
+}
+
+/*  */
+
+/**
+ * Runtime helper for checking keyCodes from config.
+ * exposed as Vue.prototype._k
+ * passing in eventKeyName as last argument separately for backwards compat
+ */
+function checkKeyCodes(eventKeyCode, key, builtInAlias, eventKeyName) {
+  var keyCodes = config.keyCodes[key] || builtInAlias;
+  if (keyCodes) {
+    if (Array.isArray(keyCodes)) {
+      return keyCodes.indexOf(eventKeyCode) === -1;
+    } else {
+      return keyCodes !== eventKeyCode;
+    }
+  } else if (eventKeyName) {
+    return hyphenate(eventKeyName) !== key;
+  }
+}
+
+/*  */
+
+/**
+ * Runtime helper for merging v-bind="object" into a VNode's data.
+ */
+function bindObjectProps(data, tag, value, asProp, isSync) {
+  if (value) {
+    if (!isObject(value)) {
+      'development' !== 'production' && warn('v-bind without argument expects an Object or Array value', this);
+    } else {
+      if (Array.isArray(value)) {
+        value = toObject(value);
+      }
+      var hash;
+      var loop = function (key) {
+        if (key === 'class' || key === 'style' || isReservedAttribute(key)) {
+          hash = data;
+        } else {
+          var type = data.attrs && data.attrs.type;
+          hash = asProp || config.mustUseProp(tag, type, key) ? data.domProps || (data.domProps = {}) : data.attrs || (data.attrs = {});
+        }
+        if (!(key in hash)) {
+          hash[key] = value[key];
+
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on["update:" + key] = function ($event) {
+              value[key] = $event;
+            };
+          }
+        }
+      };
+
+      for (var key in value) loop(key);
+    }
+  }
+  return data;
+}
+
+/*  */
+
+/**
+ * Runtime helper for rendering static trees.
+ */
+function renderStatic(index, isInFor) {
+  var cached = this._staticTrees || (this._staticTrees = []);
+  var tree = cached[index];
+  // if has already-rendered static tree and not inside v-for,
+  // we can reuse the same tree by doing a shallow clone.
+  if (tree && !isInFor) {
+    return Array.isArray(tree) ? cloneVNodes(tree) : cloneVNode(tree);
+  }
+  // otherwise, render a fresh tree.
+  tree = cached[index] = this.$options.staticRenderFns[index].call(this._renderProxy, null, this // for render fns generated for functional component templates
+  );
+  markStatic(tree, "__static__" + index, false);
+  return tree;
+}
+
+/**
+ * Runtime helper for v-once.
+ * Effectively it means marking the node as static with a unique key.
+ */
+function markOnce(tree, index, key) {
+  markStatic(tree, "__once__" + index + (key ? "_" + key : ""), true);
+  return tree;
+}
+
+function markStatic(tree, key, isOnce) {
+  if (Array.isArray(tree)) {
+    for (var i = 0; i < tree.length; i++) {
+      if (tree[i] && typeof tree[i] !== 'string') {
+        markStaticNode(tree[i], key + "_" + i, isOnce);
+      }
+    }
+  } else {
+    markStaticNode(tree, key, isOnce);
+  }
+}
+
+function markStaticNode(node, key, isOnce) {
+  node.isStatic = true;
+  node.key = key;
+  node.isOnce = isOnce;
+}
+
+/*  */
+
+function bindObjectListeners(data, value) {
+  if (value) {
+    if (!isPlainObject(value)) {
+      'development' !== 'production' && warn('v-on without argument expects an Object value', this);
+    } else {
+      var on = data.on = data.on ? extend({}, data.on) : {};
+      for (var key in value) {
+        var existing = on[key];
+        var ours = value[key];
+        on[key] = existing ? [].concat(existing, ours) : ours;
+      }
+    }
+  }
+  return data;
+}
+
+/*  */
+
+function installRenderHelpers(target) {
+  target._o = markOnce;
+  target._n = toNumber;
+  target._s = toString;
+  target._l = renderList;
+  target._t = renderSlot;
+  target._q = looseEqual;
+  target._i = looseIndexOf;
+  target._m = renderStatic;
+  target._f = resolveFilter;
+  target._k = checkKeyCodes;
+  target._b = bindObjectProps;
+  target._v = createTextVNode;
+  target._e = createEmptyVNode;
+  target._u = resolveScopedSlots;
+  target._g = bindObjectListeners;
+}
+
+/*  */
+
+function FunctionalRenderContext(data, props, children, parent, Ctor) {
+  var options = Ctor.options;
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () {
+    return resolveSlots(children, parent);
+  };
+
+  // ensure the createElement function in functional components
+  // gets a unique context - this is necessary for correct named slot check
+  var contextVm = Object.create(parent);
+  var isCompiled = isTrue(options._compiled);
+  var needNormalization = !isCompiled;
+
+  // support for compiled functional template
+  if (isCompiled) {
+    // exposing $options for renderStatic()
+    this.$options = options;
+    // pre-resolve slots for renderSlot()
+    this.$slots = this.slots();
+    this.$scopedSlots = data.scopedSlots || emptyObject;
+  }
+
+  if (options._scopeId) {
+    this._c = function (a, b, c, d) {
+      var vnode = createElement(contextVm, a, b, c, d, needNormalization);
+      if (vnode) {
+        vnode.fnScopeId = options._scopeId;
+        vnode.fnContext = parent;
+      }
+      return vnode;
+    };
+  } else {
+    this._c = function (a, b, c, d) {
+      return createElement(contextVm, a, b, c, d, needNormalization);
+    };
+  }
+}
+
+installRenderHelpers(FunctionalRenderContext.prototype);
+
+function createFunctionalComponent(Ctor, propsData, data, contextVm, children) {
+  var options = Ctor.options;
+  var props = {};
+  var propOptions = options.props;
+  if (isDef(propOptions)) {
+    for (var key in propOptions) {
+      props[key] = validateProp(key, propOptions, propsData || emptyObject);
+    }
+  } else {
+    if (isDef(data.attrs)) {
+      mergeProps(props, data.attrs);
+    }
+    if (isDef(data.props)) {
+      mergeProps(props, data.props);
+    }
+  }
+
+  var renderContext = new FunctionalRenderContext(data, props, children, contextVm, Ctor);
+
+  var vnode = options.render.call(null, renderContext._c, renderContext);
+
+  if (vnode instanceof VNode) {
+    vnode.fnContext = contextVm;
+    vnode.fnOptions = options;
+    if (data.slot) {
+      (vnode.data || (vnode.data = {})).slot = data.slot;
+    }
+  }
+
+  return vnode;
+}
+
+function mergeProps(to, from) {
+  for (var key in from) {
+    to[camelize(key)] = from[key];
+  }
+}
+
+/*  */
+
+// Register the component hook to weex native render engine.
+// The hook will be triggered by native, not javascript.
+
+
+// Updates the state of the component to weex native render engine.
+
+/*  */
+
+// https://github.com/Hanks10100/weex-native-directive/tree/master/component
+
+// listening on native callback
+
+/*  */
+
+/*  */
+
+// hooks to be invoked on component VNodes during patch
+var componentVNodeHooks = {
+  init: function init(vnode, hydrating, parentElm, refElm) {
+    if (!vnode.componentInstance || vnode.componentInstance._isDestroyed) {
+      var child = vnode.componentInstance = createComponentInstanceForVnode(vnode, activeInstance, parentElm, refElm);
+      child.$mount(hydrating ? vnode.elm : undefined, hydrating);
+    } else if (vnode.data.keepAlive) {
+      // kept-alive components, treat as a patch
+      var mountedNode = vnode; // work around flow
+      componentVNodeHooks.prepatch(mountedNode, mountedNode);
+    }
+  },
+
+  prepatch: function prepatch(oldVnode, vnode) {
+    var options = vnode.componentOptions;
+    var child = vnode.componentInstance = oldVnode.componentInstance;
+    updateChildComponent(child, options.propsData, // updated props
+    options.listeners, // updated listeners
+    vnode, // new parent vnode
+    options.children // new children
+    );
+  },
+
+  insert: function insert(vnode) {
+    var context = vnode.context;
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isMounted) {
+      componentInstance._isMounted = true;
+      callHook(componentInstance, 'mounted');
+    }
+    if (vnode.data.keepAlive) {
+      if (context._isMounted) {
+        // vue-router#1212
+        // During updates, a kept-alive component's child components may
+        // change, so directly walking the tree here may call activated hooks
+        // on incorrect children. Instead we push them into a queue which will
+        // be processed after the whole patch process ended.
+        queueActivatedComponent(componentInstance);
+      } else {
+        activateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  },
+
+  destroy: function destroy(vnode) {
+    var componentInstance = vnode.componentInstance;
+    if (!componentInstance._isDestroyed) {
+      if (!vnode.data.keepAlive) {
+        componentInstance.$destroy();
+      } else {
+        deactivateChildComponent(componentInstance, true /* direct */);
+      }
+    }
+  }
+};
+
+var hooksToMerge = Object.keys(componentVNodeHooks);
+
+function createComponent(Ctor, data, context, children, tag) {
+  if (isUndef(Ctor)) {
+    return;
+  }
+
+  var baseCtor = context.$options._base;
+
+  // plain options object: turn it into a constructor
+  if (isObject(Ctor)) {
+    Ctor = baseCtor.extend(Ctor);
+  }
+
+  // if at this stage it's not a constructor or an async component factory,
+  // reject.
+  if (typeof Ctor !== 'function') {
+    if ('development' !== 'production') {
+      warn("Invalid Component definition: " + String(Ctor), context);
+    }
+    return;
+  }
+
+  // async component
+  var asyncFactory;
+  if (isUndef(Ctor.cid)) {
+    asyncFactory = Ctor;
+    Ctor = resolveAsyncComponent(asyncFactory, baseCtor, context);
+    if (Ctor === undefined) {
+      // return a placeholder node for async component, which is rendered
+      // as a comment node but preserves all the raw information for the node.
+      // the information will be used for async server-rendering and hydration.
+      return createAsyncPlaceholder(asyncFactory, data, context, children, tag);
+    }
+  }
+
+  data = data || {};
+
+  // resolve constructor options in case global mixins are applied after
+  // component constructor creation
+  resolveConstructorOptions(Ctor);
+
+  // transform component v-model data into props & events
+  if (isDef(data.model)) {
+    transformModel(Ctor.options, data);
+  }
+
+  // extract props
+  var propsData = extractPropsFromVNodeData(data, Ctor, tag);
+
+  // functional component
+  if (isTrue(Ctor.options.functional)) {
+    return createFunctionalComponent(Ctor, propsData, data, context, children);
+  }
+
+  // extract listeners, since these needs to be treated as
+  // child component listeners instead of DOM listeners
+  var listeners = data.on;
+  // replace with listeners with .native modifier
+  // so it gets processed during parent component patch.
+  data.on = data.nativeOn;
+
+  if (isTrue(Ctor.options.abstract)) {
+    // abstract components do not keep anything
+    // other than props & listeners & slot
+
+    // work around flow
+    var slot = data.slot;
+    data = {};
+    if (slot) {
+      data.slot = slot;
+    }
+  }
+
+  // merge component management hooks onto the placeholder node
+  mergeHooks(data);
+
+  // return a placeholder vnode
+  var name = Ctor.options.name || tag;
+  var vnode = new VNode("vue-component-" + Ctor.cid + (name ? "-" + name : ''), data, undefined, undefined, undefined, context, { Ctor: Ctor, propsData: propsData, listeners: listeners, tag: tag, children: children }, asyncFactory);
+
+  // Weex specific: invoke recycle-list optimized @render function for
+  // extracting cell-slot template.
+  // https://github.com/Hanks10100/weex-native-directive/tree/master/component
+  /* istanbul ignore if */
+  return vnode;
+}
+
+function createComponentInstanceForVnode(vnode, // we know it's MountedComponentVNode but flow doesn't
+parent, // activeInstance in lifecycle state
+parentElm, refElm) {
+  var options = {
+    _isComponent: true,
+    parent: parent,
+    _parentVnode: vnode,
+    _parentElm: parentElm || null,
+    _refElm: refElm || null
+  };
+  // check inline-template render functions
+  var inlineTemplate = vnode.data.inlineTemplate;
+  if (isDef(inlineTemplate)) {
+    options.render = inlineTemplate.render;
+    options.staticRenderFns = inlineTemplate.staticRenderFns;
+  }
+  return new vnode.componentOptions.Ctor(options);
+}
+
+function mergeHooks(data) {
+  if (!data.hook) {
+    data.hook = {};
+  }
+  for (var i = 0; i < hooksToMerge.length; i++) {
+    var key = hooksToMerge[i];
+    var fromParent = data.hook[key];
+    var ours = componentVNodeHooks[key];
+    data.hook[key] = fromParent ? mergeHook$1(ours, fromParent) : ours;
+  }
+}
+
+function mergeHook$1(one, two) {
+  return function (a, b, c, d) {
+    one(a, b, c, d);
+    two(a, b, c, d);
+  };
+}
+
+// transform component v-model info (value and callback) into
+// prop and event handler respectively.
+function transformModel(options, data) {
+  var prop = options.model && options.model.prop || 'value';
+  var event = options.model && options.model.event || 'input';(data.props || (data.props = {}))[prop] = data.model.value;
+  var on = data.on || (data.on = {});
+  if (isDef(on[event])) {
+    on[event] = [data.model.callback].concat(on[event]);
+  } else {
+    on[event] = data.model.callback;
+  }
+}
+
+/*  */
+
+var SIMPLE_NORMALIZE = 1;
+var ALWAYS_NORMALIZE = 2;
+
+// wrapper function for providing a more flexible interface
+// without getting yelled at by flow
+function createElement(context, tag, data, children, normalizationType, alwaysNormalize) {
+  if (Array.isArray(data) || isPrimitive(data)) {
+    normalizationType = children;
+    children = data;
+    data = undefined;
+  }
+  if (isTrue(alwaysNormalize)) {
+    normalizationType = ALWAYS_NORMALIZE;
+  }
+  return _createElement(context, tag, data, children, normalizationType);
+}
+
+function _createElement(context, tag, data, children, normalizationType) {
+  if (isDef(data) && isDef(data.__ob__)) {
+    'development' !== 'production' && warn("Avoid using observed data object as vnode data: " + JSON.stringify(data) + "\n" + 'Always create fresh vnode data objects in each render!', context);
+    return createEmptyVNode();
+  }
+  // object syntax in v-bind
+  if (isDef(data) && isDef(data.is)) {
+    tag = data.is;
+  }
+  if (!tag) {
+    // in case of component :is set to falsy value
+    return createEmptyVNode();
+  }
+  // warn against non-primitive key
+  if ('development' !== 'production' && isDef(data) && isDef(data.key) && !isPrimitive(data.key)) {
+    {
+      warn('Avoid using non-primitive value as key, ' + 'use string/number value instead.', context);
+    }
+  }
+  // support single function children as default scoped slot
+  if (Array.isArray(children) && typeof children[0] === 'function') {
+    data = data || {};
+    data.scopedSlots = { default: children[0] };
+    children.length = 0;
+  }
+  if (normalizationType === ALWAYS_NORMALIZE) {
+    children = normalizeChildren(children);
+  } else if (normalizationType === SIMPLE_NORMALIZE) {
+    children = simpleNormalizeChildren(children);
+  }
+  var vnode, ns;
+  if (typeof tag === 'string') {
+    var Ctor;
+    ns = context.$vnode && context.$vnode.ns || config.getTagNamespace(tag);
+    if (config.isReservedTag(tag)) {
+      // platform built-in elements
+      vnode = new VNode(config.parsePlatformTagName(tag), data, children, undefined, undefined, context);
+    } else if (isDef(Ctor = resolveAsset(context.$options, 'components', tag))) {
+      // component
+      vnode = createComponent(Ctor, data, context, children, tag);
+    } else {
+      // unknown or unlisted namespaced elements
+      // check at runtime because it may get assigned a namespace when its
+      // parent normalizes children
+      vnode = new VNode(tag, data, children, undefined, undefined, context);
+    }
+  } else {
+    // direct component options / constructor
+    vnode = createComponent(tag, data, context, children);
+  }
+  if (isDef(vnode)) {
+    if (ns) {
+      applyNS(vnode, ns);
+    }
+    return vnode;
+  } else {
+    return createEmptyVNode();
+  }
+}
+
+function applyNS(vnode, ns, force) {
+  vnode.ns = ns;
+  if (vnode.tag === 'foreignObject') {
+    // use default namespace inside foreignObject
+    ns = undefined;
+    force = true;
+  }
+  if (isDef(vnode.children)) {
+    for (var i = 0, l = vnode.children.length; i < l; i++) {
+      var child = vnode.children[i];
+      if (isDef(child.tag) && (isUndef(child.ns) || isTrue(force))) {
+        applyNS(child, ns, force);
+      }
+    }
+  }
+}
+
+/*  */
+
+function initRender(vm) {
+  vm._vnode = null; // the root of the child tree
+  vm._staticTrees = null; // v-once cached trees
+  var options = vm.$options;
+  var parentVnode = vm.$vnode = options._parentVnode; // the placeholder node in parent tree
+  var renderContext = parentVnode && parentVnode.context;
+  vm.$slots = resolveSlots(options._renderChildren, renderContext);
+  vm.$scopedSlots = emptyObject;
+  // bind the createElement fn to this instance
+  // so that we get proper render context inside it.
+  // args order: tag, data, children, normalizationType, alwaysNormalize
+  // internal version is used by render functions compiled from templates
+  vm._c = function (a, b, c, d) {
+    return createElement(vm, a, b, c, d, false);
+  };
+  // normalization is always applied for the public version, used in
+  // user-written render functions.
+  vm.$createElement = function (a, b, c, d) {
+    return createElement(vm, a, b, c, d, true);
+  };
+
+  // $attrs & $listeners are exposed for easier HOC creation.
+  // they need to be reactive so that HOCs using them are always updated
+  var parentData = parentVnode && parentVnode.data;
+
+  /* istanbul ignore else */
+  if ('development' !== 'production') {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
+    }, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, function () {
+      !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
+    }, true);
+  } else {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, null, true);
+  }
+}
+
+function renderMixin(Vue) {
+  // install runtime convenience helpers
+  installRenderHelpers(Vue.prototype);
+
+  Vue.prototype.$nextTick = function (fn) {
+    return nextTick(fn, this);
+  };
+
+  Vue.prototype._render = function () {
+    var vm = this;
+    var ref = vm.$options;
+    var render = ref.render;
+    var _parentVnode = ref._parentVnode;
+
+    if (vm._isMounted) {
+      // if the parent didn't update, the slot nodes will be the ones from
+      // last render. They need to be cloned to ensure "freshness" for this render.
+      for (var key in vm.$slots) {
+        var slot = vm.$slots[key];
+        // _rendered is a flag added by renderSlot, but may not be present
+        // if the slot is passed from manually written render functions
+        if (slot._rendered || slot[0] && slot[0].elm) {
+          vm.$slots[key] = cloneVNodes(slot, true /* deep */);
+        }
+      }
+    }
+
+    vm.$scopedSlots = _parentVnode && _parentVnode.data.scopedSlots || emptyObject;
+
+    // set parent vnode. this allows render functions to have access
+    // to the data on the placeholder node.
+    vm.$vnode = _parentVnode;
+    // render self
+    var vnode;
+    try {
+      vnode = render.call(vm._renderProxy, vm.$createElement);
+    } catch (e) {
+      handleError(e, vm, "render");
+      // return error render result,
+      // or previous vnode to prevent render error causing blank component
+      /* istanbul ignore else */
+      if ('development' !== 'production') {
+        if (vm.$options.renderError) {
+          try {
+            vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
+          } catch (e) {
+            handleError(e, vm, "renderError");
+            vnode = vm._vnode;
+          }
+        } else {
+          vnode = vm._vnode;
+        }
+      } else {
+        vnode = vm._vnode;
+      }
+    }
+    // return empty vnode in case the render function errored out
+    if (!(vnode instanceof VNode)) {
+      if ('development' !== 'production' && Array.isArray(vnode)) {
+        warn('Multiple root nodes returned from render function. Render function ' + 'should return a single root node.', vm);
+      }
+      vnode = createEmptyVNode();
+    }
+    // set parent
+    vnode.parent = _parentVnode;
+    return vnode;
+  };
+}
+
+/*  */
+
+var uid = 0;
+
+function initMixin(Vue) {
+  Vue.prototype._init = function (options) {
+    var vm = this;
+    // a uid
+    vm._uid = uid++;
+
+    var startTag, endTag;
+    /* istanbul ignore if */
+    if ('development' !== 'production' && config.performance && mark) {
+      startTag = "vue-perf-start:" + vm._uid;
+      endTag = "vue-perf-end:" + vm._uid;
+      mark(startTag);
+    }
+
+    // a flag to avoid this being observed
+    vm._isVue = true;
+    // merge options
+    if (options && options._isComponent) {
+      // optimize internal component instantiation
+      // since dynamic options merging is pretty slow, and none of the
+      // internal component options needs special treatment.
+      initInternalComponent(vm, options);
+    } else {
+      vm.$options = mergeOptions(resolveConstructorOptions(vm.constructor), options || {}, vm);
+    }
+    /* istanbul ignore else */
+    if ('development' !== 'production') {
+      initProxy(vm);
+    } else {
+      vm._renderProxy = vm;
+    }
+    // expose real self
+    vm._self = vm;
+    initLifecycle(vm);
+    initEvents(vm);
+    initRender(vm);
+    callHook(vm, 'beforeCreate');
+    initInjections(vm); // resolve injections before data/props
+    initState(vm);
+    initProvide(vm); // resolve provide after data/props
+    callHook(vm, 'created');
+
+    /* istanbul ignore if */
+    if ('development' !== 'production' && config.performance && mark) {
+      vm._name = formatComponentName(vm, false);
+      mark(endTag);
+      measure("vue " + vm._name + " init", startTag, endTag);
+    }
+
+    if (vm.$options.el) {
+      vm.$mount(vm.$options.el);
+    }
+  };
+}
+
+function initInternalComponent(vm, options) {
+  var opts = vm.$options = Object.create(vm.constructor.options);
+  // doing this because it's faster than dynamic enumeration.
+  var parentVnode = options._parentVnode;
+  opts.parent = options.parent;
+  opts._parentVnode = parentVnode;
+  opts._parentElm = options._parentElm;
+  opts._refElm = options._refElm;
+
+  var vnodeComponentOptions = parentVnode.componentOptions;
+  opts.propsData = vnodeComponentOptions.propsData;
+  opts._parentListeners = vnodeComponentOptions.listeners;
+  opts._renderChildren = vnodeComponentOptions.children;
+  opts._componentTag = vnodeComponentOptions.tag;
+
+  if (options.render) {
+    opts.render = options.render;
+    opts.staticRenderFns = options.staticRenderFns;
+  }
+}
+
+function resolveConstructorOptions(Ctor) {
+  var options = Ctor.options;
+  if (Ctor.super) {
+    var superOptions = resolveConstructorOptions(Ctor.super);
+    var cachedSuperOptions = Ctor.superOptions;
+    if (superOptions !== cachedSuperOptions) {
+      // super option changed,
+      // need to resolve new options.
+      Ctor.superOptions = superOptions;
+      // check if there are any late-modified/attached options (#4976)
+      var modifiedOptions = resolveModifiedOptions(Ctor);
+      // update base extend options
+      if (modifiedOptions) {
+        extend(Ctor.extendOptions, modifiedOptions);
+      }
+      options = Ctor.options = mergeOptions(superOptions, Ctor.extendOptions);
+      if (options.name) {
+        options.components[options.name] = Ctor;
+      }
+    }
+  }
+  return options;
+}
+
+function resolveModifiedOptions(Ctor) {
+  var modified;
+  var latest = Ctor.options;
+  var extended = Ctor.extendOptions;
+  var sealed = Ctor.sealedOptions;
+  for (var key in latest) {
+    if (latest[key] !== sealed[key]) {
+      if (!modified) {
+        modified = {};
+      }
+      modified[key] = dedupe(latest[key], extended[key], sealed[key]);
+    }
+  }
+  return modified;
+}
+
+function dedupe(latest, extended, sealed) {
+  // compare latest and sealed to ensure lifecycle hooks won't be duplicated
+  // between merges
+  if (Array.isArray(latest)) {
+    var res = [];
+    sealed = Array.isArray(sealed) ? sealed : [sealed];
+    extended = Array.isArray(extended) ? extended : [extended];
+    for (var i = 0; i < latest.length; i++) {
+      // push original options and not sealed options to exclude duplicated options
+      if (extended.indexOf(latest[i]) >= 0 || sealed.indexOf(latest[i]) < 0) {
+        res.push(latest[i]);
+      }
+    }
+    return res;
+  } else {
+    return latest;
+  }
+}
+
+function Vue$3(options) {
+  if ('development' !== 'production' && !(this instanceof Vue$3)) {
+    warn('Vue is a constructor and should be called with the `new` keyword');
+  }
+  this._init(options);
+}
+
+initMixin(Vue$3);
+stateMixin(Vue$3);
+eventsMixin(Vue$3);
+lifecycleMixin(Vue$3);
+renderMixin(Vue$3);
+
+/*  */
+
+function initUse(Vue) {
+  Vue.use = function (plugin) {
+    var installedPlugins = this._installedPlugins || (this._installedPlugins = []);
+    if (installedPlugins.indexOf(plugin) > -1) {
+      return this;
+    }
+
+    // additional parameters
+    var args = toArray(arguments, 1);
+    args.unshift(this);
+    if (typeof plugin.install === 'function') {
+      plugin.install.apply(plugin, args);
+    } else if (typeof plugin === 'function') {
+      plugin.apply(null, args);
+    }
+    installedPlugins.push(plugin);
+    return this;
+  };
+}
+
+/*  */
+
+function initMixin$1(Vue) {
+  Vue.mixin = function (mixin) {
+    this.options = mergeOptions(this.options, mixin);
+    return this;
+  };
+}
+
+/*  */
+
+function initExtend(Vue) {
+  /**
+   * Each instance constructor, including Vue, has a unique
+   * cid. This enables us to create wrapped "child
+   * constructors" for prototypal inheritance and cache them.
+   */
+  Vue.cid = 0;
+  var cid = 1;
+
+  /**
+   * Class inheritance
+   */
+  Vue.extend = function (extendOptions) {
+    extendOptions = extendOptions || {};
+    var Super = this;
+    var SuperId = Super.cid;
+    var cachedCtors = extendOptions._Ctor || (extendOptions._Ctor = {});
+    if (cachedCtors[SuperId]) {
+      return cachedCtors[SuperId];
+    }
+
+    var name = extendOptions.name || Super.options.name;
+    if ('development' !== 'production' && name) {
+      validateComponentName(name);
+    }
+
+    var Sub = function VueComponent(options) {
+      this._init(options);
+    };
+    Sub.prototype = Object.create(Super.prototype);
+    Sub.prototype.constructor = Sub;
+    Sub.cid = cid++;
+    Sub.options = mergeOptions(Super.options, extendOptions);
+    Sub['super'] = Super;
+
+    // For props and computed properties, we define the proxy getters on
+    // the Vue instances at extension time, on the extended prototype. This
+    // avoids Object.defineProperty calls for each instance created.
+    if (Sub.options.props) {
+      initProps$1(Sub);
+    }
+    if (Sub.options.computed) {
+      initComputed$1(Sub);
+    }
+
+    // allow further extension/mixin/plugin usage
+    Sub.extend = Super.extend;
+    Sub.mixin = Super.mixin;
+    Sub.use = Super.use;
+
+    // create asset registers, so extended classes
+    // can have their private assets too.
+    ASSET_TYPES.forEach(function (type) {
+      Sub[type] = Super[type];
+    });
+    // enable recursive self-lookup
+    if (name) {
+      Sub.options.components[name] = Sub;
+    }
+
+    // keep a reference to the super options at extension time.
+    // later at instantiation we can check if Super's options have
+    // been updated.
+    Sub.superOptions = Super.options;
+    Sub.extendOptions = extendOptions;
+    Sub.sealedOptions = extend({}, Sub.options);
+
+    // cache constructor
+    cachedCtors[SuperId] = Sub;
+    return Sub;
+  };
+}
+
+function initProps$1(Comp) {
+  var props = Comp.options.props;
+  for (var key in props) {
+    proxy(Comp.prototype, "_props", key);
+  }
+}
+
+function initComputed$1(Comp) {
+  var computed = Comp.options.computed;
+  for (var key in computed) {
+    defineComputed(Comp.prototype, key, computed[key]);
+  }
+}
+
+/*  */
+
+function initAssetRegisters(Vue) {
+  /**
+   * Create asset registration methods.
+   */
+  ASSET_TYPES.forEach(function (type) {
+    Vue[type] = function (id, definition) {
+      if (!definition) {
+        return this.options[type + 's'][id];
+      } else {
+        /* istanbul ignore if */
+        if ('development' !== 'production' && type === 'component') {
+          validateComponentName(id);
+        }
+        if (type === 'component' && isPlainObject(definition)) {
+          definition.name = definition.name || id;
+          definition = this.options._base.extend(definition);
+        }
+        if (type === 'directive' && typeof definition === 'function') {
+          definition = { bind: definition, update: definition };
+        }
+        this.options[type + 's'][id] = definition;
+        return definition;
+      }
+    };
+  });
+}
+
+/*  */
+
+function getComponentName(opts) {
+  return opts && (opts.Ctor.options.name || opts.tag);
+}
+
+function matches(pattern, name) {
+  if (Array.isArray(pattern)) {
+    return pattern.indexOf(name) > -1;
+  } else if (typeof pattern === 'string') {
+    return pattern.split(',').indexOf(name) > -1;
+  } else if (isRegExp(pattern)) {
+    return pattern.test(name);
+  }
+  /* istanbul ignore next */
+  return false;
+}
+
+function pruneCache(keepAliveInstance, filter) {
+  var cache = keepAliveInstance.cache;
+  var keys = keepAliveInstance.keys;
+  var _vnode = keepAliveInstance._vnode;
+  for (var key in cache) {
+    var cachedNode = cache[key];
+    if (cachedNode) {
+      var name = getComponentName(cachedNode.componentOptions);
+      if (name && !filter(name)) {
+        pruneCacheEntry(cache, key, keys, _vnode);
+      }
+    }
+  }
+}
+
+function pruneCacheEntry(cache, key, keys, current) {
+  var cached$$1 = cache[key];
+  if (cached$$1 && (!current || cached$$1.tag !== current.tag)) {
+    cached$$1.componentInstance.$destroy();
+  }
+  cache[key] = null;
+  remove(keys, key);
+}
+
+var patternTypes = [String, RegExp, Array];
+
+var KeepAlive = {
+  name: 'keep-alive',
+  abstract: true,
+
+  props: {
+    include: patternTypes,
+    exclude: patternTypes,
+    max: [String, Number]
+  },
+
+  created: function created() {
+    this.cache = Object.create(null);
+    this.keys = [];
+  },
+
+  destroyed: function destroyed() {
+    var this$1 = this;
+
+    for (var key in this$1.cache) {
+      pruneCacheEntry(this$1.cache, key, this$1.keys);
+    }
+  },
+
+  watch: {
+    include: function include(val) {
+      pruneCache(this, function (name) {
+        return matches(val, name);
+      });
+    },
+    exclude: function exclude(val) {
+      pruneCache(this, function (name) {
+        return !matches(val, name);
+      });
+    }
+  },
+
+  render: function render() {
+    var slot = this.$slots.default;
+    var vnode = getFirstComponentChild(slot);
+    var componentOptions = vnode && vnode.componentOptions;
+    if (componentOptions) {
+      // check pattern
+      var name = getComponentName(componentOptions);
+      var ref = this;
+      var include = ref.include;
+      var exclude = ref.exclude;
+      if (
+      // not included
+      include && (!name || !matches(include, name)) ||
+      // excluded
+      exclude && name && matches(exclude, name)) {
+        return vnode;
+      }
+
+      var ref$1 = this;
+      var cache = ref$1.cache;
+      var keys = ref$1.keys;
+      var key = vnode.key == null
+      // same constructor may get registered as different local components
+      // so cid alone is not enough (#3269)
+      ? componentOptions.Ctor.cid + (componentOptions.tag ? "::" + componentOptions.tag : '') : vnode.key;
+      if (cache[key]) {
+        vnode.componentInstance = cache[key].componentInstance;
+        // make current key freshest
+        remove(keys, key);
+        keys.push(key);
+      } else {
+        cache[key] = vnode;
+        keys.push(key);
+        // prune oldest entry
+        if (this.max && keys.length > parseInt(this.max)) {
+          pruneCacheEntry(cache, keys[0], keys, this._vnode);
+        }
+      }
+
+      vnode.data.keepAlive = true;
+    }
+    return vnode || slot && slot[0];
+  }
+};
+
+var builtInComponents = {
+  KeepAlive: KeepAlive
+};
+
+/*  */
+
+function initGlobalAPI(Vue) {
+  // config
+  var configDef = {};
+  configDef.get = function () {
+    return config;
+  };
+  if ('development' !== 'production') {
+    configDef.set = function () {
+      warn('Do not replace the Vue.config object, set individual fields instead.');
+    };
+  }
+  Object.defineProperty(Vue, 'config', configDef);
+
+  // exposed util methods.
+  // NOTE: these are not considered part of the public API - avoid relying on
+  // them unless you are aware of the risk.
+  Vue.util = {
+    warn: warn,
+    extend: extend,
+    mergeOptions: mergeOptions,
+    defineReactive: defineReactive
+  };
+
+  Vue.set = set;
+  Vue.delete = del;
+  Vue.nextTick = nextTick;
+
+  Vue.options = Object.create(null);
+  ASSET_TYPES.forEach(function (type) {
+    Vue.options[type + 's'] = Object.create(null);
+  });
+
+  // this is used to identify the "base" constructor to extend all plain-object
+  // components with in Weex's multi-instance scenarios.
+  Vue.options._base = Vue;
+
+  extend(Vue.options.components, builtInComponents);
+
+  initUse(Vue);
+  initMixin$1(Vue);
+  initExtend(Vue);
+  initAssetRegisters(Vue);
+}
+
+initGlobalAPI(Vue$3);
+
+Object.defineProperty(Vue$3.prototype, '$isServer', {
+  get: isServerRendering
+});
+
+Object.defineProperty(Vue$3.prototype, '$ssrContext', {
+  get: function get() {
+    /* istanbul ignore next */
+    return this.$vnode && this.$vnode.ssrContext;
+  }
+});
+
+Vue$3.version = '2.5.13';
+
+/*  */
+
+// these are reserved for web because they are directly compiled away
+// during template compilation
+var isReservedAttr = makeMap('style,class');
+
+// attributes that should be using props for binding
+var acceptValue = makeMap('input,textarea,option,select,progress');
+var mustUseProp = function (tag, type, attr) {
+  return attr === 'value' && acceptValue(tag) && type !== 'button' || attr === 'selected' && tag === 'option' || attr === 'checked' && tag === 'input' || attr === 'muted' && tag === 'video';
+};
+
+var isEnumeratedAttr = makeMap('contenteditable,draggable,spellcheck');
+
+var isBooleanAttr = makeMap('allowfullscreen,async,autofocus,autoplay,checked,compact,controls,declare,' + 'default,defaultchecked,defaultmuted,defaultselected,defer,disabled,' + 'enabled,formnovalidate,hidden,indeterminate,inert,ismap,itemscope,loop,multiple,' + 'muted,nohref,noresize,noshade,novalidate,nowrap,open,pauseonexit,readonly,' + 'required,reversed,scoped,seamless,selected,sortable,translate,' + 'truespeed,typemustmatch,visible');
+
+var xlinkNS = 'http://www.w3.org/1999/xlink';
+
+var isXlink = function (name) {
+  return name.charAt(5) === ':' && name.slice(0, 5) === 'xlink';
+};
+
+var getXlinkProp = function (name) {
+  return isXlink(name) ? name.slice(6, name.length) : '';
+};
+
+var isFalsyAttrValue = function (val) {
+  return val == null || val === false;
+};
+
+/*  */
+
+function genClassForVnode(vnode) {
+  var data = vnode.data;
+  var parentNode = vnode;
+  var childNode = vnode;
+  while (isDef(childNode.componentInstance)) {
+    childNode = childNode.componentInstance._vnode;
+    if (childNode && childNode.data) {
+      data = mergeClassData(childNode.data, data);
+    }
+  }
+  while (isDef(parentNode = parentNode.parent)) {
+    if (parentNode && parentNode.data) {
+      data = mergeClassData(data, parentNode.data);
+    }
+  }
+  return renderClass(data.staticClass, data.class);
+}
+
+function mergeClassData(child, parent) {
+  return {
+    staticClass: concat(child.staticClass, parent.staticClass),
+    class: isDef(child.class) ? [child.class, parent.class] : parent.class
+  };
+}
+
+function renderClass(staticClass, dynamicClass) {
+  if (isDef(staticClass) || isDef(dynamicClass)) {
+    return concat(staticClass, stringifyClass(dynamicClass));
+  }
+  /* istanbul ignore next */
+  return '';
+}
+
+function concat(a, b) {
+  return a ? b ? a + ' ' + b : a : b || '';
+}
+
+function stringifyClass(value) {
+  if (Array.isArray(value)) {
+    return stringifyArray(value);
+  }
+  if (isObject(value)) {
+    return stringifyObject(value);
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  /* istanbul ignore next */
+  return '';
+}
+
+function stringifyArray(value) {
+  var res = '';
+  var stringified;
+  for (var i = 0, l = value.length; i < l; i++) {
+    if (isDef(stringified = stringifyClass(value[i])) && stringified !== '') {
+      if (res) {
+        res += ' ';
+      }
+      res += stringified;
+    }
+  }
+  return res;
+}
+
+function stringifyObject(value) {
+  var res = '';
+  for (var key in value) {
+    if (value[key]) {
+      if (res) {
+        res += ' ';
+      }
+      res += key;
+    }
+  }
+  return res;
+}
+
+/*  */
+
+var namespaceMap = {
+  svg: 'http://www.w3.org/2000/svg',
+  math: 'http://www.w3.org/1998/Math/MathML'
+};
+
+var isHTMLTag = makeMap('html,body,base,head,link,meta,style,title,' + 'address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,' + 'div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,' + 'a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,' + 's,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,' + 'embed,object,param,source,canvas,script,noscript,del,ins,' + 'caption,col,colgroup,table,thead,tbody,td,th,tr,' + 'button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,' + 'output,progress,select,textarea,' + 'details,dialog,menu,menuitem,summary,' + 'content,element,shadow,template,blockquote,iframe,tfoot');
+
+// this map is intentionally selective, only covering SVG elements that may
+// contain child elements.
+var isSVG = makeMap('svg,animate,circle,clippath,cursor,defs,desc,ellipse,filter,font-face,' + 'foreignObject,g,glyph,image,line,marker,mask,missing-glyph,path,pattern,' + 'polygon,polyline,rect,switch,symbol,text,textpath,tspan,use,view', true);
+
+var isReservedTag = function (tag) {
+  return isHTMLTag(tag) || isSVG(tag);
+};
+
+function getTagNamespace(tag) {
+  if (isSVG(tag)) {
+    return 'svg';
+  }
+  // basic support for MathML
+  // note it doesn't support other MathML elements being component roots
+  if (tag === 'math') {
+    return 'math';
+  }
+}
+
+var unknownElementCache = Object.create(null);
+function isUnknownElement(tag) {
+  /* istanbul ignore if */
+  if (!inBrowser) {
+    return true;
+  }
+  if (isReservedTag(tag)) {
+    return false;
+  }
+  tag = tag.toLowerCase();
+  /* istanbul ignore if */
+  if (unknownElementCache[tag] != null) {
+    return unknownElementCache[tag];
+  }
+  var el = document.createElement(tag);
+  if (tag.indexOf('-') > -1) {
+    // http://stackoverflow.com/a/28210364/1070244
+    return unknownElementCache[tag] = el.constructor === window.HTMLUnknownElement || el.constructor === window.HTMLElement;
+  } else {
+    return unknownElementCache[tag] = /HTMLUnknownElement/.test(el.toString());
+  }
+}
+
+var isTextInputType = makeMap('text,number,password,search,email,tel,url');
+
+/*  */
+
+/**
+ * Query an element selector if it's not an element already.
+ */
+function query(el) {
+  if (typeof el === 'string') {
+    var selected = document.querySelector(el);
+    if (!selected) {
+      'development' !== 'production' && warn('Cannot find element: ' + el);
+      return document.createElement('div');
+    }
+    return selected;
+  } else {
+    return el;
+  }
+}
+
+/*  */
+
+function createElement$1(tagName, vnode) {
+  var elm = document.createElement(tagName);
+  if (tagName !== 'select') {
+    return elm;
+  }
+  // false or null will remove the attribute but undefined will not
+  if (vnode.data && vnode.data.attrs && vnode.data.attrs.multiple !== undefined) {
+    elm.setAttribute('multiple', 'multiple');
+  }
+  return elm;
+}
+
+function createElementNS(namespace, tagName) {
+  return document.createElementNS(namespaceMap[namespace], tagName);
+}
+
+function createTextNode(text) {
+  return document.createTextNode(text);
+}
+
+function createComment(text) {
+  return document.createComment(text);
+}
+
+function insertBefore(parentNode, newNode, referenceNode) {
+  parentNode.insertBefore(newNode, referenceNode);
+}
+
+function removeChild(node, child) {
+  node.removeChild(child);
+}
+
+function appendChild(node, child) {
+  node.appendChild(child);
+}
+
+function parentNode(node) {
+  return node.parentNode;
+}
+
+function nextSibling(node) {
+  return node.nextSibling;
+}
+
+function tagName(node) {
+  return node.tagName;
+}
+
+function setTextContent(node, text) {
+  node.textContent = text;
+}
+
+function setAttribute(node, key, val) {
+  node.setAttribute(key, val);
+}
+
+var nodeOps = Object.freeze({
+  createElement: createElement$1,
+  createElementNS: createElementNS,
+  createTextNode: createTextNode,
+  createComment: createComment,
+  insertBefore: insertBefore,
+  removeChild: removeChild,
+  appendChild: appendChild,
+  parentNode: parentNode,
+  nextSibling: nextSibling,
+  tagName: tagName,
+  setTextContent: setTextContent,
+  setAttribute: setAttribute
+});
+
+/*  */
+
+var ref = {
+  create: function create(_, vnode) {
+    registerRef(vnode);
+  },
+  update: function update(oldVnode, vnode) {
+    if (oldVnode.data.ref !== vnode.data.ref) {
+      registerRef(oldVnode, true);
+      registerRef(vnode);
+    }
+  },
+  destroy: function destroy(vnode) {
+    registerRef(vnode, true);
+  }
+};
+
+function registerRef(vnode, isRemoval) {
+  var key = vnode.data.ref;
+  if (!key) {
+    return;
+  }
+
+  var vm = vnode.context;
+  var ref = vnode.componentInstance || vnode.elm;
+  var refs = vm.$refs;
+  if (isRemoval) {
+    if (Array.isArray(refs[key])) {
+      remove(refs[key], ref);
+    } else if (refs[key] === ref) {
+      refs[key] = undefined;
+    }
+  } else {
+    if (vnode.data.refInFor) {
+      if (!Array.isArray(refs[key])) {
+        refs[key] = [ref];
+      } else if (refs[key].indexOf(ref) < 0) {
+        // $flow-disable-line
+        refs[key].push(ref);
+      }
+    } else {
+      refs[key] = ref;
+    }
+  }
+}
+
+/**
+ * Virtual DOM patching algorithm based on Snabbdom by
+ * Simon Friis Vindum (@paldepind)
+ * Licensed under the MIT License
+ * https://github.com/paldepind/snabbdom/blob/master/LICENSE
+ *
+ * modified by Evan You (@yyx990803)
+ *
+ * Not type-checking this because this file is perf-critical and the cost
+ * of making flow understand it is not worth it.
+ */
+
+var emptyNode = new VNode('', {}, []);
+
+var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
+
+function sameVnode(a, b) {
+  return a.key === b.key && (a.tag === b.tag && a.isComment === b.isComment && isDef(a.data) === isDef(b.data) && sameInputType(a, b) || isTrue(a.isAsyncPlaceholder) && a.asyncFactory === b.asyncFactory && isUndef(b.asyncFactory.error));
+}
+
+function sameInputType(a, b) {
+  if (a.tag !== 'input') {
+    return true;
+  }
+  var i;
+  var typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type;
+  var typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type;
+  return typeA === typeB || isTextInputType(typeA) && isTextInputType(typeB);
+}
+
+function createKeyToOldIdx(children, beginIdx, endIdx) {
+  var i, key;
+  var map = {};
+  for (i = beginIdx; i <= endIdx; ++i) {
+    key = children[i].key;
+    if (isDef(key)) {
+      map[key] = i;
+    }
+  }
+  return map;
+}
+
+function createPatchFunction(backend) {
+  var i, j;
+  var cbs = {};
+
+  var modules = backend.modules;
+  var nodeOps = backend.nodeOps;
+
+  for (i = 0; i < hooks.length; ++i) {
+    cbs[hooks[i]] = [];
+    for (j = 0; j < modules.length; ++j) {
+      if (isDef(modules[j][hooks[i]])) {
+        cbs[hooks[i]].push(modules[j][hooks[i]]);
+      }
+    }
+  }
+
+  function emptyNodeAt(elm) {
+    return new VNode(nodeOps.tagName(elm).toLowerCase(), {}, [], undefined, elm);
+  }
+
+  function createRmCb(childElm, listeners) {
+    function remove() {
+      if (--remove.listeners === 0) {
+        removeNode(childElm);
+      }
+    }
+    remove.listeners = listeners;
+    return remove;
+  }
+
+  function removeNode(el) {
+    var parent = nodeOps.parentNode(el);
+    // element may have already been removed due to v-html / v-text
+    if (isDef(parent)) {
+      nodeOps.removeChild(parent, el);
+    }
+  }
+
+  function isUnknownElement$$1(vnode, inVPre) {
+    return !inVPre && !vnode.ns && !(config.ignoredElements.length && config.ignoredElements.some(function (ignore) {
+      return isRegExp(ignore) ? ignore.test(vnode.tag) : ignore === vnode.tag;
+    })) && config.isUnknownElement(vnode.tag);
+  }
+
+  var creatingElmInVPre = 0;
+  function createElm(vnode, insertedVnodeQueue, parentElm, refElm, nested) {
+    vnode.isRootInsert = !nested; // for transition enter check
+    if (createComponent(vnode, insertedVnodeQueue, parentElm, refElm)) {
+      return;
+    }
+
+    var data = vnode.data;
+    var children = vnode.children;
+    var tag = vnode.tag;
+    if (isDef(tag)) {
+      if ('development' !== 'production') {
+        if (data && data.pre) {
+          creatingElmInVPre++;
+        }
+        if (isUnknownElement$$1(vnode, creatingElmInVPre)) {
+          warn('Unknown custom element: <' + tag + '> - did you ' + 'register the component correctly? For recursive components, ' + 'make sure to provide the "name" option.', vnode.context);
+        }
+      }
+      vnode.elm = vnode.ns ? nodeOps.createElementNS(vnode.ns, tag) : nodeOps.createElement(tag, vnode);
+      setScope(vnode);
+
+      /* istanbul ignore if */
+      {
+        createChildren(vnode, children, insertedVnodeQueue);
+        if (isDef(data)) {
+          invokeCreateHooks(vnode, insertedVnodeQueue);
+        }
+        insert(parentElm, vnode.elm, refElm);
+      }
+
+      if ('development' !== 'production' && data && data.pre) {
+        creatingElmInVPre--;
+      }
+    } else if (isTrue(vnode.isComment)) {
+      vnode.elm = nodeOps.createComment(vnode.text);
+      insert(parentElm, vnode.elm, refElm);
+    } else {
+      vnode.elm = nodeOps.createTextNode(vnode.text);
+      insert(parentElm, vnode.elm, refElm);
+    }
+  }
+
+  function createComponent(vnode, insertedVnodeQueue, parentElm, refElm) {
+    var i = vnode.data;
+    if (isDef(i)) {
+      var isReactivated = isDef(vnode.componentInstance) && i.keepAlive;
+      if (isDef(i = i.hook) && isDef(i = i.init)) {
+        i(vnode, false /* hydrating */, parentElm, refElm);
+      }
+      // after calling the init hook, if the vnode is a child component
+      // it should've created a child instance and mounted it. the child
+      // component also has set the placeholder vnode's elm.
+      // in that case we can just return the element and be done.
+      if (isDef(vnode.componentInstance)) {
+        initComponent(vnode, insertedVnodeQueue);
+        if (isTrue(isReactivated)) {
+          reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm);
+        }
+        return true;
+      }
+    }
+  }
+
+  function initComponent(vnode, insertedVnodeQueue) {
+    if (isDef(vnode.data.pendingInsert)) {
+      insertedVnodeQueue.push.apply(insertedVnodeQueue, vnode.data.pendingInsert);
+      vnode.data.pendingInsert = null;
+    }
+    vnode.elm = vnode.componentInstance.$el;
+    if (isPatchable(vnode)) {
+      invokeCreateHooks(vnode, insertedVnodeQueue);
+      setScope(vnode);
+    } else {
+      // empty component root.
+      // skip all element-related modules except for ref (#3455)
+      registerRef(vnode);
+      // make sure to invoke the insert hook
+      insertedVnodeQueue.push(vnode);
+    }
+  }
+
+  function reactivateComponent(vnode, insertedVnodeQueue, parentElm, refElm) {
+    var i;
+    // hack for #4339: a reactivated component with inner transition
+    // does not trigger because the inner node's created hooks are not called
+    // again. It's not ideal to involve module-specific logic in here but
+    // there doesn't seem to be a better way to do it.
+    var innerNode = vnode;
+    while (innerNode.componentInstance) {
+      innerNode = innerNode.componentInstance._vnode;
+      if (isDef(i = innerNode.data) && isDef(i = i.transition)) {
+        for (i = 0; i < cbs.activate.length; ++i) {
+          cbs.activate[i](emptyNode, innerNode);
+        }
+        insertedVnodeQueue.push(innerNode);
+        break;
+      }
+    }
+    // unlike a newly created component,
+    // a reactivated keep-alive component doesn't insert itself
+    insert(parentElm, vnode.elm, refElm);
+  }
+
+  function insert(parent, elm, ref$$1) {
+    if (isDef(parent)) {
+      if (isDef(ref$$1)) {
+        if (ref$$1.parentNode === parent) {
+          nodeOps.insertBefore(parent, elm, ref$$1);
+        }
+      } else {
+        nodeOps.appendChild(parent, elm);
+      }
+    }
+  }
+
+  function createChildren(vnode, children, insertedVnodeQueue) {
+    if (Array.isArray(children)) {
+      if ('development' !== 'production') {
+        checkDuplicateKeys(children);
+      }
+      for (var i = 0; i < children.length; ++i) {
+        createElm(children[i], insertedVnodeQueue, vnode.elm, null, true);
+      }
+    } else if (isPrimitive(vnode.text)) {
+      nodeOps.appendChild(vnode.elm, nodeOps.createTextNode(String(vnode.text)));
+    }
+  }
+
+  function isPatchable(vnode) {
+    while (vnode.componentInstance) {
+      vnode = vnode.componentInstance._vnode;
+    }
+    return isDef(vnode.tag);
+  }
+
+  function invokeCreateHooks(vnode, insertedVnodeQueue) {
+    for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
+      cbs.create[i$1](emptyNode, vnode);
+    }
+    i = vnode.data.hook; // Reuse variable
+    if (isDef(i)) {
+      if (isDef(i.create)) {
+        i.create(emptyNode, vnode);
+      }
+      if (isDef(i.insert)) {
+        insertedVnodeQueue.push(vnode);
+      }
+    }
+  }
+
+  // set scope id attribute for scoped CSS.
+  // this is implemented as a special case to avoid the overhead
+  // of going through the normal attribute patching process.
+  function setScope(vnode) {
+    var i;
+    if (isDef(i = vnode.fnScopeId)) {
+      nodeOps.setAttribute(vnode.elm, i, '');
+    } else {
+      var ancestor = vnode;
+      while (ancestor) {
+        if (isDef(i = ancestor.context) && isDef(i = i.$options._scopeId)) {
+          nodeOps.setAttribute(vnode.elm, i, '');
+        }
+        ancestor = ancestor.parent;
+      }
+    }
+    // for slot content they should also get the scopeId from the host instance.
+    if (isDef(i = activeInstance) && i !== vnode.context && i !== vnode.fnContext && isDef(i = i.$options._scopeId)) {
+      nodeOps.setAttribute(vnode.elm, i, '');
+    }
+  }
+
+  function addVnodes(parentElm, refElm, vnodes, startIdx, endIdx, insertedVnodeQueue) {
+    for (; startIdx <= endIdx; ++startIdx) {
+      createElm(vnodes[startIdx], insertedVnodeQueue, parentElm, refElm);
+    }
+  }
+
+  function invokeDestroyHook(vnode) {
+    var i, j;
+    var data = vnode.data;
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.destroy)) {
+        i(vnode);
+      }
+      for (i = 0; i < cbs.destroy.length; ++i) {
+        cbs.destroy[i](vnode);
+      }
+    }
+    if (isDef(i = vnode.children)) {
+      for (j = 0; j < vnode.children.length; ++j) {
+        invokeDestroyHook(vnode.children[j]);
+      }
+    }
+  }
+
+  function removeVnodes(parentElm, vnodes, startIdx, endIdx) {
+    for (; startIdx <= endIdx; ++startIdx) {
+      var ch = vnodes[startIdx];
+      if (isDef(ch)) {
+        if (isDef(ch.tag)) {
+          removeAndInvokeRemoveHook(ch);
+          invokeDestroyHook(ch);
+        } else {
+          // Text node
+          removeNode(ch.elm);
+        }
+      }
+    }
+  }
+
+  function removeAndInvokeRemoveHook(vnode, rm) {
+    if (isDef(rm) || isDef(vnode.data)) {
+      var i;
+      var listeners = cbs.remove.length + 1;
+      if (isDef(rm)) {
+        // we have a recursively passed down rm callback
+        // increase the listeners count
+        rm.listeners += listeners;
+      } else {
+        // directly removing
+        rm = createRmCb(vnode.elm, listeners);
+      }
+      // recursively invoke hooks on child component root node
+      if (isDef(i = vnode.componentInstance) && isDef(i = i._vnode) && isDef(i.data)) {
+        removeAndInvokeRemoveHook(i, rm);
+      }
+      for (i = 0; i < cbs.remove.length; ++i) {
+        cbs.remove[i](vnode, rm);
+      }
+      if (isDef(i = vnode.data.hook) && isDef(i = i.remove)) {
+        i(vnode, rm);
+      } else {
+        rm();
+      }
+    } else {
+      removeNode(vnode.elm);
+    }
+  }
+
+  function updateChildren(parentElm, oldCh, newCh, insertedVnodeQueue, removeOnly) {
+    var oldStartIdx = 0;
+    var newStartIdx = 0;
+    var oldEndIdx = oldCh.length - 1;
+    var oldStartVnode = oldCh[0];
+    var oldEndVnode = oldCh[oldEndIdx];
+    var newEndIdx = newCh.length - 1;
+    var newStartVnode = newCh[0];
+    var newEndVnode = newCh[newEndIdx];
+    var oldKeyToIdx, idxInOld, vnodeToMove, refElm;
+
+    // removeOnly is a special flag used only by <transition-group>
+    // to ensure removed elements stay in correct relative positions
+    // during leaving transitions
+    var canMove = !removeOnly;
+
+    if ('development' !== 'production') {
+      checkDuplicateKeys(newCh);
+    }
+
+    while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+      if (isUndef(oldStartVnode)) {
+        oldStartVnode = oldCh[++oldStartIdx]; // Vnode has been moved left
+      } else if (isUndef(oldEndVnode)) {
+        oldEndVnode = oldCh[--oldEndIdx];
+      } else if (sameVnode(oldStartVnode, newStartVnode)) {
+        patchVnode(oldStartVnode, newStartVnode, insertedVnodeQueue);
+        oldStartVnode = oldCh[++oldStartIdx];
+        newStartVnode = newCh[++newStartIdx];
+      } else if (sameVnode(oldEndVnode, newEndVnode)) {
+        patchVnode(oldEndVnode, newEndVnode, insertedVnodeQueue);
+        oldEndVnode = oldCh[--oldEndIdx];
+        newEndVnode = newCh[--newEndIdx];
+      } else if (sameVnode(oldStartVnode, newEndVnode)) {
+        // Vnode moved right
+        patchVnode(oldStartVnode, newEndVnode, insertedVnodeQueue);
+        canMove && nodeOps.insertBefore(parentElm, oldStartVnode.elm, nodeOps.nextSibling(oldEndVnode.elm));
+        oldStartVnode = oldCh[++oldStartIdx];
+        newEndVnode = newCh[--newEndIdx];
+      } else if (sameVnode(oldEndVnode, newStartVnode)) {
+        // Vnode moved left
+        patchVnode(oldEndVnode, newStartVnode, insertedVnodeQueue);
+        canMove && nodeOps.insertBefore(parentElm, oldEndVnode.elm, oldStartVnode.elm);
+        oldEndVnode = oldCh[--oldEndIdx];
+        newStartVnode = newCh[++newStartIdx];
+      } else {
+        if (isUndef(oldKeyToIdx)) {
+          oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx);
+        }
+        idxInOld = isDef(newStartVnode.key) ? oldKeyToIdx[newStartVnode.key] : findIdxInOld(newStartVnode, oldCh, oldStartIdx, oldEndIdx);
+        if (isUndef(idxInOld)) {
+          // New element
+          createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
+        } else {
+          vnodeToMove = oldCh[idxInOld];
+          if (sameVnode(vnodeToMove, newStartVnode)) {
+            patchVnode(vnodeToMove, newStartVnode, insertedVnodeQueue);
+            oldCh[idxInOld] = undefined;
+            canMove && nodeOps.insertBefore(parentElm, vnodeToMove.elm, oldStartVnode.elm);
+          } else {
+            // same key but different element. treat as new element
+            createElm(newStartVnode, insertedVnodeQueue, parentElm, oldStartVnode.elm);
+          }
+        }
+        newStartVnode = newCh[++newStartIdx];
+      }
+    }
+    if (oldStartIdx > oldEndIdx) {
+      refElm = isUndef(newCh[newEndIdx + 1]) ? null : newCh[newEndIdx + 1].elm;
+      addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
+    } else if (newStartIdx > newEndIdx) {
+      removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
+    }
+  }
+
+  function checkDuplicateKeys(children) {
+    var seenKeys = {};
+    for (var i = 0; i < children.length; i++) {
+      var vnode = children[i];
+      var key = vnode.key;
+      if (isDef(key)) {
+        if (seenKeys[key]) {
+          warn("Duplicate keys detected: '" + key + "'. This may cause an update error.", vnode.context);
+        } else {
+          seenKeys[key] = true;
+        }
+      }
+    }
+  }
+
+  function findIdxInOld(node, oldCh, start, end) {
+    for (var i = start; i < end; i++) {
+      var c = oldCh[i];
+      if (isDef(c) && sameVnode(node, c)) {
+        return i;
+      }
+    }
+  }
+
+  function patchVnode(oldVnode, vnode, insertedVnodeQueue, removeOnly) {
+    if (oldVnode === vnode) {
+      return;
+    }
+
+    var elm = vnode.elm = oldVnode.elm;
+
+    if (isTrue(oldVnode.isAsyncPlaceholder)) {
+      if (isDef(vnode.asyncFactory.resolved)) {
+        hydrate(oldVnode.elm, vnode, insertedVnodeQueue);
+      } else {
+        vnode.isAsyncPlaceholder = true;
+      }
+      return;
+    }
+
+    // reuse element for static trees.
+    // note we only do this if the vnode is cloned -
+    // if the new node is not cloned it means the render functions have been
+    // reset by the hot-reload-api and we need to do a proper re-render.
+    if (isTrue(vnode.isStatic) && isTrue(oldVnode.isStatic) && vnode.key === oldVnode.key && (isTrue(vnode.isCloned) || isTrue(vnode.isOnce))) {
+      vnode.componentInstance = oldVnode.componentInstance;
+      return;
+    }
+
+    var i;
+    var data = vnode.data;
+    if (isDef(data) && isDef(i = data.hook) && isDef(i = i.prepatch)) {
+      i(oldVnode, vnode);
+    }
+
+    var oldCh = oldVnode.children;
+    var ch = vnode.children;
+    if (isDef(data) && isPatchable(vnode)) {
+      for (i = 0; i < cbs.update.length; ++i) {
+        cbs.update[i](oldVnode, vnode);
+      }
+      if (isDef(i = data.hook) && isDef(i = i.update)) {
+        i(oldVnode, vnode);
+      }
+    }
+    if (isUndef(vnode.text)) {
+      if (isDef(oldCh) && isDef(ch)) {
+        if (oldCh !== ch) {
+          updateChildren(elm, oldCh, ch, insertedVnodeQueue, removeOnly);
+        }
+      } else if (isDef(ch)) {
+        if (isDef(oldVnode.text)) {
+          nodeOps.setTextContent(elm, '');
+        }
+        addVnodes(elm, null, ch, 0, ch.length - 1, insertedVnodeQueue);
+      } else if (isDef(oldCh)) {
+        removeVnodes(elm, oldCh, 0, oldCh.length - 1);
+      } else if (isDef(oldVnode.text)) {
+        nodeOps.setTextContent(elm, '');
+      }
+    } else if (oldVnode.text !== vnode.text) {
+      nodeOps.setTextContent(elm, vnode.text);
+    }
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.postpatch)) {
+        i(oldVnode, vnode);
+      }
+    }
+  }
+
+  function invokeInsertHook(vnode, queue, initial) {
+    // delay insert hooks for component root nodes, invoke them after the
+    // element is really inserted
+    if (isTrue(initial) && isDef(vnode.parent)) {
+      vnode.parent.data.pendingInsert = queue;
+    } else {
+      for (var i = 0; i < queue.length; ++i) {
+        queue[i].data.hook.insert(queue[i]);
+      }
+    }
+  }
+
+  var hydrationBailed = false;
+  // list of modules that can skip create hook during hydration because they
+  // are already rendered on the client or has no need for initialization
+  // Note: style is excluded because it relies on initial clone for future
+  // deep updates (#7063).
+  var isRenderedModule = makeMap('attrs,class,staticClass,staticStyle,key');
+
+  // Note: this is a browser-only function so we can assume elms are DOM nodes.
+  function hydrate(elm, vnode, insertedVnodeQueue, inVPre) {
+    var i;
+    var tag = vnode.tag;
+    var data = vnode.data;
+    var children = vnode.children;
+    inVPre = inVPre || data && data.pre;
+    vnode.elm = elm;
+
+    if (isTrue(vnode.isComment) && isDef(vnode.asyncFactory)) {
+      vnode.isAsyncPlaceholder = true;
+      return true;
+    }
+    // assert node match
+    if ('development' !== 'production') {
+      if (!assertNodeMatch(elm, vnode, inVPre)) {
+        return false;
+      }
+    }
+    if (isDef(data)) {
+      if (isDef(i = data.hook) && isDef(i = i.init)) {
+        i(vnode, true /* hydrating */);
+      }
+      if (isDef(i = vnode.componentInstance)) {
+        // child component. it should have hydrated its own tree.
+        initComponent(vnode, insertedVnodeQueue);
+        return true;
+      }
+    }
+    if (isDef(tag)) {
+      if (isDef(children)) {
+        // empty element, allow client to pick up and populate children
+        if (!elm.hasChildNodes()) {
+          createChildren(vnode, children, insertedVnodeQueue);
+        } else {
+          // v-html and domProps: innerHTML
+          if (isDef(i = data) && isDef(i = i.domProps) && isDef(i = i.innerHTML)) {
+            if (i !== elm.innerHTML) {
+              /* istanbul ignore if */
+              if ('development' !== 'production' && typeof console !== 'undefined' && !hydrationBailed) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('server innerHTML: ', i);
+                console.warn('client innerHTML: ', elm.innerHTML);
+              }
+              return false;
+            }
+          } else {
+            // iterate and compare children lists
+            var childrenMatch = true;
+            var childNode = elm.firstChild;
+            for (var i$1 = 0; i$1 < children.length; i$1++) {
+              if (!childNode || !hydrate(childNode, children[i$1], insertedVnodeQueue, inVPre)) {
+                childrenMatch = false;
+                break;
+              }
+              childNode = childNode.nextSibling;
+            }
+            // if childNode is not null, it means the actual childNodes list is
+            // longer than the virtual children list.
+            if (!childrenMatch || childNode) {
+              /* istanbul ignore if */
+              if ('development' !== 'production' && typeof console !== 'undefined' && !hydrationBailed) {
+                hydrationBailed = true;
+                console.warn('Parent: ', elm);
+                console.warn('Mismatching childNodes vs. VNodes: ', elm.childNodes, children);
+              }
+              return false;
+            }
+          }
+        }
+      }
+      if (isDef(data)) {
+        var fullInvoke = false;
+        for (var key in data) {
+          if (!isRenderedModule(key)) {
+            fullInvoke = true;
+            invokeCreateHooks(vnode, insertedVnodeQueue);
+            break;
+          }
+        }
+        if (!fullInvoke && data['class']) {
+          // ensure collecting deps for deep class bindings for future updates
+          traverse(data['class']);
+        }
+      }
+    } else if (elm.data !== vnode.text) {
+      elm.data = vnode.text;
+    }
+    return true;
+  }
+
+  function assertNodeMatch(node, vnode, inVPre) {
+    if (isDef(vnode.tag)) {
+      return vnode.tag.indexOf('vue-component') === 0 || !isUnknownElement$$1(vnode, inVPre) && vnode.tag.toLowerCase() === (node.tagName && node.tagName.toLowerCase());
+    } else {
+      return node.nodeType === (vnode.isComment ? 8 : 3);
+    }
+  }
+
+  return function patch(oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
+    if (isUndef(vnode)) {
+      if (isDef(oldVnode)) {
+        invokeDestroyHook(oldVnode);
+      }
+      return;
+    }
+
+    var isInitialPatch = false;
+    var insertedVnodeQueue = [];
+
+    if (isUndef(oldVnode)) {
+      // empty mount (likely as component), create new root element
+      isInitialPatch = true;
+      createElm(vnode, insertedVnodeQueue, parentElm, refElm);
+    } else {
+      var isRealElement = isDef(oldVnode.nodeType);
+      if (!isRealElement && sameVnode(oldVnode, vnode)) {
+        // patch existing root node
+        patchVnode(oldVnode, vnode, insertedVnodeQueue, removeOnly);
+      } else {
+        if (isRealElement) {
+          // mounting to a real element
+          // check if this is server-rendered content and if we can perform
+          // a successful hydration.
+          if (oldVnode.nodeType === 1 && oldVnode.hasAttribute(SSR_ATTR)) {
+            oldVnode.removeAttribute(SSR_ATTR);
+            hydrating = true;
+          }
+          if (isTrue(hydrating)) {
+            if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
+              invokeInsertHook(vnode, insertedVnodeQueue, true);
+              return oldVnode;
+            } else if ('development' !== 'production') {
+              warn('The client-side rendered virtual DOM tree is not matching ' + 'server-rendered content. This is likely caused by incorrect ' + 'HTML markup, for example nesting block-level elements inside ' + '<p>, or missing <tbody>. Bailing hydration and performing ' + 'full client-side render.');
+            }
+          }
+          // either not server-rendered, or hydration failed.
+          // create an empty node and replace it
+          oldVnode = emptyNodeAt(oldVnode);
+        }
+
+        // replacing existing element
+        var oldElm = oldVnode.elm;
+        var parentElm$1 = nodeOps.parentNode(oldElm);
+
+        // create new node
+        createElm(vnode, insertedVnodeQueue,
+        // extremely rare edge case: do not insert if old element is in a
+        // leaving transition. Only happens when combining transition +
+        // keep-alive + HOCs. (#4590)
+        oldElm._leaveCb ? null : parentElm$1, nodeOps.nextSibling(oldElm));
+
+        // update parent placeholder node element, recursively
+        if (isDef(vnode.parent)) {
+          var ancestor = vnode.parent;
+          var patchable = isPatchable(vnode);
+          while (ancestor) {
+            for (var i = 0; i < cbs.destroy.length; ++i) {
+              cbs.destroy[i](ancestor);
+            }
+            ancestor.elm = vnode.elm;
+            if (patchable) {
+              for (var i$1 = 0; i$1 < cbs.create.length; ++i$1) {
+                cbs.create[i$1](emptyNode, ancestor);
+              }
+              // #6513
+              // invoke insert hooks that may have been merged by create hooks.
+              // e.g. for directives that uses the "inserted" hook.
+              var insert = ancestor.data.hook.insert;
+              if (insert.merged) {
+                // start at index 1 to avoid re-invoking component mounted hook
+                for (var i$2 = 1; i$2 < insert.fns.length; i$2++) {
+                  insert.fns[i$2]();
+                }
+              }
+            } else {
+              registerRef(ancestor);
+            }
+            ancestor = ancestor.parent;
+          }
+        }
+
+        // destroy old node
+        if (isDef(parentElm$1)) {
+          removeVnodes(parentElm$1, [oldVnode], 0, 0);
+        } else if (isDef(oldVnode.tag)) {
+          invokeDestroyHook(oldVnode);
+        }
+      }
+    }
+
+    invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch);
+    return vnode.elm;
+  };
+}
+
+/*  */
+
+var directives = {
+  create: updateDirectives,
+  update: updateDirectives,
+  destroy: function unbindDirectives(vnode) {
+    updateDirectives(vnode, emptyNode);
+  }
+};
+
+function updateDirectives(oldVnode, vnode) {
+  if (oldVnode.data.directives || vnode.data.directives) {
+    _update(oldVnode, vnode);
+  }
+}
+
+function _update(oldVnode, vnode) {
+  var isCreate = oldVnode === emptyNode;
+  var isDestroy = vnode === emptyNode;
+  var oldDirs = normalizeDirectives$1(oldVnode.data.directives, oldVnode.context);
+  var newDirs = normalizeDirectives$1(vnode.data.directives, vnode.context);
+
+  var dirsWithInsert = [];
+  var dirsWithPostpatch = [];
+
+  var key, oldDir, dir;
+  for (key in newDirs) {
+    oldDir = oldDirs[key];
+    dir = newDirs[key];
+    if (!oldDir) {
+      // new directive, bind
+      callHook$1(dir, 'bind', vnode, oldVnode);
+      if (dir.def && dir.def.inserted) {
+        dirsWithInsert.push(dir);
+      }
+    } else {
+      // existing directive, update
+      dir.oldValue = oldDir.value;
+      callHook$1(dir, 'update', vnode, oldVnode);
+      if (dir.def && dir.def.componentUpdated) {
+        dirsWithPostpatch.push(dir);
+      }
+    }
+  }
+
+  if (dirsWithInsert.length) {
+    var callInsert = function () {
+      for (var i = 0; i < dirsWithInsert.length; i++) {
+        callHook$1(dirsWithInsert[i], 'inserted', vnode, oldVnode);
+      }
+    };
+    if (isCreate) {
+      mergeVNodeHook(vnode, 'insert', callInsert);
+    } else {
+      callInsert();
+    }
+  }
+
+  if (dirsWithPostpatch.length) {
+    mergeVNodeHook(vnode, 'postpatch', function () {
+      for (var i = 0; i < dirsWithPostpatch.length; i++) {
+        callHook$1(dirsWithPostpatch[i], 'componentUpdated', vnode, oldVnode);
+      }
+    });
+  }
+
+  if (!isCreate) {
+    for (key in oldDirs) {
+      if (!newDirs[key]) {
+        // no longer present, unbind
+        callHook$1(oldDirs[key], 'unbind', oldVnode, oldVnode, isDestroy);
+      }
+    }
+  }
+}
+
+var emptyModifiers = Object.create(null);
+
+function normalizeDirectives$1(dirs, vm) {
+  var res = Object.create(null);
+  if (!dirs) {
+    // $flow-disable-line
+    return res;
+  }
+  var i, dir;
+  for (i = 0; i < dirs.length; i++) {
+    dir = dirs[i];
+    if (!dir.modifiers) {
+      // $flow-disable-line
+      dir.modifiers = emptyModifiers;
+    }
+    res[getRawDirName(dir)] = dir;
+    dir.def = resolveAsset(vm.$options, 'directives', dir.name, true);
+  }
+  // $flow-disable-line
+  return res;
+}
+
+function getRawDirName(dir) {
+  return dir.rawName || dir.name + "." + Object.keys(dir.modifiers || {}).join('.');
+}
+
+function callHook$1(dir, hook, vnode, oldVnode, isDestroy) {
+  var fn = dir.def && dir.def[hook];
+  if (fn) {
+    try {
+      fn(vnode.elm, dir, vnode, oldVnode, isDestroy);
+    } catch (e) {
+      handleError(e, vnode.context, "directive " + dir.name + " " + hook + " hook");
+    }
+  }
+}
+
+var baseModules = [ref, directives];
+
+/*  */
+
+function updateAttrs(oldVnode, vnode) {
+  var opts = vnode.componentOptions;
+  if (isDef(opts) && opts.Ctor.options.inheritAttrs === false) {
+    return;
+  }
+  if (isUndef(oldVnode.data.attrs) && isUndef(vnode.data.attrs)) {
+    return;
+  }
+  var key, cur, old;
+  var elm = vnode.elm;
+  var oldAttrs = oldVnode.data.attrs || {};
+  var attrs = vnode.data.attrs || {};
+  // clone observed objects, as the user probably wants to mutate it
+  if (isDef(attrs.__ob__)) {
+    attrs = vnode.data.attrs = extend({}, attrs);
+  }
+
+  for (key in attrs) {
+    cur = attrs[key];
+    old = oldAttrs[key];
+    if (old !== cur) {
+      setAttr(elm, key, cur);
+    }
+  }
+  // #4391: in IE9, setting type can reset value for input[type=radio]
+  // #6666: IE/Edge forces progress value down to 1 before setting a max
+  /* istanbul ignore if */
+  if ((isIE || isEdge) && attrs.value !== oldAttrs.value) {
+    setAttr(elm, 'value', attrs.value);
+  }
+  for (key in oldAttrs) {
+    if (isUndef(attrs[key])) {
+      if (isXlink(key)) {
+        elm.removeAttributeNS(xlinkNS, getXlinkProp(key));
+      } else if (!isEnumeratedAttr(key)) {
+        elm.removeAttribute(key);
+      }
+    }
+  }
+}
+
+function setAttr(el, key, value) {
+  if (isBooleanAttr(key)) {
+    // set attribute for blank value
+    // e.g. <option disabled>Select one</option>
+    if (isFalsyAttrValue(value)) {
+      el.removeAttribute(key);
+    } else {
+      // technically allowfullscreen is a boolean attribute for <iframe>,
+      // but Flash expects a value of "true" when used on <embed> tag
+      value = key === 'allowfullscreen' && el.tagName === 'EMBED' ? 'true' : key;
+      el.setAttribute(key, value);
+    }
+  } else if (isEnumeratedAttr(key)) {
+    el.setAttribute(key, isFalsyAttrValue(value) || value === 'false' ? 'false' : 'true');
+  } else if (isXlink(key)) {
+    if (isFalsyAttrValue(value)) {
+      el.removeAttributeNS(xlinkNS, getXlinkProp(key));
+    } else {
+      el.setAttributeNS(xlinkNS, key, value);
+    }
+  } else {
+    if (isFalsyAttrValue(value)) {
+      el.removeAttribute(key);
+    } else {
+      // #7138: IE10 & 11 fires input event when setting placeholder on
+      // <textarea>... block the first input event and remove the blocker
+      // immediately.
+      /* istanbul ignore if */
+      if (isIE && !isIE9 && el.tagName === 'TEXTAREA' && key === 'placeholder' && !el.__ieph) {
+        var blocker = function (e) {
+          e.stopImmediatePropagation();
+          el.removeEventListener('input', blocker);
+        };
+        el.addEventListener('input', blocker);
+        // $flow-disable-line
+        el.__ieph = true; /* IE placeholder patched */
+      }
+      el.setAttribute(key, value);
+    }
+  }
+}
+
+var attrs = {
+  create: updateAttrs,
+  update: updateAttrs
+};
+
+/*  */
+
+function updateClass(oldVnode, vnode) {
+  var el = vnode.elm;
+  var data = vnode.data;
+  var oldData = oldVnode.data;
+  if (isUndef(data.staticClass) && isUndef(data.class) && (isUndef(oldData) || isUndef(oldData.staticClass) && isUndef(oldData.class))) {
+    return;
+  }
+
+  var cls = genClassForVnode(vnode);
+
+  // handle transition classes
+  var transitionClass = el._transitionClasses;
+  if (isDef(transitionClass)) {
+    cls = concat(cls, stringifyClass(transitionClass));
+  }
+
+  // set the class
+  if (cls !== el._prevClass) {
+    el.setAttribute('class', cls);
+    el._prevClass = cls;
+  }
+}
+
+var klass = {
+  create: updateClass,
+  update: updateClass
+};
+
+/*  */
+
+/*  */
+
+// add a raw attr (use this in preTransforms)
+
+
+// note: this only removes the attr from the Array (attrsList) so that it
+// doesn't get processed by processAttrs.
+// By default it does NOT remove it from the map (attrsMap) because the map is
+// needed during codegen.
+
+/*  */
+
+/**
+ * Cross-platform code generation for component v-model
+ */
+
+/**
+ * Cross-platform codegen helper for generating v-model value assignment code.
+ */
+
+/*  */
+
+// in some cases, the event used has to be determined at runtime
+// so we used some reserved tokens during compile.
+var RANGE_TOKEN = '__r';
+var CHECKBOX_RADIO_TOKEN = '__c';
+
+/*  */
+
+// normalize v-model event tokens that can only be determined at runtime.
+// it's important to place the event as the first in the array because
+// the whole point is ensuring the v-model callback gets called before
+// user-attached handlers.
+function normalizeEvents(on) {
+  /* istanbul ignore if */
+  if (isDef(on[RANGE_TOKEN])) {
+    // IE input[type=range] only supports `change` event
+    var event = isIE ? 'change' : 'input';
+    on[event] = [].concat(on[RANGE_TOKEN], on[event] || []);
+    delete on[RANGE_TOKEN];
+  }
+  // This was originally intended to fix #4521 but no longer necessary
+  // after 2.5. Keeping it for backwards compat with generated code from < 2.4
+  /* istanbul ignore if */
+  if (isDef(on[CHECKBOX_RADIO_TOKEN])) {
+    on.change = [].concat(on[CHECKBOX_RADIO_TOKEN], on.change || []);
+    delete on[CHECKBOX_RADIO_TOKEN];
+  }
+}
+
+var target$1;
+
+function createOnceHandler(handler, event, capture) {
+  var _target = target$1; // save current target element in closure
+  return function onceHandler() {
+    var res = handler.apply(null, arguments);
+    if (res !== null) {
+      remove$2(event, onceHandler, capture, _target);
+    }
+  };
+}
+
+function add$1(event, handler, once$$1, capture, passive) {
+  handler = withMacroTask(handler);
+  if (once$$1) {
+    handler = createOnceHandler(handler, event, capture);
+  }
+  target$1.addEventListener(event, handler, supportsPassive ? { capture: capture, passive: passive } : capture);
+}
+
+function remove$2(event, handler, capture, _target) {
+  (_target || target$1).removeEventListener(event, handler._withTask || handler, capture);
+}
+
+function updateDOMListeners(oldVnode, vnode) {
+  if (isUndef(oldVnode.data.on) && isUndef(vnode.data.on)) {
+    return;
+  }
+  var on = vnode.data.on || {};
+  var oldOn = oldVnode.data.on || {};
+  target$1 = vnode.elm;
+  normalizeEvents(on);
+  updateListeners(on, oldOn, add$1, remove$2, vnode.context);
+  target$1 = undefined;
+}
+
+var events = {
+  create: updateDOMListeners,
+  update: updateDOMListeners
+};
+
+/*  */
+
+function updateDOMProps(oldVnode, vnode) {
+  if (isUndef(oldVnode.data.domProps) && isUndef(vnode.data.domProps)) {
+    return;
+  }
+  var key, cur;
+  var elm = vnode.elm;
+  var oldProps = oldVnode.data.domProps || {};
+  var props = vnode.data.domProps || {};
+  // clone observed objects, as the user probably wants to mutate it
+  if (isDef(props.__ob__)) {
+    props = vnode.data.domProps = extend({}, props);
+  }
+
+  for (key in oldProps) {
+    if (isUndef(props[key])) {
+      elm[key] = '';
+    }
+  }
+  for (key in props) {
+    cur = props[key];
+    // ignore children if the node has textContent or innerHTML,
+    // as these will throw away existing DOM nodes and cause removal errors
+    // on subsequent patches (#3360)
+    if (key === 'textContent' || key === 'innerHTML') {
+      if (vnode.children) {
+        vnode.children.length = 0;
+      }
+      if (cur === oldProps[key]) {
+        continue;
+      }
+      // #6601 work around Chrome version <= 55 bug where single textNode
+      // replaced by innerHTML/textContent retains its parentNode property
+      if (elm.childNodes.length === 1) {
+        elm.removeChild(elm.childNodes[0]);
+      }
+    }
+
+    if (key === 'value') {
+      // store value as _value as well since
+      // non-string values will be stringified
+      elm._value = cur;
+      // avoid resetting cursor position when value is the same
+      var strCur = isUndef(cur) ? '' : String(cur);
+      if (shouldUpdateValue(elm, strCur)) {
+        elm.value = strCur;
+      }
+    } else {
+      elm[key] = cur;
+    }
+  }
+}
+
+// check platforms/web/util/attrs.js acceptValue
+
+
+function shouldUpdateValue(elm, checkVal) {
+  return !elm.composing && (elm.tagName === 'OPTION' || isNotInFocusAndDirty(elm, checkVal) || isDirtyWithModifiers(elm, checkVal));
+}
+
+function isNotInFocusAndDirty(elm, checkVal) {
+  // return true when textbox (.number and .trim) loses focus and its value is
+  // not equal to the updated value
+  var notInFocus = true;
+  // #6157
+  // work around IE bug when accessing document.activeElement in an iframe
+  try {
+    notInFocus = document.activeElement !== elm;
+  } catch (e) {}
+  return notInFocus && elm.value !== checkVal;
+}
+
+function isDirtyWithModifiers(elm, newVal) {
+  var value = elm.value;
+  var modifiers = elm._vModifiers; // injected by v-model runtime
+  if (isDef(modifiers)) {
+    if (modifiers.lazy) {
+      // inputs with lazy should only be updated when not in focus
+      return false;
+    }
+    if (modifiers.number) {
+      return toNumber(value) !== toNumber(newVal);
+    }
+    if (modifiers.trim) {
+      return value.trim() !== newVal.trim();
+    }
+  }
+  return value !== newVal;
+}
+
+var domProps = {
+  create: updateDOMProps,
+  update: updateDOMProps
+};
+
+/*  */
+
+var parseStyleText = cached(function (cssText) {
+  var res = {};
+  var listDelimiter = /;(?![^(]*\))/g;
+  var propertyDelimiter = /:(.+)/;
+  cssText.split(listDelimiter).forEach(function (item) {
+    if (item) {
+      var tmp = item.split(propertyDelimiter);
+      tmp.length > 1 && (res[tmp[0].trim()] = tmp[1].trim());
+    }
+  });
+  return res;
+});
+
+// merge static and dynamic style data on the same vnode
+function normalizeStyleData(data) {
+  var style = normalizeStyleBinding(data.style);
+  // static style is pre-processed into an object during compilation
+  // and is always a fresh object, so it's safe to merge into it
+  return data.staticStyle ? extend(data.staticStyle, style) : style;
+}
+
+// normalize possible array / string values into Object
+function normalizeStyleBinding(bindingStyle) {
+  if (Array.isArray(bindingStyle)) {
+    return toObject(bindingStyle);
+  }
+  if (typeof bindingStyle === 'string') {
+    return parseStyleText(bindingStyle);
+  }
+  return bindingStyle;
+}
+
+/**
+ * parent component style should be after child's
+ * so that parent component's style could override it
+ */
+function getStyle(vnode, checkChild) {
+  var res = {};
+  var styleData;
+
+  if (checkChild) {
+    var childNode = vnode;
+    while (childNode.componentInstance) {
+      childNode = childNode.componentInstance._vnode;
+      if (childNode && childNode.data && (styleData = normalizeStyleData(childNode.data))) {
+        extend(res, styleData);
+      }
+    }
+  }
+
+  if (styleData = normalizeStyleData(vnode.data)) {
+    extend(res, styleData);
+  }
+
+  var parentNode = vnode;
+  while (parentNode = parentNode.parent) {
+    if (parentNode.data && (styleData = normalizeStyleData(parentNode.data))) {
+      extend(res, styleData);
+    }
+  }
+  return res;
+}
+
+/*  */
+
+var cssVarRE = /^--/;
+var importantRE = /\s*!important$/;
+var setProp = function (el, name, val) {
+  /* istanbul ignore if */
+  if (cssVarRE.test(name)) {
+    el.style.setProperty(name, val);
+  } else if (importantRE.test(val)) {
+    el.style.setProperty(name, val.replace(importantRE, ''), 'important');
+  } else {
+    var normalizedName = normalize(name);
+    if (Array.isArray(val)) {
+      // Support values array created by autoprefixer, e.g.
+      // {display: ["-webkit-box", "-ms-flexbox", "flex"]}
+      // Set them one by one, and the browser will only set those it can recognize
+      for (var i = 0, len = val.length; i < len; i++) {
+        el.style[normalizedName] = val[i];
+      }
+    } else {
+      el.style[normalizedName] = val;
+    }
+  }
+};
+
+var vendorNames = ['Webkit', 'Moz', 'ms'];
+
+var emptyStyle;
+var normalize = cached(function (prop) {
+  emptyStyle = emptyStyle || document.createElement('div').style;
+  prop = camelize(prop);
+  if (prop !== 'filter' && prop in emptyStyle) {
+    return prop;
+  }
+  var capName = prop.charAt(0).toUpperCase() + prop.slice(1);
+  for (var i = 0; i < vendorNames.length; i++) {
+    var name = vendorNames[i] + capName;
+    if (name in emptyStyle) {
+      return name;
+    }
+  }
+});
+
+function updateStyle(oldVnode, vnode) {
+  var data = vnode.data;
+  var oldData = oldVnode.data;
+
+  if (isUndef(data.staticStyle) && isUndef(data.style) && isUndef(oldData.staticStyle) && isUndef(oldData.style)) {
+    return;
+  }
+
+  var cur, name;
+  var el = vnode.elm;
+  var oldStaticStyle = oldData.staticStyle;
+  var oldStyleBinding = oldData.normalizedStyle || oldData.style || {};
+
+  // if static style exists, stylebinding already merged into it when doing normalizeStyleData
+  var oldStyle = oldStaticStyle || oldStyleBinding;
+
+  var style = normalizeStyleBinding(vnode.data.style) || {};
+
+  // store normalized style under a different key for next diff
+  // make sure to clone it if it's reactive, since the user likely wants
+  // to mutate it.
+  vnode.data.normalizedStyle = isDef(style.__ob__) ? extend({}, style) : style;
+
+  var newStyle = getStyle(vnode, true);
+
+  for (name in oldStyle) {
+    if (isUndef(newStyle[name])) {
+      setProp(el, name, '');
+    }
+  }
+  for (name in newStyle) {
+    cur = newStyle[name];
+    if (cur !== oldStyle[name]) {
+      // ie9 setting to null has no effect, must use empty string
+      setProp(el, name, cur == null ? '' : cur);
+    }
+  }
+}
+
+var style = {
+  create: updateStyle,
+  update: updateStyle
+};
+
+/*  */
+
+/**
+ * Add class with compatibility for SVG since classList is not supported on
+ * SVG elements in IE
+ */
+function addClass(el, cls) {
+  /* istanbul ignore if */
+  if (!cls || !(cls = cls.trim())) {
+    return;
+  }
+
+  /* istanbul ignore else */
+  if (el.classList) {
+    if (cls.indexOf(' ') > -1) {
+      cls.split(/\s+/).forEach(function (c) {
+        return el.classList.add(c);
+      });
+    } else {
+      el.classList.add(cls);
+    }
+  } else {
+    var cur = " " + (el.getAttribute('class') || '') + " ";
+    if (cur.indexOf(' ' + cls + ' ') < 0) {
+      el.setAttribute('class', (cur + cls).trim());
+    }
+  }
+}
+
+/**
+ * Remove class with compatibility for SVG since classList is not supported on
+ * SVG elements in IE
+ */
+function removeClass(el, cls) {
+  /* istanbul ignore if */
+  if (!cls || !(cls = cls.trim())) {
+    return;
+  }
+
+  /* istanbul ignore else */
+  if (el.classList) {
+    if (cls.indexOf(' ') > -1) {
+      cls.split(/\s+/).forEach(function (c) {
+        return el.classList.remove(c);
+      });
+    } else {
+      el.classList.remove(cls);
+    }
+    if (!el.classList.length) {
+      el.removeAttribute('class');
+    }
+  } else {
+    var cur = " " + (el.getAttribute('class') || '') + " ";
+    var tar = ' ' + cls + ' ';
+    while (cur.indexOf(tar) >= 0) {
+      cur = cur.replace(tar, ' ');
+    }
+    cur = cur.trim();
+    if (cur) {
+      el.setAttribute('class', cur);
+    } else {
+      el.removeAttribute('class');
+    }
+  }
+}
+
+/*  */
+
+function resolveTransition(def) {
+  if (!def) {
+    return;
+  }
+  /* istanbul ignore else */
+  if (typeof def === 'object') {
+    var res = {};
+    if (def.css !== false) {
+      extend(res, autoCssTransition(def.name || 'v'));
+    }
+    extend(res, def);
+    return res;
+  } else if (typeof def === 'string') {
+    return autoCssTransition(def);
+  }
+}
+
+var autoCssTransition = cached(function (name) {
+  return {
+    enterClass: name + "-enter",
+    enterToClass: name + "-enter-to",
+    enterActiveClass: name + "-enter-active",
+    leaveClass: name + "-leave",
+    leaveToClass: name + "-leave-to",
+    leaveActiveClass: name + "-leave-active"
+  };
+});
+
+var hasTransition = inBrowser && !isIE9;
+var TRANSITION = 'transition';
+var ANIMATION = 'animation';
+
+// Transition property/event sniffing
+var transitionProp = 'transition';
+var transitionEndEvent = 'transitionend';
+var animationProp = 'animation';
+var animationEndEvent = 'animationend';
+if (hasTransition) {
+  /* istanbul ignore if */
+  if (window.ontransitionend === undefined && window.onwebkittransitionend !== undefined) {
+    transitionProp = 'WebkitTransition';
+    transitionEndEvent = 'webkitTransitionEnd';
+  }
+  if (window.onanimationend === undefined && window.onwebkitanimationend !== undefined) {
+    animationProp = 'WebkitAnimation';
+    animationEndEvent = 'webkitAnimationEnd';
+  }
+}
+
+// binding to window is necessary to make hot reload work in IE in strict mode
+var raf = inBrowser ? window.requestAnimationFrame ? window.requestAnimationFrame.bind(window) : setTimeout : /* istanbul ignore next */function (fn) {
+  return fn();
+};
+
+function nextFrame(fn) {
+  raf(function () {
+    raf(fn);
+  });
+}
+
+function addTransitionClass(el, cls) {
+  var transitionClasses = el._transitionClasses || (el._transitionClasses = []);
+  if (transitionClasses.indexOf(cls) < 0) {
+    transitionClasses.push(cls);
+    addClass(el, cls);
+  }
+}
+
+function removeTransitionClass(el, cls) {
+  if (el._transitionClasses) {
+    remove(el._transitionClasses, cls);
+  }
+  removeClass(el, cls);
+}
+
+function whenTransitionEnds(el, expectedType, cb) {
+  var ref = getTransitionInfo(el, expectedType);
+  var type = ref.type;
+  var timeout = ref.timeout;
+  var propCount = ref.propCount;
+  if (!type) {
+    return cb();
+  }
+  var event = type === TRANSITION ? transitionEndEvent : animationEndEvent;
+  var ended = 0;
+  var end = function () {
+    el.removeEventListener(event, onEnd);
+    cb();
+  };
+  var onEnd = function (e) {
+    if (e.target === el) {
+      if (++ended >= propCount) {
+        end();
+      }
+    }
+  };
+  setTimeout(function () {
+    if (ended < propCount) {
+      end();
+    }
+  }, timeout + 1);
+  el.addEventListener(event, onEnd);
+}
+
+var transformRE = /\b(transform|all)(,|$)/;
+
+function getTransitionInfo(el, expectedType) {
+  var styles = window.getComputedStyle(el);
+  var transitionDelays = styles[transitionProp + 'Delay'].split(', ');
+  var transitionDurations = styles[transitionProp + 'Duration'].split(', ');
+  var transitionTimeout = getTimeout(transitionDelays, transitionDurations);
+  var animationDelays = styles[animationProp + 'Delay'].split(', ');
+  var animationDurations = styles[animationProp + 'Duration'].split(', ');
+  var animationTimeout = getTimeout(animationDelays, animationDurations);
+
+  var type;
+  var timeout = 0;
+  var propCount = 0;
+  /* istanbul ignore if */
+  if (expectedType === TRANSITION) {
+    if (transitionTimeout > 0) {
+      type = TRANSITION;
+      timeout = transitionTimeout;
+      propCount = transitionDurations.length;
+    }
+  } else if (expectedType === ANIMATION) {
+    if (animationTimeout > 0) {
+      type = ANIMATION;
+      timeout = animationTimeout;
+      propCount = animationDurations.length;
+    }
+  } else {
+    timeout = Math.max(transitionTimeout, animationTimeout);
+    type = timeout > 0 ? transitionTimeout > animationTimeout ? TRANSITION : ANIMATION : null;
+    propCount = type ? type === TRANSITION ? transitionDurations.length : animationDurations.length : 0;
+  }
+  var hasTransform = type === TRANSITION && transformRE.test(styles[transitionProp + 'Property']);
+  return {
+    type: type,
+    timeout: timeout,
+    propCount: propCount,
+    hasTransform: hasTransform
+  };
+}
+
+function getTimeout(delays, durations) {
+  /* istanbul ignore next */
+  while (delays.length < durations.length) {
+    delays = delays.concat(delays);
+  }
+
+  return Math.max.apply(null, durations.map(function (d, i) {
+    return toMs(d) + toMs(delays[i]);
+  }));
+}
+
+function toMs(s) {
+  return Number(s.slice(0, -1)) * 1000;
+}
+
+/*  */
+
+function enter(vnode, toggleDisplay) {
+  var el = vnode.elm;
+
+  // call leave callback now
+  if (isDef(el._leaveCb)) {
+    el._leaveCb.cancelled = true;
+    el._leaveCb();
+  }
+
+  var data = resolveTransition(vnode.data.transition);
+  if (isUndef(data)) {
+    return;
+  }
+
+  /* istanbul ignore if */
+  if (isDef(el._enterCb) || el.nodeType !== 1) {
+    return;
+  }
+
+  var css = data.css;
+  var type = data.type;
+  var enterClass = data.enterClass;
+  var enterToClass = data.enterToClass;
+  var enterActiveClass = data.enterActiveClass;
+  var appearClass = data.appearClass;
+  var appearToClass = data.appearToClass;
+  var appearActiveClass = data.appearActiveClass;
+  var beforeEnter = data.beforeEnter;
+  var enter = data.enter;
+  var afterEnter = data.afterEnter;
+  var enterCancelled = data.enterCancelled;
+  var beforeAppear = data.beforeAppear;
+  var appear = data.appear;
+  var afterAppear = data.afterAppear;
+  var appearCancelled = data.appearCancelled;
+  var duration = data.duration;
+
+  // activeInstance will always be the <transition> component managing this
+  // transition. One edge case to check is when the <transition> is placed
+  // as the root node of a child component. In that case we need to check
+  // <transition>'s parent for appear check.
+  var context = activeInstance;
+  var transitionNode = activeInstance.$vnode;
+  while (transitionNode && transitionNode.parent) {
+    transitionNode = transitionNode.parent;
+    context = transitionNode.context;
+  }
+
+  var isAppear = !context._isMounted || !vnode.isRootInsert;
+
+  if (isAppear && !appear && appear !== '') {
+    return;
+  }
+
+  var startClass = isAppear && appearClass ? appearClass : enterClass;
+  var activeClass = isAppear && appearActiveClass ? appearActiveClass : enterActiveClass;
+  var toClass = isAppear && appearToClass ? appearToClass : enterToClass;
+
+  var beforeEnterHook = isAppear ? beforeAppear || beforeEnter : beforeEnter;
+  var enterHook = isAppear ? typeof appear === 'function' ? appear : enter : enter;
+  var afterEnterHook = isAppear ? afterAppear || afterEnter : afterEnter;
+  var enterCancelledHook = isAppear ? appearCancelled || enterCancelled : enterCancelled;
+
+  var explicitEnterDuration = toNumber(isObject(duration) ? duration.enter : duration);
+
+  if ('development' !== 'production' && explicitEnterDuration != null) {
+    checkDuration(explicitEnterDuration, 'enter', vnode);
+  }
+
+  var expectsCSS = css !== false && !isIE9;
+  var userWantsControl = getHookArgumentsLength(enterHook);
+
+  var cb = el._enterCb = once(function () {
+    if (expectsCSS) {
+      removeTransitionClass(el, toClass);
+      removeTransitionClass(el, activeClass);
+    }
+    if (cb.cancelled) {
+      if (expectsCSS) {
+        removeTransitionClass(el, startClass);
+      }
+      enterCancelledHook && enterCancelledHook(el);
+    } else {
+      afterEnterHook && afterEnterHook(el);
+    }
+    el._enterCb = null;
+  });
+
+  if (!vnode.data.show) {
+    // remove pending leave element on enter by injecting an insert hook
+    mergeVNodeHook(vnode, 'insert', function () {
+      var parent = el.parentNode;
+      var pendingNode = parent && parent._pending && parent._pending[vnode.key];
+      if (pendingNode && pendingNode.tag === vnode.tag && pendingNode.elm._leaveCb) {
+        pendingNode.elm._leaveCb();
+      }
+      enterHook && enterHook(el, cb);
+    });
+  }
+
+  // start enter transition
+  beforeEnterHook && beforeEnterHook(el);
+  if (expectsCSS) {
+    addTransitionClass(el, startClass);
+    addTransitionClass(el, activeClass);
+    nextFrame(function () {
+      addTransitionClass(el, toClass);
+      removeTransitionClass(el, startClass);
+      if (!cb.cancelled && !userWantsControl) {
+        if (isValidDuration(explicitEnterDuration)) {
+          setTimeout(cb, explicitEnterDuration);
+        } else {
+          whenTransitionEnds(el, type, cb);
+        }
+      }
+    });
+  }
+
+  if (vnode.data.show) {
+    toggleDisplay && toggleDisplay();
+    enterHook && enterHook(el, cb);
+  }
+
+  if (!expectsCSS && !userWantsControl) {
+    cb();
+  }
+}
+
+function leave(vnode, rm) {
+  var el = vnode.elm;
+
+  // call enter callback now
+  if (isDef(el._enterCb)) {
+    el._enterCb.cancelled = true;
+    el._enterCb();
+  }
+
+  var data = resolveTransition(vnode.data.transition);
+  if (isUndef(data) || el.nodeType !== 1) {
+    return rm();
+  }
+
+  /* istanbul ignore if */
+  if (isDef(el._leaveCb)) {
+    return;
+  }
+
+  var css = data.css;
+  var type = data.type;
+  var leaveClass = data.leaveClass;
+  var leaveToClass = data.leaveToClass;
+  var leaveActiveClass = data.leaveActiveClass;
+  var beforeLeave = data.beforeLeave;
+  var leave = data.leave;
+  var afterLeave = data.afterLeave;
+  var leaveCancelled = data.leaveCancelled;
+  var delayLeave = data.delayLeave;
+  var duration = data.duration;
+
+  var expectsCSS = css !== false && !isIE9;
+  var userWantsControl = getHookArgumentsLength(leave);
+
+  var explicitLeaveDuration = toNumber(isObject(duration) ? duration.leave : duration);
+
+  if ('development' !== 'production' && isDef(explicitLeaveDuration)) {
+    checkDuration(explicitLeaveDuration, 'leave', vnode);
+  }
+
+  var cb = el._leaveCb = once(function () {
+    if (el.parentNode && el.parentNode._pending) {
+      el.parentNode._pending[vnode.key] = null;
+    }
+    if (expectsCSS) {
+      removeTransitionClass(el, leaveToClass);
+      removeTransitionClass(el, leaveActiveClass);
+    }
+    if (cb.cancelled) {
+      if (expectsCSS) {
+        removeTransitionClass(el, leaveClass);
+      }
+      leaveCancelled && leaveCancelled(el);
+    } else {
+      rm();
+      afterLeave && afterLeave(el);
+    }
+    el._leaveCb = null;
+  });
+
+  if (delayLeave) {
+    delayLeave(performLeave);
+  } else {
+    performLeave();
+  }
+
+  function performLeave() {
+    // the delayed leave may have already been cancelled
+    if (cb.cancelled) {
+      return;
+    }
+    // record leaving element
+    if (!vnode.data.show) {
+      (el.parentNode._pending || (el.parentNode._pending = {}))[vnode.key] = vnode;
+    }
+    beforeLeave && beforeLeave(el);
+    if (expectsCSS) {
+      addTransitionClass(el, leaveClass);
+      addTransitionClass(el, leaveActiveClass);
+      nextFrame(function () {
+        addTransitionClass(el, leaveToClass);
+        removeTransitionClass(el, leaveClass);
+        if (!cb.cancelled && !userWantsControl) {
+          if (isValidDuration(explicitLeaveDuration)) {
+            setTimeout(cb, explicitLeaveDuration);
+          } else {
+            whenTransitionEnds(el, type, cb);
+          }
+        }
+      });
+    }
+    leave && leave(el, cb);
+    if (!expectsCSS && !userWantsControl) {
+      cb();
+    }
+  }
+}
+
+// only used in dev mode
+function checkDuration(val, name, vnode) {
+  if (typeof val !== 'number') {
+    warn("<transition> explicit " + name + " duration is not a valid number - " + "got " + JSON.stringify(val) + ".", vnode.context);
+  } else if (isNaN(val)) {
+    warn("<transition> explicit " + name + " duration is NaN - " + 'the duration expression might be incorrect.', vnode.context);
+  }
+}
+
+function isValidDuration(val) {
+  return typeof val === 'number' && !isNaN(val);
+}
+
+/**
+ * Normalize a transition hook's argument length. The hook may be:
+ * - a merged hook (invoker) with the original in .fns
+ * - a wrapped component method (check ._length)
+ * - a plain function (.length)
+ */
+function getHookArgumentsLength(fn) {
+  if (isUndef(fn)) {
+    return false;
+  }
+  var invokerFns = fn.fns;
+  if (isDef(invokerFns)) {
+    // invoker
+    return getHookArgumentsLength(Array.isArray(invokerFns) ? invokerFns[0] : invokerFns);
+  } else {
+    return (fn._length || fn.length) > 1;
+  }
+}
+
+function _enter(_, vnode) {
+  if (vnode.data.show !== true) {
+    enter(vnode);
+  }
+}
+
+var transition = inBrowser ? {
+  create: _enter,
+  activate: _enter,
+  remove: function remove$$1(vnode, rm) {
+    /* istanbul ignore else */
+    if (vnode.data.show !== true) {
+      leave(vnode, rm);
+    } else {
+      rm();
+    }
+  }
+} : {};
+
+var platformModules = [attrs, klass, events, domProps, style, transition];
+
+/*  */
+
+// the directive module should be applied last, after all
+// built-in modules have been applied.
+var modules = platformModules.concat(baseModules);
+
+var patch = createPatchFunction({ nodeOps: nodeOps, modules: modules });
+
+/**
+ * Not type checking this file because flow doesn't like attaching
+ * properties to Elements.
+ */
+
+/* istanbul ignore if */
+if (isIE9) {
+  // http://www.matts411.com/post/internet-explorer-9-oninput/
+  document.addEventListener('selectionchange', function () {
+    var el = document.activeElement;
+    if (el && el.vmodel) {
+      trigger(el, 'input');
+    }
+  });
+}
+
+var directive = {
+  inserted: function inserted(el, binding, vnode, oldVnode) {
+    if (vnode.tag === 'select') {
+      // #6903
+      if (oldVnode.elm && !oldVnode.elm._vOptions) {
+        mergeVNodeHook(vnode, 'postpatch', function () {
+          directive.componentUpdated(el, binding, vnode);
+        });
+      } else {
+        setSelected(el, binding, vnode.context);
+      }
+      el._vOptions = [].map.call(el.options, getValue);
+    } else if (vnode.tag === 'textarea' || isTextInputType(el.type)) {
+      el._vModifiers = binding.modifiers;
+      if (!binding.modifiers.lazy) {
+        // Safari < 10.2 & UIWebView doesn't fire compositionend when
+        // switching focus before confirming composition choice
+        // this also fixes the issue where some browsers e.g. iOS Chrome
+        // fires "change" instead of "input" on autocomplete.
+        el.addEventListener('change', onCompositionEnd);
+        if (!isAndroid) {
+          el.addEventListener('compositionstart', onCompositionStart);
+          el.addEventListener('compositionend', onCompositionEnd);
+        }
+        /* istanbul ignore if */
+        if (isIE9) {
+          el.vmodel = true;
+        }
+      }
+    }
+  },
+
+  componentUpdated: function componentUpdated(el, binding, vnode) {
+    if (vnode.tag === 'select') {
+      setSelected(el, binding, vnode.context);
+      // in case the options rendered by v-for have changed,
+      // it's possible that the value is out-of-sync with the rendered options.
+      // detect such cases and filter out values that no longer has a matching
+      // option in the DOM.
+      var prevOptions = el._vOptions;
+      var curOptions = el._vOptions = [].map.call(el.options, getValue);
+      if (curOptions.some(function (o, i) {
+        return !looseEqual(o, prevOptions[i]);
+      })) {
+        // trigger change event if
+        // no matching option found for at least one value
+        var needReset = el.multiple ? binding.value.some(function (v) {
+          return hasNoMatchingOption(v, curOptions);
+        }) : binding.value !== binding.oldValue && hasNoMatchingOption(binding.value, curOptions);
+        if (needReset) {
+          trigger(el, 'change');
+        }
+      }
+    }
+  }
+};
+
+function setSelected(el, binding, vm) {
+  actuallySetSelected(el, binding, vm);
+  /* istanbul ignore if */
+  if (isIE || isEdge) {
+    setTimeout(function () {
+      actuallySetSelected(el, binding, vm);
+    }, 0);
+  }
+}
+
+function actuallySetSelected(el, binding, vm) {
+  var value = binding.value;
+  var isMultiple = el.multiple;
+  if (isMultiple && !Array.isArray(value)) {
+    'development' !== 'production' && warn("<select multiple v-model=\"" + binding.expression + "\"> " + "expects an Array value for its binding, but got " + Object.prototype.toString.call(value).slice(8, -1), vm);
+    return;
+  }
+  var selected, option;
+  for (var i = 0, l = el.options.length; i < l; i++) {
+    option = el.options[i];
+    if (isMultiple) {
+      selected = looseIndexOf(value, getValue(option)) > -1;
+      if (option.selected !== selected) {
+        option.selected = selected;
+      }
+    } else {
+      if (looseEqual(getValue(option), value)) {
+        if (el.selectedIndex !== i) {
+          el.selectedIndex = i;
+        }
+        return;
+      }
+    }
+  }
+  if (!isMultiple) {
+    el.selectedIndex = -1;
+  }
+}
+
+function hasNoMatchingOption(value, options) {
+  return options.every(function (o) {
+    return !looseEqual(o, value);
+  });
+}
+
+function getValue(option) {
+  return '_value' in option ? option._value : option.value;
+}
+
+function onCompositionStart(e) {
+  e.target.composing = true;
+}
+
+function onCompositionEnd(e) {
+  // prevent triggering an input event for no reason
+  if (!e.target.composing) {
+    return;
+  }
+  e.target.composing = false;
+  trigger(e.target, 'input');
+}
+
+function trigger(el, type) {
+  var e = document.createEvent('HTMLEvents');
+  e.initEvent(type, true, true);
+  el.dispatchEvent(e);
+}
+
+/*  */
+
+// recursively search for possible transition defined inside the component root
+function locateNode(vnode) {
+  return vnode.componentInstance && (!vnode.data || !vnode.data.transition) ? locateNode(vnode.componentInstance._vnode) : vnode;
+}
+
+var show = {
+  bind: function bind(el, ref, vnode) {
+    var value = ref.value;
+
+    vnode = locateNode(vnode);
+    var transition$$1 = vnode.data && vnode.data.transition;
+    var originalDisplay = el.__vOriginalDisplay = el.style.display === 'none' ? '' : el.style.display;
+    if (value && transition$$1) {
+      vnode.data.show = true;
+      enter(vnode, function () {
+        el.style.display = originalDisplay;
+      });
+    } else {
+      el.style.display = value ? originalDisplay : 'none';
+    }
+  },
+
+  update: function update(el, ref, vnode) {
+    var value = ref.value;
+    var oldValue = ref.oldValue;
+
+    /* istanbul ignore if */
+    if (value === oldValue) {
+      return;
+    }
+    vnode = locateNode(vnode);
+    var transition$$1 = vnode.data && vnode.data.transition;
+    if (transition$$1) {
+      vnode.data.show = true;
+      if (value) {
+        enter(vnode, function () {
+          el.style.display = el.__vOriginalDisplay;
+        });
+      } else {
+        leave(vnode, function () {
+          el.style.display = 'none';
+        });
+      }
+    } else {
+      el.style.display = value ? el.__vOriginalDisplay : 'none';
+    }
+  },
+
+  unbind: function unbind(el, binding, vnode, oldVnode, isDestroy) {
+    if (!isDestroy) {
+      el.style.display = el.__vOriginalDisplay;
+    }
+  }
+};
+
+var platformDirectives = {
+  model: directive,
+  show: show
+};
+
+/*  */
+
+// Provides transition support for a single element/component.
+// supports transition mode (out-in / in-out)
+
+var transitionProps = {
+  name: String,
+  appear: Boolean,
+  css: Boolean,
+  mode: String,
+  type: String,
+  enterClass: String,
+  leaveClass: String,
+  enterToClass: String,
+  leaveToClass: String,
+  enterActiveClass: String,
+  leaveActiveClass: String,
+  appearClass: String,
+  appearActiveClass: String,
+  appearToClass: String,
+  duration: [Number, String, Object]
+};
+
+// in case the child is also an abstract component, e.g. <keep-alive>
+// we want to recursively retrieve the real component to be rendered
+function getRealChild(vnode) {
+  var compOptions = vnode && vnode.componentOptions;
+  if (compOptions && compOptions.Ctor.options.abstract) {
+    return getRealChild(getFirstComponentChild(compOptions.children));
+  } else {
+    return vnode;
+  }
+}
+
+function extractTransitionData(comp) {
+  var data = {};
+  var options = comp.$options;
+  // props
+  for (var key in options.propsData) {
+    data[key] = comp[key];
+  }
+  // events.
+  // extract listeners and pass them directly to the transition methods
+  var listeners = options._parentListeners;
+  for (var key$1 in listeners) {
+    data[camelize(key$1)] = listeners[key$1];
+  }
+  return data;
+}
+
+function placeholder(h, rawChild) {
+  if (/\d-keep-alive$/.test(rawChild.tag)) {
+    return h('keep-alive', {
+      props: rawChild.componentOptions.propsData
+    });
+  }
+}
+
+function hasParentTransition(vnode) {
+  while (vnode = vnode.parent) {
+    if (vnode.data.transition) {
+      return true;
+    }
+  }
+}
+
+function isSameChild(child, oldChild) {
+  return oldChild.key === child.key && oldChild.tag === child.tag;
+}
+
+var Transition = {
+  name: 'transition',
+  props: transitionProps,
+  abstract: true,
+
+  render: function render(h) {
+    var this$1 = this;
+
+    var children = this.$slots.default;
+    if (!children) {
+      return;
+    }
+
+    // filter out text nodes (possible whitespaces)
+    children = children.filter(function (c) {
+      return c.tag || isAsyncPlaceholder(c);
+    });
+    /* istanbul ignore if */
+    if (!children.length) {
+      return;
+    }
+
+    // warn multiple elements
+    if ('development' !== 'production' && children.length > 1) {
+      warn('<transition> can only be used on a single element. Use ' + '<transition-group> for lists.', this.$parent);
+    }
+
+    var mode = this.mode;
+
+    // warn invalid mode
+    if ('development' !== 'production' && mode && mode !== 'in-out' && mode !== 'out-in') {
+      warn('invalid <transition> mode: ' + mode, this.$parent);
+    }
+
+    var rawChild = children[0];
+
+    // if this is a component root node and the component's
+    // parent container node also has transition, skip.
+    if (hasParentTransition(this.$vnode)) {
+      return rawChild;
+    }
+
+    // apply transition data to child
+    // use getRealChild() to ignore abstract components e.g. keep-alive
+    var child = getRealChild(rawChild);
+    /* istanbul ignore if */
+    if (!child) {
+      return rawChild;
+    }
+
+    if (this._leaving) {
+      return placeholder(h, rawChild);
+    }
+
+    // ensure a key that is unique to the vnode type and to this transition
+    // component instance. This key will be used to remove pending leaving nodes
+    // during entering.
+    var id = "__transition-" + this._uid + "-";
+    child.key = child.key == null ? child.isComment ? id + 'comment' : id + child.tag : isPrimitive(child.key) ? String(child.key).indexOf(id) === 0 ? child.key : id + child.key : child.key;
+
+    var data = (child.data || (child.data = {})).transition = extractTransitionData(this);
+    var oldRawChild = this._vnode;
+    var oldChild = getRealChild(oldRawChild);
+
+    // mark v-show
+    // so that the transition module can hand over the control to the directive
+    if (child.data.directives && child.data.directives.some(function (d) {
+      return d.name === 'show';
+    })) {
+      child.data.show = true;
+    }
+
+    if (oldChild && oldChild.data && !isSameChild(child, oldChild) && !isAsyncPlaceholder(oldChild) &&
+    // #6687 component root is a comment node
+    !(oldChild.componentInstance && oldChild.componentInstance._vnode.isComment)) {
+      // replace old child transition data with fresh one
+      // important for dynamic transitions!
+      var oldData = oldChild.data.transition = extend({}, data);
+      // handle transition mode
+      if (mode === 'out-in') {
+        // return placeholder node and queue update when leave finishes
+        this._leaving = true;
+        mergeVNodeHook(oldData, 'afterLeave', function () {
+          this$1._leaving = false;
+          this$1.$forceUpdate();
+        });
+        return placeholder(h, rawChild);
+      } else if (mode === 'in-out') {
+        if (isAsyncPlaceholder(child)) {
+          return oldRawChild;
+        }
+        var delayedLeave;
+        var performLeave = function () {
+          delayedLeave();
+        };
+        mergeVNodeHook(data, 'afterEnter', performLeave);
+        mergeVNodeHook(data, 'enterCancelled', performLeave);
+        mergeVNodeHook(oldData, 'delayLeave', function (leave) {
+          delayedLeave = leave;
+        });
+      }
+    }
+
+    return rawChild;
+  }
+};
+
+/*  */
+
+// Provides transition support for list items.
+// supports move transitions using the FLIP technique.
+
+// Because the vdom's children update algorithm is "unstable" - i.e.
+// it doesn't guarantee the relative positioning of removed elements,
+// we force transition-group to update its children into two passes:
+// in the first pass, we remove all nodes that need to be removed,
+// triggering their leaving transition; in the second pass, we insert/move
+// into the final desired state. This way in the second pass removed
+// nodes will remain where they should be.
+
+var props = extend({
+  tag: String,
+  moveClass: String
+}, transitionProps);
+
+delete props.mode;
+
+var TransitionGroup = {
+  props: props,
+
+  render: function render(h) {
+    var tag = this.tag || this.$vnode.data.tag || 'span';
+    var map = Object.create(null);
+    var prevChildren = this.prevChildren = this.children;
+    var rawChildren = this.$slots.default || [];
+    var children = this.children = [];
+    var transitionData = extractTransitionData(this);
+
+    for (var i = 0; i < rawChildren.length; i++) {
+      var c = rawChildren[i];
+      if (c.tag) {
+        if (c.key != null && String(c.key).indexOf('__vlist') !== 0) {
+          children.push(c);
+          map[c.key] = c;(c.data || (c.data = {})).transition = transitionData;
+        } else if ('development' !== 'production') {
+          var opts = c.componentOptions;
+          var name = opts ? opts.Ctor.options.name || opts.tag || '' : c.tag;
+          warn("<transition-group> children must be keyed: <" + name + ">");
+        }
+      }
+    }
+
+    if (prevChildren) {
+      var kept = [];
+      var removed = [];
+      for (var i$1 = 0; i$1 < prevChildren.length; i$1++) {
+        var c$1 = prevChildren[i$1];
+        c$1.data.transition = transitionData;
+        c$1.data.pos = c$1.elm.getBoundingClientRect();
+        if (map[c$1.key]) {
+          kept.push(c$1);
+        } else {
+          removed.push(c$1);
+        }
+      }
+      this.kept = h(tag, null, kept);
+      this.removed = removed;
+    }
+
+    return h(tag, null, children);
+  },
+
+  beforeUpdate: function beforeUpdate() {
+    // force removing pass
+    this.__patch__(this._vnode, this.kept, false, // hydrating
+    true // removeOnly (!important avoids unnecessary moves)
+    );
+    this._vnode = this.kept;
+  },
+
+  updated: function updated() {
+    var children = this.prevChildren;
+    var moveClass = this.moveClass || (this.name || 'v') + '-move';
+    if (!children.length || !this.hasMove(children[0].elm, moveClass)) {
+      return;
+    }
+
+    // we divide the work into three loops to avoid mixing DOM reads and writes
+    // in each iteration - which helps prevent layout thrashing.
+    children.forEach(callPendingCbs);
+    children.forEach(recordPosition);
+    children.forEach(applyTranslation);
+
+    // force reflow to put everything in position
+    // assign to this to avoid being removed in tree-shaking
+    // $flow-disable-line
+    this._reflow = document.body.offsetHeight;
+
+    children.forEach(function (c) {
+      if (c.data.moved) {
+        var el = c.elm;
+        var s = el.style;
+        addTransitionClass(el, moveClass);
+        s.transform = s.WebkitTransform = s.transitionDuration = '';
+        el.addEventListener(transitionEndEvent, el._moveCb = function cb(e) {
+          if (!e || /transform$/.test(e.propertyName)) {
+            el.removeEventListener(transitionEndEvent, cb);
+            el._moveCb = null;
+            removeTransitionClass(el, moveClass);
+          }
+        });
+      }
+    });
+  },
+
+  methods: {
+    hasMove: function hasMove(el, moveClass) {
+      /* istanbul ignore if */
+      if (!hasTransition) {
+        return false;
+      }
+      /* istanbul ignore if */
+      if (this._hasMove) {
+        return this._hasMove;
+      }
+      // Detect whether an element with the move class applied has
+      // CSS transitions. Since the element may be inside an entering
+      // transition at this very moment, we make a clone of it and remove
+      // all other transition classes applied to ensure only the move class
+      // is applied.
+      var clone = el.cloneNode();
+      if (el._transitionClasses) {
+        el._transitionClasses.forEach(function (cls) {
+          removeClass(clone, cls);
+        });
+      }
+      addClass(clone, moveClass);
+      clone.style.display = 'none';
+      this.$el.appendChild(clone);
+      var info = getTransitionInfo(clone);
+      this.$el.removeChild(clone);
+      return this._hasMove = info.hasTransform;
+    }
+  }
+};
+
+function callPendingCbs(c) {
+  /* istanbul ignore if */
+  if (c.elm._moveCb) {
+    c.elm._moveCb();
+  }
+  /* istanbul ignore if */
+  if (c.elm._enterCb) {
+    c.elm._enterCb();
+  }
+}
+
+function recordPosition(c) {
+  c.data.newPos = c.elm.getBoundingClientRect();
+}
+
+function applyTranslation(c) {
+  var oldPos = c.data.pos;
+  var newPos = c.data.newPos;
+  var dx = oldPos.left - newPos.left;
+  var dy = oldPos.top - newPos.top;
+  if (dx || dy) {
+    c.data.moved = true;
+    var s = c.elm.style;
+    s.transform = s.WebkitTransform = "translate(" + dx + "px," + dy + "px)";
+    s.transitionDuration = '0s';
+  }
+}
+
+var platformComponents = {
+  Transition: Transition,
+  TransitionGroup: TransitionGroup
+};
+
+/*  */
+
+// install platform specific utils
+Vue$3.config.mustUseProp = mustUseProp;
+Vue$3.config.isReservedTag = isReservedTag;
+Vue$3.config.isReservedAttr = isReservedAttr;
+Vue$3.config.getTagNamespace = getTagNamespace;
+Vue$3.config.isUnknownElement = isUnknownElement;
+
+// install platform runtime directives & components
+extend(Vue$3.options.directives, platformDirectives);
+extend(Vue$3.options.components, platformComponents);
+
+// install platform patch function
+Vue$3.prototype.__patch__ = inBrowser ? patch : noop;
+
+// public mount method
+Vue$3.prototype.$mount = function (el, hydrating) {
+  el = el && inBrowser ? query(el) : undefined;
+  return mountComponent(this, el, hydrating);
+};
+
+// devtools global hook
+/* istanbul ignore next */
+Vue$3.nextTick(function () {
+  if (config.devtools) {
+    if (devtools) {
+      devtools.emit('init', Vue$3);
+    } else if ('development' !== 'production' && isChrome) {
+      console[console.info ? 'info' : 'log']('Download the Vue Devtools extension for a better development experience:\n' + 'https://github.com/vuejs/vue-devtools');
+    }
+  }
+  if ('development' !== 'production' && config.productionTip !== false && inBrowser && typeof console !== 'undefined') {
+    console[console.info ? 'info' : 'log']("You are running Vue in development mode.\n" + "Make sure to turn on production mode when deploying for production.\n" + "See more tips at https://vuejs.org/guide/deployment.html");
+  }
+}, 0);
+
+/*  */
+
+exports.default = Vue$3;
+},{}],11:[function(require,module,exports) {
+var inserted = exports.cache = {}
+
+function noop () {}
+
+exports.insert = function (css) {
+  if (inserted[css]) return noop
+  inserted[css] = true
+
+  var elem = document.createElement('style')
+  elem.setAttribute('type', 'text/css')
+
+  if ('textContent' in elem) {
+    elem.textContent = css
+  } else {
+    elem.styleSheet.cssText = css
+  }
+
+  document.getElementsByTagName('head')[0].appendChild(elem)
+  return function () {
+    document.getElementsByTagName('head')[0].removeChild(elem)
+    inserted[css] = false
+  }
+}
+
+},{}],5:[function(require,module,exports) {
+'use strict';
+
+var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var hookCallback;
+
+function hooks() {
+    return hookCallback.apply(null, arguments);
+}
+
+// This is done to register the method called with moment()
+// without creating circular dependencies.
+function setHookCallback(callback) {
+    hookCallback = callback;
+}
+
+function isArray(input) {
+    return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+}
+
+function isObject(input) {
+    // IE8 will treat undefined and null as object if it wasn't for
+    // input != null
+    return input != null && Object.prototype.toString.call(input) === '[object Object]';
+}
+
+function isObjectEmpty(obj) {
+    if (Object.getOwnPropertyNames) {
+        return Object.getOwnPropertyNames(obj).length === 0;
+    } else {
+        var k;
+        for (k in obj) {
+            if (obj.hasOwnProperty(k)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+function isUndefined(input) {
+    return input === void 0;
+}
+
+function isNumber(input) {
+    return typeof input === 'number' || Object.prototype.toString.call(input) === '[object Number]';
+}
+
+function isDate(input) {
+    return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
+}
+
+function map(arr, fn) {
+    var res = [],
+        i;
+    for (i = 0; i < arr.length; ++i) {
+        res.push(fn(arr[i], i));
+    }
+    return res;
+}
+
+function hasOwnProp(a, b) {
+    return Object.prototype.hasOwnProperty.call(a, b);
+}
+
+function extend(a, b) {
+    for (var i in b) {
+        if (hasOwnProp(b, i)) {
+            a[i] = b[i];
+        }
+    }
+
+    if (hasOwnProp(b, 'toString')) {
+        a.toString = b.toString;
+    }
+
+    if (hasOwnProp(b, 'valueOf')) {
+        a.valueOf = b.valueOf;
+    }
+
+    return a;
+}
+
+function createUTC(input, format, locale, strict) {
+    return createLocalOrUTC(input, format, locale, strict, true).utc();
+}
+
+function defaultParsingFlags() {
+    // We need to deep clone this object.
+    return {
+        empty: false,
+        unusedTokens: [],
+        unusedInput: [],
+        overflow: -2,
+        charsLeftOver: 0,
+        nullInput: false,
+        invalidMonth: null,
+        invalidFormat: false,
+        userInvalidated: false,
+        iso: false,
+        parsedDateParts: [],
+        meridiem: null,
+        rfc2822: false,
+        weekdayMismatch: false
+    };
+}
+
+function getParsingFlags(m) {
+    if (m._pf == null) {
+        m._pf = defaultParsingFlags();
+    }
+    return m._pf;
+}
+
+var some;
+if (Array.prototype.some) {
+    some = Array.prototype.some;
+} else {
+    some = function some(fun) {
+        var t = Object(this);
+        var len = t.length >>> 0;
+
+        for (var i = 0; i < len; i++) {
+            if (i in t && fun.call(this, t[i], i, t)) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+}
+
+function isValid(m) {
+    if (m._isValid == null) {
+        var flags = getParsingFlags(m);
+        var parsedParts = some.call(flags.parsedDateParts, function (i) {
+            return i != null;
+        });
+        var isNowValid = !isNaN(m._d.getTime()) && flags.overflow < 0 && !flags.empty && !flags.invalidMonth && !flags.invalidWeekday && !flags.weekdayMismatch && !flags.nullInput && !flags.invalidFormat && !flags.userInvalidated && (!flags.meridiem || flags.meridiem && parsedParts);
+
+        if (m._strict) {
+            isNowValid = isNowValid && flags.charsLeftOver === 0 && flags.unusedTokens.length === 0 && flags.bigHour === undefined;
+        }
+
+        if (Object.isFrozen == null || !Object.isFrozen(m)) {
+            m._isValid = isNowValid;
+        } else {
+            return isNowValid;
+        }
+    }
+    return m._isValid;
+}
+
+function createInvalid(flags) {
+    var m = createUTC(NaN);
+    if (flags != null) {
+        extend(getParsingFlags(m), flags);
+    } else {
+        getParsingFlags(m).userInvalidated = true;
+    }
+
+    return m;
+}
+
+// Plugins that add properties should also add the key here (null value),
+// so we can properly clone ourselves.
+var momentProperties = hooks.momentProperties = [];
+
+function copyConfig(to, from) {
+    var i, prop, val;
+
+    if (!isUndefined(from._isAMomentObject)) {
+        to._isAMomentObject = from._isAMomentObject;
+    }
+    if (!isUndefined(from._i)) {
+        to._i = from._i;
+    }
+    if (!isUndefined(from._f)) {
+        to._f = from._f;
+    }
+    if (!isUndefined(from._l)) {
+        to._l = from._l;
+    }
+    if (!isUndefined(from._strict)) {
+        to._strict = from._strict;
+    }
+    if (!isUndefined(from._tzm)) {
+        to._tzm = from._tzm;
+    }
+    if (!isUndefined(from._isUTC)) {
+        to._isUTC = from._isUTC;
+    }
+    if (!isUndefined(from._offset)) {
+        to._offset = from._offset;
+    }
+    if (!isUndefined(from._pf)) {
+        to._pf = getParsingFlags(from);
+    }
+    if (!isUndefined(from._locale)) {
+        to._locale = from._locale;
+    }
+
+    if (momentProperties.length > 0) {
+        for (i = 0; i < momentProperties.length; i++) {
+            prop = momentProperties[i];
+            val = from[prop];
+            if (!isUndefined(val)) {
+                to[prop] = val;
+            }
+        }
+    }
+
+    return to;
+}
+
+var updateInProgress = false;
+
+// Moment prototype object
+function Moment(config) {
+    copyConfig(this, config);
+    this._d = new Date(config._d != null ? config._d.getTime() : NaN);
+    if (!this.isValid()) {
+        this._d = new Date(NaN);
+    }
+    // Prevent infinite loop in case updateOffset creates new moment
+    // objects.
+    if (updateInProgress === false) {
+        updateInProgress = true;
+        hooks.updateOffset(this);
+        updateInProgress = false;
+    }
+}
+
+function isMoment(obj) {
+    return obj instanceof Moment || obj != null && obj._isAMomentObject != null;
+}
+
+function absFloor(number) {
+    if (number < 0) {
+        // -0 -> 0
+        return Math.ceil(number) || 0;
+    } else {
+        return Math.floor(number);
+    }
+}
+
+function toInt(argumentForCoercion) {
+    var coercedNumber = +argumentForCoercion,
+        value = 0;
+
+    if (coercedNumber !== 0 && isFinite(coercedNumber)) {
+        value = absFloor(coercedNumber);
+    }
+
+    return value;
+}
+
+// compare two arrays, return the number of differences
+function compareArrays(array1, array2, dontConvert) {
+    var len = Math.min(array1.length, array2.length),
+        lengthDiff = Math.abs(array1.length - array2.length),
+        diffs = 0,
+        i;
+    for (i = 0; i < len; i++) {
+        if (dontConvert && array1[i] !== array2[i] || !dontConvert && toInt(array1[i]) !== toInt(array2[i])) {
+            diffs++;
+        }
+    }
+    return diffs + lengthDiff;
+}
+
+var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
+    return typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+} : function (obj) {
+    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === 'undefined' ? 'undefined' : _typeof2(obj);
+};
+
+var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+
+    return target;
+};
+
+function warn(msg) {
+    if (hooks.suppressDeprecationWarnings === false && typeof console !== 'undefined' && console.warn) {
+        console.warn('Deprecation warning: ' + msg);
+    }
+}
+
+function deprecate(msg, fn) {
+    var firstTime = true;
+
+    return extend(function () {
+        if (hooks.deprecationHandler != null) {
+            hooks.deprecationHandler(null, msg);
+        }
+        if (firstTime) {
+            var args = [];
+            var arg;
+            for (var i = 0; i < arguments.length; i++) {
+                arg = '';
+                if (_typeof(arguments[i]) === 'object') {
+                    arg += '\n[' + i + '] ';
+                    for (var key in arguments[0]) {
+                        arg += key + ': ' + arguments[0][key] + ', ';
+                    }
+                    arg = arg.slice(0, -2); // Remove trailing comma and space
+                } else {
+                    arg = arguments[i];
+                }
+                args.push(arg);
+            }
+            warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + new Error().stack);
+            firstTime = false;
+        }
+        return fn.apply(this, arguments);
+    }, fn);
+}
+
+var deprecations = {};
+
+function deprecateSimple(name, msg) {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(name, msg);
+    }
+    if (!deprecations[name]) {
+        warn(msg);
+        deprecations[name] = true;
+    }
+}
+
+hooks.suppressDeprecationWarnings = false;
+hooks.deprecationHandler = null;
+
+function isFunction(input) {
+    return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
+}
+
+function set$1(config) {
+    var prop, i;
+    for (i in config) {
+        prop = config[i];
+        if (isFunction(prop)) {
+            this[i] = prop;
+        } else {
+            this['_' + i] = prop;
+        }
+    }
+    this._config = config;
+    // Lenient ordinal parsing accepts just a number in addition to
+    // number + (possibly) stuff coming from _dayOfMonthOrdinalParse.
+    // TODO: Remove "ordinalParse" fallback in next major release.
+    this._dayOfMonthOrdinalParseLenient = new RegExp((this._dayOfMonthOrdinalParse.source || this._ordinalParse.source) + '|' + /\d{1,2}/.source);
+}
+
+function mergeConfigs(parentConfig, childConfig) {
+    var res = extend({}, parentConfig),
+        prop;
+    for (prop in childConfig) {
+        if (hasOwnProp(childConfig, prop)) {
+            if (isObject(parentConfig[prop]) && isObject(childConfig[prop])) {
+                res[prop] = {};
+                extend(res[prop], parentConfig[prop]);
+                extend(res[prop], childConfig[prop]);
+            } else if (childConfig[prop] != null) {
+                res[prop] = childConfig[prop];
+            } else {
+                delete res[prop];
+            }
+        }
+    }
+    for (prop in parentConfig) {
+        if (hasOwnProp(parentConfig, prop) && !hasOwnProp(childConfig, prop) && isObject(parentConfig[prop])) {
+            // make sure changes to properties don't modify parent config
+            res[prop] = extend({}, res[prop]);
+        }
+    }
+    return res;
+}
+
+function Locale(config) {
+    if (config != null) {
+        this.set(config);
+    }
+}
+
+var keys;
+
+if (Object.keys) {
+    keys = Object.keys;
+} else {
+    keys = function keys(obj) {
+        var i,
+            res = [];
+        for (i in obj) {
+            if (hasOwnProp(obj, i)) {
+                res.push(i);
+            }
+        }
+        return res;
+    };
+}
+
+var defaultCalendar = {
+    sameDay: '[Today at] LT',
+    nextDay: '[Tomorrow at] LT',
+    nextWeek: 'dddd [at] LT',
+    lastDay: '[Yesterday at] LT',
+    lastWeek: '[Last] dddd [at] LT',
+    sameElse: 'L'
+};
+
+function calendar(key, mom, now) {
+    var output = this._calendar[key] || this._calendar['sameElse'];
+    return isFunction(output) ? output.call(mom, now) : output;
+}
+
+var defaultLongDateFormat = {
+    LTS: 'h:mm:ss A',
+    LT: 'h:mm A',
+    L: 'MM/DD/YYYY',
+    LL: 'MMMM D, YYYY',
+    LLL: 'MMMM D, YYYY h:mm A',
+    LLLL: 'dddd, MMMM D, YYYY h:mm A'
+};
+
+function longDateFormat(key) {
+    var format = this._longDateFormat[key],
+        formatUpper = this._longDateFormat[key.toUpperCase()];
+
+    if (format || !formatUpper) {
+        return format;
+    }
+
+    this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+        return val.slice(1);
+    });
+
+    return this._longDateFormat[key];
+}
+
+var defaultInvalidDate = 'Invalid date';
+
+function invalidDate() {
+    return this._invalidDate;
+}
+
+var defaultOrdinal = '%d';
+var defaultDayOfMonthOrdinalParse = /\d{1,2}/;
+
+function ordinal(number) {
+    return this._ordinal.replace('%d', number);
+}
+
+var defaultRelativeTime = {
+    future: 'in %s',
+    past: '%s ago',
+    s: 'a few seconds',
+    ss: '%d seconds',
+    m: 'a minute',
+    mm: '%d minutes',
+    h: 'an hour',
+    hh: '%d hours',
+    d: 'a day',
+    dd: '%d days',
+    M: 'a month',
+    MM: '%d months',
+    y: 'a year',
+    yy: '%d years'
+};
+
+function relativeTime(number, withoutSuffix, string, isFuture) {
+    var output = this._relativeTime[string];
+    return isFunction(output) ? output(number, withoutSuffix, string, isFuture) : output.replace(/%d/i, number);
+}
+
+function pastFuture(diff, output) {
+    var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+    return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+}
+
+var aliases = {};
+
+function addUnitAlias(unit, shorthand) {
+    var lowerCase = unit.toLowerCase();
+    aliases[lowerCase] = aliases[lowerCase + 's'] = aliases[shorthand] = unit;
+}
+
+function normalizeUnits(units) {
+    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+}
+
+function normalizeObjectUnits(inputObject) {
+    var normalizedInput = {},
+        normalizedProp,
+        prop;
+
+    for (prop in inputObject) {
+        if (hasOwnProp(inputObject, prop)) {
+            normalizedProp = normalizeUnits(prop);
+            if (normalizedProp) {
+                normalizedInput[normalizedProp] = inputObject[prop];
+            }
+        }
+    }
+
+    return normalizedInput;
+}
+
+var priorities = {};
+
+function addUnitPriority(unit, priority) {
+    priorities[unit] = priority;
+}
+
+function getPrioritizedUnits(unitsObj) {
+    var units = [];
+    for (var u in unitsObj) {
+        units.push({ unit: u, priority: priorities[u] });
+    }
+    units.sort(function (a, b) {
+        return a.priority - b.priority;
+    });
+    return units;
+}
+
+function zeroFill(number, targetLength, forceSign) {
+    var absNumber = '' + Math.abs(number),
+        zerosToFill = targetLength - absNumber.length,
+        sign = number >= 0;
+    return (sign ? forceSign ? '+' : '' : '-') + Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
+}
+
+var formattingTokens = /(\[[^\[]*\])|(\\)?([Hh]mm(ss)?|Mo|MM?M?M?|Do|DDDo|DD?D?D?|ddd?d?|do?|w[o|w]?|W[o|W]?|Qo?|YYYYYY|YYYYY|YYYY|YY|gg(ggg?)?|GG(GGG?)?|e|E|a|A|hh?|HH?|kk?|mm?|ss?|S{1,9}|x|X|zz?|ZZ?|.)/g;
+
+var localFormattingTokens = /(\[[^\[]*\])|(\\)?(LTS|LT|LL?L?L?|l{1,4})/g;
+
+var formatFunctions = {};
+
+var formatTokenFunctions = {};
+
+// token:    'M'
+// padded:   ['MM', 2]
+// ordinal:  'Mo'
+// callback: function () { this.month() + 1 }
+function addFormatToken(token, padded, ordinal, callback) {
+    var func = callback;
+    if (typeof callback === 'string') {
+        func = function func() {
+            return this[callback]();
+        };
+    }
+    if (token) {
+        formatTokenFunctions[token] = func;
+    }
+    if (padded) {
+        formatTokenFunctions[padded[0]] = function () {
+            return zeroFill(func.apply(this, arguments), padded[1], padded[2]);
+        };
+    }
+    if (ordinal) {
+        formatTokenFunctions[ordinal] = function () {
+            return this.localeData().ordinal(func.apply(this, arguments), token);
+        };
+    }
+}
+
+function removeFormattingTokens(input) {
+    if (input.match(/\[[\s\S]/)) {
+        return input.replace(/^\[|\]$/g, '');
+    }
+    return input.replace(/\\/g, '');
+}
+
+function makeFormatFunction(format) {
+    var array = format.match(formattingTokens),
+        i,
+        length;
+
+    for (i = 0, length = array.length; i < length; i++) {
+        if (formatTokenFunctions[array[i]]) {
+            array[i] = formatTokenFunctions[array[i]];
+        } else {
+            array[i] = removeFormattingTokens(array[i]);
+        }
+    }
+
+    return function (mom) {
+        var output = '',
+            i;
+        for (i = 0; i < length; i++) {
+            output += isFunction(array[i]) ? array[i].call(mom, format) : array[i];
+        }
+        return output;
+    };
+}
+
+// format date using native date object
+function formatMoment(m, format) {
+    if (!m.isValid()) {
+        return m.localeData().invalidDate();
+    }
+
+    format = expandFormat(format, m.localeData());
+    formatFunctions[format] = formatFunctions[format] || makeFormatFunction(format);
+
+    return formatFunctions[format](m);
+}
+
+function expandFormat(format, locale) {
+    var i = 5;
+
+    function replaceLongDateFormatTokens(input) {
+        return locale.longDateFormat(input) || input;
+    }
+
+    localFormattingTokens.lastIndex = 0;
+    while (i >= 0 && localFormattingTokens.test(format)) {
+        format = format.replace(localFormattingTokens, replaceLongDateFormatTokens);
+        localFormattingTokens.lastIndex = 0;
+        i -= 1;
+    }
+
+    return format;
+}
+
+var match1 = /\d/; //       0 - 9
+var match2 = /\d\d/; //      00 - 99
+var match3 = /\d{3}/; //     000 - 999
+var match4 = /\d{4}/; //    0000 - 9999
+var match6 = /[+-]?\d{6}/; // -999999 - 999999
+var match1to2 = /\d\d?/; //       0 - 99
+var match3to4 = /\d\d\d\d?/; //     999 - 9999
+var match5to6 = /\d\d\d\d\d\d?/; //   99999 - 999999
+var match1to3 = /\d{1,3}/; //       0 - 999
+var match1to4 = /\d{1,4}/; //       0 - 9999
+var match1to6 = /[+-]?\d{1,6}/; // -999999 - 999999
+
+var matchUnsigned = /\d+/; //       0 - inf
+var matchSigned = /[+-]?\d+/; //    -inf - inf
+
+var matchOffset = /Z|[+-]\d\d:?\d\d/gi; // +00:00 -00:00 +0000 -0000 or Z
+var matchShortOffset = /Z|[+-]\d\d(?::?\d\d)?/gi; // +00 -00 +00:00 -00:00 +0000 -0000 or Z
+
+var matchTimestamp = /[+-]?\d+(\.\d{1,3})?/; // 123456789 123456789.123
+
+// any word (or two) characters or numbers including two/three word month in arabic.
+// includes scottish gaelic two word and hyphenated months
+var matchWord = /[0-9]{0,256}['a-z\u00A0-\u05FF\u0700-\uD7FF\uF900-\uFDCF\uFDF0-\uFF07\uFF10-\uFFEF]{1,256}|[\u0600-\u06FF\/]{1,256}(\s*?[\u0600-\u06FF]{1,256}){1,2}/i;
+
+var regexes = {};
+
+function addRegexToken(token, regex, strictRegex) {
+    regexes[token] = isFunction(regex) ? regex : function (isStrict, localeData) {
+        return isStrict && strictRegex ? strictRegex : regex;
+    };
+}
+
+function getParseRegexForToken(token, config) {
+    if (!hasOwnProp(regexes, token)) {
+        return new RegExp(unescapeFormat(token));
+    }
+
+    return regexes[token](config._strict, config._locale);
+}
+
+// Code from http://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript
+function unescapeFormat(s) {
+    return regexEscape(s.replace('\\', '').replace(/\\(\[)|\\(\])|\[([^\]\[]*)\]|\\(.)/g, function (matched, p1, p2, p3, p4) {
+        return p1 || p2 || p3 || p4;
+    }));
+}
+
+function regexEscape(s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
+
+var tokens = {};
+
+function addParseToken(token, callback) {
+    var i,
+        func = callback;
+    if (typeof token === 'string') {
+        token = [token];
+    }
+    if (isNumber(callback)) {
+        func = function func(input, array) {
+            array[callback] = toInt(input);
+        };
+    }
+    for (i = 0; i < token.length; i++) {
+        tokens[token[i]] = func;
+    }
+}
+
+function addWeekParseToken(token, callback) {
+    addParseToken(token, function (input, array, config, token) {
+        config._w = config._w || {};
+        callback(input, config._w, config, token);
+    });
+}
+
+function addTimeToArrayFromToken(token, input, config) {
+    if (input != null && hasOwnProp(tokens, token)) {
+        tokens[token](input, config._a, config, token);
+    }
+}
+
+var YEAR = 0;
+var MONTH = 1;
+var DATE = 2;
+var HOUR = 3;
+var MINUTE = 4;
+var SECOND = 5;
+var MILLISECOND = 6;
+var WEEK = 7;
+var WEEKDAY = 8;
+
+// FORMATTING
+
+addFormatToken('Y', 0, 0, function () {
+    var y = this.year();
+    return y <= 9999 ? '' + y : '+' + y;
+});
+
+addFormatToken(0, ['YY', 2], 0, function () {
+    return this.year() % 100;
+});
+
+addFormatToken(0, ['YYYY', 4], 0, 'year');
+addFormatToken(0, ['YYYYY', 5], 0, 'year');
+addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+// ALIASES
+
+addUnitAlias('year', 'y');
+
+// PRIORITIES
+
+addUnitPriority('year', 1);
+
+// PARSING
+
+addRegexToken('Y', matchSigned);
+addRegexToken('YY', match1to2, match2);
+addRegexToken('YYYY', match1to4, match4);
+addRegexToken('YYYYY', match1to6, match6);
+addRegexToken('YYYYYY', match1to6, match6);
+
+addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+addParseToken('YYYY', function (input, array) {
+    array[YEAR] = input.length === 2 ? hooks.parseTwoDigitYear(input) : toInt(input);
+});
+addParseToken('YY', function (input, array) {
+    array[YEAR] = hooks.parseTwoDigitYear(input);
+});
+addParseToken('Y', function (input, array) {
+    array[YEAR] = parseInt(input, 10);
+});
+
+// HELPERS
+
+function daysInYear(year) {
+    return isLeapYear(year) ? 366 : 365;
+}
+
+function isLeapYear(year) {
+    return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+}
+
+// HOOKS
+
+hooks.parseTwoDigitYear = function (input) {
+    return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+};
+
+// MOMENTS
+
+var getSetYear = makeGetSet('FullYear', true);
+
+function getIsLeapYear() {
+    return isLeapYear(this.year());
+}
+
+function makeGetSet(unit, keepTime) {
+    return function (value) {
+        if (value != null) {
+            set$2(this, unit, value);
+            hooks.updateOffset(this, keepTime);
+            return this;
+        } else {
+            return get$1(this, unit);
+        }
+    };
+}
+
+function get$1(mom, unit) {
+    return mom.isValid() ? mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
+}
+
+function set$2(mom, unit, value) {
+    if (mom.isValid() && !isNaN(value)) {
+        if (unit === 'FullYear' && isLeapYear(mom.year()) && mom.month() === 1 && mom.date() === 29) {
+            mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value, mom.month(), daysInMonth(value, mom.month()));
+        } else {
+            mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
+        }
+    }
+}
+
+// MOMENTS
+
+function stringGet(units) {
+    units = normalizeUnits(units);
+    if (isFunction(this[units])) {
+        return this[units]();
+    }
+    return this;
+}
+
+function stringSet(units, value) {
+    if ((typeof units === 'undefined' ? 'undefined' : _typeof(units)) === 'object') {
+        units = normalizeObjectUnits(units);
+        var prioritized = getPrioritizedUnits(units);
+        for (var i = 0; i < prioritized.length; i++) {
+            this[prioritized[i].unit](units[prioritized[i].unit]);
+        }
+    } else {
+        units = normalizeUnits(units);
+        if (isFunction(this[units])) {
+            return this[units](value);
+        }
+    }
+    return this;
+}
+
+function mod(n, x) {
+    return (n % x + x) % x;
+}
+
+var indexOf;
+
+if (Array.prototype.indexOf) {
+    indexOf = Array.prototype.indexOf;
+} else {
+    indexOf = function indexOf(o) {
+        // I know
+        var i;
+        for (i = 0; i < this.length; ++i) {
+            if (this[i] === o) {
+                return i;
+            }
+        }
+        return -1;
+    };
+}
+
+function daysInMonth(year, month) {
+    if (isNaN(year) || isNaN(month)) {
+        return NaN;
+    }
+    var modMonth = mod(month, 12);
+    year += (month - modMonth) / 12;
+    return modMonth === 1 ? isLeapYear(year) ? 29 : 28 : 31 - modMonth % 7 % 2;
+}
+
+// FORMATTING
+
+addFormatToken('M', ['MM', 2], 'Mo', function () {
+    return this.month() + 1;
+});
+
+addFormatToken('MMM', 0, 0, function (format) {
+    return this.localeData().monthsShort(this, format);
+});
+
+addFormatToken('MMMM', 0, 0, function (format) {
+    return this.localeData().months(this, format);
+});
+
+// ALIASES
+
+addUnitAlias('month', 'M');
+
+// PRIORITY
+
+addUnitPriority('month', 8);
+
+// PARSING
+
+addRegexToken('M', match1to2);
+addRegexToken('MM', match1to2, match2);
+addRegexToken('MMM', function (isStrict, locale) {
+    return locale.monthsShortRegex(isStrict);
+});
+addRegexToken('MMMM', function (isStrict, locale) {
+    return locale.monthsRegex(isStrict);
+});
+
+addParseToken(['M', 'MM'], function (input, array) {
+    array[MONTH] = toInt(input) - 1;
+});
+
+addParseToken(['MMM', 'MMMM'], function (input, array, config, token) {
+    var month = config._locale.monthsParse(input, token, config._strict);
+    // if we didn't find a month name, mark the date as invalid.
+    if (month != null) {
+        array[MONTH] = month;
+    } else {
+        getParsingFlags(config).invalidMonth = input;
+    }
+});
+
+// LOCALES
+
+var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
+var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+function localeMonths(m, format) {
+    if (!m) {
+        return isArray(this._months) ? this._months : this._months['standalone'];
+    }
+    return isArray(this._months) ? this._months[m.month()] : this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
+}
+
+var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+function localeMonthsShort(m, format) {
+    if (!m) {
+        return isArray(this._monthsShort) ? this._monthsShort : this._monthsShort['standalone'];
+    }
+    return isArray(this._monthsShort) ? this._monthsShort[m.month()] : this._monthsShort[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+}
+
+function handleStrictParse(monthName, format, strict) {
+    var i,
+        ii,
+        mom,
+        llc = monthName.toLocaleLowerCase();
+    if (!this._monthsParse) {
+        // this is not used
+        this._monthsParse = [];
+        this._longMonthsParse = [];
+        this._shortMonthsParse = [];
+        for (i = 0; i < 12; ++i) {
+            mom = createUTC([2000, i]);
+            this._shortMonthsParse[i] = this.monthsShort(mom, '').toLocaleLowerCase();
+            this._longMonthsParse[i] = this.months(mom, '').toLocaleLowerCase();
+        }
+    }
+
+    if (strict) {
+        if (format === 'MMM') {
+            ii = indexOf.call(this._shortMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf.call(this._longMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    } else {
+        if (format === 'MMM') {
+            ii = indexOf.call(this._shortMonthsParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._longMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf.call(this._longMonthsParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._shortMonthsParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    }
+}
+
+function localeMonthsParse(monthName, format, strict) {
+    var i, mom, regex;
+
+    if (this._monthsParseExact) {
+        return handleStrictParse.call(this, monthName, format, strict);
+    }
+
+    if (!this._monthsParse) {
+        this._monthsParse = [];
+        this._longMonthsParse = [];
+        this._shortMonthsParse = [];
+    }
+
+    // TODO: add sorting
+    // Sorting makes sure if one month (or abbr) is a prefix of another
+    // see sorting in computeMonthsParse
+    for (i = 0; i < 12; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, i]);
+        if (strict && !this._longMonthsParse[i]) {
+            this._longMonthsParse[i] = new RegExp('^' + this.months(mom, '').replace('.', '') + '$', 'i');
+            this._shortMonthsParse[i] = new RegExp('^' + this.monthsShort(mom, '').replace('.', '') + '$', 'i');
+        }
+        if (!strict && !this._monthsParse[i]) {
+            regex = '^' + this.months(mom, '') + '|^' + this.monthsShort(mom, '');
+            this._monthsParse[i] = new RegExp(regex.replace('.', ''), 'i');
+        }
+        // test the regex
+        if (strict && format === 'MMMM' && this._longMonthsParse[i].test(monthName)) {
+            return i;
+        } else if (strict && format === 'MMM' && this._shortMonthsParse[i].test(monthName)) {
+            return i;
+        } else if (!strict && this._monthsParse[i].test(monthName)) {
+            return i;
+        }
+    }
+}
+
+// MOMENTS
+
+function setMonth(mom, value) {
+    var dayOfMonth;
+
+    if (!mom.isValid()) {
+        // No op
+        return mom;
+    }
+
+    if (typeof value === 'string') {
+        if (/^\d+$/.test(value)) {
+            value = toInt(value);
+        } else {
+            value = mom.localeData().monthsParse(value);
+            // TODO: Another silent failure?
+            if (!isNumber(value)) {
+                return mom;
+            }
+        }
+    }
+
+    dayOfMonth = Math.min(mom.date(), daysInMonth(mom.year(), value));
+    mom._d['set' + (mom._isUTC ? 'UTC' : '') + 'Month'](value, dayOfMonth);
+    return mom;
+}
+
+function getSetMonth(value) {
+    if (value != null) {
+        setMonth(this, value);
+        hooks.updateOffset(this, true);
+        return this;
+    } else {
+        return get$1(this, 'Month');
+    }
+}
+
+function getDaysInMonth() {
+    return daysInMonth(this.year(), this.month());
+}
+
+var defaultMonthsShortRegex = matchWord;
+function monthsShortRegex(isStrict) {
+    if (this._monthsParseExact) {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            computeMonthsParse.call(this);
+        }
+        if (isStrict) {
+            return this._monthsShortStrictRegex;
+        } else {
+            return this._monthsShortRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_monthsShortRegex')) {
+            this._monthsShortRegex = defaultMonthsShortRegex;
+        }
+        return this._monthsShortStrictRegex && isStrict ? this._monthsShortStrictRegex : this._monthsShortRegex;
+    }
+}
+
+var defaultMonthsRegex = matchWord;
+function monthsRegex(isStrict) {
+    if (this._monthsParseExact) {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            computeMonthsParse.call(this);
+        }
+        if (isStrict) {
+            return this._monthsStrictRegex;
+        } else {
+            return this._monthsRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_monthsRegex')) {
+            this._monthsRegex = defaultMonthsRegex;
+        }
+        return this._monthsStrictRegex && isStrict ? this._monthsStrictRegex : this._monthsRegex;
+    }
+}
+
+function computeMonthsParse() {
+    function cmpLenRev(a, b) {
+        return b.length - a.length;
+    }
+
+    var shortPieces = [],
+        longPieces = [],
+        mixedPieces = [],
+        i,
+        mom;
+    for (i = 0; i < 12; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, i]);
+        shortPieces.push(this.monthsShort(mom, ''));
+        longPieces.push(this.months(mom, ''));
+        mixedPieces.push(this.months(mom, ''));
+        mixedPieces.push(this.monthsShort(mom, ''));
+    }
+    // Sorting makes sure if one month (or abbr) is a prefix of another it
+    // will match the longer piece.
+    shortPieces.sort(cmpLenRev);
+    longPieces.sort(cmpLenRev);
+    mixedPieces.sort(cmpLenRev);
+    for (i = 0; i < 12; i++) {
+        shortPieces[i] = regexEscape(shortPieces[i]);
+        longPieces[i] = regexEscape(longPieces[i]);
+    }
+    for (i = 0; i < 24; i++) {
+        mixedPieces[i] = regexEscape(mixedPieces[i]);
+    }
+
+    this._monthsRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+    this._monthsShortRegex = this._monthsRegex;
+    this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+    this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+}
+
+function createDate(y, m, d, h, M, s, ms) {
+    // can't just apply() to create a date:
+    // https://stackoverflow.com/q/181348
+    var date = new Date(y, m, d, h, M, s, ms);
+
+    // the date constructor remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+        date.setFullYear(y);
+    }
+    return date;
+}
+
+function createUTCDate(y) {
+    var date = new Date(Date.UTC.apply(null, arguments));
+
+    // the Date.UTC function remaps years 0-99 to 1900-1999
+    if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+        date.setUTCFullYear(y);
+    }
+    return date;
+}
+
+// start-of-first-week - start-of-year
+function firstWeekOffset(year, dow, doy) {
+    var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+    fwd = 7 + dow - doy,
+
+
+    // first-week day local weekday -- which local weekday is fwd
+    fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+    return -fwdlw + fwd - 1;
+}
+
+// https://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+    var localWeekday = (7 + weekday - dow) % 7,
+        weekOffset = firstWeekOffset(year, dow, doy),
+        dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+        resYear,
+        resDayOfYear;
+
+    if (dayOfYear <= 0) {
+        resYear = year - 1;
+        resDayOfYear = daysInYear(resYear) + dayOfYear;
+    } else if (dayOfYear > daysInYear(year)) {
+        resYear = year + 1;
+        resDayOfYear = dayOfYear - daysInYear(year);
+    } else {
+        resYear = year;
+        resDayOfYear = dayOfYear;
+    }
+
+    return {
+        year: resYear,
+        dayOfYear: resDayOfYear
+    };
+}
+
+function weekOfYear(mom, dow, doy) {
+    var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+        week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+        resWeek,
+        resYear;
+
+    if (week < 1) {
+        resYear = mom.year() - 1;
+        resWeek = week + weeksInYear(resYear, dow, doy);
+    } else if (week > weeksInYear(mom.year(), dow, doy)) {
+        resWeek = week - weeksInYear(mom.year(), dow, doy);
+        resYear = mom.year() + 1;
+    } else {
+        resYear = mom.year();
+        resWeek = week;
+    }
+
+    return {
+        week: resWeek,
+        year: resYear
+    };
+}
+
+function weeksInYear(year, dow, doy) {
+    var weekOffset = firstWeekOffset(year, dow, doy),
+        weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+    return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+}
+
+// FORMATTING
+
+addFormatToken('w', ['ww', 2], 'wo', 'week');
+addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+// ALIASES
+
+addUnitAlias('week', 'w');
+addUnitAlias('isoWeek', 'W');
+
+// PRIORITIES
+
+addUnitPriority('week', 5);
+addUnitPriority('isoWeek', 5);
+
+// PARSING
+
+addRegexToken('w', match1to2);
+addRegexToken('ww', match1to2, match2);
+addRegexToken('W', match1to2);
+addRegexToken('WW', match1to2, match2);
+
+addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+    week[token.substr(0, 1)] = toInt(input);
+});
+
+// HELPERS
+
+// LOCALES
+
+function localeWeek(mom) {
+    return weekOfYear(mom, this._week.dow, this._week.doy).week;
+}
+
+var defaultLocaleWeek = {
+    dow: 0, // Sunday is the first day of the week.
+    doy: 6 // The week that contains Jan 1st is the first week of the year.
+};
+
+function localeFirstDayOfWeek() {
+    return this._week.dow;
+}
+
+function localeFirstDayOfYear() {
+    return this._week.doy;
+}
+
+// MOMENTS
+
+function getSetWeek(input) {
+    var week = this.localeData().week(this);
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+
+function getSetISOWeek(input) {
+    var week = weekOfYear(this, 1, 4).week;
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+
+// FORMATTING
+
+addFormatToken('d', 0, 'do', 'day');
+
+addFormatToken('dd', 0, 0, function (format) {
+    return this.localeData().weekdaysMin(this, format);
+});
+
+addFormatToken('ddd', 0, 0, function (format) {
+    return this.localeData().weekdaysShort(this, format);
+});
+
+addFormatToken('dddd', 0, 0, function (format) {
+    return this.localeData().weekdays(this, format);
+});
+
+addFormatToken('e', 0, 0, 'weekday');
+addFormatToken('E', 0, 0, 'isoWeekday');
+
+// ALIASES
+
+addUnitAlias('day', 'd');
+addUnitAlias('weekday', 'e');
+addUnitAlias('isoWeekday', 'E');
+
+// PRIORITY
+addUnitPriority('day', 11);
+addUnitPriority('weekday', 11);
+addUnitPriority('isoWeekday', 11);
+
+// PARSING
+
+addRegexToken('d', match1to2);
+addRegexToken('e', match1to2);
+addRegexToken('E', match1to2);
+addRegexToken('dd', function (isStrict, locale) {
+    return locale.weekdaysMinRegex(isStrict);
+});
+addRegexToken('ddd', function (isStrict, locale) {
+    return locale.weekdaysShortRegex(isStrict);
+});
+addRegexToken('dddd', function (isStrict, locale) {
+    return locale.weekdaysRegex(isStrict);
+});
+
+addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+    var weekday = config._locale.weekdaysParse(input, token, config._strict);
+    // if we didn't get a weekday name, mark the date as invalid
+    if (weekday != null) {
+        week.d = weekday;
+    } else {
+        getParsingFlags(config).invalidWeekday = input;
+    }
+});
+
+addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+    week[token] = toInt(input);
+});
+
+// HELPERS
+
+function parseWeekday(input, locale) {
+    if (typeof input !== 'string') {
+        return input;
+    }
+
+    if (!isNaN(input)) {
+        return parseInt(input, 10);
+    }
+
+    input = locale.weekdaysParse(input);
+    if (typeof input === 'number') {
+        return input;
+    }
+
+    return null;
+}
+
+function parseIsoWeekday(input, locale) {
+    if (typeof input === 'string') {
+        return locale.weekdaysParse(input) % 7 || 7;
+    }
+    return isNaN(input) ? null : input;
+}
+
+// LOCALES
+
+var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+function localeWeekdays(m, format) {
+    if (!m) {
+        return isArray(this._weekdays) ? this._weekdays : this._weekdays['standalone'];
+    }
+    return isArray(this._weekdays) ? this._weekdays[m.day()] : this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+}
+
+var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+function localeWeekdaysShort(m) {
+    return m ? this._weekdaysShort[m.day()] : this._weekdaysShort;
+}
+
+var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+function localeWeekdaysMin(m) {
+    return m ? this._weekdaysMin[m.day()] : this._weekdaysMin;
+}
+
+function handleStrictParse$1(weekdayName, format, strict) {
+    var i,
+        ii,
+        mom,
+        llc = weekdayName.toLocaleLowerCase();
+    if (!this._weekdaysParse) {
+        this._weekdaysParse = [];
+        this._shortWeekdaysParse = [];
+        this._minWeekdaysParse = [];
+
+        for (i = 0; i < 7; ++i) {
+            mom = createUTC([2000, 1]).day(i);
+            this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+            this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+            this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+        }
+    }
+
+    if (strict) {
+        if (format === 'dddd') {
+            ii = indexOf.call(this._weekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else if (format === 'ddd') {
+            ii = indexOf.call(this._shortWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    } else {
+        if (format === 'dddd') {
+            ii = indexOf.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._shortWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else if (format === 'ddd') {
+            ii = indexOf.call(this._shortWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._minWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        } else {
+            ii = indexOf.call(this._minWeekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._weekdaysParse, llc);
+            if (ii !== -1) {
+                return ii;
+            }
+            ii = indexOf.call(this._shortWeekdaysParse, llc);
+            return ii !== -1 ? ii : null;
+        }
+    }
+}
+
+function localeWeekdaysParse(weekdayName, format, strict) {
+    var i, mom, regex;
+
+    if (this._weekdaysParseExact) {
+        return handleStrictParse$1.call(this, weekdayName, format, strict);
+    }
+
+    if (!this._weekdaysParse) {
+        this._weekdaysParse = [];
+        this._minWeekdaysParse = [];
+        this._shortWeekdaysParse = [];
+        this._fullWeekdaysParse = [];
+    }
+
+    for (i = 0; i < 7; i++) {
+        // make the regex if we don't have it already
+
+        mom = createUTC([2000, 1]).day(i);
+        if (strict && !this._fullWeekdaysParse[i]) {
+            this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+            this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+            this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+        }
+        if (!this._weekdaysParse[i]) {
+            regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+            this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+        }
+        // test the regex
+        if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+            return i;
+        } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+            return i;
+        }
+    }
+}
+
+// MOMENTS
+
+function getSetDayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+    if (input != null) {
+        input = parseWeekday(input, this.localeData());
+        return this.add(input - day, 'd');
+    } else {
+        return day;
+    }
+}
+
+function getSetLocaleDayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+    return input == null ? weekday : this.add(input - weekday, 'd');
+}
+
+function getSetISODayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+
+    // behaves the same as moment#day except
+    // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+    // as a setter, sunday should belong to the previous week.
+
+    if (input != null) {
+        var weekday = parseIsoWeekday(input, this.localeData());
+        return this.day(this.day() % 7 ? weekday : weekday - 7);
+    } else {
+        return this.day() || 7;
+    }
+}
+
+var defaultWeekdaysRegex = matchWord;
+function weekdaysRegex(isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysStrictRegex;
+        } else {
+            return this._weekdaysRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            this._weekdaysRegex = defaultWeekdaysRegex;
+        }
+        return this._weekdaysStrictRegex && isStrict ? this._weekdaysStrictRegex : this._weekdaysRegex;
+    }
+}
+
+var defaultWeekdaysShortRegex = matchWord;
+function weekdaysShortRegex(isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysShortStrictRegex;
+        } else {
+            return this._weekdaysShortRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysShortRegex')) {
+            this._weekdaysShortRegex = defaultWeekdaysShortRegex;
+        }
+        return this._weekdaysShortStrictRegex && isStrict ? this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+    }
+}
+
+var defaultWeekdaysMinRegex = matchWord;
+function weekdaysMinRegex(isStrict) {
+    if (this._weekdaysParseExact) {
+        if (!hasOwnProp(this, '_weekdaysRegex')) {
+            computeWeekdaysParse.call(this);
+        }
+        if (isStrict) {
+            return this._weekdaysMinStrictRegex;
+        } else {
+            return this._weekdaysMinRegex;
+        }
+    } else {
+        if (!hasOwnProp(this, '_weekdaysMinRegex')) {
+            this._weekdaysMinRegex = defaultWeekdaysMinRegex;
+        }
+        return this._weekdaysMinStrictRegex && isStrict ? this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+    }
+}
+
+function computeWeekdaysParse() {
+    function cmpLenRev(a, b) {
+        return b.length - a.length;
+    }
+
+    var minPieces = [],
+        shortPieces = [],
+        longPieces = [],
+        mixedPieces = [],
+        i,
+        mom,
+        minp,
+        shortp,
+        longp;
+    for (i = 0; i < 7; i++) {
+        // make the regex if we don't have it already
+        mom = createUTC([2000, 1]).day(i);
+        minp = this.weekdaysMin(mom, '');
+        shortp = this.weekdaysShort(mom, '');
+        longp = this.weekdays(mom, '');
+        minPieces.push(minp);
+        shortPieces.push(shortp);
+        longPieces.push(longp);
+        mixedPieces.push(minp);
+        mixedPieces.push(shortp);
+        mixedPieces.push(longp);
+    }
+    // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+    // will match the longer piece.
+    minPieces.sort(cmpLenRev);
+    shortPieces.sort(cmpLenRev);
+    longPieces.sort(cmpLenRev);
+    mixedPieces.sort(cmpLenRev);
+    for (i = 0; i < 7; i++) {
+        shortPieces[i] = regexEscape(shortPieces[i]);
+        longPieces[i] = regexEscape(longPieces[i]);
+        mixedPieces[i] = regexEscape(mixedPieces[i]);
+    }
+
+    this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+    this._weekdaysShortRegex = this._weekdaysRegex;
+    this._weekdaysMinRegex = this._weekdaysRegex;
+
+    this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+    this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+    this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+}
+
+// FORMATTING
+
+function hFormat() {
+    return this.hours() % 12 || 12;
+}
+
+function kFormat() {
+    return this.hours() || 24;
+}
+
+addFormatToken('H', ['HH', 2], 0, 'hour');
+addFormatToken('h', ['hh', 2], 0, hFormat);
+addFormatToken('k', ['kk', 2], 0, kFormat);
+
+addFormatToken('hmm', 0, 0, function () {
+    return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+});
+
+addFormatToken('hmmss', 0, 0, function () {
+    return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) + zeroFill(this.seconds(), 2);
+});
+
+addFormatToken('Hmm', 0, 0, function () {
+    return '' + this.hours() + zeroFill(this.minutes(), 2);
+});
+
+addFormatToken('Hmmss', 0, 0, function () {
+    return '' + this.hours() + zeroFill(this.minutes(), 2) + zeroFill(this.seconds(), 2);
+});
+
+function meridiem(token, lowercase) {
+    addFormatToken(token, 0, 0, function () {
+        return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+    });
+}
+
+meridiem('a', true);
+meridiem('A', false);
+
+// ALIASES
+
+addUnitAlias('hour', 'h');
+
+// PRIORITY
+addUnitPriority('hour', 13);
+
+// PARSING
+
+function matchMeridiem(isStrict, locale) {
+    return locale._meridiemParse;
+}
+
+addRegexToken('a', matchMeridiem);
+addRegexToken('A', matchMeridiem);
+addRegexToken('H', match1to2);
+addRegexToken('h', match1to2);
+addRegexToken('k', match1to2);
+addRegexToken('HH', match1to2, match2);
+addRegexToken('hh', match1to2, match2);
+addRegexToken('kk', match1to2, match2);
+
+addRegexToken('hmm', match3to4);
+addRegexToken('hmmss', match5to6);
+addRegexToken('Hmm', match3to4);
+addRegexToken('Hmmss', match5to6);
+
+addParseToken(['H', 'HH'], HOUR);
+addParseToken(['k', 'kk'], function (input, array, config) {
+    var kInput = toInt(input);
+    array[HOUR] = kInput === 24 ? 0 : kInput;
+});
+addParseToken(['a', 'A'], function (input, array, config) {
+    config._isPm = config._locale.isPM(input);
+    config._meridiem = input;
+});
+addParseToken(['h', 'hh'], function (input, array, config) {
+    array[HOUR] = toInt(input);
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('hmm', function (input, array, config) {
+    var pos = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos));
+    array[MINUTE] = toInt(input.substr(pos));
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('hmmss', function (input, array, config) {
+    var pos1 = input.length - 4;
+    var pos2 = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos1));
+    array[MINUTE] = toInt(input.substr(pos1, 2));
+    array[SECOND] = toInt(input.substr(pos2));
+    getParsingFlags(config).bigHour = true;
+});
+addParseToken('Hmm', function (input, array, config) {
+    var pos = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos));
+    array[MINUTE] = toInt(input.substr(pos));
+});
+addParseToken('Hmmss', function (input, array, config) {
+    var pos1 = input.length - 4;
+    var pos2 = input.length - 2;
+    array[HOUR] = toInt(input.substr(0, pos1));
+    array[MINUTE] = toInt(input.substr(pos1, 2));
+    array[SECOND] = toInt(input.substr(pos2));
+});
+
+// LOCALES
+
+function localeIsPM(input) {
+    // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+    // Using charAt should be more compatible.
+    return (input + '').toLowerCase().charAt(0) === 'p';
+}
+
+var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+function localeMeridiem(hours, minutes, isLower) {
+    if (hours > 11) {
+        return isLower ? 'pm' : 'PM';
+    } else {
+        return isLower ? 'am' : 'AM';
+    }
+}
+
+// MOMENTS
+
+// Setting the hour should keep the time, because the user explicitly
+// specified which hour he wants. So trying to maintain the same hour (in
+// a new timezone) makes sense. Adding/subtracting hours does not follow
+// this rule.
+var getSetHour = makeGetSet('Hours', true);
+
+var baseConfig = {
+    calendar: defaultCalendar,
+    longDateFormat: defaultLongDateFormat,
+    invalidDate: defaultInvalidDate,
+    ordinal: defaultOrdinal,
+    dayOfMonthOrdinalParse: defaultDayOfMonthOrdinalParse,
+    relativeTime: defaultRelativeTime,
+
+    months: defaultLocaleMonths,
+    monthsShort: defaultLocaleMonthsShort,
+
+    week: defaultLocaleWeek,
+
+    weekdays: defaultLocaleWeekdays,
+    weekdaysMin: defaultLocaleWeekdaysMin,
+    weekdaysShort: defaultLocaleWeekdaysShort,
+
+    meridiemParse: defaultLocaleMeridiemParse
+};
+
+// internal storage for locale config files
+var locales = {};
+var localeFamilies = {};
+var globalLocale;
+
+function normalizeLocale(key) {
+    return key ? key.toLowerCase().replace('_', '-') : key;
+}
+
+// pick the locale from the array
+// try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+// substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+function chooseLocale(names) {
+    var i = 0,
+        j,
+        next,
+        locale,
+        split;
+
+    while (i < names.length) {
+        split = normalizeLocale(names[i]).split('-');
+        j = split.length;
+        next = normalizeLocale(names[i + 1]);
+        next = next ? next.split('-') : null;
+        while (j > 0) {
+            locale = loadLocale(split.slice(0, j).join('-'));
+            if (locale) {
+                return locale;
+            }
+            if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                //the next array item is better than a shallower substring of this one
+                break;
+            }
+            j--;
+        }
+        i++;
+    }
+    return null;
+}
+
+function loadLocale(name) {
+    var oldLocale = null;
+    // TODO: Find a better way to register and load all the locales in Node
+    if (!locales[name] && typeof module !== 'undefined' && module && module.exports) {
+        try {
+            oldLocale = globalLocale._abbr;
+            var aliasedRequire = require;
+            aliasedRequire('./locale/' + name);
+            getSetGlobalLocale(oldLocale);
+        } catch (e) {}
+    }
+    return locales[name];
+}
+
+// This function will load locale and then set the global locale.  If
+// no arguments are passed in, it will simply return the current global
+// locale key.
+function getSetGlobalLocale(key, values) {
+    var data;
+    if (key) {
+        if (isUndefined(values)) {
+            data = getLocale(key);
+        } else {
+            data = defineLocale(key, values);
+        }
+
+        if (data) {
+            // moment.duration._locale = moment._locale = data;
+            globalLocale = data;
+        }
+    }
+
+    return globalLocale._abbr;
+}
+
+function defineLocale(name, config) {
+    if (config !== null) {
+        var parentConfig = baseConfig;
+        config.abbr = name;
+        if (locales[name] != null) {
+            deprecateSimple('defineLocaleOverride', 'use moment.updateLocale(localeName, config) to change ' + 'an existing locale. moment.defineLocale(localeName, ' + 'config) should only be used for creating a new locale ' + 'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
+            parentConfig = locales[name]._config;
+        } else if (config.parentLocale != null) {
+            if (locales[config.parentLocale] != null) {
+                parentConfig = locales[config.parentLocale]._config;
+            } else {
+                if (!localeFamilies[config.parentLocale]) {
+                    localeFamilies[config.parentLocale] = [];
+                }
+                localeFamilies[config.parentLocale].push({
+                    name: name,
+                    config: config
+                });
+                return null;
+            }
+        }
+        locales[name] = new Locale(mergeConfigs(parentConfig, config));
+
+        if (localeFamilies[name]) {
+            localeFamilies[name].forEach(function (x) {
+                defineLocale(x.name, x.config);
+            });
+        }
+
+        // backwards compat for now: also set the locale
+        // make sure we set the locale AFTER all child locales have been
+        // created, so we won't end up with the child locale set.
+        getSetGlobalLocale(name);
+
+        return locales[name];
+    } else {
+        // useful for testing
+        delete locales[name];
+        return null;
+    }
+}
+
+function updateLocale(name, config) {
+    if (config != null) {
+        var locale,
+            tmpLocale,
+            parentConfig = baseConfig;
+        // MERGE
+        tmpLocale = loadLocale(name);
+        if (tmpLocale != null) {
+            parentConfig = tmpLocale._config;
+        }
+        config = mergeConfigs(parentConfig, config);
+        locale = new Locale(config);
+        locale.parentLocale = locales[name];
+        locales[name] = locale;
+
+        // backwards compat for now: also set the locale
+        getSetGlobalLocale(name);
+    } else {
+        // pass null for config to unupdate, useful for tests
+        if (locales[name] != null) {
+            if (locales[name].parentLocale != null) {
+                locales[name] = locales[name].parentLocale;
+            } else if (locales[name] != null) {
+                delete locales[name];
+            }
+        }
+    }
+    return locales[name];
+}
+
+// returns locale data
+function getLocale(key) {
+    var locale;
+
+    if (key && key._locale && key._locale._abbr) {
+        key = key._locale._abbr;
+    }
+
+    if (!key) {
+        return globalLocale;
+    }
+
+    if (!isArray(key)) {
+        //short-circuit everything else
+        locale = loadLocale(key);
+        if (locale) {
+            return locale;
+        }
+        key = [key];
+    }
+
+    return chooseLocale(key);
+}
+
+function listLocales() {
+    return keys(locales);
+}
+
+function checkOverflow(m) {
+    var overflow;
+    var a = m._a;
+
+    if (a && getParsingFlags(m).overflow === -2) {
+        overflow = a[MONTH] < 0 || a[MONTH] > 11 ? MONTH : a[DATE] < 1 || a[DATE] > daysInMonth(a[YEAR], a[MONTH]) ? DATE : a[HOUR] < 0 || a[HOUR] > 24 || a[HOUR] === 24 && (a[MINUTE] !== 0 || a[SECOND] !== 0 || a[MILLISECOND] !== 0) ? HOUR : a[MINUTE] < 0 || a[MINUTE] > 59 ? MINUTE : a[SECOND] < 0 || a[SECOND] > 59 ? SECOND : a[MILLISECOND] < 0 || a[MILLISECOND] > 999 ? MILLISECOND : -1;
+
+        if (getParsingFlags(m)._overflowDayOfYear && (overflow < YEAR || overflow > DATE)) {
+            overflow = DATE;
+        }
+        if (getParsingFlags(m)._overflowWeeks && overflow === -1) {
+            overflow = WEEK;
+        }
+        if (getParsingFlags(m)._overflowWeekday && overflow === -1) {
+            overflow = WEEKDAY;
+        }
+
+        getParsingFlags(m).overflow = overflow;
+    }
+
+    return m;
+}
+
+// Pick the first defined of two or three arguments.
+function defaults$1(a, b, c) {
+    if (a != null) {
+        return a;
+    }
+    if (b != null) {
+        return b;
+    }
+    return c;
+}
+
+function currentDateArray(config) {
+    // hooks is actually the exported moment object
+    var nowValue = new Date(hooks.now());
+    if (config._useUTC) {
+        return [nowValue.getUTCFullYear(), nowValue.getUTCMonth(), nowValue.getUTCDate()];
+    }
+    return [nowValue.getFullYear(), nowValue.getMonth(), nowValue.getDate()];
+}
+
+// convert an array to a date.
+// the array should mirror the parameters below
+// note: all values past the year are optional and will default to the lowest possible value.
+// [year, month, day , hour, minute, second, millisecond]
+function configFromArray(config) {
+    var i,
+        date,
+        input = [],
+        currentDate,
+        expectedWeekday,
+        yearToUse;
+
+    if (config._d) {
+        return;
+    }
+
+    currentDate = currentDateArray(config);
+
+    //compute day of the year from weeks and weekdays
+    if (config._w && config._a[DATE] == null && config._a[MONTH] == null) {
+        dayOfYearFromWeekInfo(config);
+    }
+
+    //if the day of the year is set, figure out what it is
+    if (config._dayOfYear != null) {
+        yearToUse = defaults$1(config._a[YEAR], currentDate[YEAR]);
+
+        if (config._dayOfYear > daysInYear(yearToUse) || config._dayOfYear === 0) {
+            getParsingFlags(config)._overflowDayOfYear = true;
+        }
+
+        date = createUTCDate(yearToUse, 0, config._dayOfYear);
+        config._a[MONTH] = date.getUTCMonth();
+        config._a[DATE] = date.getUTCDate();
+    }
+
+    // Default to current date.
+    // * if no year, month, day of month are given, default to today
+    // * if day of month is given, default month and year
+    // * if month is given, default only year
+    // * if year is given, don't default anything
+    for (i = 0; i < 3 && config._a[i] == null; ++i) {
+        config._a[i] = input[i] = currentDate[i];
+    }
+
+    // Zero out whatever was not defaulted, including time
+    for (; i < 7; i++) {
+        config._a[i] = input[i] = config._a[i] == null ? i === 2 ? 1 : 0 : config._a[i];
+    }
+
+    // Check for 24:00:00.000
+    if (config._a[HOUR] === 24 && config._a[MINUTE] === 0 && config._a[SECOND] === 0 && config._a[MILLISECOND] === 0) {
+        config._nextDay = true;
+        config._a[HOUR] = 0;
+    }
+
+    config._d = (config._useUTC ? createUTCDate : createDate).apply(null, input);
+    expectedWeekday = config._useUTC ? config._d.getUTCDay() : config._d.getDay();
+
+    // Apply timezone offset from input. The actual utcOffset can be changed
+    // with parseZone.
+    if (config._tzm != null) {
+        config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+    }
+
+    if (config._nextDay) {
+        config._a[HOUR] = 24;
+    }
+
+    // check for mismatching day of week
+    if (config._w && typeof config._w.d !== 'undefined' && config._w.d !== expectedWeekday) {
+        getParsingFlags(config).weekdayMismatch = true;
+    }
+}
+
+function dayOfYearFromWeekInfo(config) {
+    var w, weekYear, week, weekday, dow, doy, temp, weekdayOverflow;
+
+    w = config._w;
+    if (w.GG != null || w.W != null || w.E != null) {
+        dow = 1;
+        doy = 4;
+
+        // TODO: We need to take the current isoWeekYear, but that depends on
+        // how we interpret now (local, utc, fixed offset). So create
+        // a now version of current config (take local/utc/offset flags, and
+        // create now).
+        weekYear = defaults$1(w.GG, config._a[YEAR], weekOfYear(createLocal(), 1, 4).year);
+        week = defaults$1(w.W, 1);
+        weekday = defaults$1(w.E, 1);
+        if (weekday < 1 || weekday > 7) {
+            weekdayOverflow = true;
+        }
+    } else {
+        dow = config._locale._week.dow;
+        doy = config._locale._week.doy;
+
+        var curWeek = weekOfYear(createLocal(), dow, doy);
+
+        weekYear = defaults$1(w.gg, config._a[YEAR], curWeek.year);
+
+        // Default to current week.
+        week = defaults$1(w.w, curWeek.week);
+
+        if (w.d != null) {
+            // weekday -- low day numbers are considered next week
+            weekday = w.d;
+            if (weekday < 0 || weekday > 6) {
+                weekdayOverflow = true;
+            }
+        } else if (w.e != null) {
+            // local weekday -- counting starts from begining of week
+            weekday = w.e + dow;
+            if (w.e < 0 || w.e > 6) {
+                weekdayOverflow = true;
+            }
+        } else {
+            // default to begining of week
+            weekday = dow;
+        }
+    }
+    if (week < 1 || week > weeksInYear(weekYear, dow, doy)) {
+        getParsingFlags(config)._overflowWeeks = true;
+    } else if (weekdayOverflow != null) {
+        getParsingFlags(config)._overflowWeekday = true;
+    } else {
+        temp = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy);
+        config._a[YEAR] = temp.year;
+        config._dayOfYear = temp.dayOfYear;
+    }
+}
+
+// iso 8601 regex
+// 0000-00-00 0000-W00 or 0000-W00-0 + T + 00 or 00:00 or 00:00:00 or 00:00:00.000 + +00:00 or +0000 or +00)
+var extendedIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})-(?:\d\d-\d\d|W\d\d-\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?::\d\d(?::\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+var basicIsoRegex = /^\s*((?:[+-]\d{6}|\d{4})(?:\d\d\d\d|W\d\d\d|W\d\d|\d\d\d|\d\d))(?:(T| )(\d\d(?:\d\d(?:\d\d(?:[.,]\d+)?)?)?)([\+\-]\d\d(?::?\d\d)?|\s*Z)?)?$/;
+
+var tzRegex = /Z|[+-]\d\d(?::?\d\d)?/;
+
+var isoDates = [['YYYYYY-MM-DD', /[+-]\d{6}-\d\d-\d\d/], ['YYYY-MM-DD', /\d{4}-\d\d-\d\d/], ['GGGG-[W]WW-E', /\d{4}-W\d\d-\d/], ['GGGG-[W]WW', /\d{4}-W\d\d/, false], ['YYYY-DDD', /\d{4}-\d{3}/], ['YYYY-MM', /\d{4}-\d\d/, false], ['YYYYYYMMDD', /[+-]\d{10}/], ['YYYYMMDD', /\d{8}/],
+// YYYYMM is NOT allowed by the standard
+['GGGG[W]WWE', /\d{4}W\d{3}/], ['GGGG[W]WW', /\d{4}W\d{2}/, false], ['YYYYDDD', /\d{7}/]];
+
+// iso time formats and regexes
+var isoTimes = [['HH:mm:ss.SSSS', /\d\d:\d\d:\d\d\.\d+/], ['HH:mm:ss,SSSS', /\d\d:\d\d:\d\d,\d+/], ['HH:mm:ss', /\d\d:\d\d:\d\d/], ['HH:mm', /\d\d:\d\d/], ['HHmmss.SSSS', /\d\d\d\d\d\d\.\d+/], ['HHmmss,SSSS', /\d\d\d\d\d\d,\d+/], ['HHmmss', /\d\d\d\d\d\d/], ['HHmm', /\d\d\d\d/], ['HH', /\d\d/]];
+
+var aspNetJsonRegex = /^\/?Date\((\-?\d+)/i;
+
+// date from iso format
+function configFromISO(config) {
+    var i,
+        l,
+        string = config._i,
+        match = extendedIsoRegex.exec(string) || basicIsoRegex.exec(string),
+        allowTime,
+        dateFormat,
+        timeFormat,
+        tzFormat;
+
+    if (match) {
+        getParsingFlags(config).iso = true;
+
+        for (i = 0, l = isoDates.length; i < l; i++) {
+            if (isoDates[i][1].exec(match[1])) {
+                dateFormat = isoDates[i][0];
+                allowTime = isoDates[i][2] !== false;
+                break;
+            }
+        }
+        if (dateFormat == null) {
+            config._isValid = false;
+            return;
+        }
+        if (match[3]) {
+            for (i = 0, l = isoTimes.length; i < l; i++) {
+                if (isoTimes[i][1].exec(match[3])) {
+                    // match[2] should be 'T' or space
+                    timeFormat = (match[2] || ' ') + isoTimes[i][0];
+                    break;
+                }
+            }
+            if (timeFormat == null) {
+                config._isValid = false;
+                return;
+            }
+        }
+        if (!allowTime && timeFormat != null) {
+            config._isValid = false;
+            return;
+        }
+        if (match[4]) {
+            if (tzRegex.exec(match[4])) {
+                tzFormat = 'Z';
+            } else {
+                config._isValid = false;
+                return;
+            }
+        }
+        config._f = dateFormat + (timeFormat || '') + (tzFormat || '');
+        configFromStringAndFormat(config);
+    } else {
+        config._isValid = false;
+    }
+}
+
+// RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
+var rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
+
+function extractFromRFC2822Strings(yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr) {
+    var result = [untruncateYear(yearStr), defaultLocaleMonthsShort.indexOf(monthStr), parseInt(dayStr, 10), parseInt(hourStr, 10), parseInt(minuteStr, 10)];
+
+    if (secondStr) {
+        result.push(parseInt(secondStr, 10));
+    }
+
+    return result;
+}
+
+function untruncateYear(yearStr) {
+    var year = parseInt(yearStr, 10);
+    if (year <= 49) {
+        return 2000 + year;
+    } else if (year <= 999) {
+        return 1900 + year;
+    }
+    return year;
+}
+
+function preprocessRFC2822(s) {
+    // Remove comments and folding whitespace and replace multiple-spaces with a single space
+    return s.replace(/\([^)]*\)|[\n\t]/g, ' ').replace(/(\s\s+)/g, ' ').trim();
+}
+
+function checkWeekday(weekdayStr, parsedInput, config) {
+    if (weekdayStr) {
+        // TODO: Replace the vanilla JS Date object with an indepentent day-of-week check.
+        var weekdayProvided = defaultLocaleWeekdaysShort.indexOf(weekdayStr),
+            weekdayActual = new Date(parsedInput[0], parsedInput[1], parsedInput[2]).getDay();
+        if (weekdayProvided !== weekdayActual) {
+            getParsingFlags(config).weekdayMismatch = true;
+            config._isValid = false;
+            return false;
+        }
+    }
+    return true;
+}
+
+var obsOffsets = {
+    UT: 0,
+    GMT: 0,
+    EDT: -4 * 60,
+    EST: -5 * 60,
+    CDT: -5 * 60,
+    CST: -6 * 60,
+    MDT: -6 * 60,
+    MST: -7 * 60,
+    PDT: -7 * 60,
+    PST: -8 * 60
+};
+
+function calculateOffset(obsOffset, militaryOffset, numOffset) {
+    if (obsOffset) {
+        return obsOffsets[obsOffset];
+    } else if (militaryOffset) {
+        // the only allowed military tz is Z
+        return 0;
+    } else {
+        var hm = parseInt(numOffset, 10);
+        var m = hm % 100,
+            h = (hm - m) / 100;
+        return h * 60 + m;
+    }
+}
+
+// date and time from ref 2822 format
+function configFromRFC2822(config) {
+    var match = rfc2822.exec(preprocessRFC2822(config._i));
+    if (match) {
+        var parsedArray = extractFromRFC2822Strings(match[4], match[3], match[2], match[5], match[6], match[7]);
+        if (!checkWeekday(match[1], parsedArray, config)) {
+            return;
+        }
+
+        config._a = parsedArray;
+        config._tzm = calculateOffset(match[8], match[9], match[10]);
+
+        config._d = createUTCDate.apply(null, config._a);
+        config._d.setUTCMinutes(config._d.getUTCMinutes() - config._tzm);
+
+        getParsingFlags(config).rfc2822 = true;
+    } else {
+        config._isValid = false;
+    }
+}
+
+// date from iso format or fallback
+function configFromString(config) {
+    var matched = aspNetJsonRegex.exec(config._i);
+
+    if (matched !== null) {
+        config._d = new Date(+matched[1]);
+        return;
+    }
+
+    configFromISO(config);
+    if (config._isValid === false) {
+        delete config._isValid;
+    } else {
+        return;
+    }
+
+    configFromRFC2822(config);
+    if (config._isValid === false) {
+        delete config._isValid;
+    } else {
+        return;
+    }
+
+    // Final attempt, use Input Fallback
+    hooks.createFromInputFallback(config);
+}
+
+hooks.createFromInputFallback = deprecate('value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), ' + 'which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are ' + 'discouraged and will be removed in an upcoming major release. Please refer to ' + 'http://momentjs.com/guides/#/warnings/js-date/ for more info.', function (config) {
+    config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
+});
+
+// constant that refers to the ISO standard
+hooks.ISO_8601 = function () {};
+
+// constant that refers to the RFC 2822 form
+hooks.RFC_2822 = function () {};
+
+// date from string and format string
+function configFromStringAndFormat(config) {
+    // TODO: Move this to another part of the creation flow to prevent circular deps
+    if (config._f === hooks.ISO_8601) {
+        configFromISO(config);
+        return;
+    }
+    if (config._f === hooks.RFC_2822) {
+        configFromRFC2822(config);
+        return;
+    }
+    config._a = [];
+    getParsingFlags(config).empty = true;
+
+    // This array is used to make a Date, either with `new Date` or `Date.UTC`
+    var string = '' + config._i,
+        i,
+        parsedInput,
+        tokens,
+        token,
+        skipped,
+        stringLength = string.length,
+        totalParsedInputLength = 0;
+
+    tokens = expandFormat(config._f, config._locale).match(formattingTokens) || [];
+
+    for (i = 0; i < tokens.length; i++) {
+        token = tokens[i];
+        parsedInput = (string.match(getParseRegexForToken(token, config)) || [])[0];
+        // console.log('token', token, 'parsedInput', parsedInput,
+        //         'regex', getParseRegexForToken(token, config));
+        if (parsedInput) {
+            skipped = string.substr(0, string.indexOf(parsedInput));
+            if (skipped.length > 0) {
+                getParsingFlags(config).unusedInput.push(skipped);
+            }
+            string = string.slice(string.indexOf(parsedInput) + parsedInput.length);
+            totalParsedInputLength += parsedInput.length;
+        }
+        // don't parse if it's not a known token
+        if (formatTokenFunctions[token]) {
+            if (parsedInput) {
+                getParsingFlags(config).empty = false;
+            } else {
+                getParsingFlags(config).unusedTokens.push(token);
+            }
+            addTimeToArrayFromToken(token, parsedInput, config);
+        } else if (config._strict && !parsedInput) {
+            getParsingFlags(config).unusedTokens.push(token);
+        }
+    }
+
+    // add remaining unparsed input length to the string
+    getParsingFlags(config).charsLeftOver = stringLength - totalParsedInputLength;
+    if (string.length > 0) {
+        getParsingFlags(config).unusedInput.push(string);
+    }
+
+    // clear _12h flag if hour is <= 12
+    if (config._a[HOUR] <= 12 && getParsingFlags(config).bigHour === true && config._a[HOUR] > 0) {
+        getParsingFlags(config).bigHour = undefined;
+    }
+
+    getParsingFlags(config).parsedDateParts = config._a.slice(0);
+    getParsingFlags(config).meridiem = config._meridiem;
+    // handle meridiem
+    config._a[HOUR] = meridiemFixWrap(config._locale, config._a[HOUR], config._meridiem);
+
+    configFromArray(config);
+    checkOverflow(config);
+}
+
+function meridiemFixWrap(locale, hour, meridiem) {
+    var isPm;
+
+    if (meridiem == null) {
+        // nothing to do
+        return hour;
+    }
+    if (locale.meridiemHour != null) {
+        return locale.meridiemHour(hour, meridiem);
+    } else if (locale.isPM != null) {
+        // Fallback
+        isPm = locale.isPM(meridiem);
+        if (isPm && hour < 12) {
+            hour += 12;
+        }
+        if (!isPm && hour === 12) {
+            hour = 0;
+        }
+        return hour;
+    } else {
+        // this is not supposed to happen
+        return hour;
+    }
+}
+
+// date from string and array of format strings
+function configFromStringAndArray(config) {
+    var tempConfig, bestMoment, scoreToBeat, i, currentScore;
+
+    if (config._f.length === 0) {
+        getParsingFlags(config).invalidFormat = true;
+        config._d = new Date(NaN);
+        return;
+    }
+
+    for (i = 0; i < config._f.length; i++) {
+        currentScore = 0;
+        tempConfig = copyConfig({}, config);
+        if (config._useUTC != null) {
+            tempConfig._useUTC = config._useUTC;
+        }
+        tempConfig._f = config._f[i];
+        configFromStringAndFormat(tempConfig);
+
+        if (!isValid(tempConfig)) {
+            continue;
+        }
+
+        // if there is any input that was not parsed add a penalty for that format
+        currentScore += getParsingFlags(tempConfig).charsLeftOver;
+
+        //or tokens
+        currentScore += getParsingFlags(tempConfig).unusedTokens.length * 10;
+
+        getParsingFlags(tempConfig).score = currentScore;
+
+        if (scoreToBeat == null || currentScore < scoreToBeat) {
+            scoreToBeat = currentScore;
+            bestMoment = tempConfig;
+        }
+    }
+
+    extend(config, bestMoment || tempConfig);
+}
+
+function configFromObject(config) {
+    if (config._d) {
+        return;
+    }
+
+    var i = normalizeObjectUnits(config._i);
+    config._a = map([i.year, i.month, i.day || i.date, i.hour, i.minute, i.second, i.millisecond], function (obj) {
+        return obj && parseInt(obj, 10);
+    });
+
+    configFromArray(config);
+}
+
+function createFromConfig(config) {
+    var res = new Moment(checkOverflow(prepareConfig(config)));
+    if (res._nextDay) {
+        // Adding is smart enough around DST
+        res.add(1, 'd');
+        res._nextDay = undefined;
+    }
+
+    return res;
+}
+
+function prepareConfig(config) {
+    var input = config._i,
+        format = config._f;
+
+    config._locale = config._locale || getLocale(config._l);
+
+    if (input === null || format === undefined && input === '') {
+        return createInvalid({ nullInput: true });
+    }
+
+    if (typeof input === 'string') {
+        config._i = input = config._locale.preparse(input);
+    }
+
+    if (isMoment(input)) {
+        return new Moment(checkOverflow(input));
+    } else if (isDate(input)) {
+        config._d = input;
+    } else if (isArray(format)) {
+        configFromStringAndArray(config);
+    } else if (format) {
+        configFromStringAndFormat(config);
+    } else {
+        configFromInput(config);
+    }
+
+    if (!isValid(config)) {
+        config._d = null;
+    }
+
+    return config;
+}
+
+function configFromInput(config) {
+    var input = config._i;
+    if (isUndefined(input)) {
+        config._d = new Date(hooks.now());
+    } else if (isDate(input)) {
+        config._d = new Date(input.valueOf());
+    } else if (typeof input === 'string') {
+        configFromString(config);
+    } else if (isArray(input)) {
+        config._a = map(input.slice(0), function (obj) {
+            return parseInt(obj, 10);
+        });
+        configFromArray(config);
+    } else if (isObject(input)) {
+        configFromObject(config);
+    } else if (isNumber(input)) {
+        // from milliseconds
+        config._d = new Date(input);
+    } else {
+        hooks.createFromInputFallback(config);
+    }
+}
+
+function createLocalOrUTC(input, format, locale, strict, isUTC) {
+    var c = {};
+
+    if (locale === true || locale === false) {
+        strict = locale;
+        locale = undefined;
+    }
+
+    if (isObject(input) && isObjectEmpty(input) || isArray(input) && input.length === 0) {
+        input = undefined;
+    }
+    // object construction must be done this way.
+    // https://github.com/moment/moment/issues/1423
+    c._isAMomentObject = true;
+    c._useUTC = c._isUTC = isUTC;
+    c._l = locale;
+    c._i = input;
+    c._f = format;
+    c._strict = strict;
+
+    return createFromConfig(c);
+}
+
+function createLocal(input, format, locale, strict) {
+    return createLocalOrUTC(input, format, locale, strict, false);
+}
+
+var prototypeMin = deprecate('moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/', function () {
+    var other = createLocal.apply(null, arguments);
+    if (this.isValid() && other.isValid()) {
+        return other < this ? this : other;
+    } else {
+        return createInvalid();
+    }
+});
+
+var prototypeMax = deprecate('moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/', function () {
+    var other = createLocal.apply(null, arguments);
+    if (this.isValid() && other.isValid()) {
+        return other > this ? this : other;
+    } else {
+        return createInvalid();
+    }
+});
+
+// Pick a moment m from moments so that m[fn](other) is true for all
+// other. This relies on the function fn to be transitive.
+//
+// moments should either be an array of moment objects or an array, whose
+// first element is an array of moment objects.
+function pickBy(fn, moments) {
+    var res, i;
+    if (moments.length === 1 && isArray(moments[0])) {
+        moments = moments[0];
+    }
+    if (!moments.length) {
+        return createLocal();
+    }
+    res = moments[0];
+    for (i = 1; i < moments.length; ++i) {
+        if (!moments[i].isValid() || moments[i][fn](res)) {
+            res = moments[i];
+        }
+    }
+    return res;
+}
+
+// TODO: Use [].sort instead?
+function min() {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy('isBefore', args);
+}
+
+function max() {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy('isAfter', args);
+}
+
+var now = function now() {
+    return Date.now ? Date.now() : +new Date();
+};
+
+var ordering = ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'];
+
+function isDurationValid(m) {
+    for (var key in m) {
+        if (!(indexOf.call(ordering, key) !== -1 && (m[key] == null || !isNaN(m[key])))) {
+            return false;
+        }
+    }
+
+    var unitHasDecimal = false;
+    for (var i = 0; i < ordering.length; ++i) {
+        if (m[ordering[i]]) {
+            if (unitHasDecimal) {
+                return false; // only allow non-integers for smallest unit
+            }
+            if (parseFloat(m[ordering[i]]) !== toInt(m[ordering[i]])) {
+                unitHasDecimal = true;
+            }
+        }
+    }
+
+    return true;
+}
+
+function isValid$1() {
+    return this._isValid;
+}
+
+function createInvalid$1() {
+    return createDuration(NaN);
+}
+
+function Duration(duration) {
+    var normalizedInput = normalizeObjectUnits(duration),
+        years = normalizedInput.year || 0,
+        quarters = normalizedInput.quarter || 0,
+        months = normalizedInput.month || 0,
+        weeks = normalizedInput.week || 0,
+        days = normalizedInput.day || 0,
+        hours = normalizedInput.hour || 0,
+        minutes = normalizedInput.minute || 0,
+        seconds = normalizedInput.second || 0,
+        milliseconds = normalizedInput.millisecond || 0;
+
+    this._isValid = isDurationValid(normalizedInput);
+
+    // representation for dateAddRemove
+    this._milliseconds = +milliseconds + seconds * 1e3 + // 1000
+    minutes * 6e4 + // 1000 * 60
+    hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
+    // Because of dateAddRemove treats 24 hours as different from a
+    // day when working around DST, we need to store them separately
+    this._days = +days + weeks * 7;
+    // It is impossible to translate months into days without knowing
+    // which months you are are talking about, so we have to store
+    // it separately.
+    this._months = +months + quarters * 3 + years * 12;
+
+    this._data = {};
+
+    this._locale = getLocale();
+
+    this._bubble();
+}
+
+function isDuration(obj) {
+    return obj instanceof Duration;
+}
+
+function absRound(number) {
+    if (number < 0) {
+        return Math.round(-1 * number) * -1;
+    } else {
+        return Math.round(number);
+    }
+}
+
+// FORMATTING
+
+function offset(token, separator) {
+    addFormatToken(token, 0, 0, function () {
+        var offset = this.utcOffset();
+        var sign = '+';
+        if (offset < 0) {
+            offset = -offset;
+            sign = '-';
+        }
+        return sign + zeroFill(~~(offset / 60), 2) + separator + zeroFill(~~offset % 60, 2);
+    });
+}
+
+offset('Z', ':');
+offset('ZZ', '');
+
+// PARSING
+
+addRegexToken('Z', matchShortOffset);
+addRegexToken('ZZ', matchShortOffset);
+addParseToken(['Z', 'ZZ'], function (input, array, config) {
+    config._useUTC = true;
+    config._tzm = offsetFromString(matchShortOffset, input);
+});
+
+// HELPERS
+
+// timezone chunker
+// '+10:00' > ['10',  '00']
+// '-1530'  > ['-15', '30']
+var chunkOffset = /([\+\-]|\d\d)/gi;
+
+function offsetFromString(matcher, string) {
+    var matches = (string || '').match(matcher);
+
+    if (matches === null) {
+        return null;
+    }
+
+    var chunk = matches[matches.length - 1] || [];
+    var parts = (chunk + '').match(chunkOffset) || ['-', 0, 0];
+    var minutes = +(parts[1] * 60) + toInt(parts[2]);
+
+    return minutes === 0 ? 0 : parts[0] === '+' ? minutes : -minutes;
+}
+
+// Return a moment from input, that is local/utc/zone equivalent to model.
+function cloneWithOffset(input, model) {
+    var res, diff;
+    if (model._isUTC) {
+        res = model.clone();
+        diff = (isMoment(input) || isDate(input) ? input.valueOf() : createLocal(input).valueOf()) - res.valueOf();
+        // Use low-level api, because this fn is low-level api.
+        res._d.setTime(res._d.valueOf() + diff);
+        hooks.updateOffset(res, false);
+        return res;
+    } else {
+        return createLocal(input).local();
+    }
+}
+
+function getDateOffset(m) {
+    // On Firefox.24 Date#getTimezoneOffset returns a floating point.
+    // https://github.com/moment/moment/pull/1871
+    return -Math.round(m._d.getTimezoneOffset() / 15) * 15;
+}
+
+// HOOKS
+
+// This function will be called whenever a moment is mutated.
+// It is intended to keep the offset in sync with the timezone.
+hooks.updateOffset = function () {};
+
+// MOMENTS
+
+// keepLocalTime = true means only change the timezone, without
+// affecting the local hour. So 5:31:26 +0300 --[utcOffset(2, true)]-->
+// 5:31:26 +0200 It is possible that 5:31:26 doesn't exist with offset
+// +0200, so we adjust the time as needed, to be valid.
+//
+// Keeping the time actually adds/subtracts (one hour)
+// from the actual represented time. That is why we call updateOffset
+// a second time. In case it wants us to change the offset again
+// _changeInProgress == true case, then we have to adjust, because
+// there is no such time in the given timezone.
+function getSetOffset(input, keepLocalTime, keepMinutes) {
+    var offset = this._offset || 0,
+        localAdjust;
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    if (input != null) {
+        if (typeof input === 'string') {
+            input = offsetFromString(matchShortOffset, input);
+            if (input === null) {
+                return this;
+            }
+        } else if (Math.abs(input) < 16 && !keepMinutes) {
+            input = input * 60;
+        }
+        if (!this._isUTC && keepLocalTime) {
+            localAdjust = getDateOffset(this);
+        }
+        this._offset = input;
+        this._isUTC = true;
+        if (localAdjust != null) {
+            this.add(localAdjust, 'm');
+        }
+        if (offset !== input) {
+            if (!keepLocalTime || this._changeInProgress) {
+                addSubtract(this, createDuration(input - offset, 'm'), 1, false);
+            } else if (!this._changeInProgress) {
+                this._changeInProgress = true;
+                hooks.updateOffset(this, true);
+                this._changeInProgress = null;
+            }
+        }
+        return this;
+    } else {
+        return this._isUTC ? offset : getDateOffset(this);
+    }
+}
+
+function getSetZone(input, keepLocalTime) {
+    if (input != null) {
+        if (typeof input !== 'string') {
+            input = -input;
+        }
+
+        this.utcOffset(input, keepLocalTime);
+
+        return this;
+    } else {
+        return -this.utcOffset();
+    }
+}
+
+function setOffsetToUTC(keepLocalTime) {
+    return this.utcOffset(0, keepLocalTime);
+}
+
+function setOffsetToLocal(keepLocalTime) {
+    if (this._isUTC) {
+        this.utcOffset(0, keepLocalTime);
+        this._isUTC = false;
+
+        if (keepLocalTime) {
+            this.subtract(getDateOffset(this), 'm');
+        }
+    }
+    return this;
+}
+
+function setOffsetToParsedOffset() {
+    if (this._tzm != null) {
+        this.utcOffset(this._tzm, false, true);
+    } else if (typeof this._i === 'string') {
+        var tZone = offsetFromString(matchOffset, this._i);
+        if (tZone != null) {
+            this.utcOffset(tZone);
+        } else {
+            this.utcOffset(0, true);
+        }
+    }
+    return this;
+}
+
+function hasAlignedHourOffset(input) {
+    if (!this.isValid()) {
+        return false;
+    }
+    input = input ? createLocal(input).utcOffset() : 0;
+
+    return (this.utcOffset() - input) % 60 === 0;
+}
+
+function isDaylightSavingTime() {
+    return this.utcOffset() > this.clone().month(0).utcOffset() || this.utcOffset() > this.clone().month(5).utcOffset();
+}
+
+function isDaylightSavingTimeShifted() {
+    if (!isUndefined(this._isDSTShifted)) {
+        return this._isDSTShifted;
+    }
+
+    var c = {};
+
+    copyConfig(c, this);
+    c = prepareConfig(c);
+
+    if (c._a) {
+        var other = c._isUTC ? createUTC(c._a) : createLocal(c._a);
+        this._isDSTShifted = this.isValid() && compareArrays(c._a, other.toArray()) > 0;
+    } else {
+        this._isDSTShifted = false;
+    }
+
+    return this._isDSTShifted;
+}
+
+function isLocal() {
+    return this.isValid() ? !this._isUTC : false;
+}
+
+function isUtcOffset() {
+    return this.isValid() ? this._isUTC : false;
+}
+
+function isUtc() {
+    return this.isValid() ? this._isUTC && this._offset === 0 : false;
+}
+
+// ASP.NET json date format regex
+var aspNetRegex = /^(\-|\+)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)(\.\d*)?)?$/;
+
+// from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
+// somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
+// and further modified to allow for strings containing both week and day
+var isoRegex = /^(-|\+)?P(?:([-+]?[0-9,.]*)Y)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)W)?(?:([-+]?[0-9,.]*)D)?(?:T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?)?$/;
+
+function createDuration(input, key) {
+    var duration = input,
+
+
+    // matching against regexp is expensive, do it on demand
+    match = null,
+        sign,
+        ret,
+        diffRes;
+
+    if (isDuration(input)) {
+        duration = {
+            ms: input._milliseconds,
+            d: input._days,
+            M: input._months
+        };
+    } else if (isNumber(input)) {
+        duration = {};
+        if (key) {
+            duration[key] = input;
+        } else {
+            duration.milliseconds = input;
+        }
+    } else if (!!(match = aspNetRegex.exec(input))) {
+        sign = match[1] === '-' ? -1 : 1;
+        duration = {
+            y: 0,
+            d: toInt(match[DATE]) * sign,
+            h: toInt(match[HOUR]) * sign,
+            m: toInt(match[MINUTE]) * sign,
+            s: toInt(match[SECOND]) * sign,
+            ms: toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
+        };
+    } else if (!!(match = isoRegex.exec(input))) {
+        sign = match[1] === '-' ? -1 : match[1] === '+' ? 1 : 1;
+        duration = {
+            y: parseIso(match[2], sign),
+            M: parseIso(match[3], sign),
+            w: parseIso(match[4], sign),
+            d: parseIso(match[5], sign),
+            h: parseIso(match[6], sign),
+            m: parseIso(match[7], sign),
+            s: parseIso(match[8], sign)
+        };
+    } else if (duration == null) {
+        // checks for null or undefined
+        duration = {};
+    } else if ((typeof duration === 'undefined' ? 'undefined' : _typeof(duration)) === 'object' && ('from' in duration || 'to' in duration)) {
+        diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
+
+        duration = {};
+        duration.ms = diffRes.milliseconds;
+        duration.M = diffRes.months;
+    }
+
+    ret = new Duration(duration);
+
+    if (isDuration(input) && hasOwnProp(input, '_locale')) {
+        ret._locale = input._locale;
+    }
+
+    return ret;
+}
+
+createDuration.fn = Duration.prototype;
+createDuration.invalid = createInvalid$1;
+
+function parseIso(inp, sign) {
+    // We'd normally use ~~inp for this, but unfortunately it also
+    // converts floats to ints.
+    // inp may be undefined, so careful calling replace on it.
+    var res = inp && parseFloat(inp.replace(',', '.'));
+    // apply sign while we're at it
+    return (isNaN(res) ? 0 : res) * sign;
+}
+
+function positiveMomentsDifference(base, other) {
+    var res = { milliseconds: 0, months: 0 };
+
+    res.months = other.month() - base.month() + (other.year() - base.year()) * 12;
+    if (base.clone().add(res.months, 'M').isAfter(other)) {
+        --res.months;
+    }
+
+    res.milliseconds = +other - +base.clone().add(res.months, 'M');
+
+    return res;
+}
+
+function momentsDifference(base, other) {
+    var res;
+    if (!(base.isValid() && other.isValid())) {
+        return { milliseconds: 0, months: 0 };
+    }
+
+    other = cloneWithOffset(other, base);
+    if (base.isBefore(other)) {
+        res = positiveMomentsDifference(base, other);
+    } else {
+        res = positiveMomentsDifference(other, base);
+        res.milliseconds = -res.milliseconds;
+        res.months = -res.months;
+    }
+
+    return res;
+}
+
+// TODO: remove 'name' arg after deprecation is removed
+function createAdder(direction, name) {
+    return function (val, period) {
+        var dur, tmp;
+        //invert the arguments, but complain about it
+        if (period !== null && !isNaN(+period)) {
+            deprecateSimple(name, 'moment().' + name + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' + 'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+            tmp = val;val = period;period = tmp;
+        }
+
+        val = typeof val === 'string' ? +val : val;
+        dur = createDuration(val, period);
+        addSubtract(this, dur, direction);
+        return this;
+    };
+}
+
+function addSubtract(mom, duration, isAdding, updateOffset) {
+    var milliseconds = duration._milliseconds,
+        days = absRound(duration._days),
+        months = absRound(duration._months);
+
+    if (!mom.isValid()) {
+        // No op
+        return;
+    }
+
+    updateOffset = updateOffset == null ? true : updateOffset;
+
+    if (months) {
+        setMonth(mom, get$1(mom, 'Month') + months * isAdding);
+    }
+    if (days) {
+        set$2(mom, 'Date', get$1(mom, 'Date') + days * isAdding);
+    }
+    if (milliseconds) {
+        mom._d.setTime(mom._d.valueOf() + milliseconds * isAdding);
+    }
+    if (updateOffset) {
+        hooks.updateOffset(mom, days || months);
+    }
+}
+
+var add = createAdder(1, 'add');
+var subtract = createAdder(-1, 'subtract');
+
+function getCalendarFormat(myMoment, now) {
+    var diff = myMoment.diff(now, 'days', true);
+    return diff < -6 ? 'sameElse' : diff < -1 ? 'lastWeek' : diff < 0 ? 'lastDay' : diff < 1 ? 'sameDay' : diff < 2 ? 'nextDay' : diff < 7 ? 'nextWeek' : 'sameElse';
+}
+
+function calendar$1(time, formats) {
+    // We want to compare the start of today, vs this.
+    // Getting start-of-today depends on whether we're local/utc/offset or not.
+    var now = time || createLocal(),
+        sod = cloneWithOffset(now, this).startOf('day'),
+        format = hooks.calendarFormat(this, sod) || 'sameElse';
+
+    var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+
+    return this.format(output || this.localeData().calendar(format, this, createLocal(now)));
+}
+
+function clone() {
+    return new Moment(this);
+}
+
+function isAfter(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() > localInput.valueOf();
+    } else {
+        return localInput.valueOf() < this.clone().startOf(units).valueOf();
+    }
+}
+
+function isBefore(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() < localInput.valueOf();
+    } else {
+        return this.clone().endOf(units).valueOf() < localInput.valueOf();
+    }
+}
+
+function isBetween(from, to, units, inclusivity) {
+    inclusivity = inclusivity || '()';
+    return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) && (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+}
+
+function isSame(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input),
+        inputMs;
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(units || 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() === localInput.valueOf();
+    } else {
+        inputMs = localInput.valueOf();
+        return this.clone().startOf(units).valueOf() <= inputMs && inputMs <= this.clone().endOf(units).valueOf();
+    }
+}
+
+function isSameOrAfter(input, units) {
+    return this.isSame(input, units) || this.isAfter(input, units);
+}
+
+function isSameOrBefore(input, units) {
+    return this.isSame(input, units) || this.isBefore(input, units);
+}
+
+function diff(input, units, asFloat) {
+    var that, zoneDelta, output;
+
+    if (!this.isValid()) {
+        return NaN;
+    }
+
+    that = cloneWithOffset(input, this);
+
+    if (!that.isValid()) {
+        return NaN;
+    }
+
+    zoneDelta = (that.utcOffset() - this.utcOffset()) * 6e4;
+
+    units = normalizeUnits(units);
+
+    switch (units) {
+        case 'year':
+            output = monthDiff(this, that) / 12;break;
+        case 'month':
+            output = monthDiff(this, that);break;
+        case 'quarter':
+            output = monthDiff(this, that) / 3;break;
+        case 'second':
+            output = (this - that) / 1e3;break; // 1000
+        case 'minute':
+            output = (this - that) / 6e4;break; // 1000 * 60
+        case 'hour':
+            output = (this - that) / 36e5;break; // 1000 * 60 * 60
+        case 'day':
+            output = (this - that - zoneDelta) / 864e5;break; // 1000 * 60 * 60 * 24, negate dst
+        case 'week':
+            output = (this - that - zoneDelta) / 6048e5;break; // 1000 * 60 * 60 * 24 * 7, negate dst
+        default:
+            output = this - that;
+    }
+
+    return asFloat ? output : absFloor(output);
+}
+
+function monthDiff(a, b) {
+    // difference in months
+    var wholeMonthDiff = (b.year() - a.year()) * 12 + (b.month() - a.month()),
+
+
+    // b is in (anchor - 1 month, anchor + 1 month)
+    anchor = a.clone().add(wholeMonthDiff, 'months'),
+        anchor2,
+        adjust;
+
+    if (b - anchor < 0) {
+        anchor2 = a.clone().add(wholeMonthDiff - 1, 'months');
+        // linear across the month
+        adjust = (b - anchor) / (anchor - anchor2);
+    } else {
+        anchor2 = a.clone().add(wholeMonthDiff + 1, 'months');
+        // linear across the month
+        adjust = (b - anchor) / (anchor2 - anchor);
+    }
+
+    //check for negative zero, return zero if negative zero
+    return -(wholeMonthDiff + adjust) || 0;
+}
+
+hooks.defaultFormat = 'YYYY-MM-DDTHH:mm:ssZ';
+hooks.defaultFormatUtc = 'YYYY-MM-DDTHH:mm:ss[Z]';
+
+function toString() {
+    return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+}
+
+function toISOString(keepOffset) {
+    if (!this.isValid()) {
+        return null;
+    }
+    var utc = keepOffset !== true;
+    var m = utc ? this.clone().utc() : this;
+    if (m.year() < 0 || m.year() > 9999) {
+        return formatMoment(m, utc ? 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]' : 'YYYYYY-MM-DD[T]HH:mm:ss.SSSZ');
+    }
+    if (isFunction(Date.prototype.toISOString)) {
+        // native implementation is ~50x faster, use it when we can
+        if (utc) {
+            return this.toDate().toISOString();
+        } else {
+            return new Date(this._d.valueOf()).toISOString().replace('Z', formatMoment(m, 'Z'));
+        }
+    }
+    return formatMoment(m, utc ? 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]' : 'YYYY-MM-DD[T]HH:mm:ss.SSSZ');
+}
+
+/**
+ * Return a human readable representation of a moment that can
+ * also be evaluated to get a new moment which is the same
+ *
+ * @link https://nodejs.org/dist/latest/docs/api/util.html#util_custom_inspect_function_on_objects
+ */
+function inspect() {
+    if (!this.isValid()) {
+        return 'moment.invalid(/* ' + this._i + ' */)';
+    }
+    var func = 'moment';
+    var zone = '';
+    if (!this.isLocal()) {
+        func = this.utcOffset() === 0 ? 'moment.utc' : 'moment.parseZone';
+        zone = 'Z';
+    }
+    var prefix = '[' + func + '("]';
+    var year = 0 <= this.year() && this.year() <= 9999 ? 'YYYY' : 'YYYYYY';
+    var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+    var suffix = zone + '[")]';
+
+    return this.format(prefix + year + datetime + suffix);
+}
+
+function format(inputString) {
+    if (!inputString) {
+        inputString = this.isUtc() ? hooks.defaultFormatUtc : hooks.defaultFormat;
+    }
+    var output = formatMoment(this, inputString);
+    return this.localeData().postformat(output);
+}
+
+function from(time, withoutSuffix) {
+    if (this.isValid() && (isMoment(time) && time.isValid() || createLocal(time).isValid())) {
+        return createDuration({ to: this, from: time }).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+
+function fromNow(withoutSuffix) {
+    return this.from(createLocal(), withoutSuffix);
+}
+
+function to(time, withoutSuffix) {
+    if (this.isValid() && (isMoment(time) && time.isValid() || createLocal(time).isValid())) {
+        return createDuration({ from: this, to: time }).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+
+function toNow(withoutSuffix) {
+    return this.to(createLocal(), withoutSuffix);
+}
+
+// If passed a locale key, it will set the locale for this
+// instance.  Otherwise, it will return the locale configuration
+// variables for this instance.
+function locale(key) {
+    var newLocaleData;
+
+    if (key === undefined) {
+        return this._locale._abbr;
+    } else {
+        newLocaleData = getLocale(key);
+        if (newLocaleData != null) {
+            this._locale = newLocaleData;
+        }
+        return this;
+    }
+}
+
+var lang = deprecate('moment().lang() is deprecated. Instead, use moment().localeData() to get the language configuration. Use moment().locale() to change languages.', function (key) {
+    if (key === undefined) {
+        return this.localeData();
+    } else {
+        return this.locale(key);
+    }
+});
+
+function localeData() {
+    return this._locale;
+}
+
+function startOf(units) {
+    units = normalizeUnits(units);
+    // the following switch intentionally omits break keywords
+    // to utilize falling through the cases.
+    switch (units) {
+        case 'year':
+            this.month(0);
+        /* falls through */
+        case 'quarter':
+        case 'month':
+            this.date(1);
+        /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            this.hours(0);
+        /* falls through */
+        case 'hour':
+            this.minutes(0);
+        /* falls through */
+        case 'minute':
+            this.seconds(0);
+        /* falls through */
+        case 'second':
+            this.milliseconds(0);
+    }
+
+    // weeks are a special case
+    if (units === 'week') {
+        this.weekday(0);
+    }
+    if (units === 'isoWeek') {
+        this.isoWeekday(1);
+    }
+
+    // quarters are also special
+    if (units === 'quarter') {
+        this.month(Math.floor(this.month() / 3) * 3);
+    }
+
+    return this;
+}
+
+function endOf(units) {
+    units = normalizeUnits(units);
+    if (units === undefined || units === 'millisecond') {
+        return this;
+    }
+
+    // 'date' is an alias for 'day', so it should be considered as such.
+    if (units === 'date') {
+        units = 'day';
+    }
+
+    return this.startOf(units).add(1, units === 'isoWeek' ? 'week' : units).subtract(1, 'ms');
+}
+
+function valueOf() {
+    return this._d.valueOf() - (this._offset || 0) * 60000;
+}
+
+function unix() {
+    return Math.floor(this.valueOf() / 1000);
+}
+
+function toDate() {
+    return new Date(this.valueOf());
+}
+
+function toArray$1() {
+    var m = this;
+    return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
+}
+
+function toObject() {
+    var m = this;
+    return {
+        years: m.year(),
+        months: m.month(),
+        date: m.date(),
+        hours: m.hours(),
+        minutes: m.minutes(),
+        seconds: m.seconds(),
+        milliseconds: m.milliseconds()
+    };
+}
+
+function toJSON() {
+    // new Date(NaN).toJSON() === null
+    return this.isValid() ? this.toISOString() : null;
+}
+
+function isValid$2() {
+    return isValid(this);
+}
+
+function parsingFlags() {
+    return extend({}, getParsingFlags(this));
+}
+
+function invalidAt() {
+    return getParsingFlags(this).overflow;
+}
+
+function creationData() {
+    return {
+        input: this._i,
+        format: this._f,
+        locale: this._locale,
+        isUTC: this._isUTC,
+        strict: this._strict
+    };
+}
+
+// FORMATTING
+
+addFormatToken(0, ['gg', 2], 0, function () {
+    return this.weekYear() % 100;
+});
+
+addFormatToken(0, ['GG', 2], 0, function () {
+    return this.isoWeekYear() % 100;
+});
+
+function addWeekYearFormatToken(token, getter) {
+    addFormatToken(0, [token, token.length], 0, getter);
+}
+
+addWeekYearFormatToken('gggg', 'weekYear');
+addWeekYearFormatToken('ggggg', 'weekYear');
+addWeekYearFormatToken('GGGG', 'isoWeekYear');
+addWeekYearFormatToken('GGGGG', 'isoWeekYear');
+
+// ALIASES
+
+addUnitAlias('weekYear', 'gg');
+addUnitAlias('isoWeekYear', 'GG');
+
+// PRIORITY
+
+addUnitPriority('weekYear', 1);
+addUnitPriority('isoWeekYear', 1);
+
+// PARSING
+
+addRegexToken('G', matchSigned);
+addRegexToken('g', matchSigned);
+addRegexToken('GG', match1to2, match2);
+addRegexToken('gg', match1to2, match2);
+addRegexToken('GGGG', match1to4, match4);
+addRegexToken('gggg', match1to4, match4);
+addRegexToken('GGGGG', match1to6, match6);
+addRegexToken('ggggg', match1to6, match6);
+
+addWeekParseToken(['gggg', 'ggggg', 'GGGG', 'GGGGG'], function (input, week, config, token) {
+    week[token.substr(0, 2)] = toInt(input);
+});
+
+addWeekParseToken(['gg', 'GG'], function (input, week, config, token) {
+    week[token] = hooks.parseTwoDigitYear(input);
+});
+
+// MOMENTS
+
+function getSetWeekYear(input) {
+    return getSetWeekYearHelper.call(this, input, this.week(), this.weekday(), this.localeData()._week.dow, this.localeData()._week.doy);
+}
+
+function getSetISOWeekYear(input) {
+    return getSetWeekYearHelper.call(this, input, this.isoWeek(), this.isoWeekday(), 1, 4);
+}
+
+function getISOWeeksInYear() {
+    return weeksInYear(this.year(), 1, 4);
+}
+
+function getWeeksInYear() {
+    var weekInfo = this.localeData()._week;
+    return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
+}
+
+function getSetWeekYearHelper(input, week, weekday, dow, doy) {
+    var weeksTarget;
+    if (input == null) {
+        return weekOfYear(this, dow, doy).year;
+    } else {
+        weeksTarget = weeksInYear(input, dow, doy);
+        if (week > weeksTarget) {
+            week = weeksTarget;
+        }
+        return setWeekAll.call(this, input, week, weekday, dow, doy);
+    }
+}
+
+function setWeekAll(weekYear, week, weekday, dow, doy) {
+    var dayOfYearData = dayOfYearFromWeeks(weekYear, week, weekday, dow, doy),
+        date = createUTCDate(dayOfYearData.year, 0, dayOfYearData.dayOfYear);
+
+    this.year(date.getUTCFullYear());
+    this.month(date.getUTCMonth());
+    this.date(date.getUTCDate());
+    return this;
+}
+
+// FORMATTING
+
+addFormatToken('Q', 0, 'Qo', 'quarter');
+
+// ALIASES
+
+addUnitAlias('quarter', 'Q');
+
+// PRIORITY
+
+addUnitPriority('quarter', 7);
+
+// PARSING
+
+addRegexToken('Q', match1);
+addParseToken('Q', function (input, array) {
+    array[MONTH] = (toInt(input) - 1) * 3;
+});
+
+// MOMENTS
+
+function getSetQuarter(input) {
+    return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+}
+
+// FORMATTING
+
+addFormatToken('D', ['DD', 2], 'Do', 'date');
+
+// ALIASES
+
+addUnitAlias('date', 'D');
+
+// PRIOROITY
+addUnitPriority('date', 9);
+
+// PARSING
+
+addRegexToken('D', match1to2);
+addRegexToken('DD', match1to2, match2);
+addRegexToken('Do', function (isStrict, locale) {
+    // TODO: Remove "ordinalParse" fallback in next major release.
+    return isStrict ? locale._dayOfMonthOrdinalParse || locale._ordinalParse : locale._dayOfMonthOrdinalParseLenient;
+});
+
+addParseToken(['D', 'DD'], DATE);
+addParseToken('Do', function (input, array) {
+    array[DATE] = toInt(input.match(match1to2)[0]);
+});
+
+// MOMENTS
+
+var getSetDayOfMonth = makeGetSet('Date', true);
+
+// FORMATTING
+
+addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
+
+// ALIASES
+
+addUnitAlias('dayOfYear', 'DDD');
+
+// PRIORITY
+addUnitPriority('dayOfYear', 4);
+
+// PARSING
+
+addRegexToken('DDD', match1to3);
+addRegexToken('DDDD', match3);
+addParseToken(['DDD', 'DDDD'], function (input, array, config) {
+    config._dayOfYear = toInt(input);
+});
+
+// HELPERS
+
+// MOMENTS
+
+function getSetDayOfYear(input) {
+    var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+    return input == null ? dayOfYear : this.add(input - dayOfYear, 'd');
+}
+
+// FORMATTING
+
+addFormatToken('m', ['mm', 2], 0, 'minute');
+
+// ALIASES
+
+addUnitAlias('minute', 'm');
+
+// PRIORITY
+
+addUnitPriority('minute', 14);
+
+// PARSING
+
+addRegexToken('m', match1to2);
+addRegexToken('mm', match1to2, match2);
+addParseToken(['m', 'mm'], MINUTE);
+
+// MOMENTS
+
+var getSetMinute = makeGetSet('Minutes', false);
+
+// FORMATTING
+
+addFormatToken('s', ['ss', 2], 0, 'second');
+
+// ALIASES
+
+addUnitAlias('second', 's');
+
+// PRIORITY
+
+addUnitPriority('second', 15);
+
+// PARSING
+
+addRegexToken('s', match1to2);
+addRegexToken('ss', match1to2, match2);
+addParseToken(['s', 'ss'], SECOND);
+
+// MOMENTS
+
+var getSetSecond = makeGetSet('Seconds', false);
+
+// FORMATTING
+
+addFormatToken('S', 0, 0, function () {
+    return ~~(this.millisecond() / 100);
+});
+
+addFormatToken(0, ['SS', 2], 0, function () {
+    return ~~(this.millisecond() / 10);
+});
+
+addFormatToken(0, ['SSS', 3], 0, 'millisecond');
+addFormatToken(0, ['SSSS', 4], 0, function () {
+    return this.millisecond() * 10;
+});
+addFormatToken(0, ['SSSSS', 5], 0, function () {
+    return this.millisecond() * 100;
+});
+addFormatToken(0, ['SSSSSS', 6], 0, function () {
+    return this.millisecond() * 1000;
+});
+addFormatToken(0, ['SSSSSSS', 7], 0, function () {
+    return this.millisecond() * 10000;
+});
+addFormatToken(0, ['SSSSSSSS', 8], 0, function () {
+    return this.millisecond() * 100000;
+});
+addFormatToken(0, ['SSSSSSSSS', 9], 0, function () {
+    return this.millisecond() * 1000000;
+});
+
+// ALIASES
+
+addUnitAlias('millisecond', 'ms');
+
+// PRIORITY
+
+addUnitPriority('millisecond', 16);
+
+// PARSING
+
+addRegexToken('S', match1to3, match1);
+addRegexToken('SS', match1to3, match2);
+addRegexToken('SSS', match1to3, match3);
+
+var token;
+for (token = 'SSSS'; token.length <= 9; token += 'S') {
+    addRegexToken(token, matchUnsigned);
+}
+
+function parseMs(input, array) {
+    array[MILLISECOND] = toInt(('0.' + input) * 1000);
+}
+
+for (token = 'S'; token.length <= 9; token += 'S') {
+    addParseToken(token, parseMs);
+}
+// MOMENTS
+
+var getSetMillisecond = makeGetSet('Milliseconds', false);
+
+// FORMATTING
+
+addFormatToken('z', 0, 0, 'zoneAbbr');
+addFormatToken('zz', 0, 0, 'zoneName');
+
+// MOMENTS
+
+function getZoneAbbr() {
+    return this._isUTC ? 'UTC' : '';
+}
+
+function getZoneName() {
+    return this._isUTC ? 'Coordinated Universal Time' : '';
+}
+
+var proto = Moment.prototype;
+
+proto.add = add;
+proto.calendar = calendar$1;
+proto.clone = clone;
+proto.diff = diff;
+proto.endOf = endOf;
+proto.format = format;
+proto.from = from;
+proto.fromNow = fromNow;
+proto.to = to;
+proto.toNow = toNow;
+proto.get = stringGet;
+proto.invalidAt = invalidAt;
+proto.isAfter = isAfter;
+proto.isBefore = isBefore;
+proto.isBetween = isBetween;
+proto.isSame = isSame;
+proto.isSameOrAfter = isSameOrAfter;
+proto.isSameOrBefore = isSameOrBefore;
+proto.isValid = isValid$2;
+proto.lang = lang;
+proto.locale = locale;
+proto.localeData = localeData;
+proto.max = prototypeMax;
+proto.min = prototypeMin;
+proto.parsingFlags = parsingFlags;
+proto.set = stringSet;
+proto.startOf = startOf;
+proto.subtract = subtract;
+proto.toArray = toArray$1;
+proto.toObject = toObject;
+proto.toDate = toDate;
+proto.toISOString = toISOString;
+proto.inspect = inspect;
+proto.toJSON = toJSON;
+proto.toString = toString;
+proto.unix = unix;
+proto.valueOf = valueOf;
+proto.creationData = creationData;
+proto.year = getSetYear;
+proto.isLeapYear = getIsLeapYear;
+proto.weekYear = getSetWeekYear;
+proto.isoWeekYear = getSetISOWeekYear;
+proto.quarter = proto.quarters = getSetQuarter;
+proto.month = getSetMonth;
+proto.daysInMonth = getDaysInMonth;
+proto.week = proto.weeks = getSetWeek;
+proto.isoWeek = proto.isoWeeks = getSetISOWeek;
+proto.weeksInYear = getWeeksInYear;
+proto.isoWeeksInYear = getISOWeeksInYear;
+proto.date = getSetDayOfMonth;
+proto.day = proto.days = getSetDayOfWeek;
+proto.weekday = getSetLocaleDayOfWeek;
+proto.isoWeekday = getSetISODayOfWeek;
+proto.dayOfYear = getSetDayOfYear;
+proto.hour = proto.hours = getSetHour;
+proto.minute = proto.minutes = getSetMinute;
+proto.second = proto.seconds = getSetSecond;
+proto.millisecond = proto.milliseconds = getSetMillisecond;
+proto.utcOffset = getSetOffset;
+proto.utc = setOffsetToUTC;
+proto.local = setOffsetToLocal;
+proto.parseZone = setOffsetToParsedOffset;
+proto.hasAlignedHourOffset = hasAlignedHourOffset;
+proto.isDST = isDaylightSavingTime;
+proto.isLocal = isLocal;
+proto.isUtcOffset = isUtcOffset;
+proto.isUtc = isUtc;
+proto.isUTC = isUtc;
+proto.zoneAbbr = getZoneAbbr;
+proto.zoneName = getZoneName;
+proto.dates = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
+proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
+proto.years = deprecate('years accessor is deprecated. Use year instead', getSetYear);
+proto.zone = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
+proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
+
+function createUnix(input) {
+    return createLocal(input * 1000);
+}
+
+function createInZone() {
+    return createLocal.apply(null, arguments).parseZone();
+}
+
+function preParsePostFormat(string) {
+    return string;
+}
+
+var proto$1 = Locale.prototype;
+
+proto$1.calendar = calendar;
+proto$1.longDateFormat = longDateFormat;
+proto$1.invalidDate = invalidDate;
+proto$1.ordinal = ordinal;
+proto$1.preparse = preParsePostFormat;
+proto$1.postformat = preParsePostFormat;
+proto$1.relativeTime = relativeTime;
+proto$1.pastFuture = pastFuture;
+proto$1.set = set$1;
+
+proto$1.months = localeMonths;
+proto$1.monthsShort = localeMonthsShort;
+proto$1.monthsParse = localeMonthsParse;
+proto$1.monthsRegex = monthsRegex;
+proto$1.monthsShortRegex = monthsShortRegex;
+proto$1.week = localeWeek;
+proto$1.firstDayOfYear = localeFirstDayOfYear;
+proto$1.firstDayOfWeek = localeFirstDayOfWeek;
+
+proto$1.weekdays = localeWeekdays;
+proto$1.weekdaysMin = localeWeekdaysMin;
+proto$1.weekdaysShort = localeWeekdaysShort;
+proto$1.weekdaysParse = localeWeekdaysParse;
+
+proto$1.weekdaysRegex = weekdaysRegex;
+proto$1.weekdaysShortRegex = weekdaysShortRegex;
+proto$1.weekdaysMinRegex = weekdaysMinRegex;
+
+proto$1.isPM = localeIsPM;
+proto$1.meridiem = localeMeridiem;
+
+function get$2(format, index, field, setter) {
+    var locale = getLocale();
+    var utc = createUTC().set(setter, index);
+    return locale[field](utc, format);
+}
+
+function listMonthsImpl(format, index, field) {
+    if (isNumber(format)) {
+        index = format;
+        format = undefined;
+    }
+
+    format = format || '';
+
+    if (index != null) {
+        return get$2(format, index, field, 'month');
+    }
+
+    var i;
+    var out = [];
+    for (i = 0; i < 12; i++) {
+        out[i] = get$2(format, i, field, 'month');
+    }
+    return out;
+}
+
+// ()
+// (5)
+// (fmt, 5)
+// (fmt)
+// (true)
+// (true, 5)
+// (true, fmt, 5)
+// (true, fmt)
+function listWeekdaysImpl(localeSorted, format, index, field) {
+    if (typeof localeSorted === 'boolean') {
+        if (isNumber(format)) {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+    } else {
+        format = localeSorted;
+        index = format;
+        localeSorted = false;
+
+        if (isNumber(format)) {
+            index = format;
+            format = undefined;
+        }
+
+        format = format || '';
+    }
+
+    var locale = getLocale(),
+        shift = localeSorted ? locale._week.dow : 0;
+
+    if (index != null) {
+        return get$2(format, (index + shift) % 7, field, 'day');
+    }
+
+    var i;
+    var out = [];
+    for (i = 0; i < 7; i++) {
+        out[i] = get$2(format, (i + shift) % 7, field, 'day');
+    }
+    return out;
+}
+
+function listMonths(format, index) {
+    return listMonthsImpl(format, index, 'months');
+}
+
+function listMonthsShort(format, index) {
+    return listMonthsImpl(format, index, 'monthsShort');
+}
+
+function listWeekdays(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
+}
+
+function listWeekdaysShort(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
+}
+
+function listWeekdaysMin(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
+}
+
+getSetGlobalLocale('en', {
+    dayOfMonthOrdinalParse: /\d{1,2}(th|st|nd|rd)/,
+    ordinal: function ordinal(number) {
+        var b = number % 10,
+            output = toInt(number % 100 / 10) === 1 ? 'th' : b === 1 ? 'st' : b === 2 ? 'nd' : b === 3 ? 'rd' : 'th';
+        return number + output;
+    }
+});
+
+// Side effect imports
+
+hooks.lang = deprecate('moment.lang is deprecated. Use moment.locale instead.', getSetGlobalLocale);
+hooks.langData = deprecate('moment.langData is deprecated. Use moment.localeData instead.', getLocale);
+
+var mathAbs = Math.abs;
+
+function abs() {
+    var data = this._data;
+
+    this._milliseconds = mathAbs(this._milliseconds);
+    this._days = mathAbs(this._days);
+    this._months = mathAbs(this._months);
+
+    data.milliseconds = mathAbs(data.milliseconds);
+    data.seconds = mathAbs(data.seconds);
+    data.minutes = mathAbs(data.minutes);
+    data.hours = mathAbs(data.hours);
+    data.months = mathAbs(data.months);
+    data.years = mathAbs(data.years);
+
+    return this;
+}
+
+function addSubtract$1(duration, input, value, direction) {
+    var other = createDuration(input, value);
+
+    duration._milliseconds += direction * other._milliseconds;
+    duration._days += direction * other._days;
+    duration._months += direction * other._months;
+
+    return duration._bubble();
+}
+
+// supports only 2.0-style add(1, 's') or add(duration)
+function add$1(input, value) {
+    return addSubtract$1(this, input, value, 1);
+}
+
+// supports only 2.0-style subtract(1, 's') or subtract(duration)
+function subtract$1(input, value) {
+    return addSubtract$1(this, input, value, -1);
+}
+
+function absCeil(number) {
+    if (number < 0) {
+        return Math.floor(number);
+    } else {
+        return Math.ceil(number);
+    }
+}
+
+function bubble() {
+    var milliseconds = this._milliseconds;
+    var days = this._days;
+    var months = this._months;
+    var data = this._data;
+    var seconds, minutes, hours, years, monthsFromDays;
+
+    // if we have a mix of positive and negative values, bubble down first
+    // check: https://github.com/moment/moment/issues/2166
+    if (!(milliseconds >= 0 && days >= 0 && months >= 0 || milliseconds <= 0 && days <= 0 && months <= 0)) {
+        milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
+        days = 0;
+        months = 0;
+    }
+
+    // The following code bubbles up values, see the tests for
+    // examples of what that means.
+    data.milliseconds = milliseconds % 1000;
+
+    seconds = absFloor(milliseconds / 1000);
+    data.seconds = seconds % 60;
+
+    minutes = absFloor(seconds / 60);
+    data.minutes = minutes % 60;
+
+    hours = absFloor(minutes / 60);
+    data.hours = hours % 24;
+
+    days += absFloor(hours / 24);
+
+    // convert days to months
+    monthsFromDays = absFloor(daysToMonths(days));
+    months += monthsFromDays;
+    days -= absCeil(monthsToDays(monthsFromDays));
+
+    // 12 months -> 1 year
+    years = absFloor(months / 12);
+    months %= 12;
+
+    data.days = days;
+    data.months = months;
+    data.years = years;
+
+    return this;
+}
+
+function daysToMonths(days) {
+    // 400 years have 146097 days (taking into account leap year rules)
+    // 400 years have 12 months === 4800
+    return days * 4800 / 146097;
+}
+
+function monthsToDays(months) {
+    // the reverse of daysToMonths
+    return months * 146097 / 4800;
+}
+
+function as(units) {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    var days;
+    var months;
+    var milliseconds = this._milliseconds;
+
+    units = normalizeUnits(units);
+
+    if (units === 'month' || units === 'year') {
+        days = this._days + milliseconds / 864e5;
+        months = this._months + daysToMonths(days);
+        return units === 'month' ? months : months / 12;
+    } else {
+        // handle milliseconds separately because of floating point math errors (issue #1867)
+        days = this._days + Math.round(monthsToDays(this._months));
+        switch (units) {
+            case 'week':
+                return days / 7 + milliseconds / 6048e5;
+            case 'day':
+                return days + milliseconds / 864e5;
+            case 'hour':
+                return days * 24 + milliseconds / 36e5;
+            case 'minute':
+                return days * 1440 + milliseconds / 6e4;
+            case 'second':
+                return days * 86400 + milliseconds / 1000;
+            // Math.floor prevents floating point math errors here
+            case 'millisecond':
+                return Math.floor(days * 864e5) + milliseconds;
+            default:
+                throw new Error('Unknown unit ' + units);
+        }
+    }
+}
+
+// TODO: Use this.as('ms')?
+function valueOf$1() {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    return this._milliseconds + this._days * 864e5 + this._months % 12 * 2592e6 + toInt(this._months / 12) * 31536e6;
+}
+
+function makeAs(alias) {
+    return function () {
+        return this.as(alias);
+    };
+}
+
+var asMilliseconds = makeAs('ms');
+var asSeconds = makeAs('s');
+var asMinutes = makeAs('m');
+var asHours = makeAs('h');
+var asDays = makeAs('d');
+var asWeeks = makeAs('w');
+var asMonths = makeAs('M');
+var asYears = makeAs('y');
+
+function clone$1() {
+    return createDuration(this);
+}
+
+function get$3(units) {
+    units = normalizeUnits(units);
+    return this.isValid() ? this[units + 's']() : NaN;
+}
+
+function makeGetter(name) {
+    return function () {
+        return this.isValid() ? this._data[name] : NaN;
+    };
+}
+
+var milliseconds = makeGetter('milliseconds');
+var seconds = makeGetter('seconds');
+var minutes = makeGetter('minutes');
+var hours = makeGetter('hours');
+var days = makeGetter('days');
+var months = makeGetter('months');
+var years = makeGetter('years');
+
+function weeks() {
+    return absFloor(this.days() / 7);
+}
+
+var round = Math.round;
+var thresholds = {
+    ss: 44, // a few seconds to seconds
+    s: 45, // seconds to minute
+    m: 45, // minutes to hour
+    h: 22, // hours to day
+    d: 26, // days to month
+    M: 11 // months to year
+};
+
+// helper function for moment.fn.from, moment.fn.fromNow, and moment.duration.fn.humanize
+function substituteTimeAgo(string, number, withoutSuffix, isFuture, locale) {
+    return locale.relativeTime(number || 1, !!withoutSuffix, string, isFuture);
+}
+
+function relativeTime$1(posNegDuration, withoutSuffix, locale) {
+    var duration = createDuration(posNegDuration).abs();
+    var seconds = round(duration.as('s'));
+    var minutes = round(duration.as('m'));
+    var hours = round(duration.as('h'));
+    var days = round(duration.as('d'));
+    var months = round(duration.as('M'));
+    var years = round(duration.as('y'));
+
+    var a = seconds <= thresholds.ss && ['s', seconds] || seconds < thresholds.s && ['ss', seconds] || minutes <= 1 && ['m'] || minutes < thresholds.m && ['mm', minutes] || hours <= 1 && ['h'] || hours < thresholds.h && ['hh', hours] || days <= 1 && ['d'] || days < thresholds.d && ['dd', days] || months <= 1 && ['M'] || months < thresholds.M && ['MM', months] || years <= 1 && ['y'] || ['yy', years];
+
+    a[2] = withoutSuffix;
+    a[3] = +posNegDuration > 0;
+    a[4] = locale;
+    return substituteTimeAgo.apply(null, a);
+}
+
+// This function allows you to set the rounding function for relative time strings
+function getSetRelativeTimeRounding(roundingFunction) {
+    if (roundingFunction === undefined) {
+        return round;
+    }
+    if (typeof roundingFunction === 'function') {
+        round = roundingFunction;
+        return true;
+    }
+    return false;
+}
+
+// This function allows you to set a threshold for relative time strings
+function getSetRelativeTimeThreshold(threshold, limit) {
+    if (thresholds[threshold] === undefined) {
+        return false;
+    }
+    if (limit === undefined) {
+        return thresholds[threshold];
+    }
+    thresholds[threshold] = limit;
+    if (threshold === 's') {
+        thresholds.ss = limit - 1;
+    }
+    return true;
+}
+
+function humanize(withSuffix) {
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var locale = this.localeData();
+    var output = relativeTime$1(this, !withSuffix, locale);
+
+    if (withSuffix) {
+        output = locale.pastFuture(+this, output);
+    }
+
+    return locale.postformat(output);
+}
+
+var abs$1 = Math.abs;
+
+function sign(x) {
+    return (x > 0) - (x < 0) || +x;
+}
+
+function toISOString$1() {
+    // for ISO strings we do not use the normal bubbling rules:
+    //  * milliseconds bubble up until they become hours
+    //  * days do not bubble at all
+    //  * months bubble up until they become years
+    // This is because there is no context-free conversion between hours and days
+    // (think of clock changes)
+    // and also not between days and months (28-31 days per month)
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var seconds = abs$1(this._milliseconds) / 1000;
+    var days = abs$1(this._days);
+    var months = abs$1(this._months);
+    var minutes, hours, years;
+
+    // 3600 seconds -> 60 minutes -> 1 hour
+    minutes = absFloor(seconds / 60);
+    hours = absFloor(minutes / 60);
+    seconds %= 60;
+    minutes %= 60;
+
+    // 12 months -> 1 year
+    years = absFloor(months / 12);
+    months %= 12;
+
+    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    var Y = years;
+    var M = months;
+    var D = days;
+    var h = hours;
+    var m = minutes;
+    var s = seconds ? seconds.toFixed(3).replace(/\.?0+$/, '') : '';
+    var total = this.asSeconds();
+
+    if (!total) {
+        // this is the same as C#'s (Noda) and python (isodate)...
+        // but not other JS (goog.date)
+        return 'P0D';
+    }
+
+    var totalSign = total < 0 ? '-' : '';
+    var ymSign = sign(this._months) !== sign(total) ? '-' : '';
+    var daysSign = sign(this._days) !== sign(total) ? '-' : '';
+    var hmsSign = sign(this._milliseconds) !== sign(total) ? '-' : '';
+
+    return totalSign + 'P' + (Y ? ymSign + Y + 'Y' : '') + (M ? ymSign + M + 'M' : '') + (D ? daysSign + D + 'D' : '') + (h || m || s ? 'T' : '') + (h ? hmsSign + h + 'H' : '') + (m ? hmsSign + m + 'M' : '') + (s ? hmsSign + s + 'S' : '');
+}
+
+var proto$2 = Duration.prototype;
+
+proto$2.isValid = isValid$1;
+proto$2.abs = abs;
+proto$2.add = add$1;
+proto$2.subtract = subtract$1;
+proto$2.as = as;
+proto$2.asMilliseconds = asMilliseconds;
+proto$2.asSeconds = asSeconds;
+proto$2.asMinutes = asMinutes;
+proto$2.asHours = asHours;
+proto$2.asDays = asDays;
+proto$2.asWeeks = asWeeks;
+proto$2.asMonths = asMonths;
+proto$2.asYears = asYears;
+proto$2.valueOf = valueOf$1;
+proto$2._bubble = bubble;
+proto$2.clone = clone$1;
+proto$2.get = get$3;
+proto$2.milliseconds = milliseconds;
+proto$2.seconds = seconds;
+proto$2.minutes = minutes;
+proto$2.hours = hours;
+proto$2.days = days;
+proto$2.weeks = weeks;
+proto$2.months = months;
+proto$2.years = years;
+proto$2.humanize = humanize;
+proto$2.toISOString = toISOString$1;
+proto$2.toString = toISOString$1;
+proto$2.toJSON = toISOString$1;
+proto$2.locale = locale;
+proto$2.localeData = localeData;
+
+proto$2.toIsoString = deprecate('toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)', toISOString$1);
+proto$2.lang = lang;
+
+// Side effect imports
+
+// FORMATTING
+
+addFormatToken('X', 0, 0, 'unix');
+addFormatToken('x', 0, 0, 'valueOf');
+
+// PARSING
+
+addRegexToken('x', matchSigned);
+addRegexToken('X', matchTimestamp);
+addParseToken('X', function (input, array, config) {
+    config._d = new Date(parseFloat(input, 10) * 1000);
+});
+addParseToken('x', function (input, array, config) {
+    config._d = new Date(toInt(input));
+});
+
+// Side effect imports
+
+//! moment.js
+
+hooks.version = '2.20.1';
+
+setHookCallback(createLocal);
+
+hooks.fn = proto;
+hooks.min = min;
+hooks.max = max;
+hooks.now = now;
+hooks.utc = createUTC;
+hooks.unix = createUnix;
+hooks.months = listMonths;
+hooks.isDate = isDate;
+hooks.locale = getSetGlobalLocale;
+hooks.invalid = createInvalid;
+hooks.duration = createDuration;
+hooks.isMoment = isMoment;
+hooks.weekdays = listWeekdays;
+hooks.parseZone = createInZone;
+hooks.localeData = getLocale;
+hooks.isDuration = isDuration;
+hooks.monthsShort = listMonthsShort;
+hooks.weekdaysMin = listWeekdaysMin;
+hooks.defineLocale = defineLocale;
+hooks.updateLocale = updateLocale;
+hooks.locales = listLocales;
+hooks.weekdaysShort = listWeekdaysShort;
+hooks.normalizeUnits = normalizeUnits;
+hooks.relativeTimeRounding = getSetRelativeTimeRounding;
+hooks.relativeTimeThreshold = getSetRelativeTimeThreshold;
+hooks.calendarFormat = getCalendarFormat;
+hooks.prototype = proto;
+
+// currently HTML5 input type only supports 24-hour formats
+hooks.HTML5_FMT = {
+    DATETIME_LOCAL: 'YYYY-MM-DDTHH:mm', // <input type="datetime-local" />
+    DATETIME_LOCAL_SECONDS: 'YYYY-MM-DDTHH:mm:ss', // <input type="datetime-local" step="1" />
+    DATETIME_LOCAL_MS: 'YYYY-MM-DDTHH:mm:ss.SSS', // <input type="datetime-local" step="0.001" />
+    DATE: 'YYYY-MM-DD', // <input type="date" />
+    TIME: 'HH:mm', // <input type="time" />
+    TIME_SECONDS: 'HH:mm:ss', // <input type="time" step="1" />
+    TIME_MS: 'HH:mm:ss.SSS', // <input type="time" step="0.001" />
+    WEEK: 'YYYY-[W]WW', // <input type="week" />
+    MONTH: 'YYYY-MM' // <input type="month" />
+};
+
+var dateFunc = {
+    methods: {
+        getMonthViewStartDay: function getMonthViewStartDay(date, firstDay, mode) {
+            firstDay = parseInt(firstDay);
+            // get cur month start day obj from data
+            var start = this.moment(date);
+            var startTemp = this.moment(start.startOf(mode));
+            // subtract the start day & cur month start day
+            // if cur day is Wed, the view start day should substract 2
+            start.subtract(startTemp.day(), 'days');
+
+            if (startTemp.day() < firstDay) {
+                // if start day back of the view's first day
+                // view start should substrat a week
+                start.subtract(7, 'days');
+            }
+
+            // set final start day
+            start.add(firstDay, 'days');
+            return start;
+        },
+        getMonthViewEndDay: function getMonthViewEndDay(date) {
+            return this.getMonthViewStartDay().add(6, 'weeks');
+        }
+    }
+};
+
+var genBody = {
+    methods: {
+        genWeekTitle: function genWeekTitle(h) {
+            var titleCls = this.prefixCls + '-week-title';
+            var titleData = this.moment().localeData().weekdaysShort();
+            var temp = this.firstDay - 1;
+
+            var titleArr = titleData.map(function (date) {
+                if (++temp >= 7) temp = 0;
+
+                return h('div', {
+                    class: [titleCls + '-item']
+                }, [titleData[temp]]);
+            });
+
+            return h('div', {
+                class: [titleCls]
+            }, [titleArr]);
+        },
+        genCalendateItem: function genCalendateItem(h) {
+            var _this = this;
+
+            var tempRow = this.genItemRow(h);
+            var itemArr = [];
+
+            this.monthData.map(function (data, index) {
+                var item = h('div', {
+                    class: _this.prefixCls + '-day-item'
+                }, [_this.$scopedSlots.default ? _this.$scopedSlots.default(data) : _this.$slots.default]);
+
+                tempRow.children.push(item);
+
+                if (index - 1 > 0 && (index + 1) % 7 === 0) {
+                    itemArr.push(tempRow);
+                    tempRow = _this.genItemRow(h);
+                }
+            });
+
+            return h('div', {
+                class: [this.prefixCls + '-body']
+            }, [itemArr]);
+        },
+        genItemRow: function genItemRow(h) {
+            var itemRow = h('div', {
+                class: [this.prefixCls + '-body-row']
+            }, []);
+            return itemRow;
+        }
+    }
+};
+
+var genHeader = {
+    computed: {
+        headerDateText: function headerDateText() {
+            if (this.mode === 'week') {
+                var startDay = this.moment(this.currentDate).startOf('week').format('YYYY-MM-DD');
+                var endDay = this.moment(this.currentDate).endOf('week').format('YYYY-MM-DD');
+                return startDay + ' - ' + endDay;
+            } else {
+                return this.moment(this.currentDate).format('YYYY-MM');
+            }
+        }
+    },
+    methods: {
+        genHeaderCenter: function genHeaderCenter(h) {
+            var prevControl = h('a', {
+                class: [this.prefixCls + '-control', this.prefixCls + '-prev'],
+                on: {
+                    click: this.prev
+                }
+            }, [this.prevNode || '<']);
+
+            var nextControl = h('a', {
+                class: [this.prefixCls + '-control', this.prefixCls + '-next'],
+                on: {
+                    click: this.next
+                }
+            }, [this.nextNode || '>']);
+
+            var curMonth = h('span', {
+                class: [this.prefixCls + '-header-date']
+            }, [this.headerDateText]);
+
+            return h('div', {
+                class: [this.prefixCls + '-header-center']
+            }, [prevControl, curMonth, nextControl]);
+        },
+        genHeader: function genHeader(h) {
+            var headerLeft = h('div', {
+                class: [this.prefixCls + '-header-left']
+            }, [this.$slots['header-left']]);
+
+            var headerRight = h('div', {
+                class: [this.prefixCls + '-header-right']
+            }, [this.$slots['header-right']]);
+
+            return h('div', {
+                class: [this.prefixCls + '-header']
+            }, [headerLeft, this.genHeaderCenter(h), headerRight]);
+        }
+    }
+};
+
+var prefixCls = 'vue-calendar';
+
+var calendar$3 = {
+    name: prefixCls,
+    mixins: [genBody, genHeader, dateFunc],
+    props: {
+        value: null,
+        dateData: {
+            type: Array,
+            default: function _default() {
+                return [];
+            }
+        },
+        matchKey: {
+            type: String,
+            default: 'date'
+        },
+        locale: {
+            type: String,
+            default: 'zh-cn'
+        },
+        firstDay: {
+            type: Number,
+            default: 0
+        },
+        mode: {
+            type: String,
+            default: 'month',
+            validator: function validator(value) {
+                return value === 'month' || value === 'week';
+            }
+        },
+        prefixCls: {
+            type: String,
+            default: prefixCls
+        },
+        onMonthChange: Function,
+        onPrev: Function,
+        onNext: Function
+    },
+    computed: {
+        monthData: function monthData() {
+            var _this = this;
+
+            var dateData = this.dateData,
+                currentDate = this.currentDate,
+                firstDay = this.firstDay,
+                mode = this.mode;
+
+            if (!currentDate) return [];
+
+            var monthViewStartDate = this.getMonthViewStartDay(currentDate, firstDay, mode);
+            var monthData = [];
+            var row = 6;
+
+            if (this.mode === 'week') row = 1;
+
+            for (var day = 0; day < 7 * row; day++) {
+                var data = dateData.find(function (item) {
+                    return monthViewStartDate.isSame(_this.moment(new Date(item[_this.matchKey])), 'day');
+                });
+
+                monthData.push(_extends({}, this.getItemStatus(monthViewStartDate), {
+                    data: data || {},
+                    date: {
+                        year: monthViewStartDate.year(),
+                        month: monthViewStartDate.month() + 1,
+                        date: monthViewStartDate.date(),
+                        day: monthViewStartDate.day(),
+                        full: monthViewStartDate.format('YYYY-MM-DD')
+                    }
+                }));
+
+                monthViewStartDate.add(1, 'day');
+            }
+
+            return monthData;
+        }
+    },
+    methods: {
+        prev: function prev() {
+            this.currentDate = this.moment(this.currentDate).subtract(1, this.mode + 's').startOf(this.mode);
+            this.onPrev && this.onPrev({
+                startDay: this.monthData[0].date,
+                endDay: this.monthData[this.monthData.length - 1].date
+            });
+        },
+        next: function next() {
+            this.currentDate = this.moment(this.currentDate).add(1, this.mode + 's').startOf(this.mode);
+            this.onNext && this.onNext({
+                startDay: this.monthData[0].date,
+                endDay: this.monthData[this.monthData.length - 1].date
+            });
+        },
+        getItemStatus: function getItemStatus(date) {
+            var isCurMonth = date.isSame(this.currentDate, 'month');
+            var isPrevLastDay = false;
+            var isNextFirstDay = false;
+
+            var isPrevMonth = !isCurMonth && date.isBefore(this.currentDate, 'month');
+            var isNextMonth = !isCurMonth && date.isAfter(this.currentDate, 'month');
+
+            isPrevMonth && (isPrevLastDay = date.isSame(this.moment(date).endOf('month').format('YYYY-MM-DD')));
+            isNextMonth && (isNextFirstDay = date.isSame(this.moment(date).startOf('month').format('YYYY-MM-DD')));
+
+            return {
+                isPrevMonth: isPrevMonth,
+                isPrevLastDay: isPrevLastDay,
+                isNextMonth: isNextMonth,
+                isNextFirstDay: isNextFirstDay,
+                isToday: date.isSame(this.moment(this.today), 'day'),
+                isCurMonth: isCurMonth
+            };
+        },
+        viewDataChage: function viewDataChage() {
+            this.onMonthChange && this.onMonthChange({
+                startDay: this.monthData[0].date,
+                endDay: this.monthData[this.monthData.length - 1].date
+            });
+        }
+    },
+    watch: {
+        value: {
+            immediate: true,
+            handler: function handler(val) {
+                this.currentDate = this.moment(val);
+
+                if (!this.today) {
+                    this.today = val;
+                }
+            }
+        },
+        currentDate: function currentDate(val, oval) {
+            if (val.isSame(oval, 'day')) return;
+            this.$emit('input', val.format('YYYY-MM-DD'));
+
+            this.viewDataChage();
+        },
+        mode: function mode(val) {
+            this.viewDataChage();
+        }
+    },
+    created: function created() {
+        // this.moment = moment.locale(this.locale);
+        this.moment.locale(this.locale);
+        // this.currentDate = this.value || new Date();
+    },
+    data: function data() {
+        return {
+            today: '',
+            currentDate: null,
+            moment: hooks
+        };
+    },
+    render: function render(h) {
+        return h('div', {
+            class: [this.prefixCls]
+        }, [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]);
+    }
+};
+
+module.exports = calendar$3;
+},{}],6:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+exports.default = [{
+  date: year + '-' + month + '-8',
+  title: 'buy something'
+}, {
+  date: year + '-' + (month + 1) + '-2',
+  title: 'remember homework'
+}, {
+  date: year + '-' + (month + 1) + '-15',
+  title: 'music festival'
+}, {
+  date: year + '-' + (month + 2) + '-6',
+  title: 'a course of lectures'
+}];
 },{}],10:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("./calendar"),r=t(e);function t(e){return e&&e.__esModule?e:{default:e}}require("./style/calendar.less"),exports.default=r.default;
-},{"./calendar":14,"./style/calendar.less":15}],8:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=new Date,t=e.getFullYear(),r=e.getMonth()+1;exports.default=[{date:t+"-"+r+"-8",title:"buy something"},{date:t+"-"+(r+1)+"-2",title:"remember homework"},{date:t+"-"+(r+1)+"-15",title:"music festival"},{date:t+"-"+(r+2)+"-6",title:"a course of lectures"}];
-},{}],17:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("../moment"),_=d(e);function d(e){return e&&e.__esModule?e:{default:e}}exports.default=_.default.defineLocale("zh-cn",{months:"一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),monthsShort:"1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),weekdays:"星期日_星期一_星期二_星期三_星期四_星期五_星期六".split("_"),weekdaysShort:"周日_周一_周二_周三_周四_周五_周六".split("_"),weekdaysMin:"日_一_二_三_四_五_六".split("_"),longDateFormat:{LT:"HH:mm",LTS:"HH:mm:ss",L:"YYYY/MM/DD",LL:"YYYY年M月D日",LLL:"YYYY年M月D日Ah点mm分",LLLL:"YYYY年M月D日ddddAh点mm分",l:"YYYY/M/D",ll:"YYYY年M月D日",lll:"YYYY年M月D日 HH:mm",llll:"YYYY年M月D日dddd HH:mm"},meridiemParse:/凌晨|早上|上午|中午|下午|晚上/,meridiemHour:function(e,_){return 12===e&&(e=0),"凌晨"===_||"早上"===_||"上午"===_?e:"下午"===_||"晚上"===_?e+12:e>=11?e:e+12},meridiem:function(e,_,d){var t=100*e+_;return t<600?"凌晨":t<900?"早上":t<1130?"上午":t<1230?"中午":t<1800?"下午":"晚上"},calendar:{sameDay:"[今天]LT",nextDay:"[明天]LT",nextWeek:"[下]ddddLT",lastDay:"[昨天]LT",lastWeek:"[上]ddddLT",sameElse:"L"},dayOfMonthOrdinalParse:/\d{1,2}(日|月|周)/,ordinal:function(e,_){switch(_){case"d":case"D":case"DDD":return e+"日";case"M":return e+"月";case"w":case"W":return e+"周";default:return e}},relativeTime:{future:"%s内",past:"%s前",s:"几秒",ss:"%d 秒",m:"1 分钟",mm:"%d 分钟",h:"1 小时",hh:"%d 小时",d:"1 天",dd:"%d 天",M:"1 个月",MM:"%d 个月",y:"1 年",yy:"%d 年"},week:{dow:1,doy:4}});
-},{"../moment":21}],6:[function(require,module,exports) {
-var e=require("vueify/lib/insert-css").insert("body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;color:#333;background-image:linear-gradient(60deg,#fb7bb0,#fb7bce)}h1,h2{color:#fff;text-align:center;text-shadow:0 3px 1px #f81875;margin:0;font-family:Georgia,Times New Roman,Times,serif}h1{margin-top:40px;font-size:2.4rem}.ui-calendar{margin-top:20px;box-shadow:0 1px 5px #f81875;border-radius:5px}.ui-calendar .k-calendar-header-center,.ui-calendar .k-calendar-week-title-item{color:#ff7dc5}.ui-calendar-item{padding:5px 10px;color:#666}.ui-calendar-item.is-otherMonth{color:#bbb}.ui-calendar-item-name{font-size:12px}");!function(){"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=t(require("../src")),a=t(require("./data"));function t(e){return e&&e.__esModule?e:{default:e}}require("moment/src/locale/zh-cn"),exports.default={name:"App",components:{Calendar:e.default},data:function(){return{currMonth:new Date,dateData:a.default}}}}(),module.exports.__esModule&&(module.exports=module.exports.default);var a="function"==typeof module.exports?module.exports.options:module.exports;a.render=function(){var e=this,a=e.$createElement,t=e._self._c||a;return t("div",[t("h1",[e._v("A Vue2 Full Calendar")]),e._v(" "),t("h2",[e._v("Has month and week two mode. And you can custom all style")]),e._v(" "),t("Calendar",{staticClass:"ui-calendar",attrs:{dateData:e.dateData,locale:"zh_cn"},scopedSlots:e._u([{key:"default",fn:function(a){return t("div",{class:["ui-calendar-item",{"is-otherMonth":a.isPrevMonth||a.isNextMonth}]},[t("div",{class:["ui-calendar-item-date"]},[e._v("\n        "+e._s(a.date.date)+"\n      ")]),e._v(" "),t("div",{staticClass:"ui-calendar-item-name"},[e._v(e._s(a.data.title))])])}}]),model:{value:e.currMonth,callback:function(a){e.currMonth=a},expression:"currMonth"}})],1)},a.staticRenderFns=[];
-},{"vueify/lib/insert-css":16,"../src":10,"./data":8,"moment/src/locale/zh-cn":17}],4:[function(require,module,exports) {
-"use strict";var e=require("vue"),u=n(e),r=require("./App.vue"),t=n(r);function n(e){return e&&e.__esModule?e:{default:e}}new u.default({el:"#app",components:{App:t.default},render:function(e){return e(t.default)}});
-},{"vue":12,"./App.vue":6}]},{},[4])
+var Vue // late bind
+var version
+var map = (window.__VUE_HOT_MAP__ = Object.create(null))
+var installed = false
+var isBrowserify = false
+var initHookName = 'beforeCreate'
+
+exports.install = function (vue, browserify) {
+  if (installed) { return }
+  installed = true
+
+  Vue = vue.__esModule ? vue.default : vue
+  version = Vue.version.split('.').map(Number)
+  isBrowserify = browserify
+
+  // compat with < 2.0.0-alpha.7
+  if (Vue.config._lifecycleHooks.indexOf('init') > -1) {
+    initHookName = 'init'
+  }
+
+  exports.compatible = version[0] >= 2
+  if (!exports.compatible) {
+    console.warn(
+      '[HMR] You are using a version of vue-hot-reload-api that is ' +
+        'only compatible with Vue.js core ^2.0.0.'
+    )
+    return
+  }
+}
+
+/**
+ * Create a record for a hot module, which keeps track of its constructor
+ * and instances
+ *
+ * @param {String} id
+ * @param {Object} options
+ */
+
+exports.createRecord = function (id, options) {
+  if(map[id]) { return }
+  
+  var Ctor = null
+  if (typeof options === 'function') {
+    Ctor = options
+    options = Ctor.options
+  }
+  makeOptionsHot(id, options)
+  map[id] = {
+    Ctor: Ctor,
+    options: options,
+    instances: []
+  }
+}
+
+/**
+ * Check if module is recorded
+ *
+ * @param {String} id
+ */
+
+exports.isRecorded = function (id) {
+  return typeof map[id] !== 'undefined'
+}
+
+/**
+ * Make a Component options object hot.
+ *
+ * @param {String} id
+ * @param {Object} options
+ */
+
+function makeOptionsHot(id, options) {
+  if (options.functional) {
+    var render = options.render
+    options.render = function (h, ctx) {
+      var instances = map[id].instances
+      if (ctx && instances.indexOf(ctx.parent) < 0) {
+        instances.push(ctx.parent)
+      }
+      return render(h, ctx)
+    }
+  } else {
+    injectHook(options, initHookName, function() {
+      var record = map[id]
+      if (!record.Ctor) {
+        record.Ctor = this.constructor
+      }
+      record.instances.push(this)
+    })
+    injectHook(options, 'beforeDestroy', function() {
+      var instances = map[id].instances
+      instances.splice(instances.indexOf(this), 1)
+    })
+  }
+}
+
+/**
+ * Inject a hook to a hot reloadable component so that
+ * we can keep track of it.
+ *
+ * @param {Object} options
+ * @param {String} name
+ * @param {Function} hook
+ */
+
+function injectHook(options, name, hook) {
+  var existing = options[name]
+  options[name] = existing
+    ? Array.isArray(existing) ? existing.concat(hook) : [existing, hook]
+    : [hook]
+}
+
+function tryWrap(fn) {
+  return function (id, arg) {
+    try {
+      fn(id, arg)
+    } catch (e) {
+      console.error(e)
+      console.warn(
+        'Something went wrong during Vue component hot-reload. Full reload required.'
+      )
+    }
+  }
+}
+
+function updateOptions (oldOptions, newOptions) {
+  for (var key in oldOptions) {
+    if (!(key in newOptions)) {
+      delete oldOptions[key]
+    }
+  }
+  for (var key$1 in newOptions) {
+    oldOptions[key$1] = newOptions[key$1]
+  }
+}
+
+exports.rerender = tryWrap(function (id, options) {
+  var record = map[id]
+  if (!options) {
+    record.instances.slice().forEach(function (instance) {
+      instance.$forceUpdate()
+    })
+    return
+  }
+  if (typeof options === 'function') {
+    options = options.options
+  }
+  if (record.Ctor) {
+    record.Ctor.options.render = options.render
+    record.Ctor.options.staticRenderFns = options.staticRenderFns
+    record.instances.slice().forEach(function (instance) {
+      instance.$options.render = options.render
+      instance.$options.staticRenderFns = options.staticRenderFns
+      // reset static trees
+      // pre 2.5, all static trees are cahced together on the instance
+      if (instance._staticTrees) {
+        instance._staticTrees = []
+      }
+      // 2.5.0
+      if (Array.isArray(record.Ctor.options.cached)) {
+        record.Ctor.options.cached = []
+      }
+      // 2.5.3
+      if (Array.isArray(instance.$options.cached)) {
+        instance.$options.cached = []
+      }
+      // post 2.5.4: v-once trees are cached on instance._staticTrees.
+      // Pure static trees are cached on the staticRenderFns array
+      // (both already reset above)
+      instance.$forceUpdate()
+    })
+  } else {
+    // functional or no instance created yet
+    record.options.render = options.render
+    record.options.staticRenderFns = options.staticRenderFns
+
+    // handle functional component re-render
+    if (record.options.functional) {
+      // rerender with full options
+      if (Object.keys(options).length > 2) {
+        updateOptions(record.options, options)
+      } else {
+        // template-only rerender.
+        // need to inject the style injection code for CSS modules
+        // to work properly.
+        var injectStyles = record.options._injectStyles
+        if (injectStyles) {
+          var render = options.render
+          record.options.render = function (h, ctx) {
+            injectStyles.call(ctx)
+            return render(h, ctx)
+          }
+        }
+      }
+      record.options._Ctor = null
+      // 2.5.3
+      if (Array.isArray(record.options.cached)) {
+        record.options.cached = []
+      }
+      record.instances.slice().forEach(function (instance) {
+        instance.$forceUpdate()
+      })
+    }
+  }
+})
+
+exports.reload = tryWrap(function (id, options) {
+  var record = map[id]
+  if (options) {
+    if (typeof options === 'function') {
+      options = options.options
+    }
+    makeOptionsHot(id, options)
+    if (record.Ctor) {
+      if (version[1] < 2) {
+        // preserve pre 2.2 behavior for global mixin handling
+        record.Ctor.extendOptions = options
+      }
+      var newCtor = record.Ctor.super.extend(options)
+      record.Ctor.options = newCtor.options
+      record.Ctor.cid = newCtor.cid
+      record.Ctor.prototype = newCtor.prototype
+      if (newCtor.release) {
+        // temporary global mixin strategy used in < 2.0.0-alpha.6
+        newCtor.release()
+      }
+    } else {
+      updateOptions(record.options, options)
+    }
+  }
+  record.instances.slice().forEach(function (instance) {
+    if (instance.$vnode && instance.$vnode.context) {
+      instance.$vnode.context.$forceUpdate()
+    } else {
+      console.warn(
+        'Root or manually mounted instance modified. Full reload required.'
+      )
+    }
+  })
+})
+
+},{}],3:[function(require,module,exports) {
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("@import '../dist/vue2-event-calendar.css';\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  color: #333;\n  background-image: linear-gradient(60deg, #fb7bb0, #fb7bce);\n}\nh1,\nh2 {\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 3px 1px #f81875;\n  margin: 0;\n  font-family: Georgia, \"Times New Roman\", Times, serif;\n}\nh1 {\n  margin-top: 40px;\n  font-size: 2.4rem;\n}\n.ui-calendar {\n  margin-top: 20px;\n  box-shadow: 0 1px 5px #f81875;\n  border-radius: 5px;\n}\n.ui-calendar .k-calendar-header-center {\n  color: #ff7dc5;\n}\n.ui-calendar .k-calendar-week-title-item {\n  color: #ff7dc5;\n}\n.ui-calendar-item {\n  padding: 5px 10px;\n  color: #666;\n}\n.ui-calendar-item.is-otherMonth {\n  color: #bbb;\n}\n.ui-calendar-item-name {\n  font-size: 12px;\n}");(function () {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _vue2EventCalendar = require('../dist/vue2-event-calendar');
+
+  var _vue2EventCalendar2 = _interopRequireDefault(_vue2EventCalendar);
+
+  var _data2 = require('./data');
+
+  var _data3 = _interopRequireDefault(_data2);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+  }
+
+  exports.default = {
+    name: 'App',
+    components: {
+      Calendar: _vue2EventCalendar2.default
+    },
+    data: function data() {
+      return {
+        currMonth: new Date(),
+        dateData: _data3.default
+      };
+    }
+  };
+})();
+if (module.exports.__esModule) module.exports = module.exports.default;
+var __vue__options__ = typeof module.exports === "function" ? module.exports.options : module.exports;
+if (__vue__options__.functional) {
+  console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.");
+}
+__vue__options__.render = function render() {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', [_c('h1', [_vm._v("A Vue2 Full Calendar")]), _vm._v(" "), _c('h2', [_vm._v("Has month and week two mode. And you can custom all style")]), _vm._v(" "), _c('Calendar', { staticClass: "ui-calendar", attrs: { "dateData": _vm.dateData, "locale": "en" }, scopedSlots: _vm._u([{ key: "default", fn: function fn(item) {
+        return _c('div', { class: ['ui-calendar-item', { 'is-otherMonth': item.isPrevMonth || item.isNextMonth }] }, [_c('div', { class: ['ui-calendar-item-date'] }, [_vm._v("\n        " + _vm._s(item.date.date) + "\n      ")]), _vm._v(" "), _c('div', { staticClass: "ui-calendar-item-name" }, [_vm._v(_vm._s(item.data.title))])]);
+      } }]), model: { value: _vm.currMonth, callback: function callback($$v) {
+        _vm.currMonth = $$v;
+      }, expression: "currMonth" } })], 1);
+};
+__vue__options__.staticRenderFns = [];
+if (module.hot) {
+  (function () {
+    var hotAPI = require("vue-hot-reload-api");
+    hotAPI.install(require("vue"), true);
+    if (!hotAPI.compatible) return;
+    module.hot.accept();
+    module.hot.dispose(__vueify_style_dispose__);
+    if (!module.hot.data) {
+      hotAPI.createRecord("data-v-8cfe3c60", __vue__options__);
+    } else {
+      hotAPI.reload("data-v-8cfe3c60", __vue__options__);
+    }
+  })();
+}
+},{"vueify/lib/insert-css":11,"../dist/vue2-event-calendar":5,"./data":6,"vue-hot-reload-api":10,"vue":9}],2:[function(require,module,exports) {
+'use strict';
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _App = require('./App.vue');
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable no-new */
+new _vue2.default({
+  el: '#app',
+  components: {
+    App: _App2.default
+  },
+  render: function render(h) {
+    return h(_App2.default);
+  }
+});
+},{"vue":9,"./App.vue":3}],0:[function(require,module,exports) {
+var global = (1, eval)('this');
+var OldModule = module.bundle.Module;
+function Module(config) {
+  OldModule.call(this);
+  this.hot = {
+    accept: function (fn) {
+      this._acceptCallback = fn || function () {};
+    },
+    dispose: function (fn) {
+      this._disposeCallback = fn;
+    },
+    data: config && config.hot
+  };
+}
+
+module.bundle.Module = Module;
+
+if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
+  var ws = new WebSocket('ws://localhost:58068/');
+  ws.onmessage = function(event) {
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      data.assets.forEach(function (asset) {
+        hmrApply(global.require, asset);
+      });
+
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          hmrAccept(global.require, asset.id);
+        }
+      });
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+      ws.onclose = function () {
+        window.location.reload();
+      }
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + 'data.error.stack');
+    }
+  };
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+      if (dep === id || (Array.isArray(dep) && dep[dep.length - 1] === id)) {
+        parents.push(+k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAccept(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAccept(bundle.parent, id);
+  }
+
+  var cached = bundle.cache[id];
+  if (cached && cached.hot._disposeCallback) {
+    cached.hot._disposeCallback();
+  }
+
+  delete bundle.cache[id];
+  bundle(id, undefined, {
+    hot: true
+  });
+
+  cached = bundle.cache[id];
+  if (cached && cached.hot && cached.hot._acceptCallback) {
+    cached.hot._acceptCallback();
+    return true;
+  }
+
+  return getParents(global.require, id).some(function (id) {
+    return hmrAccept(global.require, id)
+  });
+}
+},{}]},{},[0,2])

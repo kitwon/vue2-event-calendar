@@ -1,12 +1,12 @@
 {
   "name": "vue2-event-calendar",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "dist/vue2-event-calendar.js",
   "scripts": {
     "dev": "parcel index.html -d demo",
     "build": "parcel build index.html -d demo",
-    "deploy": "yarn test && yarn build && parcel build src/index.js -o vue2-event-calendar.min.js && parcel build src/index.js -o vue2-event-calendar.js --no-minify",
+    "deploy": "yarn test && yarn build && node build/build",
     "lint": "eslint src test",
     "unit": "jest",
     "test": "npm run lint && npm run unit"
@@ -22,6 +22,7 @@
     "@vue/test-utils": "^1.0.0-beta.12",
     "babel-eslint": "^8.2.2",
     "babel-jest": "^22.4.1",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.18.2",
@@ -37,6 +38,12 @@
     "parcel-bundler": "^1.6.2",
     "parcel-plugin-vue": "^1.5.0",
     "postcss-flexbugs-fixes": "^3.3.0",
+    "rollup": "^0.56.5",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "rollup-plugin-less": "^0.1.4",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "uglify-js": "^3.3.13",
     "vue-jest": "^2.1.1",
     "vue-template-compiler": "^2.5.13"
   },
