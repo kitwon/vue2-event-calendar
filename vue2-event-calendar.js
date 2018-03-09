@@ -1318,7 +1318,7 @@ var calendar$1 = {
     value: {
       immediate: true,
       handler: function handler(val) {
-        this.currentDate = this.moment(val);
+        this.currentDate = this.moment(new Date(val));
 
         if (!this.today) {
           this.today = val;

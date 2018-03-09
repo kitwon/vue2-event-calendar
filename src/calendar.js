@@ -149,7 +149,7 @@ export default {
     value: {
       immediate: true,
       handler(val) {
-        this.currentDate = this.moment(val)
+        this.currentDate = this.moment(new Date(val))
 
         if (!this.today) {
           this.today = val
