@@ -137,7 +137,7 @@ export default {
         isCurMonth: isCurMonth
       }
     },
-    viewDataChage() {
+    changeViewData() {
       this.onMonthChange &&
         this.onMonthChange({
           startDay: this.monthData[0].date,
@@ -158,13 +158,13 @@ export default {
       }
     },
     currentDate(val, oval) {
-      if (val.isSame(oval, 'day')) return
+      // if (val.isSame(oval, 'day')) return
       this.$emit('input', val.format('YYYY-MM-DD'))
 
-      this.viewDataChage()
+      this.changeViewData()
     },
     mode(val) {
-      this.viewDataChage()
+      this.changeViewData()
     }
   },
   // created() {

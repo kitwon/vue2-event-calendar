@@ -1307,7 +1307,7 @@ var calendar$1 = {
         isCurMonth: isCurMonth
       };
     },
-    viewDataChage: function viewDataChage() {
+    changeViewData: function changeViewData() {
       this.onMonthChange && this.onMonthChange({
         startDay: this.monthData[0].date,
         endDay: this.monthData[this.monthData.length - 1].date
@@ -1327,13 +1327,13 @@ var calendar$1 = {
       }
     },
     currentDate: function currentDate(val, oval) {
-      if (val.isSame(oval, 'day')) return;
+      // if (val.isSame(oval, 'day')) return
       this.$emit('input', val.format('YYYY-MM-DD'));
 
-      this.viewDataChage();
+      this.changeViewData();
     },
     mode: function mode(val) {
-      this.viewDataChage();
+      this.changeViewData();
     }
   },
   // created() {
