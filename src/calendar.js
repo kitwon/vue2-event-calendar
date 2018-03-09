@@ -90,6 +90,7 @@ export default {
       this.currentDate = this.moment(this.currentDate)
         .subtract(1, `${this.mode}s`)
         .startOf(this.mode)
+
       this.onPrev &&
         this.onPrev({
           startDay: this.monthData[0].date,
@@ -100,6 +101,7 @@ export default {
       this.currentDate = this.moment(this.currentDate)
         .add(1, `${this.mode}s`)
         .startOf(this.mode)
+
       this.onNext &&
         this.onNext({
           startDay: this.monthData[0].date,

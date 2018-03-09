@@ -1275,6 +1275,7 @@ var calendar$1 = {
   methods: {
     prev: function prev() {
       this.currentDate = this.moment(this.currentDate).subtract(1, this.mode + 's').startOf(this.mode);
+
       this.onPrev && this.onPrev({
         startDay: this.monthData[0].date,
         endDay: this.monthData[this.monthData.length - 1].date
@@ -1282,6 +1283,7 @@ var calendar$1 = {
     },
     next: function next() {
       this.currentDate = this.moment(this.currentDate).add(1, this.mode + 's').startOf(this.mode);
+
       this.onNext && this.onNext({
         startDay: this.monthData[0].date,
         endDay: this.monthData[this.monthData.length - 1].date

@@ -3,10 +3,11 @@
     <h1>A Vue2 Full Calendar</h1>
     <h2>Has month and week two mode. And you can custom all style</h2>
     <Calendar
-      :dateData="dateData"
       class="ui-calendar"
       v-model="currMonth"
       locale="zh-cn"
+      :dateData="dateData"
+      :on-month-change="onMonthChange"
     >
       <div
         :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
@@ -36,6 +37,11 @@ export default {
     return {
       currMonth: '',
       dateData: data
+    }
+  },
+  methods: {
+    onMonthChange(val) {
+      console.log(val);
     }
   }
 }
