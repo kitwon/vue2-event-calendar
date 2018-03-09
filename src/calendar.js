@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment/min/moment.min'
 import dateFunc from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'

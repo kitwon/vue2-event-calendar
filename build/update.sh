@@ -3,4 +3,4 @@
 #yarn deploy
 git add -A
 git commit -am 'oridinary update'
-git push origin dev
+git push origin master
