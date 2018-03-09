@@ -22,10 +22,10 @@
 </template>
 
 <script>
-require('moment/src/locale/zh-cn');
-import Calendar from '../vue2-event-calendar';
-import '../default.css';
-import data from './data';
+require('moment/src/locale/zh-cn')
+import Calendar from '../vue2-event-calendar'
+import '../default.css'
+import data from './data'
 
 export default {
   name: 'App',
@@ -36,23 +36,26 @@ export default {
     return {
       currMonth: new Date(),
       dateData: data
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="less">
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
   color: #333;
   background-image: linear-gradient(60deg, #fb7bb0, #fb7bce);
 }
-h1, h2 {
+h1,
+h2 {
   color: #fff;
   text-align: center;
   text-shadow: 0 3px 1px darken(#fb7bb0, 20%);
   margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 h1 {
   margin-top: 40px;
