@@ -12381,7 +12381,7 @@ if (module.hot) {
     if (!module.hot.data) {
       hotAPI.createRecord("data-v-8cfe3c60", __vue__options__);
     } else {
-      hotAPI.reload("data-v-8cfe3c60", __vue__options__);
+      hotAPI.rerender("data-v-8cfe3c60", __vue__options__);
     }
   })();
 }
