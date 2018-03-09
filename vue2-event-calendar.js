@@ -4429,7 +4429,7 @@ var genBody = {
   methods: {
     genWeekTitle: function genWeekTitle(h) {
       var titleCls = this.prefixCls + '-week-title';
-      var titleData = this.moment().localeData().weekdaysShort();
+      var titleData = this.weekDateShort || this.localeData[this.locale];
       var temp = this.firstDay - 1;
 
       var titleArr = titleData.map(function (date) {
@@ -4564,6 +4564,7 @@ var calendar$3 = {
       type: String,
       default: prefixCls
     },
+    weekDateShort: Array,
     onMonthChange: Function,
     onPrev: Function,
     onNext: Function
@@ -4670,16 +4671,18 @@ var calendar$3 = {
       this.viewDataChage();
     }
   },
-  created: function created() {
-    // this.moment = moment.locale(this.locale);
-    this.moment.locale(this.locale);
-    // this.currentDate = this.value || new Date();
-  },
+  // created() {
+  //   this.moment.locale(this.locale)
+  // },
   data: function data() {
     return {
       today: '',
       currentDate: null,
-      moment: hooks
+      moment: hooks,
+      localeData: {
+        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+      }
     };
   },
   render: function render(h) {

@@ -22,8 +22,8 @@
 </template>
 
 <script>
-require('moment/src/locale/zh-cn')
 import Calendar from '../vue2-event-calendar'
+// import Calendar from '../src/calendar'
 import '../default.css'
 import data from './data'
 

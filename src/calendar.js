@@ -39,6 +39,7 @@ export default {
       type: String,
       default: prefixCls
     },
+    weekDateShort: Array,
     onMonthChange: Function,
     onPrev: Function,
     onNext: Function
@@ -165,16 +166,18 @@ export default {
       this.viewDataChage()
     }
   },
-  created() {
-    // this.moment = moment.locale(this.locale);
-    this.moment.locale(this.locale)
-    // this.currentDate = this.value || new Date();
-  },
+  // created() {
+  //   this.moment.locale(this.locale)
+  // },
   data() {
     return {
       today: '',
       currentDate: null,
-      moment: moment
+      moment: moment,
+      localeData: {
+        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+      }
     }
   },
   render(h) {
