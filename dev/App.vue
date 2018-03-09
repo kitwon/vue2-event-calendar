@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      currMonth: new Date(),
+      currMonth: '',
       dateData: data
     }
   }
