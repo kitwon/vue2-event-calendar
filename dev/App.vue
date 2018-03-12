@@ -2,31 +2,33 @@
   <div>
     <h1>A Vue2 Full Calendar</h1>
     <h2 @click="changeDate">Has month and week two mode. And you can custom all style</h2>
-    <Calendar
-      class="ui-calendar"
-      locale="zh-cn"
-      :start-day="currMonth"
-      :dateData="dateData"
-      :on-month-change="onMonthChange"
-      ref="calendar"
-    >
-      <div
-        :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
-        slot-scope="item">
+    <div class="container">
+      <Calendar
+        class="ui-calendar"
+        locale="zh-cn"
+        :start-day="currMonth"
+        :dateData="dateData"
+        :onMonthChange="onMonthChange"
+        ref="calendar"
+      >
         <div
-          :class="['ui-calendar-item-date']">
-          {{item.date.date}}
+          :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
+          slot-scope="item">
+          <div
+            :class="['ui-calendar-item-date']">
+            {{item.date.date}}
+          </div>
+          <div class="ui-calendar-item-name">{{item.data.title}}</div>
         </div>
-        <div class="ui-calendar-item-name">{{item.data.title}}</div>
-      </div>
-    </Calendar>
+      </Calendar>
+    </div>
   </div>
 </template>
 
 <script>
 // import Calendar from '../vue2-event-calendar'
 import Calendar from '../src/calendar'
-import '../default.css'
+// import '../default.css'
 import data from './data'
 
 export default {
@@ -52,6 +54,8 @@ export default {
 </script>
 
 <style lang="less">
+@import "../src/style/calendar.less";
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
@@ -70,6 +74,11 @@ h2 {
 h1 {
   margin-top: 40px;
   font-size: 2.4rem;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .ui-calendar {
