@@ -1144,11 +1144,11 @@ var genHeader = {
   computed: {
     headerDateText: function headerDateText() {
       if (this.mode === 'week') {
-        var startDay = this.moment(this.currentDate).startOf('week').format('YYYY-MM-DD');
-        var endDay = this.moment(this.currentDate).endOf('week').format('YYYY-MM-DD');
+        var startDay = this.moment(this.formatedDay).startOf('week').format('YYYY-MM-DD');
+        var endDay = this.moment(this.formatedDay).endOf('week').format('YYYY-MM-DD');
         return startDay + ' - ' + endDay;
       } else {
-        return this.moment(this.currentDate).format('YYYY-MM');
+        return this.moment(this.formatedDay).format('YYYY-MM');
       }
     }
   },
@@ -1198,7 +1198,7 @@ var calendar$1 = {
   name: prefixCls,
   mixins: [genBody, genHeader, dateFunc],
   props: {
-    value: null,
+    startDate: [Number, String, Date],
     dateData: {
       type: Array,
       default: function _default() {
@@ -1234,17 +1234,20 @@ var calendar$1 = {
     onNext: Function
   },
   computed: {
+    formatedDay: function formatedDay() {
+      return this.moment(this.currentDay);
+    },
     monthData: function monthData() {
       var _this = this;
 
       var dateData = this.dateData,
-          currentDate = this.currentDate,
+          formatedDay = this.formatedDay,
           firstDay = this.firstDay,
           mode = this.mode;
 
-      if (!currentDate) return [];
+      if (!formatedDay) return [];
 
-      var monthViewStartDate = this.getMonthViewStartDay(currentDate, firstDay, mode);
+      var monthViewStartDate = this.getMonthViewStartDay(formatedDay, firstDay, mode);
       var monthData = [];
       var row = 6;
 
@@ -1273,8 +1276,16 @@ var calendar$1 = {
     }
   },
   methods: {
+    changeDate: function changeDate(date) {
+      if (!date) {
+        console.error('invalied date!');
+        return;
+      }
+
+      this.currentDay = date;
+    },
     prev: function prev() {
-      this.currentDate = this.moment(this.currentDate).subtract(1, this.mode + 's').startOf(this.mode);
+      this.currentDay = this.formatedDay.subtract(1, this.mode + 's').startOf(this.mode).format('YYYY-MM-DD');
 
       this.onPrev && this.onPrev({
         startDay: this.monthData[0].date,
@@ -1282,7 +1293,7 @@ var calendar$1 = {
       });
     },
     next: function next() {
-      this.currentDate = this.moment(this.currentDate).add(1, this.mode + 's').startOf(this.mode);
+      this.currentDay = this.formatedDay.add(1, this.mode + 's').startOf(this.mode).format('YYYY-MM-DD');
 
       this.onNext && this.onNext({
         startDay: this.monthData[0].date,
@@ -1290,12 +1301,12 @@ var calendar$1 = {
       });
     },
     getItemStatus: function getItemStatus(date) {
-      var isCurMonth = date.isSame(this.currentDate, 'month');
+      var isCurMonth = date.isSame(this.formatedDay, 'month');
       var isPrevLastDay = false;
       var isNextFirstDay = false;
 
-      var isPrevMonth = !isCurMonth && date.isBefore(this.currentDate, 'month');
-      var isNextMonth = !isCurMonth && date.isAfter(this.currentDate, 'month');
+      var isPrevMonth = !isCurMonth && date.isBefore(this.formatedDay, 'month');
+      var isNextMonth = !isCurMonth && date.isAfter(this.formatedDay, 'month');
 
       isPrevMonth && (isPrevLastDay = date.isSame(this.moment(date).endOf('month').format('YYYY-MM-DD')));
       isNextMonth && (isNextFirstDay = date.isSame(this.moment(date).startOf('month').format('YYYY-MM-DD')));
@@ -1317,34 +1328,33 @@ var calendar$1 = {
     }
   },
   watch: {
-    value: {
+    startDate: {
       immediate: true,
       handler: function handler(val) {
-        var date = val ? new Date(val) : new Date();
-        this.currentDate = this.moment(date);
+        this.currentDay = val ? new Date(val) : new Date();
 
         if (!this.today) {
           this.today = val;
         }
       }
     },
-    currentDate: function currentDate(val, oval) {
-      // if (val.isSame(oval, 'day')) return
-      this.$emit('input', val.format('YYYY-MM-DD'));
+    currentDay: {
+      immediate: true,
+      handler: function handler(val, oval) {
+        // if (val.isSame(oval, 'day')) return
+        // this.$emit('input', val.format('YYYY-MM-DD'))
 
-      this.changeViewData();
+        this.changeViewData();
+      }
     },
     mode: function mode(val) {
       this.changeViewData();
     }
   },
-  // created() {
-  //   this.moment.locale(this.locale)
-  // },
   data: function data() {
     return {
       today: '',
-      currentDate: null,
+      currentDay: null,
       moment: moment_min,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),

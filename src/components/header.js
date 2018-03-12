@@ -2,15 +2,15 @@ export default {
   computed: {
     headerDateText() {
       if (this.mode === 'week') {
-        const startDay = this.moment(this.currentDate)
+        const startDay = this.moment(this.formatedDay)
           .startOf('week')
           .format('YYYY-MM-DD')
-        const endDay = this.moment(this.currentDate)
+        const endDay = this.moment(this.formatedDay)
           .endOf('week')
           .format('YYYY-MM-DD')
         return `${startDay} - ${endDay}`
       } else {
-        return this.moment(this.currentDate).format('YYYY-MM')
+        return this.moment(this.formatedDay).format('YYYY-MM')
       }
     }
   },

@@ -11,7 +11,7 @@ export default {
   name: prefixCls,
   mixins: [genBody, genHeader, dateFunc],
   props: {
-    value: null,
+    startDate: [Number, String, Date],
     dateData: {
       type: Array,
       default: () => []
@@ -45,12 +45,15 @@ export default {
     onNext: Function
   },
   computed: {
+    formatedDay() {
+      return this.moment(this.currentDay)
+    },
     monthData() {
-      const { dateData, currentDate, firstDay, mode } = this
-      if (!currentDate) return []
+      const { dateData, formatedDay, firstDay, mode } = this
+      if (!formatedDay) return []
 
       let monthViewStartDate = this.getMonthViewStartDay(
-        currentDate,
+        formatedDay,
         firstDay,
         mode
       )
@@ -86,10 +89,19 @@ export default {
     }
   },
   methods: {
+    changeDate(date) {
+      if (!date) {
+        console.error('invalied date!')
+        return
+      }
+
+      this.currentDay = date
+    },
     prev() {
-      this.currentDate = this.moment(this.currentDate)
+      this.currentDay = this.formatedDay
         .subtract(1, `${this.mode}s`)
         .startOf(this.mode)
+        .format('YYYY-MM-DD')
 
       this.onPrev &&
         this.onPrev({
@@ -98,9 +110,10 @@ export default {
         })
     },
     next() {
-      this.currentDate = this.moment(this.currentDate)
+      this.currentDay = this.formatedDay
         .add(1, `${this.mode}s`)
         .startOf(this.mode)
+        .format('YYYY-MM-DD')
 
       this.onNext &&
         this.onNext({
@@ -109,13 +122,13 @@ export default {
         })
     },
     getItemStatus(date) {
-      const isCurMonth = date.isSame(this.currentDate, 'month')
+      const isCurMonth = date.isSame(this.formatedDay, 'month')
       let isPrevLastDay = false
       let isNextFirstDay = false
 
       const isPrevMonth =
-        !isCurMonth && date.isBefore(this.currentDate, 'month')
-      const isNextMonth = !isCurMonth && date.isAfter(this.currentDate, 'month')
+        !isCurMonth && date.isBefore(this.formatedDay, 'month')
+      const isNextMonth = !isCurMonth && date.isAfter(this.formatedDay, 'month')
 
       isPrevMonth &&
         (isPrevLastDay = date.isSame(
@@ -148,34 +161,33 @@ export default {
     }
   },
   watch: {
-    value: {
+    startDate: {
       immediate: true,
       handler(val) {
-        const date = val ? new Date(val) : new Date()
-        this.currentDate = this.moment(date)
+        this.currentDay = val ? new Date(val) : new Date()
 
         if (!this.today) {
           this.today = val
         }
       }
     },
-    currentDate(val, oval) {
-      // if (val.isSame(oval, 'day')) return
-      this.$emit('input', val.format('YYYY-MM-DD'))
+    currentDay: {
+      immediate: true,
+      handler(val, oval) {
+        // if (val.isSame(oval, 'day')) return
+        // this.$emit('input', val.format('YYYY-MM-DD'))
 
-      this.changeViewData()
+        this.changeViewData()
+      }
     },
     mode(val) {
       this.changeViewData()
     }
   },
-  // created() {
-  //   this.moment.locale(this.locale)
-  // },
   data() {
     return {
       today: '',
-      currentDate: null,
+      currentDay: null,
       moment: moment,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),

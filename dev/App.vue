@@ -1,13 +1,14 @@
 <template>
   <div>
     <h1>A Vue2 Full Calendar</h1>
-    <h2>Has month and week two mode. And you can custom all style</h2>
+    <h2 @click="changeDate">Has month and week two mode. And you can custom all style</h2>
     <Calendar
       class="ui-calendar"
-      v-model="currMonth"
       locale="zh-cn"
+      :start-day="currMonth"
       :dateData="dateData"
       :on-month-change="onMonthChange"
+      ref="calendar"
     >
       <div
         :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
@@ -23,8 +24,8 @@
 </template>
 
 <script>
-import Calendar from '../vue2-event-calendar'
-// import Calendar from '../src/calendar'
+// import Calendar from '../vue2-event-calendar'
+import Calendar from '../src/calendar'
 import '../default.css'
 import data from './data'
 
@@ -42,6 +43,9 @@ export default {
   methods: {
     onMonthChange(val) {
       console.log(val);
+    },
+    changeDate() {
+      this.$refs.calendar.changeDate('2017-12-12')
     }
   }
 }

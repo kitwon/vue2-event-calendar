@@ -9,7 +9,7 @@ describe('Calendar component', () => {
   test('component should match snapshot', () => {
     const wrapper = shallow(Calendar, {
       propsData: {
-        value: new Date('2018-01-01'),
+        startDate: new Date('2018-01-01'),
         dateData: data
       }
     })
@@ -20,14 +20,14 @@ describe('Calendar component', () => {
   test('mode is work', () => {
     const wrapper = shallow(Calendar, {
       propsData: {
-        value: new Date('2018-01-01')
+        startDate: new Date('2018-01-01')
       }
     })
 
     const weekWrapper = shallow(Calendar, {
       propsData: {
         mode: 'week',
-        value: new Date('2018-01-01')
+        startDate: new Date('2018-01-01')
       }
     })
 
@@ -39,8 +39,8 @@ describe('Calendar component', () => {
   })
 
   test('has require props', () => {
-    const { value, dateData, onMonthChange, mode, prefixCls } = Calendar.props
-    expect(value).not.toBe(undefined)
+    const { startDate, dateData, onMonthChange, mode, prefixCls } = Calendar.props
+    expect(startDate).not.toBe(undefined)
     expect(dateData).not.toBe(undefined)
     expect(onMonthChange.type).toBe(Function)
     expect(mode).not.toBe(undefined)
@@ -51,7 +51,7 @@ describe('Calendar component', () => {
     const prefixCls = 'kit-calendar'
     const wrapper = shallow(Calendar, {
       propsData: {
-        value: '2018-01-01',
+        startDate: '2018-01-01',
         prefixCls
       }
     })
