@@ -89,3 +89,8 @@ Vue.component('Calendar', Calendar)
 | name | description                                                                                                                                   |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 |      | custom content for date item, the scope param is { isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date } |
+
+## TODO
+
+1. custom header
+2. improve unit test coverage

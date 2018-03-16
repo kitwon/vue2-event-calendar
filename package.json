@@ -5,7 +5,7 @@
   "main": "vue2-event-calendar.js",
   "scripts": {
     "dev": "parcel dev/index.html -d demo",
-    "build": "parcel build dev/index.html -d demo",
+    "build": "parcel build dev/index.html -d docs",
     "deploy": "yarn test && node build/build && yarn build",
     "lint": "eslint src test",
     "unit": "jest --config test/jest.conf.js --coverage",
