@@ -26,8 +26,8 @@
 </template>
 
 <script>
-// import Calendar from '../vue2-event-calendar'
-import Calendar from '../src/calendar'
+import Calendar from '../dist/calendar-nodep'
+// import Calendar from '../src/calendar'
 // import '../default.css'
 import data from './data'
 

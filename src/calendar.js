@@ -1,4 +1,4 @@
-import moment from 'moment/min/moment.min'
+import moment from 'moment'
 import dateFunc from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'
@@ -90,9 +90,9 @@ export default {
   },
   methods: {
     changeDate(date) {
-      if (!date) {
+      if (typeof date !== 'string' && Object.prototype.toString.call(date) !== '[object Date]') {
         console.error('invalied date!')
-        return
+        return false
       }
 
       this.currentDay = date

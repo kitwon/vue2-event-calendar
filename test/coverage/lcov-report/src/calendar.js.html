@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/calendar.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> calendar.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>34/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.5% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>33/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">168x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import moment from 'moment'
+import dateFunc from './date-func'
+import genBody from './components/body'
+import genHeader from './components/header'
+&nbsp;
+import './style/calendar.less'
+&nbsp;
+const prefixCls = 'vue-calendar'
+&nbsp;
+export default {
+  name: prefixCls,
+  mixins: [genBody, genHeader, dateFunc],
+  props: {
+    startDate: [Number, String, Date],
+    dateData: {
+      type: Array,
+      default: () =&gt; []
+    },
+    matchKey: {
+      type: String,
+      default: 'date'
+    },
+    locale: {
+      type: String,
+      default: 'zh-cn'
+    },
+    firstDay: {
+      type: Number,
+      default: 0
+    },
+    mode: {
+      type: String,
+      default: 'month',
+      validator(value) {
+        return value === 'month' || value === 'week'
+      }
+    },
+    prefixCls: {
+      type: String,
+      default: prefixCls
+    },
+    weekDateShort: Array,
+    onMonthChange: Function,
+    onPrev: Function,
+    onNext: Function
+  },
+  computed: {
+    formatedDay() {
+      return this.moment(this.currentDay)
+    },
+    monthData() {
+      const { dateData, formatedDay, firstDay, mode } = this
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!formatedDay) <span class="cstat-no" title="statement not covered" >return []</span>
+&nbsp;
+      let monthViewStartDate = this.getMonthViewStartDay(
+        formatedDay,
+        firstDay,
+        mode
+      )
+      let monthData = []
+      let row = 6
+&nbsp;
+      if (this.mode === 'week') row = 1
+&nbsp;
+      for (let day = 0; day &lt; 7 * row; day++) {
+        const data = dateData.find(item =&gt; {
+          return monthViewStartDate.isSame(
+            this.moment(new Date(item[this.matchKey])),
+            'day'
+          )
+        })
+&nbsp;
+        monthData.push({
+          ...this.getItemStatus(monthViewStartDate),
+          data: data || {},
+          date: {
+            year: monthViewStartDate.year(),
+            month: monthViewStartDate.month() + 1,
+            date: monthViewStartDate.date(),
+            day: monthViewStartDate.day(),
+            full: monthViewStartDate.format('YYYY-MM-DD')
+          }
+        })
+&nbsp;
+        monthViewStartDate.add(1, 'day')
+      }
+&nbsp;
+      return monthData
+    }
+  },
+  methods: {
+    changeDate(date) {
+<span class="cstat-no" title="statement not covered" >      if (typeof date !== 'string' &amp;&amp; Object.prototype.toString.call(date) !== '[object Date]') {</span>
+<span class="cstat-no" title="statement not covered" >        console.error('invalied date!')</span>
+<span class="cstat-no" title="statement not covered" >        return false</span>
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.currentDay = date</span>
+    },
+    prev() {
+<span class="cstat-no" title="statement not covered" >      this.currentDay = this.formatedDay</span>
+        .subtract(1, `${this.mode}s`)
+        .startOf(this.mode)
+        .format('YYYY-MM-DD')
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      this.onPrev &amp;&amp;</span>
+        this.onPrev({
+          startDay: this.monthData[0].date,
+          endDay: this.monthData[this.monthData.length - 1].date
+        })
+    },
+    next() {
+      this.currentDay = this.formatedDay
+        .add(1, `${this.mode}s`)
+        .startOf(this.mode)
+        .format('YYYY-MM-DD')
+&nbsp;
+      this.onNext &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >        this.onNext({</span>
+          startDay: this.monthData[0].date,
+          endDay: this.monthData[this.monthData.length - 1].date
+        })
+    },
+    getItemStatus(date) {
+      const isCurMonth = date.isSame(this.formatedDay, 'month')
+      let isPrevLastDay = false
+      let isNextFirstDay = false
+&nbsp;
+      const isPrevMonth =
+        !isCurMonth &amp;&amp; date.isBefore(this.formatedDay, 'month')
+      const isNextMonth = !isCurMonth &amp;&amp; date.isAfter(this.formatedDay, 'month')
+&nbsp;
+      isPrevMonth &amp;&amp;
+        (isPrevLastDay = date.isSame(
+          this.moment(date)
+            .endOf('month')
+            .format('YYYY-MM-DD')
+        ))
+      isNextMonth &amp;&amp;
+        (isNextFirstDay = date.isSame(
+          this.moment(date)
+            .startOf('month')
+            .format('YYYY-MM-DD')
+        ))
+&nbsp;
+      return {
+        isPrevMonth: isPrevMonth,
+        isPrevLastDay: isPrevLastDay,
+        isNextMonth: isNextMonth,
+        isNextFirstDay: isNextFirstDay,
+        isToday: date.isSame(this.moment(this.today), 'day'),
+        isCurMonth: isCurMonth
+      }
+    },
+    changeViewData() {
+      this.onMonthChange &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >        this.onMonthChange({</span>
+          startDay: this.monthData[0].date,
+          endDay: this.monthData[this.monthData.length - 1].date
+        })
+    }
+  },
+  watch: {
+    startDate: {
+      immediate: true,
+      handler(val) {
+        this.currentDay = val ? new Date(val) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date()</span>
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.today) {
+          this.today = val
+        }
+      }
+    },
+    currentDay: {
+      immediate: true,
+      handler(val, oval) {
+        // if (val.isSame(oval, 'day')) return
+        // this.$emit('input', val.format('YYYY-MM-DD'))
+&nbsp;
+        this.changeViewData()
+      }
+    },
+    mode(val) {
+<span class="cstat-no" title="statement not covered" >      this.changeViewData()</span>
+    }
+  },
+  data() {
+    return {
+      today: '',
+      currentDay: null,
+      moment: moment,
+      localeData: {
+        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+      }
+    }
+  },
+  render(h) {
+    return h(
+      'div',
+      {
+        class: [this.prefixCls]
+      },
+      [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]
+    )
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 16 2018 14:49:29 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

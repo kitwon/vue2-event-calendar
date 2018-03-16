@@ -56,3 +56,61 @@
   border-style: solid;
   border-width: 0 0 1px 1px;
 }
+.vue-calendar {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.vue-calendar-header {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.vue-calendar-header-center {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #19a0ff;
+}
+.vue-calendar-header-left,
+.vue-calendar-header-right {
+  flex: 1;
+}
+.vue-calendar-header-date {
+  display: inline-block;
+  margin: 0 32px;
+}
+.vue-calendar-control {
+  cursor: pointer;
+}
+.vue-calendar-week-title {
+  display: flex;
+  border-color: #e8ebee;
+  border-style: solid;
+  border-width: 1px 0 1px 1px;
+}
+.vue-calendar-week-title-item {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+  color: #19a0ff;
+}
+.vue-calendar-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.vue-calendar-body-row {
+  flex: 1;
+  display: flex;
+  height: 5em;
+}
+.vue-calendar-day-item {
+  flex: 1;
+  overflow: hidden;
+  border-color: #e8ebee;
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+}

@@ -12,17 +12,27 @@ npm install vue2-event-calendar --save
 yarn add vue2-event-calendar
 ```
 
-## Import and Useage
+## Import and Usage
+
+Common usage.
 
 ```javascript
 // import component
-import Calendar from 'vue2-calendar';
-Vue.component('Calendar', Calendar);
+import Calendar from 'vue2-event-calendar'
+Vue.component('Calendar', Calendar)
+```
+
+If your project also use `moment.js`, you can use the independence version.
+
+```javascript
+import Calendar from 'vue2-event-calendar/dist/calendar-nodep.js'
+Vue.component('Calendar', Calendar)
+// ...
 ```
 
 ```html
 <!-- template -->
-<Calendar :dateData="data">
+<Calendar startDate="2018-03-07" :dateData="data">
   <div slot="header-left">
     <Button>month</Button>
     <Button>week</Button>
@@ -43,15 +53,15 @@ Vue.component('Calendar', Calendar);
 
 ## Props
 
-| parameter | description                                                                                                       | type              | default      | acceptable value |
-| --------- | ----------------------------------------------------------------------------------------------------------------- | ----------------- | ------------ | ---------------- |
-| value     | calendar start date                                                                                               | String, timestamp | new Date()   |                  |
-| dateData  | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Array             |              |                  |
-| matchKey  | specify which key of dateData object as calendar date match key                                                   | String            | date         |                  |
-| locale    | locale data of calendar language, other locale name please check [momentjs](http://momentjs.com/docs/#/i18n/) doc | String            | en           |                  |
-| firstDay  | start day of the week, 0 to 6, 0 as Sunday                                                                        | Number            | 0            | 0 - 6            |
-| mode      | component view mode                                                                                               | String            | month        | month, week      |
-| prefixCls | component style namespace                                                                                         | String            | vue-calendar |                  |
+| parameter | description                                                                                                       | type                    | default      | acceptable value |
+| --------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------ | ---------------- |
+| startDate | calendar start date                                                                                               | String, timestamp, Date | new Date()   |                  |
+| dateData  | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Array                   |              |                  |
+| matchKey  | specify which key of dateData object as calendar date match key                                                   | String                  | date         |                  |
+| locale    | locale data of calendar language, other locale name please check [momentjs](http://momentjs.com/docs/#/i18n/) doc | String                  | en           |                  |
+| firstDay  | start day of the week, 0 to 6, 0 as Sunday                                                                        | Number                  | 0            | 0 - 6            |
+| mode      | component view mode                                                                                               | String                  | month        | month, week      |
+| prefixCls | component style namespace                                                                                         | String                  | vue-calendar |                  |
 
 ## Event Props
 
@@ -60,6 +70,12 @@ Vue.component('Calendar', Calendar);
 | onMonthChange | trigger when calendar date change      | `(date)` parameter has two key startDay and endDay of selected month |
 | onPrev        | trigger after clicking the prev button | same as `onMonthChange` param                                        |
 | onNext        | trigger after clicking the next button | same as `onMonthChange` param                                        |
+
+## Methods
+
+| name       | description                | params                                    |
+| ---------- | -------------------------- | ----------------------------------------- |
+| changeDate | set calendar display month | `(date)` accept `String` or `Date` Object |
 
 ## Slots
 

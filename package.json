@@ -1,6 +1,6 @@
 {
   "name": "vue2-event-calendar",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "vue2-event-calendar.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "parcel build dev/index.html -d demo",
     "deploy": "yarn test && node build/build && yarn build",
     "lint": "eslint src test",
-    "unit": "jest",
+    "unit": "jest --config test/jest.conf.js --coverage",
     "test": "npm run lint && npm run unit"
   },
   "keywords": [
@@ -50,21 +50,5 @@
   "dependencies": {
     "moment": "^2.20.1",
     "vue": "^2.5.13"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "<rootDir>/test/__mocks__/styleMock.js"
-    },
-    "snapshotSerializers": [
-      "<rootDir>/node_modules/jest-serializer-vue"
-    ]
   }
 }
