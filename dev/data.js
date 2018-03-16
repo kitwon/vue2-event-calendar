@@ -1,10 +1,16 @@
 const date = new Date()
 const year = date.getFullYear()
 const month = date.getMonth() + 1
-export default [
+const day = date.getDate()
+
+const ArrayData = [
   {
-    date: `${year}-${month}-8`,
+    date: `${year}-${month}-${day}`,
     title: 'buy something'
+  },
+  {
+    date: `${year}-${month}-${day}`,
+    title: 'shopping'
   },
   {
     date: `${year}-${month + 1}-2`,
@@ -19,3 +25,13 @@ export default [
     title: 'a course of lectures'
   }
 ]
+let ObjectData = {}
+
+ArrayData.forEach(item => {
+  ObjectData[item.date] = { title: item.title }
+})
+
+export default {
+  Array: ArrayData,
+  Object: ObjectData
+}

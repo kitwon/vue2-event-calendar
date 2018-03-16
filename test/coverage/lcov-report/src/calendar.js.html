@@ -20,28 +20,28 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.95% </span>
+        <span class="strong">77.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>34/42</span>
+        <span class='fraction'>38/49</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">63.33% </span>
+        <span class="strong">61.11% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>19/30</span>
+        <span class='fraction'>22/36</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">82.5% </span>
+        <span class="strong">78.72% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>33/40</span>
+        <span class='fraction'>37/47</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -250,7 +250,22 @@
 205
 206
 207
-208</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -260,13 +275,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -306,6 +322,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,7 +334,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">217x</span>
-<span class="cline-any cline-yes">168x</span>
+<span class="cline-any cline-yes">217x</span>
+<span class="cline-any cline-yes">42x</span>
+<span class="cline-any cline-yes">84x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">175x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -466,15 +496,16 @@ import './style/calendar.less'
 &nbsp;
 const prefixCls = 'vue-calendar'
 &nbsp;
+function checkType(data) {
+  return Object.prototype.toString.call(data)
+}
+&nbsp;
 export default {
   name: prefixCls,
   mixins: [genBody, genHeader, dateFunc],
   props: {
     startDate: [Number, String, Date],
-    dateData: {
-      type: Array,
-      default: () =&gt; []
-    },
+    dateData: [Object, Array],
     matchKey: {
       type: String,
       default: 'date'
@@ -509,6 +540,8 @@ export default {
     },
     monthData() {
       const { dateData, formatedDay, firstDay, mode } = this
+      const dataType = checkType(dateData)
+&nbsp;
       <span class="missing-if-branch" title="if path not taken" >I</span>if (!formatedDay) <span class="cstat-no" title="statement not covered" >return []</span>
 &nbsp;
       let monthViewStartDate = this.getMonthViewStartDay(
@@ -522,16 +555,28 @@ export default {
       if (this.mode === 'week') row = 1
 &nbsp;
       for (let day = 0; day &lt; 7 * row; day++) {
-        const data = dateData.find(item =&gt; {
-          return monthViewStartDate.isSame(
-            this.moment(new Date(item[this.matchKey])),
-            'day'
-          )
-        })
+        let data = []
+        if (dataType === '[object Object]') {
+          Object.keys(dateData).forEach(item =&gt; {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (monthViewStartDate.isSame(
+              this.moment(new Date(item)),
+              'day'
+            )) {
+<span class="cstat-no" title="statement not covered" >              data.push(dateData[item])</span>
+            }
+          })
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (dataType === '[object Array]') {
+<span class="cstat-no" title="statement not covered" >          data = dateData.filter(<span class="fstat-no" title="function not covered" >it</span>em =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            return monthViewStartDate.isSame(</span>
+              this.moment(new Date(item[this.matchKey])),
+              'day'
+            )
+          })
+        }
 &nbsp;
         monthData.push({
           ...this.getItemStatus(monthViewStartDate),
-          data: data || {},
+          data: data || <span class="branch-1 cbranch-no" title="branch not covered" >{},</span>
           date: {
             year: monthViewStartDate.year(),
             month: monthViewStartDate.month() + 1,
@@ -658,7 +703,7 @@ export default {
     return h(
       'div',
       {
-        class: [this.prefixCls]
+        class: [this.prefixCls, `is-${this.mode}`]
       },
       [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]
     )
@@ -670,7 +715,7 @@ export default {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 16 2018 14:49:29 GMT+0800 (CST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 16 2018 17:43:33 GMT+0800 (CST)
 </div>
 </div>
 <script src="../prettify.js"></script>

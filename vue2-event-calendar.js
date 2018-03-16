@@ -4530,17 +4530,16 @@ var genHeader = {
 
 var prefixCls = 'vue-calendar';
 
+function checkType(data) {
+  return Object.prototype.toString.call(data);
+}
+
 var calendar$3 = {
   name: prefixCls,
   mixins: [genBody, genHeader, dateFunc],
   props: {
     startDate: [Number, String, Date],
-    dateData: {
-      type: Array,
-      default: function _default() {
-        return [];
-      }
-    },
+    dateData: [Object, Array],
     matchKey: {
       type: String,
       default: 'date'
@@ -4581,6 +4580,8 @@ var calendar$3 = {
           firstDay = this.firstDay,
           mode = this.mode;
 
+      var dataType = checkType(dateData);
+
       if (!formatedDay) return [];
 
       var monthViewStartDate = this.getMonthViewStartDay(formatedDay, firstDay, mode);
@@ -4589,12 +4590,21 @@ var calendar$3 = {
 
       if (this.mode === 'week') row = 1;
 
-      for (var day = 0; day < 7 * row; day++) {
-        var data = dateData.find(function (item) {
-          return monthViewStartDate.isSame(_this.moment(new Date(item[_this.matchKey])), 'day');
-        });
+      var _loop = function _loop(day) {
+        var data = [];
+        if (dataType === '[object Object]') {
+          Object.keys(dateData).forEach(function (item) {
+            if (monthViewStartDate.isSame(_this.moment(new Date(item)), 'day')) {
+              data.push(dateData[item]);
+            }
+          });
+        } else if (dataType === '[object Array]') {
+          data = dateData.filter(function (item) {
+            return monthViewStartDate.isSame(_this.moment(new Date(item[_this.matchKey])), 'day');
+          });
+        }
 
-        monthData.push(_extends({}, this.getItemStatus(monthViewStartDate), {
+        monthData.push(_extends({}, _this.getItemStatus(monthViewStartDate), {
           data: data || {},
           date: {
             year: monthViewStartDate.year(),
@@ -4606,6 +4616,10 @@ var calendar$3 = {
         }));
 
         monthViewStartDate.add(1, 'day');
+      };
+
+      for (var day = 0; day < 7 * row; day++) {
+        _loop(day);
       }
 
       return monthData;
@@ -4700,7 +4714,7 @@ var calendar$3 = {
   },
   render: function render(h) {
     return h('div', {
-      class: [this.prefixCls]
+      class: [this.prefixCls, 'is-' + this.mode]
     }, [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]);
   }
 };

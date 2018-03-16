@@ -57,7 +57,7 @@ Vue.component('Calendar', Calendar)
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------ | ---------------- |
 | startDate | calendar start date                                                                                               | String, timestamp, Date | new Date()   |                  |
 | dateData  | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Array                   |              |                  |
-| matchKey  | specify which key of dateData object as calendar date match key                                                   | String                  | date         |                  |
+| matchKey  | if dateData is Array, specify which key of dateData object as calendar date match key                             | String                  | date         |                  |
 | locale    | locale data of calendar language, other locale name please check [momentjs](http://momentjs.com/docs/#/i18n/) doc | String                  | en           |                  |
 | firstDay  | start day of the week, 0 to 6, 0 as Sunday                                                                        | Number                  | 0            | 0 - 6            |
 | mode      | component view mode                                                                                               | String                  | month        | month, week      |
@@ -92,5 +92,5 @@ Vue.component('Calendar', Calendar)
 
 ## TODO
 
-1. custom header
-2. improve unit test coverage
+1.  custom header
+2.  improve unit test coverage

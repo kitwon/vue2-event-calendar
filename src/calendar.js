@@ -7,15 +7,16 @@ import './style/calendar.less'
 
 const prefixCls = 'vue-calendar'
 
+function checkType(data) {
+  return Object.prototype.toString.call(data)
+}
+
 export default {
   name: prefixCls,
   mixins: [genBody, genHeader, dateFunc],
   props: {
     startDate: [Number, String, Date],
-    dateData: {
-      type: Array,
-      default: () => []
-    },
+    dateData: [Object, Array],
     matchKey: {
       type: String,
       default: 'date'
@@ -50,6 +51,8 @@ export default {
     },
     monthData() {
       const { dateData, formatedDay, firstDay, mode } = this
+      const dataType = checkType(dateData)
+
       if (!formatedDay) return []
 
       let monthViewStartDate = this.getMonthViewStartDay(
@@ -63,12 +66,24 @@ export default {
       if (this.mode === 'week') row = 1
 
       for (let day = 0; day < 7 * row; day++) {
-        const data = dateData.find(item => {
-          return monthViewStartDate.isSame(
-            this.moment(new Date(item[this.matchKey])),
-            'day'
-          )
-        })
+        let data = []
+        if (dataType === '[object Object]') {
+          Object.keys(dateData).forEach(item => {
+            if (monthViewStartDate.isSame(
+              this.moment(new Date(item)),
+              'day'
+            )) {
+              data.push(dateData[item])
+            }
+          })
+        } else if (dataType === '[object Array]') {
+          data = dateData.filter(item => {
+            return monthViewStartDate.isSame(
+              this.moment(new Date(item[this.matchKey])),
+              'day'
+            )
+          })
+        }
 
         monthData.push({
           ...this.getItemStatus(monthViewStartDate),
@@ -199,7 +214,7 @@ export default {
     return h(
       'div',
       {
-        class: [this.prefixCls]
+        class: [this.prefixCls, `is-${this.mode}`]
       },
       [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]
     )
