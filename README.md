@@ -1,7 +1,8 @@
 # Vue2 Calendar Component
 
 Full calendar base on Vue2 and momentjs. Support month and week view. Custom date item style with scopeSlots.
-[live demo](https://kitwon.github.io/vue2-event-calendar/)
+
+[📺**Live demo**](https://kitwon.github.io/vue2-event-calendar/)
 
 ## Install
 
@@ -57,7 +58,7 @@ Vue.component('Calendar', Calendar)
 | parameter | description                                                                                                       | type                    | default      | acceptable value |
 | --------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------ | ---------------- |
 | startDate | calendar start date                                                                                               | String, timestamp, Date | new Date()   |                  |
-| dateData  | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Array                   |              |                  |
+| dateData  | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Object, Array           |              |                  |
 | matchKey  | if dateData is Array, specify which key of dateData object as calendar date match key                             | String                  | date         |                  |
 | locale    | locale data of calendar language, other locale name please check [momentjs](http://momentjs.com/docs/#/i18n/) doc | String                  | en           |                  |
 | firstDay  | start day of the week, 0 to 6, 0 as Sunday                                                                        | Number                  | 0            | 0 - 6            |
@@ -93,5 +94,5 @@ Vue.component('Calendar', Calendar)
 
 ## TODO
 
-1.  custom header
-2.  improve unit test coverage
+1. custom header
+2. improve unit test coverage
