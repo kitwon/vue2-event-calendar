@@ -23,7 +23,7 @@ export default {
     },
     locale: {
       type: String,
-      default: 'zh-cn'
+      default: 'en'
     },
     firstDay: {
       type: Number,

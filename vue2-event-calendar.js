@@ -4546,7 +4546,7 @@ var calendar$3 = {
     },
     locale: {
       type: String,
-      default: 'zh-cn'
+      default: 'en'
     },
     firstDay: {
       type: Number,

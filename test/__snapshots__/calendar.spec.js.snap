@@ -39,37 +39,37 @@ exports[`Calendar component component should match snapshot 1`] = `
     <div
       class="vue-calendar-week-title-item"
     >
-      周日
+      Sun
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周一
+      Mon
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周二
+      Tue
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周三
+      Wed
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周四
+      Thu
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周五
+      Fri
     </div>
     <div
       class="vue-calendar-week-title-item"
     >
-      周六
+      Sat
     </div>
   </div>
   <div

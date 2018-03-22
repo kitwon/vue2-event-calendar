@@ -166,7 +166,7 @@ var calendar$1 = {
     },
     locale: {
       type: String,
-      default: 'zh-cn'
+      default: 'en'
     },
     firstDay: {
       type: Number,
