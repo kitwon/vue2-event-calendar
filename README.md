@@ -1,6 +1,7 @@
 # Vue2 Calendar Component
 
 Full calendar base on Vue2 and momentjs. Support month and week view. Custom date item style with scopeSlots.
+
 [中文文档](https://github.com/kitwon/vue2-event-calendar/blob/master/README-CN.md)
 
 [📺**Live demo**](https://kitwon.github.io/vue2-event-calendar/)
