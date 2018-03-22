@@ -5,7 +5,6 @@
     <div class="container">
       <Calendar
         class="ui-calendar"
-        locale="zh-cn"
         :start-day="currMonth"
         :dateData="dateData"
         :onMonthChange="onMonthChange"
