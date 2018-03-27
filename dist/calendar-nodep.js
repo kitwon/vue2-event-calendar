@@ -2,7 +2,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var moment = _interopDefault(require('moment'));
+var moment = _interopDefault(require('moment/min/moment.min'));
 
 var dateFunc = {
   methods: {

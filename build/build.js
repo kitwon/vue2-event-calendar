@@ -52,7 +52,7 @@ async function build() {
 
 async function buildNoDep() {
   const bundle = await rollup.rollup(Object.assign(config, {
-    external: ['moment']
+    external: ['moment/min/moment.min', 'moment']
   }))
 
   await bundle.write({
