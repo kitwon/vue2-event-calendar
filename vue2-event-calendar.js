@@ -1832,8 +1832,7 @@ function loadLocale(name) {
     var oldLocale = null;
     // TODO: Find a better way to register and load all the locales in Node
     if (!locales[name] && typeof module !== 'undefined' && module && module.exports) {
-      try {
-            console.log(locales);
+        try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
             aliasedRequire('./locale/' + name);
