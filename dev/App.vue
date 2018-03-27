@@ -37,7 +37,8 @@
             v-for="(item, index) in item.data"
             :key="index"
           >
-            {{item.title}}
+            <span>{{item.title}}</span>
+            <span class="del" @click="deleteItem(item.title)">✖️</span>
           </div>
         </div>
       </Calendar>
@@ -69,6 +70,11 @@ export default {
     },
     changeDate() {
       this.$refs.calendar.changeDate('2017-12-12')
+    },
+    deleteItem(title) {
+      this.dateData = this.dateData.filter(item => {
+        return item.title !== title
+      })
     }
   }
 }
@@ -183,6 +189,16 @@ h1 {
 
     &-name {
       font-size: 12px;
+      > * {
+        vertical-align: middle;
+      }
+
+      .del {
+        display: inline-block;
+        cursor: pointer;
+        color: inherit;
+        margin-bottom: -2px;
+      }
     }
   }
 
