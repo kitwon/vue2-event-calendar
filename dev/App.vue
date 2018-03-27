@@ -60,7 +60,7 @@ export default {
   data() {
     return {
       currMonth: '',
-      dateData: data.Array,
+      dateData: data.Object,
       mode: 'month'
     }
   },
