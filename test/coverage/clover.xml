@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1522122647379" clover="3.2.0">
-  <project timestamp="1522122647379" name="All files">
-    <metrics statements="86" coveredstatements="76" conditionals="54" coveredconditionals="38" methods="5" coveredmethods="4" elements="145" coveredelements="118" complexity="0" loc="86" ncloc="86" packages="2" files="4" classes="4">
+<coverage generated="1522125962488" clover="3.2.0">
+  <project timestamp="1522125962488" name="All files">
+    <metrics statements="86" coveredstatements="76" conditionals="54" coveredconditionals="38" methods="7" coveredmethods="5" elements="147" coveredelements="119" complexity="0" loc="86" ncloc="86" packages="2" files="4" classes="4">
       <package name="src">
-        <metrics statements="56" coveredstatements="46" conditionals="38" coveredconditionals="24" methods="3" coveredmethods="2"/>
+        <metrics statements="56" coveredstatements="46" conditionals="38" coveredconditionals="24" methods="5" coveredmethods="3"/>
         <file name="calendar.js" path="/Users/kit/Projects/vue-resource/vue2-event-calendar/src/calendar.js">
           <metrics statements="47" coveredstatements="39" conditionals="36" coveredconditionals="23" methods="3" coveredmethods="2"/>
           <line num="8" count="1" type="stmt"/>
@@ -52,10 +52,10 @@
           <line num="195" count="6" type="stmt"/>
           <line num="199" count="0" type="stmt"/>
           <line num="203" count="4" type="stmt"/>
-          <line num="214" count="6" type="stmt"/>
+          <line num="213" count="6" type="stmt"/>
         </file>
         <file name="date-func.js" path="/Users/kit/Projects/vue-resource/vue2-event-calendar/src/date-func.js">
-          <metrics statements="9" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+          <metrics statements="9" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
           <line num="4" count="5" type="stmt"/>
           <line num="6" count="5" type="stmt"/>
           <line num="7" count="5" type="stmt"/>
@@ -64,7 +64,7 @@
           <line num="15" count="0" type="stmt"/>
           <line num="19" count="5" type="stmt"/>
           <line num="20" count="5" type="stmt"/>
-          <line num="23" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
         </file>
       </package>
       <package name="src.components">
@@ -92,18 +92,18 @@
         </file>
         <file name="header.js" path="/Users/kit/Projects/vue-resource/vue2-event-calendar/src/components/header.js">
           <metrics statements="12" coveredstatements="12" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
-          <line num="4" count="6" type="cond" truecount="2" falsecount="0"/>
-          <line num="5" count="1" type="stmt"/>
-          <line num="8" count="1" type="stmt"/>
-          <line num="11" count="1" type="stmt"/>
-          <line num="13" count="5" type="stmt"/>
-          <line num="19" count="6" type="stmt"/>
-          <line num="30" count="6" type="stmt"/>
-          <line num="41" count="6" type="stmt"/>
-          <line num="49" count="6" type="stmt"/>
-          <line num="58" count="6" type="stmt"/>
-          <line num="66" count="6" type="stmt"/>
-          <line num="74" count="6" type="stmt"/>
+          <line num="6" count="6" type="cond" truecount="2" falsecount="0"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="15" count="5" type="stmt"/>
+          <line num="21" count="6" type="stmt"/>
+          <line num="32" count="6" type="stmt"/>
+          <line num="43" count="6" type="stmt"/>
+          <line num="51" count="6" type="stmt"/>
+          <line num="60" count="6" type="stmt"/>
+          <line num="68" count="6" type="stmt"/>
+          <line num="76" count="6" type="stmt"/>
         </file>
       </package>
     </metrics>

@@ -1,5 +1,5 @@
-import moment from 'moment/min/moment.min'
-import dateFunc from './date-func'
+import moment from 'moment'
+import { getMonthViewStartDay } from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'
 
@@ -13,7 +13,7 @@ function checkType(data) {
 
 export default {
   name: prefixCls,
-  mixins: [genBody, genHeader, dateFunc],
+  mixins: [genBody, genHeader],
   props: {
     startDate: [Number, String, Date],
     dateData: [Object, Array],
@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     formatedDay() {
-      return this.moment(this.currentDay)
+      return moment(this.currentDay)
     },
     monthData() {
       const { dateData, formatedDay, firstDay, mode } = this
@@ -55,7 +55,7 @@ export default {
 
       if (!formatedDay) return []
 
-      let monthViewStartDate = this.getMonthViewStartDay(
+      let monthViewStartDate = getMonthViewStartDay(
         formatedDay,
         firstDay,
         mode
@@ -70,7 +70,7 @@ export default {
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(item => {
             if (monthViewStartDate.isSame(
-              this.moment(new Date(item)),
+              moment(new Date(item)),
               'day'
             )) {
               data.push(dateData[item])
@@ -79,7 +79,7 @@ export default {
         } else if (dataType === '[object Array]') {
           data = dateData.filter(item => {
             return monthViewStartDate.isSame(
-              this.moment(new Date(item[this.matchKey])),
+              moment(new Date(item[this.matchKey])),
               'day'
             )
           })
@@ -147,13 +147,13 @@ export default {
 
       isPrevMonth &&
         (isPrevLastDay = date.isSame(
-          this.moment(date)
+          moment(date)
             .endOf('month')
             .format('YYYY-MM-DD')
         ))
       isNextMonth &&
         (isNextFirstDay = date.isSame(
-          this.moment(date)
+          moment(date)
             .startOf('month')
             .format('YYYY-MM-DD')
         ))
@@ -163,7 +163,7 @@ export default {
         isPrevLastDay: isPrevLastDay,
         isNextMonth: isNextMonth,
         isNextFirstDay: isNextFirstDay,
-        isToday: date.isSame(this.moment(this.today), 'day'),
+        isToday: date.isSame(moment(this.today), 'day'),
         isCurMonth: isCurMonth
       }
     },
@@ -203,7 +203,6 @@ export default {
     return {
       today: '',
       currentDay: null,
-      moment: moment,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
         'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')

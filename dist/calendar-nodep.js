@@ -2,34 +2,27 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var moment = _interopDefault(require('moment/min/moment.min'));
+var moment = _interopDefault(require('moment'));
 
-var dateFunc = {
-  methods: {
-    getMonthViewStartDay: function getMonthViewStartDay(date, firstDay, mode) {
-      firstDay = parseInt(firstDay);
-      // get cur month start day obj from data
-      var start = this.moment(date);
-      var startTemp = this.moment(start.startOf(mode));
-      // subtract the start day & cur month start day
-      // if cur day is Wed, the view start day should substract 2
-      start.subtract(startTemp.day(), 'days');
+function getMonthViewStartDay(date, firstDay, mode) {
+  firstDay = parseInt(firstDay);
+  // get cur month start day obj from data
+  var start = moment(date);
+  var startTemp = moment(start.startOf(mode));
+  // subtract the start day & cur month start day
+  // if cur day is Wed, the view start day should substract 2
+  start.subtract(startTemp.day(), 'days');
 
-      if (startTemp.day() < firstDay) {
-        // if start day back of the view's first day
-        // view start should substrat a week
-        start.subtract(7, 'days');
-      }
-
-      // set final start day
-      start.add(firstDay, 'days');
-      return start;
-    },
-    getMonthViewEndDay: function getMonthViewEndDay(date) {
-      return this.getMonthViewStartDay().add(6, 'weeks');
-    }
+  if (startTemp.day() < firstDay) {
+    // if start day back of the view's first day
+    // view start should substrat a week
+    start.subtract(7, 'days');
   }
-};
+
+  // set final start day
+  start.add(firstDay, 'days');
+  return start;
+}
 
 var genBody = {
   methods: {
@@ -86,11 +79,11 @@ var genHeader = {
   computed: {
     headerDateText: function headerDateText() {
       if (this.mode === 'week') {
-        var startDay = this.moment(this.formatedDay).startOf('week').format('YYYY-MM-DD');
-        var endDay = this.moment(this.formatedDay).endOf('week').format('YYYY-MM-DD');
+        var startDay = moment(this.formatedDay).startOf('week').format('YYYY-MM-DD');
+        var endDay = moment(this.formatedDay).endOf('week').format('YYYY-MM-DD');
         return startDay + ' - ' + endDay;
       } else {
-        return this.moment(this.formatedDay).format('YYYY-MM');
+        return moment(this.formatedDay).format('YYYY-MM');
       }
     }
   },
@@ -156,7 +149,7 @@ function checkType(data) {
 
 var calendar$1 = {
   name: prefixCls,
-  mixins: [genBody, genHeader, dateFunc],
+  mixins: [genBody, genHeader],
   props: {
     startDate: [Number, String, Date],
     dateData: [Object, Array],
@@ -190,7 +183,7 @@ var calendar$1 = {
   },
   computed: {
     formatedDay: function formatedDay() {
-      return this.moment(this.currentDay);
+      return moment(this.currentDay);
     },
     monthData: function monthData() {
       var _this = this;
@@ -204,7 +197,7 @@ var calendar$1 = {
 
       if (!formatedDay) return [];
 
-      var monthViewStartDate = this.getMonthViewStartDay(formatedDay, firstDay, mode);
+      var monthViewStartDate = getMonthViewStartDay(formatedDay, firstDay, mode);
       var monthData = [];
       var row = 6;
 
@@ -214,13 +207,13 @@ var calendar$1 = {
         var data = [];
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(function (item) {
-            if (monthViewStartDate.isSame(_this.moment(new Date(item)), 'day')) {
+            if (monthViewStartDate.isSame(moment(new Date(item)), 'day')) {
               data.push(dateData[item]);
             }
           });
         } else if (dataType === '[object Array]') {
           data = dateData.filter(function (item) {
-            return monthViewStartDate.isSame(_this.moment(new Date(item[_this.matchKey])), 'day');
+            return monthViewStartDate.isSame(moment(new Date(item[_this.matchKey])), 'day');
           });
         }
 
@@ -278,15 +271,15 @@ var calendar$1 = {
       var isPrevMonth = !isCurMonth && date.isBefore(this.formatedDay, 'month');
       var isNextMonth = !isCurMonth && date.isAfter(this.formatedDay, 'month');
 
-      isPrevMonth && (isPrevLastDay = date.isSame(this.moment(date).endOf('month').format('YYYY-MM-DD')));
-      isNextMonth && (isNextFirstDay = date.isSame(this.moment(date).startOf('month').format('YYYY-MM-DD')));
+      isPrevMonth && (isPrevLastDay = date.isSame(moment(date).endOf('month').format('YYYY-MM-DD')));
+      isNextMonth && (isNextFirstDay = date.isSame(moment(date).startOf('month').format('YYYY-MM-DD')));
 
       return {
         isPrevMonth: isPrevMonth,
         isPrevLastDay: isPrevLastDay,
         isNextMonth: isNextMonth,
         isNextFirstDay: isNextFirstDay,
-        isToday: date.isSame(this.moment(this.today), 'day'),
+        isToday: date.isSame(moment(this.today), 'day'),
         isCurMonth: isCurMonth
       };
     },
@@ -325,7 +318,6 @@ var calendar$1 = {
     return {
       today: '',
       currentDay: null,
-      moment: moment,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
         'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')

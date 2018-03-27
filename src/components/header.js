@@ -1,16 +1,18 @@
+import moment from 'moment'
+
 export default {
   computed: {
     headerDateText() {
       if (this.mode === 'week') {
-        const startDay = this.moment(this.formatedDay)
+        const startDay = moment(this.formatedDay)
           .startOf('week')
           .format('YYYY-MM-DD')
-        const endDay = this.moment(this.formatedDay)
+        const endDay = moment(this.formatedDay)
           .endOf('week')
           .format('YYYY-MM-DD')
         return `${startDay} - ${endDay}`
       } else {
-        return this.moment(this.formatedDay).format('YYYY-MM')
+        return moment(this.formatedDay).format('YYYY-MM')
       }
     }
   },
