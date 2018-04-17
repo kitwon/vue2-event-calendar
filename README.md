@@ -22,6 +22,7 @@ yarn add vue2-event-calendar
 
 ```javascript
 // import component
+import 'vue2-event-calendar/default.css'
 import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
@@ -29,6 +30,7 @@ Vue.component('Calendar', Calendar)
 If your project also use `moment.js`, you can use the independence version.
 
 ```javascript
+import 'vue2-event-calendar/default.css'
 import Calendar from 'vue2-event-calendar/dist/calendar-nodep.js'
 Vue.component('Calendar', Calendar)
 // ...
