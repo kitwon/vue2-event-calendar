@@ -7,11 +7,12 @@
         class="ui-calendar"
         :start-day="currMonth"
         :dateData="dateData"
-        :onMonthChange="onMonthChange"
+        :on-month-change="onMonthChange"
         :mode="mode"
+        :render-header="renderHeader"
         ref="calendar"
       >
-        <div slot="header-left">
+        <div slot="header-left" class="ui-calendar-header__left">
           <button
             :class="['ui-calendar-modeBtn' ,{ active: mode === 'month' }]"
             @click="mode = 'month'"
@@ -48,8 +49,8 @@
 
 <script>
 // import Calendar from '../dist/calendar-nodep'
-// import Calendar from '../src/calendar'
-import Calendar from '../vue2-event-calendar'
+import Calendar from '../src/calendar'
+// import Calendar from '../vue2-event-calendar'
 // import '../default.css'
 import data from './data'
 
@@ -61,7 +62,7 @@ export default {
   data() {
     return {
       currMonth: '',
-      dateData: data.Object,
+      dateData: data.Array,
       mode: 'month'
     }
   },
@@ -76,6 +77,27 @@ export default {
       this.dateData = this.dateData.filter(item => {
         return item.title !== title
       })
+    },
+    renderHeader({ prev, next, selectedDate }) {
+      // console.log(selectedDate)
+      const h = this.$createElement;
+
+      const prevButton = h('div', {
+        class: ['ui-calendar-modeBtn'],
+        on: {
+          click: prev
+        }
+      }, ['prev'])
+
+      const nextButton = h('div', {
+        class: ['ui-calendar-modeBtn'],
+        on: {
+          click: next
+        }
+      }, ['next'])
+
+      const dateText = h('div', { class: ['ui-calendar-modeBtn'] }, [selectedDate])
+      return h('div', [prevButton, dateText, nextButton])
     }
   }
 }
@@ -134,26 +156,42 @@ h1 {
   border-radius: 5px;
   height: 90%;
 
+  &-header {
+    &__left {
+
+      > button {
+        font-size: 12px;
+
+        &:nth-child(2) {
+          margin-left: -4px;
+        }
+      }
+    }
+  }
+
   &-modeBtn {
     position: relative;
     display: inline-block;
     background: #fff;
     border: 1px solid #ff7dc5;
     color: #ff7dc5;
-    padding: 5px 0;
+    padding: 5px 1em;
+    font-size: 13px;
     line-height: 1;
     box-shadow: 0 1px 3px lighten(#ff7dc5, 15%);
-    width: 5em;
+    min-width: 5em;
+    margin-right: -1px;
+    // text-indent: 0.5em;
     text-align: center;
     cursor: pointer;
 
-    &:nth-child(1) {
+    &:first-child {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
     }
 
-    &:nth-child(2) {
-      left: -.5em;;
+    &:last-child {
+      // left: -.5em;
       border-bottom-right-radius: 3px;
       border-top-right-radius: 3px;
     }
@@ -163,7 +201,8 @@ h1 {
       outline: none;
     }
 
-    &.active {
+    &.active,
+    &:active {
       background: #ff7dc5;
       color: #fff;
       z-index: 2;

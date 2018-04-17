@@ -1,6 +1,9 @@
 import moment from 'moment'
 
 export default {
+  props: {
+    renderHeader: Function
+  },
   computed: {
     headerDateText() {
       if (this.mode === 'week') {
@@ -48,13 +51,22 @@ export default {
         [this.headerDateText]
       )
 
-      return h(
-        'div',
-        {
-          class: [`${this.prefixCls}-header-center`]
-        },
-        [prevControl, curMonth, nextControl]
-      )
+      console.log(this.$props)
+      if (this.renderHeader) {
+        return this.renderHeader({
+          prev: this.prev,
+          next: this.next,
+          selectedDate: this.headerDateText
+        })
+      } else {
+        return h(
+          'div',
+          {
+            class: [`${this.prefixCls}-header-center`]
+          },
+          [prevControl, curMonth, nextControl]
+        )
+      }
     },
     genHeader(h) {
       const headerLeft = h(

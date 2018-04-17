@@ -76,6 +76,9 @@ var genBody = {
 };
 
 var genHeader = {
+  props: {
+    renderHeader: Function
+  },
   computed: {
     headerDateText: function headerDateText() {
       if (this.mode === 'week') {
@@ -107,9 +110,18 @@ var genHeader = {
         class: [this.prefixCls + '-header-date']
       }, [this.headerDateText]);
 
-      return h('div', {
-        class: [this.prefixCls + '-header-center']
-      }, [prevControl, curMonth, nextControl]);
+      console.log(this.$props);
+      if (this.renderHeader) {
+        return this.renderHeader({
+          prev: this.prev,
+          next: this.next,
+          selectedDate: this.headerDateText
+        });
+      } else {
+        return h('div', {
+          class: [this.prefixCls + '-header-center']
+        }, [prevControl, curMonth, nextControl]);
+      }
     },
     genHeader: function genHeader(h) {
       var headerLeft = h('div', {

@@ -1,6 +1,6 @@
 {
   "name": "vue2-event-calendar",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "vue2-event-calendar.js",
   "scripts": {
@@ -19,23 +19,23 @@
   "license": "MIT",
   "repository": "https://github.com/kitwon/vue2-calendar",
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.12",
-    "babel-eslint": "^8.2.2",
+    "@vue/test-utils": "^1.0.0-beta.14",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.18.2",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-html": "^4.0.2",
-    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.4.2",
     "jest-serializer-vue": "^0.3.0",
     "less": "^3.0.1",
-    "parcel-bundler": "^1.6.2",
+    "parcel-bundler": "^1.7.1",
     "parcel-plugin-vue": "^1.5.0",
     "postcss-flexbugs-fixes": "^3.3.0",
     "rollup": "^0.56.5",
@@ -43,12 +43,12 @@
     "rollup-plugin-commonjs": "^9.0.0",
     "rollup-plugin-less": "^0.1.4",
     "rollup-plugin-node-resolve": "^3.2.0",
-    "uglify-js": "^3.3.13",
-    "vue-jest": "^2.1.1",
+    "uglify-js": "^3.3.21",
+    "vue-jest": "^2.5.0",
     "vue-template-compiler": "^2.5.13"
   },
   "dependencies": {
-    "moment": "^2.20.1",
+    "moment": "^2.22.1",
     "vue": "^2.5.13"
   }
 }

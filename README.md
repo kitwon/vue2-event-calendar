@@ -18,7 +18,7 @@ yarn add vue2-event-calendar
 
 ## Import and Usage
 
-Common usage.
+### Common usage.
 
 ```javascript
 // import component
@@ -55,18 +55,56 @@ Vue.component('Calendar', Calendar)
 </Calendar>
 ```
 
+### Customize header
+
+```html
+<!-- template -->
+<Calendar
+  startDate="2018-03-07"
+  :renderHeader="renderHeader"
+  :dateData="data">
+  <!-- constent -->
+</Calendar>
+```
+
+```javascript
+export default {
+  // ...
+  methods: {
+    renderHeader({ prev, next, selectedDate }) {
+      const h = this.$createElement
+
+      const prevButton = h('div', {
+        on: {
+          click: prev
+        }
+      }, ['prev'])
+
+      const nextButton = h('div', {
+        on: {
+          click: next
+        }
+      }, ['next'])
+
+      return h('div', [prevButton, selectedDate, nextButton])
+    }
+  }
+}
+```
+
 ## Props
 
-| parameter     | description                                                                                                       | type                    | default      | acceptable value |
-| ------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------ | ---------------- |
-| startDate     | calendar start date                                                                                               | String, timestamp, Date | new Date()   |                  |
-| dateData      | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)           | Object, Array           |              |                  |
-| matchKey      | if dateData is Array, specify which key of dateData object as calendar date match key                             | String                  | date         |                  |
-| locale        | set weekdays locale text, custom this text use `weekDateShort` props | String                  | en           |   zh-cn, en               |
-| weekDateShort | set body weekdays text, **begin with sunday**, if set this props, locale will be not work                         | array                   |              |                  |
-| firstDay      | start day of the week, 0 to 6, 0 as Sunday                                                                        | Number                  | 0            | 0 - 6            |
-| mode          | component view mode                                                                                               | String                  | month        | month, week      |
-| prefixCls     | component style namespace                                                                                         | String                  | vue-calendar |                  |
+| parameter     | description                                                                                             | type                                   | default      | acceptable value |
+| ------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------ | ---------------- |
+| startDate     | calendar start date                                                                                     | String, timestamp, Date                | new Date()   |                  |
+| dateData      | calendar data, item object must have date params to match date(params key can use `matchKey` to modify) | Object, Array                          |              |                  |
+| matchKey      | if dateData is Array, specify which key of dateData object as calendar date match key                   | String                                 | date         |                  |
+| locale        | set weekdays locale text, custom this text use `weekDateShort` props                                    | String                                 | en           | zh-cn, en        |
+| weekDateShort | set body weekdays text, **begin with sunday**, if set this props, locale will be not work               | array                                  |              |                  |
+| firstDay      | start day of the week, 0 to 6, 0 as Sunday                                                              | Number                                 | 0            | 0 - 6            |
+| mode          | component view mode                                                                                     | String                                 | month        | month, week      |
+| prefixCls     | component style namespace                                                                               | String                                 | vue-calendar |                  |
+| renderHeader  | redner function for header                                                                              | Function({ prev, next, selectedDate }) |              |
 
 ## Event Props
 
@@ -97,5 +135,5 @@ Vue.component('Calendar', Calendar)
 
 ## TODO
 
-1.  custom header
+1.  ✅custom header
 2.  improve unit test coverage

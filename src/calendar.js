@@ -13,7 +13,7 @@ function checkType(data) {
 
 export default {
   name: prefixCls,
-  mixins: [genBody, genHeader],
+  mixins: [ genBody, genHeader ],
   props: {
     startDate: [Number, String, Date],
     dateData: [Object, Array],

@@ -1763,7 +1763,7 @@ function localeMeridiem(hours, minutes, isLower) {
 // MOMENTS
 
 // Setting the hour should keep the time, because the user explicitly
-// specified which hour he wants. So trying to maintain the same hour (in
+// specified which hour they want. So trying to maintain the same hour (in
 // a new timezone) makes sense. Adding/subtracting hours does not follow
 // this rule.
 var getSetHour = makeGetSet('Hours', true);
@@ -3589,7 +3589,7 @@ addFormatToken('D', ['DD', 2], 'Do', 'date');
 
 addUnitAlias('date', 'D');
 
-// PRIOROITY
+// PRIORITY
 addUnitPriority('date', 9);
 
 // PARSING
@@ -4364,7 +4364,7 @@ addParseToken('x', function (input, array, config) {
 
 //! moment.js
 
-hooks.version = '2.21.0';
+hooks.version = '2.22.1';
 
 setHookCallback(createLocal);
 
@@ -4481,6 +4481,9 @@ var genBody = {
 };
 
 var genHeader = {
+  props: {
+    renderHeader: Function
+  },
   computed: {
     headerDateText: function headerDateText() {
       if (this.mode === 'week') {
@@ -4512,9 +4515,18 @@ var genHeader = {
         class: [this.prefixCls + '-header-date']
       }, [this.headerDateText]);
 
-      return h('div', {
-        class: [this.prefixCls + '-header-center']
-      }, [prevControl, curMonth, nextControl]);
+      console.log(this.$props);
+      if (this.renderHeader) {
+        return this.renderHeader({
+          prev: this.prev,
+          next: this.next,
+          selectedDate: this.headerDateText
+        });
+      } else {
+        return h('div', {
+          class: [this.prefixCls + '-header-center']
+        }, [prevControl, curMonth, nextControl]);
+      }
     },
     genHeader: function genHeader(h) {
       var headerLeft = h('div', {
