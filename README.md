@@ -137,5 +137,5 @@ export default {
 
 ## TODO
 
-1.  ✅custom header
+1.  not depend on momentjs
 2.  improve unit test coverage

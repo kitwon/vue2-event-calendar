@@ -135,5 +135,5 @@ export default {
 
 ## TODO
 
-1.  ✅~~自定义头部~~
+1.  不依赖momentjs
 2.  提高单元测试覆盖率
