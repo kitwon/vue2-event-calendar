@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "rimraf docs && parcel dev/index.html -d docs",
     "build": "rimraf docs && parcel build dev/index.html -d docs --public-url ./",
-    "deploy": "yarn test && node build/build && yarn build",
+    "deploy": "npm run test && node build/build && npm run build",
     "lint": "eslint src test",
     "unit": "jest --config test/jest.conf.js --coverage",
     "test": "npm run lint && npm run unit"
