@@ -1,11 +1,11 @@
 {
   "name": "vue2-event-calendar",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "vue2-event-calendar.js",
   "scripts": {
-    "dev": "parcel dev/index.html -d docs",
-    "build": "parcel build dev/index.html -d docs --public-url ./",
+    "dev": "rimraf docs && parcel dev/index.html -d docs",
+    "build": "rimraf docs && parcel build dev/index.html -d docs --public-url ./",
     "deploy": "yarn test && node build/build && yarn build",
     "lint": "eslint src test",
     "unit": "jest --config test/jest.conf.js --coverage",
@@ -38,6 +38,7 @@
     "parcel-bundler": "^1.7.1",
     "parcel-plugin-vue": "^1.5.0",
     "postcss-flexbugs-fixes": "^3.3.1",
+    "rimraf": "^2.6.2",
     "rollup": "^0.56.5",
     "rollup-plugin-babel": "^3.0.4",
     "rollup-plugin-commonjs": "^9.1.3",
@@ -48,6 +49,7 @@
     "vue-template-compiler": "^2.5.13"
   },
   "dependencies": {
+    "dayjs": "^1.5.19",
     "moment": "^2.22.1",
     "vue": "^2.5.13"
   }
