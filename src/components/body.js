@@ -28,7 +28,6 @@ export default {
     genCalendateItem(h) {
       let tempRow = this.genItemRow(h)
       let itemArr = []
-
       this.monthData.map((data, index) => {
         const item = h(
           'div',

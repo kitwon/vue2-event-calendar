@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 
 export default {
   props: {
@@ -7,15 +7,15 @@ export default {
   computed: {
     headerDateText() {
       if (this.mode === 'week') {
-        const startDay = moment(this.formatedDay)
+        const startDay = dayjs(this.formatedDay)
           .startOf('week')
           .format('YYYY-MM-DD')
-        const endDay = moment(this.formatedDay)
+        const endDay = dayjs(this.formatedDay)
           .endOf('week')
           .format('YYYY-MM-DD')
         return `${startDay} - ${endDay}`
       } else {
-        return moment(this.formatedDay).format('YYYY-MM')
+        return dayjs(this.formatedDay).format('YYYY-MM')
       }
     }
   },

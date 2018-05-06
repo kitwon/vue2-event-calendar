@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { getMonthViewStartDay } from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'
@@ -41,13 +41,22 @@ export default {
       default: prefixCls
     },
     weekDateShort: Array,
-    onMonthChange: Function,
-    onPrev: Function,
-    onNext: Function
+    onMonthChange: {
+      type: Function,
+      default: () => undefined
+    },
+    onPrev: {
+      type: Function,
+      default: () => undefined
+    },
+    onNext: {
+      type: Function,
+      default: () => undefined
+    }
   },
   computed: {
     formatedDay() {
-      return moment(this.currentDay)
+      return dayjs(this.currentDay)
     },
     monthData() {
       const { dateData, formatedDay, firstDay, mode } = this
@@ -70,7 +79,7 @@ export default {
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(item => {
             if (monthViewStartDate.isSame(
-              moment(new Date(item)),
+              dayjs(new Date(item)),
               'day'
             )) {
               data.push(dateData[item])
@@ -79,7 +88,7 @@ export default {
         } else if (dataType === '[object Array]') {
           data = dateData.filter(item => {
             return monthViewStartDate.isSame(
-              moment(new Date(item[this.matchKey])),
+              dayjs(new Date(item[this.matchKey])),
               'day'
             )
           })
@@ -97,7 +106,7 @@ export default {
           }
         })
 
-        monthViewStartDate.add(1, 'day')
+        monthViewStartDate = monthViewStartDate.add(1, 'day')
       }
 
       return monthData
@@ -113,30 +122,32 @@ export default {
       this.currentDay = date
     },
     prev() {
-      this.currentDay = this.formatedDay
-        .subtract(1, `${this.mode}s`)
-        .startOf(this.mode)
+      const { formatedDay, mode, onPrev, monthData } = this
+      this.currentDay = formatedDay
+        .subtract(1, mode)
+        .startOf(mode)
         .format('YYYY-MM-DD')
 
-      this.onPrev &&
-        this.onPrev({
-          startDay: this.monthData[0].date,
-          endDay: this.monthData[this.monthData.length - 1].date
-        })
+      onPrev({
+        startDay: monthData[0].date,
+        endDay: monthData[monthData.length - 1].date
+      })
     },
     next() {
-      this.currentDay = this.formatedDay
-        .add(1, `${this.mode}s`)
-        .startOf(this.mode)
+      const { formatedDay, mode, onNext, monthData } = this
+      this.currentDay = formatedDay
+        .add(1, mode)
+        .startOf(mode)
         .format('YYYY-MM-DD')
 
-      this.onNext &&
-        this.onNext({
-          startDay: this.monthData[0].date,
-          endDay: this.monthData[this.monthData.length - 1].date
-        })
+      onNext({
+        startDay: monthData[0].date,
+        endDay: monthData[monthData.length - 1].date
+      })
     },
     getItemStatus(date) {
+      const tempDate = dayjs(date)
+
       const isCurMonth = date.isSame(this.formatedDay, 'month')
       let isPrevLastDay = false
       let isNextFirstDay = false
@@ -147,32 +158,33 @@ export default {
 
       isPrevMonth &&
         (isPrevLastDay = date.isSame(
-          moment(date)
+          tempDate
             .endOf('month')
             .format('YYYY-MM-DD')
         ))
       isNextMonth &&
         (isNextFirstDay = date.isSame(
-          moment(date)
+          tempDate
             .startOf('month')
             .format('YYYY-MM-DD')
         ))
+
+      console.log(date)
 
       return {
         isPrevMonth: isPrevMonth,
         isPrevLastDay: isPrevLastDay,
         isNextMonth: isNextMonth,
         isNextFirstDay: isNextFirstDay,
-        isToday: date.isSame(moment(this.today), 'day'),
+        isToday: date.isSame(dayjs(this.today), 'day'),
         isCurMonth: isCurMonth
       }
     },
     changeViewData() {
-      this.onMonthChange &&
-        this.onMonthChange({
-          startDay: this.monthData[0].date,
-          endDay: this.monthData[this.monthData.length - 1].date
-        })
+      this.onMonthChange({
+        startDay: this.monthData[0].date,
+        endDay: this.monthData[this.monthData.length - 1].date
+      })
     }
   },
   watch: {
