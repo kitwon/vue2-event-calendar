@@ -137,3 +137,4 @@ export default {
 
 1.  不依赖momentjs
 2.  提高单元测试覆盖率
+3.  添加动画

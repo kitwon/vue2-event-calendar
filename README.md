@@ -139,3 +139,4 @@ export default {
 
 1.  not depend on momentjs
 2.  improve unit test coverage
+3.  add animation
