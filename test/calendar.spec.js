@@ -1,4 +1,4 @@
-import { shallow } from '@vue/test-utils'
+import { shallow, mount } from '@vue/test-utils'
 import Calendar from '../src/calendar'
 import data from '../dev/data'
 
@@ -49,16 +49,77 @@ describe('Calendar component', () => {
 
   test('has currect change action', () => {
     const prefixCls = 'kit-calendar'
-    const wrapper = shallow(Calendar, {
-      propsData: {
-        startDate: '2018-01-01',
-        prefixCls
-      }
-    })
+    const props = { prefixCls }
 
-    const prev = wrapper.find(`.${prefixCls}-prev`)
-    const next = wrapper.find(`.${prefixCls}-next`)
-    const title = wrapper.find(`.${prefixCls}-header-date`)
+    createDefaultWrapper({buttonPrefix: prefixCls, props})
+  })
+
+  test('renderHeader prop render currectly', () => {
+    const props = {
+      renderHeader({ prev, next, selectedDate }) {
+        return (
+          <div class="custom-header">
+            <div class="custom-header-prev" onClick={prev}>prev</div>
+            <span class="custom-header-header-date">{selectedDate}</span>
+            <div class="custom-header-next" onClick={next}>next</div>
+          </div>
+        )
+      }
+    }
+
+    createDefaultWrapper({buttonPrefix: 'custom-header', props})
+  })
+
+  test('scoped-slot should render currectly', () => {
+    const component = {
+      components: { Calendar },
+      template: `
+        <Calendar :startDate="startDate" :dateData="data">
+          <div slot-scope="dateItem">
+            <span>{{dateItem.date.date}} {{dateItem}}</span>
+            <div
+              v-for="(item, index) in dateItem.data"
+              :key="index">
+              {{ item.title }}
+            </div>
+          </div>
+        </Calendar>
+      `,
+      data() {
+        return {
+          startDate: '2018-1-1',
+          data: [
+            {
+              date: '2018-1-1',
+              title: 'test scope-slot1'
+            },
+            {
+              date: '2018-1-5',
+              title: 'test scope-slot2'
+            }
+          ]
+        }
+      }
+    }
+
+    // console.log(shallow(component).element)
+    expect(mount(component).element).toMatchSnapshot()
+  })
+})
+
+function createDefaultWrapper({buttonPrefix, props, mountOptions, handleMounted}) {
+  const wrapper = shallow(Calendar, {
+    ...mountOptions,
+    propsData: {
+      startDate: '2018-01-01',
+      ...props
+    }
+  })
+
+  if (!handleMounted) {
+    const prev = wrapper.find(`.${buttonPrefix}-prev`)
+    const next = wrapper.find(`.${buttonPrefix}-next`)
+    const title = wrapper.find(`.${buttonPrefix}-header-date`)
 
     next.trigger('click')
     wrapper.vm
@@ -72,5 +133,7 @@ describe('Calendar component', () => {
       .then(() => {
         expect(title.text()).toBe('2018-01')
       })
-  })
-})
+  } else {
+    handleMounted(wrapper)
+  }
+}

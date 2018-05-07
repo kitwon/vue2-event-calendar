@@ -34,7 +34,8 @@
               'is-today': item.isToday
             },
           ]"
-          slot-scope="item">
+          slot-scope="item"
+        >
           <div
             :class="['ui-calendar-item-date']">
             {{item.date.date}}

@@ -53,7 +53,7 @@ Vue.component('Calendar', Calendar)
       {{item.date.date}}
     </div>
     <div class="calendar-item-name">{{item.data.title}}</div>
-  </div
+  </div>
 </Calendar>
 ```
 
@@ -65,7 +65,7 @@ Vue.component('Calendar', Calendar)
   startDate="2018-03-07"
   :renderHeader="renderHeader"
   :dateData="data">
-  <!-- constent -->
+  <!-- content -->
 </Calendar>
 ```
 

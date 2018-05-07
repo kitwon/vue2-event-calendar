@@ -1,5 +1,7 @@
 import dayjs from 'dayjs'
-import { getMonthViewStartDay } from './date-func'
+import {
+  getMonthViewStartDay
+} from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'
 
@@ -13,7 +15,7 @@ function checkType(data) {
 
 export default {
   name: prefixCls,
-  mixins: [ genBody, genHeader ],
+  mixins: [genBody, genHeader],
   props: {
     startDate: [Number, String, Date],
     dateData: [Object, Array],
@@ -52,14 +54,22 @@ export default {
     onNext: {
       type: Function,
       default: () => undefined
-    }
+    },
+    renderHeader: Function
   },
   computed: {
     formatedDay() {
       return dayjs(new Date(this.currentDay))
     },
     monthData() {
-      const { dateData, formatedDay, firstDay, mode } = this
+      const {
+        dateData,
+        formatedDay,
+        firstDay,
+        mode,
+        matchKey
+      } = this
+
       const dataType = checkType(dateData)
 
       if (!formatedDay) return []
@@ -78,18 +88,14 @@ export default {
         let data = []
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(item => {
-            if (monthViewStartDate.isSame(
-              dayjs(new Date(item)),
-              'day'
-            )) {
+            if (monthViewStartDate.isSame(dayjs(new Date(item)))) {
               data.push(dateData[item])
             }
           })
         } else if (dataType === '[object Array]') {
           data = dateData.filter(item => {
             return monthViewStartDate.isSame(
-              dayjs(new Date(item[this.matchKey])),
-              'day'
+              dayjs(new Date(item[matchKey]))
             )
           })
         }
@@ -122,7 +128,13 @@ export default {
       this.currentDay = date
     },
     prev() {
-      const { formatedDay, mode, onPrev, monthData } = this
+      const {
+        formatedDay,
+        mode,
+        onPrev,
+        monthData
+      } = this
+
       this.currentDay = formatedDay
         .subtract(1, mode)
         .startOf(mode)
@@ -134,7 +146,13 @@ export default {
       })
     },
     next() {
-      const { formatedDay, mode, onNext, monthData } = this
+      const {
+        formatedDay,
+        mode,
+        onNext,
+        monthData
+      } = this
+
       this.currentDay = formatedDay
         .add(1, mode)
         .startOf(mode)
@@ -147,12 +165,13 @@ export default {
     },
     getItemStatus(date) {
       const tempDate = dayjs(date)
-      const { formatedDay } = this
+      const {
+        formatedDay
+      } = this
 
       const isCurMonth = tempDate.month() === formatedDay.month()
 
-      const isPrevMonth =
-        !isCurMonth && tempDate.isBefore(this.formatedDay, 'month')
+      const isPrevMonth = !isCurMonth && tempDate.isBefore(this.formatedDay, 'month')
       const isNextMonth = !isCurMonth && tempDate.isAfter(this.formatedDay, 'month')
 
       const isPrevLastDay = isPrevMonth ? tempDate.isSame(tempDate.endOf('month').format('YYYY-MM-DD')) : false
@@ -211,11 +230,9 @@ export default {
   },
   render(h) {
     return h(
-      'div',
-      {
+      'div', {
         class: [this.prefixCls, `is-${this.mode}`]
-      },
-      [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]
+      }, [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]
     )
   }
 }
