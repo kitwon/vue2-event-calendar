@@ -27,7 +27,13 @@
           </button>
         </div>
         <div
-          :class="['ui-calendar-item', {'is-otherMonth': item.isPrevMonth || item.isNextMonth}]"
+          :class="[
+            'ui-calendar-item',
+            {
+              'is-otherMonth': item.isPrevMonth || item.isNextMonth,
+              'is-today': item.isToday
+            },
+          ]"
           slot-scope="item">
           <div
             :class="['ui-calendar-item-date']">
@@ -68,7 +74,7 @@ export default {
   },
   methods: {
     onMonthChange(val) {
-      console.log(val);
+      // console.log(val);
     },
     changeDate() {
       this.$refs.calendar.changeDate('2017-12-12')
@@ -223,8 +229,25 @@ h1 {
     padding: 5px 10px;
     color: #666;
 
-    &.is-otherMonth {
-      color: #bbb;
+    &.is {
+      &-otherMonth {
+        color: #bbb;
+      }
+
+      &-today {
+        .ui-calendar-item-date {
+          position: relative;
+          display: inline-block;
+          background: #ff7dc5;
+          color: #fff;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 20px;
+          top: -1px;
+        }
+      }
     }
 
     &-name {

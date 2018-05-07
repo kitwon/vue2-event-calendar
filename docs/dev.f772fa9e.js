@@ -68,8 +68,8 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({4:[function(require,module,exports) {
-var global = arguments[3];
+})({5:[function(require,module,exports) {
+var global = (1,eval)("this");
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7349,7 +7349,7 @@ if (inBrowser) {
 /*  */
 
 exports.default = Vue;
-},{}],8:[function(require,module,exports) {
+},{}],11:[function(require,module,exports) {
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -7374,11 +7374,10 @@ exports.insert = function (css) {
   }
 }
 
-},{}],13:[function(require,module,exports) {
-var define;
-!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.dayjs=e()}(this,function(){"use strict";var t="second",e="minute",n="hour",s="day",r="week",i="month",a="year",u="Sunday.Monday.Tuesday.Wednesday.Thursday.Friday.Saturday".split("."),c="January.February.March.April.May.June.July.August.September.October.November.December".split("."),h=/^(\d{4})-?(\d{2})-?(\d{1,2})$/,o=/Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}/g,$=function(t,e,n){var s=String(t);return!s||s.length>=e?t:""+Array(e+1-s.length).join(n)+t},d=function(t){return t&&String(t).toLowerCase().replace(/s$/,"")},f=function(t){return void 0===t},l=function(t){var e;return null===t?new Date(NaN):f(t)?new Date:t instanceof Date?t:(e=String(t).match(h))?new Date(e[1],e[2]-1,e[3]):new Date(t)},m=function(){function h(t){this.$d=l(t),this.init()}var m=h.prototype;return m.init=function(){var t,e,n;this.$zone=this.$d.getTimezoneOffset()/60,this.$zoneStr=(t=this.$zone,n="",n=(e=-1*t)>-10&&e<10?"$10$200":"$1$200",$(String(e).replace(/^(.)?(\d)/,n),5,"+")),this.$y=this.$d.getFullYear(),this.$M=this.$d.getMonth(),this.$D=this.$d.getDate(),this.$W=this.$d.getDay(),this.$H=this.$d.getHours(),this.$m=this.$d.getMinutes(),this.$s=this.$d.getSeconds(),this.$ms=this.$d.getMilliseconds()},m.isValid=function(){return!("Invalid Date"===this.$d.toString())},m.isLeapYear=function(){return this.$y%4==0&&this.$y%100!=0||this.$y%400==0},m.isSame=function(t){return this.valueOf()===t.valueOf()},m.isBefore=function(t){return this.valueOf()<t.valueOf()},m.isAfter=function(t){return this.valueOf()>t.valueOf()},m.year=function(){return this.$y},m.month=function(){return this.$M},m.day=function(){return this.$W},m.date=function(){return this.$D},m.hour=function(){return this.$H},m.minute=function(){return this.$m},m.second=function(){return this.$s},m.millisecond=function(){return this.$ms},m.unix=function(){return Math.floor(this.valueOf()/1e3)},m.valueOf=function(){return this.$d.getTime()},m.startOf=function(u,c){var o=this,$=!!f(c)||c,l=function(t,e,n){void 0===n&&(n=o.$y);var r=new h(new Date(n,e,t));return $?r:r.endOf(s)},m=function(t,e){return new h(o.toDate()[t].apply(o.toDate(),$?[0,0,0,0].slice(e):[23,59,59,999].slice(e)))};switch(d(u)){case a:return $?l(1,0):l(31,11,this.$y);case i:return $?l(1,this.$M):l(0,this.$M+1,this.$y);case r:return $?l(this.$D-this.$W,this.$M):l(this.$D+(6-this.$W),this.$M,this.$y);case s:case"date":return m("setHours",0);case n:return m("setMinutes",1);case e:return m("setSeconds",2);case t:return m("setMilliseconds",3);default:return this.clone()}},m.endOf=function(t){return this.startOf(t,!1)},m.mSet=function(s,r){switch(d(s)){case"date":this.$d.setDate(r);break;case i:this.$d.setMonth(r);break;case a:this.$d.setFullYear(r);break;case n:this.$d.setHours(r);break;case e:this.$d.setMinutes(r);break;case t:this.$d.setSeconds(r);break;case"millisecond":this.$d.setMilliseconds(r)}return this.init(),this},m.set=function(t,e){return n=e,Number.isNaN(parseFloat(n))||!Number.isFinite(n)?this:this.clone().mSet(t,e);var n},m.add=function(t,u){var c,o=u&&1===u.length?u:d(u);if(["M",i].indexOf(o)>-1){var $=this.set("date",1).set(i,this.$M+t);return $=$.set("date",Math.min(this.$D,$.daysInMonth()))}if(["y",a].indexOf(o)>-1)return this.set(a,this.$y+t);switch(o){case"m":case e:c=6e4;break;case"h":case n:c=36e5;break;case"d":case s:c=864e5;break;case"w":case r:c=6048e5;break;default:c=1e3}return new h(this.valueOf()+t*c)},m.subtract=function(t,e){return this.add(-1*t,e)},m.format=function(t){var e=this;return(t||"YYYY-MM-DDTHH:mm:ssZ").replace(o,function(t){switch(t){case"YY":return String(e.$y).slice(-2);case"YYYY":return String(e.$y);case"M":return String(e.$M+1);case"MM":return $(e.$M+1,2,"0");case"MMM":return c[e.$M].slice(0,3);case"MMMM":return c[e.$M];case"D":return String(e.$D);case"DD":return $(e.$D,2,"0");case"d":return String(e.$W);case"dddd":return u[e.$W];case"H":return String(e.$H);case"HH":return $(e.$H,2,"0");case"h":case"hh":return 0===e.$H?12:$(e.$H<13?e.$H:e.$H-12,"hh"===t?2:1,"0");case"a":return e.$H<12?"am":"pm";case"A":return e.$H<12?"AM":"PM";case"m":return String(e.$m);case"mm":return $(e.$m,2,"0");case"s":return String(e.$s);case"ss":return $(e.$s,2,"0");case"Z":return e.$zoneStr.slice(0,-2)+":00";default:return e.$zoneStr}})},m.diff=function(e,n,u){var c,o,$,f,l,m,M=d(n),y=e instanceof h?e:new h(e),S=this-y,g=(c=this,f=12*((o=y).year()-c.year())+(o.month()-c.month()),l=c.clone().add(f,"months"),$=o-l<0?(o-l)/(l-c.clone().add(f-1,"months")):(o-l)/(c.clone().add(f+1,"months")-l),Number(-(f+$)));switch(M){case a:g/=12;break;case i:break;case"quarter":g/=3;break;case r:g=S/6048e5;break;case s:g=S/864e5;break;case t:g=S/1e3;break;default:g=S}return u?g:(m=g)<0?Math.ceil(m)||0:Math.floor(m)},m.daysInMonth=function(){return this.endOf(i).$D},m.clone=function(){return new h(this)},m.toDate=function(){return new Date(this.$d)},m.toArray=function(){return[this.$y,this.$M,this.$D,this.$H,this.$m,this.$s,this.$ms]},m.toJSON=function(){return this.toISOString()},m.toISOString=function(){return this.toDate().toISOString()},m.toObject=function(){return{years:this.$y,months:this.$M,date:this.$D,hours:this.$H,minutes:this.$m,seconds:this.$s,milliseconds:this.$ms}},m.toString=function(){return this.$d.toUTCString()},h}();return function(t){return new m(t)}});
+},{}],22:[function(require,module,exports) {
+!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):t.dayjs=e()}(this,function(){"use strict";var t="second",e="minute",n="hour",s="day",r="week",i="month",a="year",u="Sunday.Monday.Tuesday.Wednesday.Thursday.Friday.Saturday".split("."),c="January.February.March.April.May.June.July.August.September.October.November.December".split("."),h=/^(\d{4})-?(\d{2})-?(\d{1,2})(.*(\d{2}):(\d{2}):(\d{2}))?.?(\d{3})?$/,o=/\[.*?\]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,$=function(t,e,n){var s=String(t);return!s||s.length>=e?t:""+Array(e+1-s.length).join(n)+t},d=function(t){return t&&String(t).toLowerCase().replace(/s$/,"")},f=function(t){return void 0===t},l=function(t){var e;return null===t?new Date(NaN):f(t)?new Date:t instanceof Date?t:(e=String(t).match(h))?new Date(e[1],e[2]-1,e[3],e[5],e[6],e[7],e[8]||0):new Date(t)},m=function(){function h(t){this.$d=l(t),this.init()}var m=h.prototype;return m.init=function(){var t,e,n,s,r;this.$zone=this.$d.getTimezoneOffset(),this.$zoneStr=(t=this.$zone,e=Math.abs(t),n=t<=0?"+":"-",s=Math.floor(e/60),r=e%60,""+n+$(s,2,"0")+":"+$(r,2,"0")),this.$y=this.$d.getFullYear(),this.$M=this.$d.getMonth(),this.$D=this.$d.getDate(),this.$W=this.$d.getDay(),this.$H=this.$d.getHours(),this.$m=this.$d.getMinutes(),this.$s=this.$d.getSeconds(),this.$ms=this.$d.getMilliseconds()},m.isValid=function(){return!("Invalid Date"===this.$d.toString())},m.isLeapYear=function(){return this.$y%4==0&&this.$y%100!=0||this.$y%400==0},m.isSame=function(t){return this.valueOf()===t.valueOf()},m.isBefore=function(t){return this.valueOf()<t.valueOf()},m.isAfter=function(t){return this.valueOf()>t.valueOf()},m.year=function(){return this.$y},m.month=function(){return this.$M},m.day=function(){return this.$W},m.date=function(){return this.$D},m.hour=function(){return this.$H},m.minute=function(){return this.$m},m.second=function(){return this.$s},m.millisecond=function(){return this.$ms},m.unix=function(){return Math.floor(this.valueOf()/1e3)},m.valueOf=function(){return this.$d.getTime()},m.startOf=function(u,c){var o=this,$=!!f(c)||c,l=function(t,e,n){void 0===n&&(n=o.$y);var r=new h(new Date(n,e,t));return $?r:r.endOf(s)},m=function(t,e){return new h(o.toDate()[t].apply(o.toDate(),$?[0,0,0,0].slice(e):[23,59,59,999].slice(e)))};switch(d(u)){case a:return $?l(1,0):l(31,11,this.$y);case i:return $?l(1,this.$M):l(0,this.$M+1,this.$y);case r:return $?l(this.$D-this.$W,this.$M):l(this.$D+(6-this.$W),this.$M,this.$y);case s:case"date":return m("setHours",0);case n:return m("setMinutes",1);case e:return m("setSeconds",2);case t:return m("setMilliseconds",3);default:return this.clone()}},m.endOf=function(t){return this.startOf(t,!1)},m.mSet=function(s,r){switch(d(s)){case"date":this.$d.setDate(r);break;case i:this.$d.setMonth(r);break;case a:this.$d.setFullYear(r);break;case n:this.$d.setHours(r);break;case e:this.$d.setMinutes(r);break;case t:this.$d.setSeconds(r);break;case"millisecond":this.$d.setMilliseconds(r)}return this.init(),this},m.set=function(t,e){return this.clone().mSet(t,e)},m.add=function(t,u){var c,o=u&&1===u.length?u:d(u);if(["M",i].indexOf(o)>-1){var $=this.set("date",1).set(i,this.$M+t);return $=$.set("date",Math.min(this.$D,$.daysInMonth()))}if(["y",a].indexOf(o)>-1)return this.set(a,this.$y+t);switch(o){case"m":case e:c=6e4;break;case"h":case n:c=36e5;break;case"d":case s:c=864e5;break;case"w":case r:c=6048e5;break;default:c=1e3}return new h(this.valueOf()+t*c)},m.subtract=function(t,e){return this.add(-1*t,e)},m.format=function(t){var e=this;return(t||"YYYY-MM-DDTHH:mm:ssZ").replace(o,function(t){if(t.indexOf("[")>-1)return t.replace(/\[|\]/g,"");switch(t){case"YY":return String(e.$y).slice(-2);case"YYYY":return String(e.$y);case"M":return String(e.$M+1);case"MM":return $(e.$M+1,2,"0");case"MMM":return c[e.$M].slice(0,3);case"MMMM":return c[e.$M];case"D":return String(e.$D);case"DD":return $(e.$D,2,"0");case"d":return String(e.$W);case"dddd":return u[e.$W];case"H":return String(e.$H);case"HH":return $(e.$H,2,"0");case"h":case"hh":return 0===e.$H?12:$(e.$H<13?e.$H:e.$H-12,"hh"===t?2:1,"0");case"a":return e.$H<12?"am":"pm";case"A":return e.$H<12?"AM":"PM";case"m":return String(e.$m);case"mm":return $(e.$m,2,"0");case"s":return String(e.$s);case"ss":return $(e.$s,2,"0");case"SSS":return $(e.$ms,3,"0");case"Z":return e.$zoneStr;default:return e.$zoneStr.replace(":","")}})},m.diff=function(e,n,u){var c,o,$,f,l,m,M=d(n),y=e instanceof h?e:new h(e),S=this-y,g=(c=this,f=12*((o=y).year()-c.year())+(o.month()-c.month()),l=c.clone().add(f,"months"),$=o-l<0?(o-l)/(l-c.clone().add(f-1,"months")):(o-l)/(c.clone().add(f+1,"months")-l),Number(-(f+$)));switch(M){case a:g/=12;break;case i:break;case"quarter":g/=3;break;case r:g=S/6048e5;break;case s:g=S/864e5;break;case t:g=S/1e3;break;default:g=S}return u?g:(m=g)<0?Math.ceil(m)||0:Math.floor(m)},m.daysInMonth=function(){return this.endOf(i).$D},m.clone=function(){return new h(this)},m.toDate=function(){return new Date(this.$d)},m.toArray=function(){return[this.$y,this.$M,this.$D,this.$H,this.$m,this.$s,this.$ms]},m.toJSON=function(){return this.toISOString()},m.toISOString=function(){return this.toDate().toISOString()},m.toObject=function(){return{years:this.$y,months:this.$M,date:this.$D,hours:this.$H,minutes:this.$m,seconds:this.$s,milliseconds:this.$ms}},m.toString=function(){return this.$d.toUTCString()},h}();return function(t){return new m(t)}});
 
-},{}],9:[function(require,module,exports) {
+},{}],15:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7394,29 +7393,30 @@ var _dayjs2 = _interopRequireDefault(_dayjs);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function getMonthViewStartDay(date, firstDay, mode) {
-  firstDay = parseInt(firstDay);
+  var first = Number(firstDay);
   // get cur month start day obj from data
-  var start = (0, _dayjs2.default)(date);
-  var startTemp = (0, _dayjs2.default)(start.startOf(mode));
+  var start = (0, _dayjs2.default)(date).startOf(mode);
+  // let startTemp = dayjs(start.startOf(mode))
   // subtract the start day & cur month start day
-  // if cur day is Wed, the view start day should substract 2
-  start.subtract(startTemp.day(), 'day');
+  // start = start.subtract(startTemp.day(), 'day')
+  // console.log(startTemp.day())
 
-  if (startTemp.day() < firstDay) {
+  // if (startTemp.day() < firstDay) {
+  if (start.day() !== first) {
     // if start day back of the view's first day
     // view start should substrat a week
-    start.subtract(7, 'day');
+    start = start.subtract(start.day(), 'day');
   }
 
   // set final start day
-  start.add(firstDay, 'day');
+  start = start.add(firstDay, 'day');
   return start;
 }
 
 function getMonthViewEndDay(date) {
   return this.getMonthViewStartDay().add(6, 'week');
 }
-},{"dayjs":13}],11:[function(require,module,exports) {
+},{"dayjs":22}],17:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7471,7 +7471,7 @@ exports.default = {
     }
   }
 };
-},{}],12:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7546,7 +7546,7 @@ exports.default = {
     }
   }
 };
-},{"dayjs":13}],15:[function(require,module,exports) {
+},{"dayjs":22}],26:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -7576,7 +7576,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],14:[function(require,module,exports) {
+},{}],24:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -7607,13 +7607,13 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":15}],10:[function(require,module,exports) {
+},{"./bundle-url":26}],16:[function(require,module,exports) {
 
         var reloadCSS = require('_css_loader');
         module.hot.dispose(reloadCSS);
         module.hot.accept(reloadCSS);
       
-},{"_css_loader":14}],5:[function(require,module,exports) {
+},{"_css_loader":24}],7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7697,7 +7697,7 @@ exports.default = {
   },
   computed: {
     formatedDay: function formatedDay() {
-      return (0, _dayjs2.default)(this.currentDay);
+      return (0, _dayjs2.default)(new Date(this.currentDay));
     },
     monthData: function monthData() {
       var _this = this;
@@ -7789,25 +7789,24 @@ exports.default = {
     },
     getItemStatus: function getItemStatus(date) {
       var tempDate = (0, _dayjs2.default)(date);
+      var formatedDay = this.formatedDay;
 
-      var isCurMonth = date.isSame(this.formatedDay, 'month');
-      var isPrevLastDay = false;
-      var isNextFirstDay = false;
 
-      var isPrevMonth = !isCurMonth && date.isBefore(this.formatedDay, 'month');
-      var isNextMonth = !isCurMonth && date.isAfter(this.formatedDay, 'month');
+      var isCurMonth = tempDate.month() === formatedDay.month();
 
-      isPrevMonth && (isPrevLastDay = date.isSame(tempDate.endOf('month').format('YYYY-MM-DD')));
-      isNextMonth && (isNextFirstDay = date.isSame(tempDate.startOf('month').format('YYYY-MM-DD')));
+      var isPrevMonth = !isCurMonth && tempDate.isBefore(this.formatedDay, 'month');
+      var isNextMonth = !isCurMonth && tempDate.isAfter(this.formatedDay, 'month');
 
-      console.log(date);
+      var isPrevLastDay = isPrevMonth ? tempDate.isSame(tempDate.endOf('month').format('YYYY-MM-DD')) : false;
+      var isNextFirstDay = isNextMonth ? tempDate.isSame(tempDate.startOf('month').format('YYYY-MM-DD')) : false;
 
       return {
         isPrevMonth: isPrevMonth,
         isPrevLastDay: isPrevLastDay,
         isNextMonth: isNextMonth,
         isNextFirstDay: isNextFirstDay,
-        isToday: date.isSame((0, _dayjs2.default)(this.today), 'day'),
+        // isToday: date.isSame(dayjs(this.today), 'day'),
+        isToday: date.format('YYYY-MM-DD') === (0, _dayjs2.default)(this.today).format('YYYY-MM-DD'),
         isCurMonth: isCurMonth
       };
     },
@@ -7825,7 +7824,7 @@ exports.default = {
         this.currentDay = val ? new Date(val) : new Date();
 
         if (!this.today) {
-          this.today = val;
+          this.today = this.currentDay;
         }
       }
     },
@@ -7844,7 +7843,7 @@ exports.default = {
   },
   data: function data() {
     return {
-      today: '',
+      today: this.currentDay,
       currentDay: null,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
@@ -7858,7 +7857,7 @@ exports.default = {
     }, [this.genHeader(h), this.genWeekTitle(h), this.genCalendateItem(h)]);
   }
 };
-},{"dayjs":13,"./date-func":9,"./components/body":11,"./components/header":12,"./style/calendar.less":10}],6:[function(require,module,exports) {
+},{"dayjs":22,"./date-func":15,"./components/body":17,"./components/header":18,"./style/calendar.less":16}],8:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7895,7 +7894,7 @@ exports.default = {
   Array: ArrayData,
   Object: ObjectData
 };
-},{}],7:[function(require,module,exports) {
+},{}],10:[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -8137,8 +8136,8 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],3:[function(require,module,exports) {
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".vue-calendar {\n  background: #fff;\n  display: flex;\n  flex-direction: column;\n}\n.vue-calendar-header {\n  position: relative;\n  padding: 20px;\n  display: flex;\n  align-items: center;\n}\n.vue-calendar-header-center {\n  flex: 1;\n  text-align: center;\n  font-size: 14px;\n  color: #19a0ff;\n}\n.vue-calendar-header-left,\n.vue-calendar-header-right {\n  flex: 1;\n}\n.vue-calendar-header-date {\n  display: inline-block;\n  margin: 0 32px;\n}\n.vue-calendar-control {\n  cursor: pointer;\n}\n.vue-calendar-week-title {\n  display: flex;\n  border-color: #e8ebee;\n  border-style: solid;\n  border-width: 1px 0 1px 1px;\n}\n.vue-calendar-week-title-item {\n  flex: 1;\n  height: 30px;\n  line-height: 30px;\n  padding: 0 15px;\n  color: #19a0ff;\n}\n.vue-calendar-body {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.vue-calendar-body-row {\n  flex: 1;\n  display: flex;\n  height: 5em;\n}\n.vue-calendar-day-item {\n  flex: 1;\n  overflow: hidden;\n  border-color: #e8ebee;\n  border-style: solid;\n  border-width: 0 0 1px 1px;\n}\n* {\n  box-sizing: border-box;\n}\nbody,\nhtml {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  background-image: linear-gradient(60deg, #fb7bb0, #fb7bce);\n}\nh1,\nh2 {\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 3px 1px #f81875;\n  margin: 0;\n  font-family: Georgia, 'Times New Roman', Times, serif;\n}\nh1 {\n  font-size: 2.4rem;\n}\n.page-container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding-top: 40px;\n}\n.container {\n  width: 80%;\n  margin: 0 auto;\n  flex: 1;\n  height: 100%;\n}\n.ui-calendar {\n  margin-top: 20px;\n  box-shadow: 0 1px 5px #f81875;\n  border-radius: 5px;\n  height: 90%;\n}\n.ui-calendar-header__left > button {\n  font-size: 12px;\n}\n.ui-calendar-header__left > button:nth-child(2) {\n  margin-left: -4px;\n}\n.ui-calendar-modeBtn {\n  position: relative;\n  display: inline-block;\n  background: #fff;\n  border: 1px solid #ff7dc5;\n  color: #ff7dc5;\n  padding: 5px 1em;\n  font-size: 13px;\n  line-height: 1;\n  box-shadow: 0 1px 3px #ffcae7;\n  min-width: 5em;\n  margin-right: -1px;\n  text-align: center;\n  cursor: pointer;\n}\n.ui-calendar-modeBtn:first-child {\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.ui-calendar-modeBtn:last-child {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.ui-calendar-modeBtn:active,\n.ui-calendar-modeBtn:focus {\n  outline: none;\n}\n.ui-calendar-modeBtn.active,\n.ui-calendar-modeBtn:active {\n  background: #ff7dc5;\n  color: #fff;\n  z-index: 2;\n}\n.ui-calendar .k-calendar-header-center {\n  color: #ff7dc5;\n}\n.ui-calendar .k-calendar-week-title-item {\n  color: #ff7dc5;\n}\n.ui-calendar-item {\n  padding: 5px 10px;\n  color: #666;\n}\n.ui-calendar-item.is-otherMonth {\n  color: #bbb;\n}\n.ui-calendar-item-name {\n  font-size: 12px;\n}\n.ui-calendar-item-name > * {\n  vertical-align: middle;\n}\n.ui-calendar-item-name .del {\n  display: inline-block;\n  cursor: pointer;\n  color: inherit;\n  margin-bottom: -2px;\n}\n.ui-calendar .vue-calendar-body-row {\n  height: auto;\n}");(function () {
+},{}],4:[function(require,module,exports) {
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".vue-calendar {\n  background: #fff;\n  display: flex;\n  flex-direction: column;\n}\n.vue-calendar-header {\n  position: relative;\n  padding: 20px;\n  display: flex;\n  align-items: center;\n}\n.vue-calendar-header-center {\n  flex: 1;\n  text-align: center;\n  font-size: 14px;\n  color: #19a0ff;\n}\n.vue-calendar-header-left,\n.vue-calendar-header-right {\n  flex: 1;\n}\n.vue-calendar-header-date {\n  display: inline-block;\n  margin: 0 32px;\n}\n.vue-calendar-control {\n  cursor: pointer;\n}\n.vue-calendar-week-title {\n  display: flex;\n  border-color: #e8ebee;\n  border-style: solid;\n  border-width: 1px 0 1px 1px;\n}\n.vue-calendar-week-title-item {\n  flex: 1;\n  height: 30px;\n  line-height: 30px;\n  padding: 0 15px;\n  color: #19a0ff;\n}\n.vue-calendar-body {\n  display: flex;\n  flex-direction: column;\n  flex: 1;\n}\n.vue-calendar-body-row {\n  flex: 1;\n  display: flex;\n  height: 5em;\n}\n.vue-calendar-day-item {\n  flex: 1;\n  overflow: hidden;\n  border-color: #e8ebee;\n  border-style: solid;\n  border-width: 0 0 1px 1px;\n}\n* {\n  box-sizing: border-box;\n}\nbody,\nhtml {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nbody {\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  color: #333;\n  background-image: linear-gradient(60deg, #fb7bb0, #fb7bce);\n}\nh1,\nh2 {\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 3px 1px #f81875;\n  margin: 0;\n  font-family: Georgia, 'Times New Roman', Times, serif;\n}\nh1 {\n  font-size: 2.4rem;\n}\n.page-container {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  padding-top: 40px;\n}\n.container {\n  width: 80%;\n  margin: 0 auto;\n  flex: 1;\n  height: 100%;\n}\n.ui-calendar {\n  margin-top: 20px;\n  box-shadow: 0 1px 5px #f81875;\n  border-radius: 5px;\n  height: 90%;\n}\n.ui-calendar-header__left > button {\n  font-size: 12px;\n}\n.ui-calendar-header__left > button:nth-child(2) {\n  margin-left: -4px;\n}\n.ui-calendar-modeBtn {\n  position: relative;\n  display: inline-block;\n  background: #fff;\n  border: 1px solid #ff7dc5;\n  color: #ff7dc5;\n  padding: 5px 1em;\n  font-size: 13px;\n  line-height: 1;\n  box-shadow: 0 1px 3px #ffcae7;\n  min-width: 5em;\n  margin-right: -1px;\n  text-align: center;\n  cursor: pointer;\n}\n.ui-calendar-modeBtn:first-child {\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.ui-calendar-modeBtn:last-child {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.ui-calendar-modeBtn:active,\n.ui-calendar-modeBtn:focus {\n  outline: none;\n}\n.ui-calendar-modeBtn.active,\n.ui-calendar-modeBtn:active {\n  background: #ff7dc5;\n  color: #fff;\n  z-index: 2;\n}\n.ui-calendar .k-calendar-header-center {\n  color: #ff7dc5;\n}\n.ui-calendar .k-calendar-week-title-item {\n  color: #ff7dc5;\n}\n.ui-calendar-item {\n  padding: 5px 10px;\n  color: #666;\n}\n.ui-calendar-item.is-otherMonth {\n  color: #bbb;\n}\n.ui-calendar-item.is-today .ui-calendar-item-date {\n  position: relative;\n  display: inline-block;\n  background: #ff7dc5;\n  color: #fff;\n  width: 20px;\n  height: 20px;\n  border-radius: 50%;\n  text-align: center;\n  line-height: 20px;\n  top: -1px;\n}\n.ui-calendar-item-name {\n  font-size: 12px;\n}\n.ui-calendar-item-name > * {\n  vertical-align: middle;\n}\n.ui-calendar-item-name .del {\n  display: inline-block;\n  cursor: pointer;\n  color: inherit;\n  margin-bottom: -2px;\n}\n.ui-calendar .vue-calendar-body-row {\n  height: auto;\n}");(function () {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -8171,9 +8170,7 @@ var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".vue-cal
     },
 
     methods: {
-      onMonthChange: function onMonthChange(val) {
-        console.log(val);
-      },
+      onMonthChange: function onMonthChange(val) {},
       changeDate: function changeDate() {
         this.$refs.calendar.changeDate('2017-12-12');
       },
@@ -8216,7 +8213,10 @@ if (__vue__options__.functional) {
 }
 __vue__options__.render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "page-container" }, [_c('h1', [_vm._v("A Vue2 Full Calendar")]), _vm._v(" "), _c('h2', { on: { "click": _vm.changeDate } }, [_vm._v("Has month and week two mode. And you can custom all style")]), _vm._v(" "), _c('div', { staticClass: "container" }, [_c('Calendar', { ref: "calendar", staticClass: "ui-calendar", attrs: { "start-day": _vm.currMonth, "dateData": _vm.dateData, "on-month-change": _vm.onMonthChange, "mode": _vm.mode, "render-header": _vm.renderHeader }, scopedSlots: _vm._u([{ key: "default", fn: function fn(item) {
-        return _c('div', { class: ['ui-calendar-item', { 'is-otherMonth': item.isPrevMonth || item.isNextMonth }] }, [_c('div', { class: ['ui-calendar-item-date'] }, [_vm._v("\n          " + _vm._s(item.date.date) + "\n        ")]), _vm._v(" "), _vm._l(item.data, function (item, index) {
+        return _c('div', { class: ['ui-calendar-item', {
+            'is-otherMonth': item.isPrevMonth || item.isNextMonth,
+            'is-today': item.isToday
+          }] }, [_c('div', { class: ['ui-calendar-item-date'] }, [_vm._v("\n          " + _vm._s(item.date.date) + "\n        ")]), _vm._v(" "), _vm._l(item.data, function (item, index) {
           return _c('div', { key: index, staticClass: "ui-calendar-item-name" }, [_c('span', [_vm._v(_vm._s(item.title))]), _vm._v(" "), _c('span', { staticClass: "del", on: { "click": function click($event) {
                 _vm.deleteItem(item.title);
               } } }, [_vm._v("✖️")])]);
@@ -8236,13 +8236,13 @@ if (module.hot) {
     module.hot.accept();
     module.hot.dispose(__vueify_style_dispose__);
     if (!module.hot.data) {
-      hotAPI.createRecord("data-v-1f017cd5", __vue__options__);
+      hotAPI.createRecord("data-v-2f2a56e4", __vue__options__);
     } else {
-      hotAPI.reload("data-v-1f017cd5", __vue__options__);
+      hotAPI.rerender("data-v-2f2a56e4", __vue__options__);
     }
   })();
 }
-},{"vueify/lib/insert-css":8,"../src/calendar":5,"./data":6,"vue-hot-reload-api":7,"vue":4}],2:[function(require,module,exports) {
+},{"vueify/lib/insert-css":11,"../src/calendar":7,"./data":8,"vue-hot-reload-api":10,"vue":5}],2:[function(require,module,exports) {
 'use strict';
 
 var _vue = require('vue');
@@ -8265,7 +8265,7 @@ new _vue2.default({
     return h(_App2.default);
   }
 });
-},{"vue":4,"./App.vue":3}],0:[function(require,module,exports) {
+},{"vue":5,"./App.vue":4}],0:[function(require,module,exports) {
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
 function Module(config) {
@@ -8284,7 +8284,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:49880/');
+  var ws = new WebSocket('ws://localhost:57506/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 

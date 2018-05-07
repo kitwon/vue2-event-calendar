@@ -56,7 +56,7 @@ export default {
   },
   computed: {
     formatedDay() {
-      return dayjs(this.currentDay)
+      return dayjs(new Date(this.currentDay))
     },
     monthData() {
       const { dateData, formatedDay, firstDay, mode } = this
@@ -147,36 +147,24 @@ export default {
     },
     getItemStatus(date) {
       const tempDate = dayjs(date)
+      const { formatedDay } = this
 
-      const isCurMonth = date.isSame(this.formatedDay, 'month')
-      let isPrevLastDay = false
-      let isNextFirstDay = false
+      const isCurMonth = tempDate.month() === formatedDay.month()
 
       const isPrevMonth =
-        !isCurMonth && date.isBefore(this.formatedDay, 'month')
-      const isNextMonth = !isCurMonth && date.isAfter(this.formatedDay, 'month')
+        !isCurMonth && tempDate.isBefore(this.formatedDay, 'month')
+      const isNextMonth = !isCurMonth && tempDate.isAfter(this.formatedDay, 'month')
 
-      isPrevMonth &&
-        (isPrevLastDay = date.isSame(
-          tempDate
-            .endOf('month')
-            .format('YYYY-MM-DD')
-        ))
-      isNextMonth &&
-        (isNextFirstDay = date.isSame(
-          tempDate
-            .startOf('month')
-            .format('YYYY-MM-DD')
-        ))
-
-      console.log(date)
+      const isPrevLastDay = isPrevMonth ? tempDate.isSame(tempDate.endOf('month').format('YYYY-MM-DD')) : false
+      const isNextFirstDay = isNextMonth ? tempDate.isSame(tempDate.startOf('month').format('YYYY-MM-DD')) : false
 
       return {
         isPrevMonth: isPrevMonth,
         isPrevLastDay: isPrevLastDay,
         isNextMonth: isNextMonth,
         isNextFirstDay: isNextFirstDay,
-        isToday: date.isSame(dayjs(this.today), 'day'),
+        // isToday: date.isSame(dayjs(this.today), 'day'),
+        isToday: date.format('YYYY-MM-DD') === dayjs(this.today).format('YYYY-MM-DD'),
         isCurMonth: isCurMonth
       }
     },
@@ -194,7 +182,7 @@ export default {
         this.currentDay = val ? new Date(val) : new Date()
 
         if (!this.today) {
-          this.today = val
+          this.today = this.currentDay
         }
       }
     },
@@ -213,7 +201,7 @@ export default {
   },
   data() {
     return {
-      today: '',
+      today: this.currentDay,
       currentDay: null,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
