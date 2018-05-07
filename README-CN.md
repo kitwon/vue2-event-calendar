@@ -129,9 +129,9 @@ export default {
 
 ## Scope-slots
 
-| name | description                                                                                                         |
-| ---- | ------------------------------------------------------------------------------------------------------------------- |
-|      | scopslot 返回对象的参数{ isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date } |
+| name | description                                                                                                                                                          |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      | scopslot 返回对象的参数{ isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date }, { data } 是一个数组，里面包含匹配日期的所有数据 |
 
 ## TODO
 

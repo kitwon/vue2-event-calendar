@@ -4515,7 +4515,6 @@ var genHeader = {
         class: [this.prefixCls + '-header-date']
       }, [this.headerDateText]);
 
-      console.log(this.$props);
       if (this.renderHeader) {
         return this.renderHeader({
           prev: this.prev,

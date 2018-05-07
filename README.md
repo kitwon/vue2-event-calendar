@@ -131,9 +131,9 @@ export default {
 
 ## Scope-slots
 
-| name | description                                                                                                                                   |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-|      | custom content for date item, the scope param is { isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date } |
+| name | description                                                                                                                                                                                         |
+| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      | custom content for date item, the scope param is { isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date }, { data } is an Array, include all matching date data |
 
 ## TODO
 

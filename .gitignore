@@ -12,3 +12,5 @@ yarn-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+test/coverage/
