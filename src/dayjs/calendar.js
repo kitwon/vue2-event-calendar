@@ -88,14 +88,16 @@ export default {
         let data = []
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(item => {
-            if (monthViewStartDate.isSame(dayjs(new Date(item)))) {
+            const date = item.replace('-', '/')
+            if (monthViewStartDate.isSame(dayjs(new Date(date)))) {
               data.push(dateData[item])
             }
           })
         } else if (dataType === '[object Array]') {
           data = dateData.filter(item => {
+            const date = item[matchKey].replace('-', '/')
             return monthViewStartDate.isSame(
-              dayjs(new Date(item[matchKey]))
+              dayjs(new Date(date))
             )
           })
         }

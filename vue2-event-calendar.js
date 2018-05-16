@@ -409,13 +409,15 @@ var calendar$1 = {
         var data = [];
         if (dataType === '[object Object]') {
           Object.keys(dateData).forEach(function (item) {
-            if (monthViewStartDate.isSame(dayjs_min(new Date(item)))) {
+            var date = item.replace('-', '/');
+            if (monthViewStartDate.isSame(dayjs_min(new Date(date)))) {
               data.push(dateData[item]);
             }
           });
         } else if (dataType === '[object Array]') {
           data = dateData.filter(function (item) {
-            return monthViewStartDate.isSame(dayjs_min(new Date(item[matchKey])));
+            var date = item[matchKey].replace('-', '/');
+            return monthViewStartDate.isSame(dayjs_min(new Date(date)));
           });
         }
 
