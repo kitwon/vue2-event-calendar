@@ -12,7 +12,8 @@ module.exports = {
   },
   globals: {
     'expect': true,
-    'sinon': true
+    'sinon': true,
+    'DATE_MODULE': true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',

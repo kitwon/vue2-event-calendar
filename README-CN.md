@@ -25,11 +25,15 @@ import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
 
-如果你的项目也使用了`moment.js`，可以使用无依赖版本。
+如果你的项目也使用了`moment` 或者 `dayjs`，可以使用无依赖版本。
 
 ```javascript
 import 'vue2-event-calendar/default.css'
+// moment
 import Calendar from 'vue2-event-calendar/dist/calendar-nodep.js'
+
+// dayjs
+import Calendar from 'vue2-event-calendar/dist/dayjs-nodep.js'
 Vue.component('Calendar', Calendar)
 // ...
 ```

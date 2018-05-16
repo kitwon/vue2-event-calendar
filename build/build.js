@@ -15,10 +15,10 @@ const banner = `/*!
   * Released under the MIT License.
   */`
 
-const dir = 'dist/'
+const DIR = 'dist/'
 const sortName = 'calendar'
 const config = {
-  input: 'src/calendar.js',
+  input: 'src/dayjs/index',
   plugins: [
     less({
       // output: '' + name + '.css'
@@ -45,31 +45,33 @@ async function build() {
 
   const { code } = await bundle.generate({ format: 'cjs' })
   const minify = banner + '\n' + uglify.minify(code).code
-  write(`${dir + name}.min.js`, minify)
+  write(`${DIR + name}.min.js`, minify)
 
-  buildNoDep()
+  await buildNoDep('src/dayjs/index')
+  await buildNoDep('src/moment/index')
 }
 
-async function buildNoDep() {
+async function buildNoDep(input) {
   const bundle = await rollup.rollup(Object.assign(config, {
-    external: ['moment/min/moment.min', 'moment']
+    input,
+    external: ['moment/min/moment.min', 'moment', 'dayjs']
   }))
 
   await bundle.write({
-    file: `${dir + sortName}-nodep.js`,
+    file: input.indexOf('moment') >= 0 ? `${DIR + sortName}-nodep.js` : `${DIR}dayjs-nodep.js`,
     format: 'cjs'
   })
 
-  const { code } = await bundle.generate({ format: 'cjs' })
-  const minify = banner + '\n' + uglify.minify(code).code
-  write(`${dir + sortName}-nodep.min.js`, minify)
+  // const { code } = await bundle.generate({ format: 'cjs' })
+  // const minify = banner + '\n' + uglify.minify(code).code
+  // write(`${dir + sortName}-nodep.min.js`, minify)
 }
 
-function write(dest, content) {
+function write(dist, content) {
   return new Promise((resolve, reject) => {
-    fs.writeFile(dest, content, err => {
+    fs.writeFile(dist, content, 'utf8', err => {
       if (err) reject(err)
-      console.log(blue(dest) + ' ' + getSize(content))
+      console.log(blue(dist) + ' ' + getSize(content))
       resolve()
     })
   })

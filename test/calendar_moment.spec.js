@@ -1,5 +1,5 @@
 import { shallow, mount } from '@vue/test-utils'
-import Calendar from '../src/dayjs'
+import Calendar from '../src/moment'
 import data from '../dev/data'
 
 // todo

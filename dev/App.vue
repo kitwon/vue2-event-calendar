@@ -56,7 +56,8 @@
 
 <script>
 // import Calendar from '../dist/calendar-nodep'
-import Calendar from '../src/calendar'
+// import Calendar from '../dist/vue2-event-calendar.min'
+import Calendar from '../src/dayjs'
 // import Calendar from '../vue2-event-calendar'
 // import '../default.css'
 import data from './data'

@@ -1,6 +1,6 @@
 # Vue2 Calendar Component
 
-Full calendar base on Vue2 and momentjs. Support month and week view. Custom date item style with scopeSlots.
+Full calendar base on Vue2 and dayjs. Support month and week view. Custom date item style with scopeSlots.
 
 [中文文档](https://github.com/kitwon/vue2-event-calendar/blob/master/README-CN.md)
 
@@ -27,11 +27,16 @@ import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
 
-If your project also use `moment.js`, you can use the independence version.
+If your project also use `moment` or `dayjs`, you can use the independence version.
 
 ```javascript
 import 'vue2-event-calendar/default.css'
+// moment
 import Calendar from 'vue2-event-calendar/dist/calendar-nodep.js'
+
+// dayjs
+import Calendar from 'vue2-event-calendar/dist/dayjs-nodep.js'
+
 Vue.component('Calendar', Calendar)
 // ...
 ```

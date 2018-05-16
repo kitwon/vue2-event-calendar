@@ -1,11 +1,11 @@
-import dayjs from 'dayjs'
+import '../style/calendar.less'
+
 import {
   getMonthViewStartDay
 } from './date-func'
 import genBody from './components/body'
 import genHeader from './components/header'
-
-import './style/calendar.less'
+import dayjs from 'dayjs'
 
 const prefixCls = 'vue-calendar'
 
