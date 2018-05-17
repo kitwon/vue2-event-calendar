@@ -225,8 +225,9 @@ export default {
       today: this.currentDay,
       currentDay: null,
       localeData: {
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+        'fa-ir': 'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنجشنبه_جمعه_شنبه'.split('_')
       }
     }
   },
