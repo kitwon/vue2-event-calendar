@@ -2,7 +2,7 @@ export default {
   methods: {
     genWeekTitle(h) {
       const titleCls = `${this.prefixCls}-week-title`
-      const titleData = this.weekDateShort || this.localeData[this.locale]
+      const titleData = this.weekDateShort || this.weekLocaleData || this.localeData[this.locale]
       let temp = this.firstDay - 1
 
       const titleArr = titleData.map(date => {
