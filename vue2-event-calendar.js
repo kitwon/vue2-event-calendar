@@ -202,7 +202,7 @@ var genBody = {
   methods: {
     genWeekTitle: function genWeekTitle(h) {
       var titleCls = this.prefixCls + '-week-title';
-      var titleData = this.weekDateShort || this.localeData[this.locale];
+      var titleData = this.weekDateShort || this.weekLocaleData || this.localeData[this.locale];
       var temp = this.firstDay - 1;
 
       var titleArr = titleData.map(function (date) {
@@ -379,7 +379,8 @@ var calendar$1 = {
         return undefined;
       }
     },
-    renderHeader: Function
+    renderHeader: Function,
+    weekLocaleData: Array
   },
   computed: {
     formatedDay: function formatedDay() {

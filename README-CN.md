@@ -104,7 +104,7 @@ export default {
 | dateData      | 日历展示数据，数据对象中必须有 date 参数，或者你可以使用`matchKey`自定义匹配日期参数的名字 | Object, Array                          |              |                  |
 | matchKey      | 如果数据是一个数组，设置数组对象匹配日期的参数名                                           | String                                 | date         |                  |
 | locale        | 设置日历顶部周标题显示语言                                                                 | String                                 | en           | zh-cn, en        |
-| weekDateShort | 自定义周标题显示内容，如果使用这个 props，local 将不起作用                                 | array                                  |              |                  |
+| weekLocaleData | 自定义周标题显示内容，如果使用这个 props，local 将不起作用                                 | array                                  |              |                  |
 | firstDay      | 设置每周第一天，默认周日，0 为周日                                                         | Number                                 | 0            | 0 - 6            |
 | mode          | 组件显示模式，默认为月日历                                                                 | String                                 | month        | month, week      |
 | prefixCls     | 组件样式命名空间                                                                           | String                                 | vue-calendar |                  |

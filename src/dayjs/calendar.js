@@ -55,7 +55,8 @@ export default {
       type: Function,
       default: () => undefined
     },
-    renderHeader: Function
+    renderHeader: Function,
+    weekLocaleData: Array
   },
   computed: {
     formatedDay() {

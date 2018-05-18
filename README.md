@@ -101,17 +101,17 @@ export default {
 
 ## Props
 
-| parameter     | description                                                                                             | type                                   | default      | acceptable value |
-| ------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------ | ---------------- |
-| startDate     | calendar start date                                                                                     | String, timestamp, Date                | new Date()   |                  |
-| dateData      | calendar data, item object must have date params to match date(params key can use `matchKey` to modify) | Object, Array                          |              |                  |
-| matchKey      | if dateData is Array, specify which key of dateData object as calendar date match key                   | String                                 | date         |                  |
-| locale        | set weekdays locale text, custom this text use `weekDateShort` props                                    | String                                 | en           | zh-cn, en        |
-| weekDateShort | set body weekdays text, **begin with sunday**, if set this props, locale will be not work               | array                                  |              |                  |
-| firstDay      | start day of the week, 0 to 6, 0 as Sunday                                                              | Number                                 | 0            | 0 - 6            |
-| mode          | component view mode                                                                                     | String                                 | month        | month, week      |
-| prefixCls     | component style namespace                                                                               | String                                 | vue-calendar |                  |
-| renderHeader  | redner function for header                                                                              | Function({ prev, next, selectedDate }) |              |
+| parameter      | description                                                                                                                                    | type                                   | default      | acceptable value |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- | ------------ | ---------------- |
+| startDate      | calendar start date                                                                                                                            | String, timestamp, Date                | new Date()   |                  |
+| dateData       | calendar data, item object must have date params to match date(params key can use `matchKey` to modify)                                        | Object, Array                          |              |                  |
+| matchKey       | if dateData is Array, specify which key of dateData object as calendar date match key                                                          | String                                 | date         |                  |
+| locale         | set weekdays locale text, custom this text use `weekDateShort` props. If want to use custom local, use **weekLocaleData** customize you locale | String                                 | en           | zh-cn, en        |
+| weekLocaleData | set body weekdays text, **begin with sunday**, if set this props, locale will be not work                                                      | array                                  |              |                  |
+| firstDay       | start day of the week, 0 to 6, 0 as Sunday                                                                                                     | Number                                 | 0            | 0 - 6            |
+| mode           | component view mode                                                                                                                            | String                                 | month        | month, week      |
+| prefixCls      | component style namespace                                                                                                                      | String                                 | vue-calendar |                  |
+| renderHeader   | redner function for header                                                                                                                     | Function({ prev, next, selectedDate }) |              |
 
 ## Event Props
 
