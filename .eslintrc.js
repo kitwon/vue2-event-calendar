@@ -13,7 +13,8 @@ module.exports = {
   globals: {
     'expect': true,
     'sinon': true,
-    'DATE_MODULE': true
+    'DATE_MODULE': true,
+    '__webpack_modules__': true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
