@@ -6,16 +6,20 @@ export default {
   },
   computed: {
     headerDateText() {
-      if (this.mode === 'week') {
-        const startDay = dayjs(this.formatedDay)
-          .startOf('week')
-          .format('YYYY-MM-DD')
-        const endDay = dayjs(this.formatedDay)
-          .endOf('week')
-          .format('YYYY-MM-DD')
-        return `${startDay} - ${endDay}`
+      if (this.locale) {
+        return new Date(this.formatedDay.toString()).toLocaleDateString(this.locale, { year: 'numeric', month: 'numeric' })
       } else {
-        return dayjs(this.formatedDay).format('YYYY-MM')
+        if (this.mode === 'week') {
+          const startDay = dayjs(this.formatedDay)
+            .startOf('week')
+            .format('YYYY-MM-DD')
+          const endDay = dayjs(this.formatedDay)
+            .endOf('week')
+            .format('YYYY-MM-DD')
+          return `${startDay} - ${endDay}`
+        } else {
+          return dayjs(this.formatedDay).format('YYYY-MM')
+        }
       }
     }
   },
