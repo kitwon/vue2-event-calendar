@@ -81,12 +81,16 @@ var genHeader = {
   },
   computed: {
     headerDateText: function headerDateText() {
-      if (this.mode === 'week') {
-        var startDay = dayjs(this.formatedDay).startOf('week').format('YYYY-MM-DD');
-        var endDay = dayjs(this.formatedDay).endOf('week').format('YYYY-MM-DD');
-        return startDay + ' - ' + endDay;
+      if (this.locale) {
+        return new Date(this.formatedDay.toString()).toLocaleDateString(this.locale, { year: 'numeric', month: 'numeric' });
       } else {
-        return dayjs(this.formatedDay).format('YYYY-MM');
+        if (this.mode === 'week') {
+          var startDay = dayjs(this.formatedDay).startOf('week').format('YYYY-MM-DD');
+          var endDay = dayjs(this.formatedDay).endOf('week').format('YYYY-MM-DD');
+          return startDay + ' - ' + endDay;
+        } else {
+          return dayjs(this.formatedDay).format('YYYY-MM');
+        }
       }
     }
   },
@@ -220,7 +224,8 @@ var calendar$1 = {
           formatedDay = this.formatedDay,
           firstDay = this.firstDay,
           mode = this.mode,
-          matchKey = this.matchKey;
+          matchKey = this.matchKey,
+          locale = this.locale;
 
 
       var dataType = checkType(dateData);
@@ -249,16 +254,37 @@ var calendar$1 = {
           });
         }
 
-        monthData.push(_extends({}, _this.getItemStatus(monthViewStartDate), {
-          data: data || {},
-          date: {
-            year: monthViewStartDate.year(),
-            month: monthViewStartDate.month() + 1,
-            date: monthViewStartDate.date(),
-            day: monthViewStartDate.day(),
-            full: monthViewStartDate.format('YYYY-MM-DD')
-          }
-        }));
+        if (locale) {
+          var date = new Date(monthViewStartDate);
+          monthData.push(_extends({}, _this.getItemStatus(monthViewStartDate), {
+            data: data || {},
+            date: {
+              year: monthViewStartDate.year(),
+              month: monthViewStartDate.month() + 1,
+              date: monthViewStartDate.date(),
+              day: monthViewStartDate.day(),
+              full: monthViewStartDate.format('YYYY-MM-DD')
+            },
+            localeDate: {
+              year: date.toLocaleDateString(locale, { year: 'numeric' }),
+              month: date.toLocaleDateString(locale, { month: 'numeric' }),
+              date: date.toLocaleDateString(locale, { day: 'numeric' }),
+              day: monthViewStartDate.day(),
+              full: date.toLocaleDateString(locale)
+            }
+          }));
+        } else {
+          monthData.push(_extends({}, _this.getItemStatus(monthViewStartDate), {
+            data: data || {},
+            date: {
+              year: monthViewStartDate.year(),
+              month: monthViewStartDate.month() + 1,
+              date: monthViewStartDate.date(),
+              day: monthViewStartDate.day(),
+              full: monthViewStartDate.format('YYYY-MM-DD')
+            }
+          }));
+        }
 
         monthViewStartDate = monthViewStartDate.add(1, 'day');
       };
@@ -367,7 +393,8 @@ var calendar$1 = {
       currentDay: null,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
+        'fa-ir': 'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنجشنبه_جمعه_شنبه'.split('_')
       }
     };
   },

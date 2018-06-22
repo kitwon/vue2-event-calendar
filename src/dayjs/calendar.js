@@ -68,7 +68,8 @@ export default {
         formatedDay,
         firstDay,
         mode,
-        matchKey
+        matchKey,
+        locale
       } = this
 
       const dataType = checkType(dateData)
@@ -103,17 +104,39 @@ export default {
           })
         }
 
-        monthData.push({
-          ...this.getItemStatus(monthViewStartDate),
-          data: data || {},
-          date: {
-            year: monthViewStartDate.year(),
-            month: monthViewStartDate.month() + 1,
-            date: monthViewStartDate.date(),
-            day: monthViewStartDate.day(),
-            full: monthViewStartDate.format('YYYY-MM-DD')
-          }
-        })
+        if (locale) {
+          let date = new Date(monthViewStartDate)
+          monthData.push({
+            ...this.getItemStatus(monthViewStartDate),
+            data: data || {},
+            date: {
+              year: monthViewStartDate.year(),
+              month: monthViewStartDate.month() + 1,
+              date: monthViewStartDate.date(),
+              day: monthViewStartDate.day(),
+              full: monthViewStartDate.format('YYYY-MM-DD')
+            },
+            localeDate: {
+              year: date.toLocaleDateString(locale, { year: 'numeric' }),
+              month: date.toLocaleDateString(locale, { month: 'numeric' }),
+              date: date.toLocaleDateString(locale, { day: 'numeric' }),
+              day: monthViewStartDate.day(),
+              full: date.toLocaleDateString(locale)
+            }
+          })
+        } else {
+          monthData.push({
+            ...this.getItemStatus(monthViewStartDate),
+            data: data || {},
+            date: {
+              year: monthViewStartDate.year(),
+              month: monthViewStartDate.month() + 1,
+              date: monthViewStartDate.date(),
+              day: monthViewStartDate.day(),
+              full: monthViewStartDate.format('YYYY-MM-DD')
+            }
+          })
+        }
 
         monthViewStartDate = monthViewStartDate.add(1, 'day')
       }
@@ -227,7 +250,8 @@ export default {
       currentDay: null,
       localeData: {
         'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+        'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_'),
+        'fa-ir': 'یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنجشنبه_جمعه_شنبه'.split('_')
       }
     }
   },
