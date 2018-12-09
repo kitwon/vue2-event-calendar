@@ -1,22 +1,22 @@
 export default function header(dayjs) {
   return {
     props: {
-      renderHeader: Function
+      renderHeader: Function,
     },
     computed: {
       headerDateText() {
         if (this.mode === 'week') {
           const startDay = dayjs(this.formatedDay)
             .startOf('week')
-            .format('YYYY-MM-DD')
+            .format('YYYY-MM-DD');
           const endDay = dayjs(this.formatedDay)
             .endOf('week')
-            .format('YYYY-MM-DD')
-          return `${startDay} - ${endDay}`
+            .format('YYYY-MM-DD');
+          return `${startDay} - ${endDay}`;
         } else {
-          return dayjs(this.formatedDay).format('YYYY-MM')
+          return dayjs(this.formatedDay).format('YYYY-MM');
         }
-      }
+      },
     },
     methods: {
       genHeaderCenter(h) {
@@ -25,72 +25,72 @@ export default function header(dayjs) {
           {
             class: [`${this.prefixCls}-control`, `${this.prefixCls}-prev`],
             on: {
-              click: this.prev
-            }
+              click: this.prev,
+            },
           },
-          [this.prevNode || '<']
-        )
+          [this.prevNode || '<'],
+        );
 
         const nextControl = h(
           'a',
           {
             class: [`${this.prefixCls}-control`, `${this.prefixCls}-next`],
             on: {
-              click: this.next
-            }
+              click: this.next,
+            },
           },
-          [this.nextNode || '>']
-        )
+          [this.nextNode || '>'],
+        );
 
         const curMonth = h(
           'span',
           {
-            class: [`${this.prefixCls}-header-date`]
+            class: [`${this.prefixCls}-header-date`],
           },
-          [this.headerDateText]
-        )
+          [this.headerDateText],
+        );
 
         if (this.renderHeader) {
           return this.renderHeader({
             prev: this.prev,
             next: this.next,
-            selectedDate: this.headerDateText
-          })
+            selectedDate: this.headerDateText,
+          });
         } else {
           return h(
             'div',
             {
-              class: [`${this.prefixCls}-header-center`]
+              class: [`${this.prefixCls}-header-center`],
             },
-            [prevControl, curMonth, nextControl]
-          )
+            [prevControl, curMonth, nextControl],
+          );
         }
       },
       genHeader(h) {
         const headerLeft = h(
           'div',
           {
-            class: [`${this.prefixCls}-header-left`]
+            class: [`${this.prefixCls}-header-left`],
           },
-          [this.$slots['header-left']]
-        )
+          [this.$slots['header-left']],
+        );
 
         const headerRight = h(
           'div',
           {
-            class: [`${this.prefixCls}-header-right`]
+            class: [`${this.prefixCls}-header-right`],
           },
-          [this.$slots['header-right']]
-        )
+          [this.$slots['header-right']],
+        );
 
         return h(
           'div',
           {
-            class: [`${this.prefixCls}-header`]
+            class: [`${this.prefixCls}-header`],
           },
-          [headerLeft, this.genHeaderCenter(h), headerRight]
-        )
-      }
-    }
-  }
+          [headerLeft, this.genHeaderCenter(h), headerRight],
+        );
+      },
+    },
+  };
 }
