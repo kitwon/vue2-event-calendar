@@ -1,6 +1,6 @@
-import dayjs from 'dayjs';
+import dayjs, { OpUnitType, Dayjs } from 'dayjs';
 
-export function getMonthViewStartDay(date, firstDay, mode) {
+export function getMonthViewStartDay(date: Dayjs, firstDay: number, mode: OpUnitType) {
   const first = Number(firstDay);
   // get cur month start day obj from data
   let start = dayjs(date).startOf(mode);
@@ -21,6 +21,6 @@ export function getMonthViewStartDay(date, firstDay, mode) {
   return start;
 }
 
-export function getMonthViewEndDay(date) {
-  return this.getMonthViewStartDay().add(6, 'week');
-}
+// export function getMonthViewEndDay() {
+//   return getMonthViewStartDay().add(6, 'week');
+// }

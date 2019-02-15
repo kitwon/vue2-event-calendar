@@ -27,22 +27,24 @@
           </button>
         </div>
         <div
+          v-slot:item="{
+            date, data, isPrevMonth, isNextMonth, isToday
+          }"
           :class="[
             'ui-calendar-item',
             {
-              'is-otherMonth': item.isPrevMonth || item.isNextMonth,
-              'is-today': item.isToday
+              'is-otherMonth': isPrevMonth || isNextMonth,
+              'is-today': isToday
             },
           ]"
-          slot-scope="item"
         >
           <div
             :class="['ui-calendar-item-date']">
-            {{item.date.date}}
+            {{date.date}}
           </div>
           <div
             class="ui-calendar-item-name"
-            v-for="(item, index) in item.data"
+            v-for="(item, index) in data"
             :key="index"
           >
             <span>{{item.title}}</span>
