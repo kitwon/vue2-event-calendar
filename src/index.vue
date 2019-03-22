@@ -19,12 +19,14 @@
     <div :class="`${prefixCls}-body`">
       <div v-for="(row, index) in titleArray"
         :key="index"
-        :class="`${prefixCls}-row`">
-        <div :class="`${prefixCls}-item`"
-          v-for="i in 7"
-          :key="i">
-          <slot :date="monthData[i + index * 8]" />
-        </div>
+        :class="`${prefixCls}-body-row`">
+        <template v-for="i in 7">
+          <div :class="`${prefixCls}-day-item`"
+            v-if="monthData[(i - 1) + index * 7]"
+            :key="i">
+            <slot :date="monthData[(i - 1) + index * 7]" />
+          </div>
+        </template>
        </div>
     </div>
   </div>

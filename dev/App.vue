@@ -26,31 +26,31 @@
             Week
           </button>
         </div>
-        <div
-          v-slot:item="{
-            date, data, isPrevMonth, isNextMonth, isToday
-          }"
-          :class="[
-            'ui-calendar-item',
-            {
-              'is-otherMonth': isPrevMonth || isNextMonth,
-              'is-today': isToday
-            },
-          ]"
-        >
+
+        <template v-slot="{date: { date, data, isPrevMonth, isNextMonth, isToday }}">
           <div
-            :class="['ui-calendar-item-date']">
-            {{date.date}}
-          </div>
-          <div
-            class="ui-calendar-item-name"
-            v-for="(item, index) in data"
-            :key="index"
+            :class="[
+              'ui-calendar-item',
+              {
+                'is-otherMonth': isPrevMonth || isNextMonth,
+                'is-today': isToday
+              },
+            ]"
           >
-            <span>{{item.title}}</span>
-            <span class="del" @click="deleteItem(item.title)">✖️</span>
+            <div
+              :class="['ui-calendar-item-date']">
+              {{date.date}}
+            </div>
+            <div
+              class="ui-calendar-item-name"
+              v-for="(item, index) in data"
+              :key="index"
+            >
+              <span>{{item.title}}</span>
+              <span class="del" @click="deleteItem(item.title)">✖️</span>
+            </div>
           </div>
-        </div>
+        </template>
       </Calendar>
     </div>
   </div>
