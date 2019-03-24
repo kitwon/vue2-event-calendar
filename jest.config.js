@@ -21,6 +21,11 @@ module.exports = {
   testMatch: [
     '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
   ],
-  setupFiles: ['test/setup'],
-  testURL: 'http://localhost/'
+  setupFiles: ['<rootDir>test/setup'],
+  testURL: 'http://localhost/',
+  globals: {
+    'ts-jest': {
+      babelConfig: true
+    }
+  }
 }

@@ -1,7 +1,7 @@
 interface IRenderOptions {
   prev: IMonthChange;
   next: IMonthChange;
-  selectedDate: IMonthChange;
+  selectedDate: string;
 }
 
 interface ILocaleData {

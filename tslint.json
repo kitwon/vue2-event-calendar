@@ -1,6 +1,5 @@
 {
   "defaultSeverity": "warning",
-  "tslint.enable": true,
   "extends": [
     "tslint:recommended"
   ],

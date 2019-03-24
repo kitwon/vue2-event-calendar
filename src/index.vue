@@ -4,6 +4,8 @@
       :mode="mode"
       :prefix-cls="prefixCls"
       :render-header="renderHeader"
+      :header-left="$slots['header-left']"
+      :header-right="$slots['header-right']"
       :current-date="formatedDay"
       @prev="prev"
       @next="next" />
@@ -37,7 +39,7 @@ import { Component, Vue, Prop, Watch, Emit } from 'vue-property-decorator';
 import dayjs, { OpUnitType } from 'dayjs';
 import { getMonthViewStartDay} from './date-func';
 import { CreateElement } from 'vue';
-import CalendarHeader from './header.vue';
+import CalendarHeader from './header';
 
 @Component({
   components: {
