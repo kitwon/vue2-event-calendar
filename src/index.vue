@@ -42,6 +42,7 @@ import { CreateElement } from 'vue';
 import CalendarHeader from './header';
 
 @Component({
+  name: 'Calendar',
   components: {
     CalendarHeader
   }
@@ -49,7 +50,7 @@ import CalendarHeader from './header';
 export default class Calendar extends Vue {
   @Prop({ default: 'calendar' }) prefixCls!: string;
   @Prop([Number, String, Date]) startDate!: number | string | Date;
-  @Prop([Object, Array]) dateData!: IDataObject | any[];
+  @Prop({ default: () => [] }) dateData!: IDataObject | any[];
   @Prop({ default: 'date' }) matchKey!: string;
   @Prop({ default: 'en' }) locale!: string;
   @Prop({ default: 0 }) firstDay!: number;

@@ -1,8 +1,10 @@
-import { VNode } from 'vue';
+import { VNodeChildren } from 'vue';
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Dayjs } from 'dayjs';
 
-@Component
+@Component({
+  name: 'CalendarHeader'
+})
 export default class Header extends Vue {
   @Prop({
     type: String,
@@ -10,8 +12,8 @@ export default class Header extends Vue {
   }) prefixCls!: string;
   @Prop(String) mode!: string;
   @Prop(Function) renderHeader!: IRenderHeader;
-  @Prop(Function) headerLeft!: VNode;
-  @Prop(Function) headerRight!: VNode;
+  @Prop(Array) headerLeft!: VNodeChildren;
+  @Prop(Array) headerRight!: VNodeChildren;
   @Prop(Object) currentDate!: Dayjs;
 
   get headerDateText() {
@@ -35,19 +37,20 @@ export default class Header extends Vue {
   get HeaderCenter() {
     const p: any = this.$parent;
     const { prev, next } = p;
+    const { prefixCls } = this;
     const Content = this.renderHeader
       ? this.renderHeader({
           prev,
           next,
           selectedDate: this.headerDateText
         })
-      : (<div class={`${p.pre}-center`}>
-          <a class={[`${p.pre}-control`, `${p.pre}-prev`]}
+      : (<div class={`${prefixCls}-header-center`}>
+          <a class={[`${prefixCls}-control`, `${prefixCls}-prev`]}
             onClick={prev}>
             {'<'}
           </a>
-          <span class={`${p.pre}-date`}>{this.headerDateText}</span>
-          <a class={[`${p.pre}-control`, `${p.pre}-next`]}
+          <span class={`${prefixCls}-header-date`}>{this.headerDateText}</span>
+          <a class={[`${prefixCls}-control`, `${prefixCls}-next`]}
             onClick={next}>
             {'>'}
           </a>
@@ -56,15 +59,16 @@ export default class Header extends Vue {
   }
 
   render() {
+    const { prefixCls } = this;
     return (
-      <div class={this.pre}>
-        <div class={`${this.pre}-left`}>
+      <div class={`${prefixCls}-header`}>
+        <div class={`${prefixCls}-header-left`}>
           { this.headerLeft }
         </div>
 
         { this.HeaderCenter }
 
-        <div class={`${this.pre}-right`}>
+        <div class={`${prefixCls}-header-right`}>
           { this.headerRight }
         </div>
       </div>

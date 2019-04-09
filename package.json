@@ -20,22 +20,22 @@
   "repository": "https://github.com/kitwon/vue2-calendar",
   "devDependencies": {
     "@types/jest": "^23.3.14",
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-typescript": "^3.5.0",
-    "@vue/cli-plugin-unit-jest": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-plugin-babel": "^3.5.5",
+    "@vue/cli-plugin-typescript": "^3.5.3",
+    "@vue/cli-plugin-unit-jest": "^3.5.3",
+    "@vue/cli-service": "^3.5.3",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "ts-jest": "^23.0.0",
-    "typescript": "^3.3.3333",
-    "vue-template-compiler": "^2.6.8"
+    "typescript": "^3.4.2",
+    "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "dayjs": "^1.8.10",
-    "vue": "^2.6.8",
+    "dayjs": "^1.8.12",
+    "vue": "^2.6.10",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.3.0"
   }

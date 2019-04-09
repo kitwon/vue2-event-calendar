@@ -1,9 +1,17 @@
-const date = new Date()
-const year = date.getFullYear()
-const month = date.getMonth() + 1
-const day = date.getDate()
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
 
-const ArrayData = [
+interface IData {
+  date: string;
+  title: string;
+}
+interface IObjectData {
+  [key: string]: IData;
+}
+
+const ArrayData: IData[] = [
   {
     date: `${year}-${month}-${day}`,
     title: 'buy something'
@@ -24,14 +32,14 @@ const ArrayData = [
     date: `${year}-${month + 2}-6`,
     title: 'a course of lectures'
   }
-]
-let ObjectData = {}
+];
+const ObjectData: IObjectData = {};
 
-ArrayData.forEach(item => {
-  ObjectData[item.date] = { title: item.title }
-})
+ArrayData.forEach((item: IData) => {
+  ObjectData[item.date] = { ...item };
+});
 
 export default {
   Array: ArrayData,
   Object: ObjectData
-}
+};
