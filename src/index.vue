@@ -19,7 +19,7 @@
     </div>
 
     <div :class="`${prefixCls}-body`">
-      <div v-for="(row, index) in titleArray"
+      <div v-for="(row, index) in (monthData.length / titleArray.length)"
         :key="index"
         :class="`${prefixCls}-body-row`">
         <template v-for="i in 7">
@@ -40,6 +40,7 @@ import dayjs, { OpUnitType } from 'dayjs';
 import { getMonthViewStartDay} from './date-func';
 import { CreateElement } from 'vue';
 import CalendarHeader from './header';
+import { IDataObject, IRenderHeader, ILocaleData } from './types/index';
 
 @Component({
   name: 'Calendar',

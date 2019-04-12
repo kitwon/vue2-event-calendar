@@ -1,6 +1,7 @@
 import { VNodeChildren } from 'vue';
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Dayjs } from 'dayjs';
+import { IRenderHeader } from './types/index';
 
 @Component({
   name: 'CalendarHeader'
