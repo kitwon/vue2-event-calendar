@@ -39,7 +39,7 @@ import { Component, Vue, Prop, Watch, Emit } from 'vue-property-decorator';
 import dayjs, { OpUnitType } from 'dayjs';
 import { getMonthViewStartDay} from './date-func';
 import { CreateElement } from 'vue';
-import CalendarHeader from './header';
+import CalendarHeader from './header.vue';
 import { IDataObject, IRenderHeader, ILocaleData } from './types/index';
 
 @Component({

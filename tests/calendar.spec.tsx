@@ -1,6 +1,6 @@
 import { shallowMount, mount, BaseWrapper } from '@vue/test-utils';
 import Calendar from '../src/index.vue';
-import Header from '../src/header';
+import Header from '../src/header.vue';
 import data from '../dev/data';
 
 interface IWrapperOptions {

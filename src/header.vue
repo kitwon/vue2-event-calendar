@@ -1,3 +1,4 @@
+<script lang="tsx">
 import { VNodeChildren } from 'vue';
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import { Dayjs } from 'dayjs';
@@ -76,3 +77,4 @@ export default class Header extends Vue {
     );
   }
 }
+</script>
