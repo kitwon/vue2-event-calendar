@@ -1,0 +1,6 @@
+{
+  "presets": [
+    "@vue/app",
+    "@vue/babel-preset-jsx"
+  ]
+}
