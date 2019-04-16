@@ -1,15 +1,18 @@
+const path = require('path');
+
 module.exports = ({ config }) => {
+  config.context = path.resolve(__dirname, '..');
+
   config.module.rules.push({
-    test: /\.(ts|tsx)$/,
-    use: [
-      {
-        loader: require.resolve('ts-loader'),
-      }
-    ]
-  }, {
+    test: /\.stories\.jsx?$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  });
+
+  config.module.rules.push({
     test: /\.less$/,
     use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'less-loader']
   });
-  config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve.extensions.push('.vue', '.css', '.less', '.html');
   return config;
 };

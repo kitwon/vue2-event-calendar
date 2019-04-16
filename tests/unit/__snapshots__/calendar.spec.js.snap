@@ -1511,17 +1511,6 @@ exports[`Calendar component scoped-slot should match snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="calendar-body-row"
-    >
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-    </div>
   </div>
 </div>
 `;
@@ -1622,161 +1611,318 @@ exports[`Calendar component should match snapshot 1`] = `
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          31
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          1
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          2
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          3
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          4
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          5
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          6
+        </span>
+      </div>
     </div>
     <div
       class="calendar-body-row"
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          7
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          8
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          9
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          10
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          11
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          12
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          13
+        </span>
+      </div>
     </div>
     <div
       class="calendar-body-row"
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          14
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          15
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          16
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          17
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          18
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          19
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          20
+        </span>
+      </div>
     </div>
     <div
       class="calendar-body-row"
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          21
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          22
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          23
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          24
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          25
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          26
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          27
+        </span>
+      </div>
     </div>
     <div
       class="calendar-body-row"
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          28
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          29
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          30
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          31
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          1
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          2
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          3
+        </span>
+      </div>
     </div>
     <div
       class="calendar-body-row"
     >
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          4
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          5
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          6
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          7
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          8
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
+      >
+        <span>
+          9
+        </span>
+      </div>
       <div
         class="calendar-day-item"
-      />
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
-      <!---->
+      >
+        <span>
+          10
+        </span>
+      </div>
     </div>
   </div>
 </div>

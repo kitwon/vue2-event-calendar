@@ -3,15 +3,8 @@ const year = date.getFullYear();
 const month = date.getMonth() + 1;
 const day = date.getDate();
 
-interface IData {
-  date: string;
-  title: string;
-}
-interface IObjectData {
-  [key: string]: IData;
-}
 
-const ArrayData: IData[] = [
+const ArrayData = [
   {
     date: `${year}-${month}-${day}`,
     title: 'buy something'
@@ -33,9 +26,9 @@ const ArrayData: IData[] = [
     title: 'a course of lectures'
   }
 ];
-const ObjectData: IObjectData = {};
+const ObjectData = {};
 
-ArrayData.forEach((item: IData) => {
+ArrayData.forEach((item) => {
   ObjectData[item.date] = { ...item };
 });
 

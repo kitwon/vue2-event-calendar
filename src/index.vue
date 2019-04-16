@@ -26,7 +26,9 @@
           <div :class="`${prefixCls}-day-item`"
             v-if="monthData[(i - 1) + index * 7]"
             :key="i">
-            <slot :date="monthData[(i - 1) + index * 7]" />
+            <slot :date="monthData[(i - 1) + index * 7]">
+              <span>{{ monthData[(i - 1) + index * 7].date.date }}</span>
+            </slot>
           </div>
         </template>
        </div>
@@ -34,223 +36,229 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue, Prop, Watch, Emit } from 'vue-property-decorator';
-import dayjs, { OpUnitType } from 'dayjs';
-import { getMonthViewStartDay} from './date-func';
-import { CreateElement } from 'vue';
-import CalendarHeader from './header.vue';
-import { IDataObject, IRenderHeader, ILocaleData } from './types/index';
+<script>
+import dayjs from 'dayjs';
+import getMonthViewStartDay from './date-func';
+import CalendarHeader from './header';
 
-@Component({
-  name: 'Calendar',
+export default {
   components: {
     CalendarHeader
-  }
-})
-export default class Calendar extends Vue {
-  @Prop({ default: 'calendar' }) prefixCls!: string;
-  @Prop([Number, String, Date]) startDate!: number | string | Date;
-  @Prop({ default: () => [] }) dateData!: IDataObject | any[];
-  @Prop({ default: 'date' }) matchKey!: string;
-  @Prop({ default: 'en' }) locale!: string;
-  @Prop({ default: 0 }) firstDay!: number;
-  @Prop({
-    default: 'month',
-    validator: (val: any) => val === 'month' || val === 'week'
-  }) mode!: OpUnitType;
-  @Prop(Array) weekDateShort!: string[];
-  // @Prop({ default: () => undefined }) onMonthChange!: IMonthChange;
-  // @Prop({ default: () => undefined }) onPrev!: IMonthChange;
-  // @Prop({ default: () => undefined }) onNext!: IMonthChange;
-  @Prop(Function) renderHeader!: IRenderHeader;
-  @Prop(Array) weekLocaleData!: string[];
+  },
+  props: {
+    prefixCls: {
+      type: String,
+      default: 'calendar'
+    },
+    startDate: [Number, String, Date],
+    dateData: {
+      type: [Object, Array],
+      default: () => []
+    },
+    matchKey: {
+      type: String,
+      default: 'date'
+    },
+    locale: {
+      type: String,
+      default: 'en'
+    },
+    firstDay: {
+      type: Number,
+      default: 0
+    },
+    mode: {
+      type: String,
+      default: 'month',
+      validator: val => val === 'month' || val === 'week'
+    },
+    weekDateShort: Array,
+    renderHeader: Function,
+    weekLocaleData: Array
+  },
+  data() {
+    return {
+      today: this.currentDay,
+      currentDay: null,
+      localeData: {
+        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        en: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+      }
+    };
+  },
+  computed: {
+    formatedDay() {
+      return dayjs(new Date(this.currentDay));
+    },
 
+    titleArray() {
+      const arr = this.weekDateShort || this.weekLocaleData || this.localeData[this.locale];
+      let i = this.firstDay - 1;
 
-  // init data
-  currentDay: any = '';
-  today: string = this.currentDay;
-  localeData: ILocaleData = {
-    'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-    'en': 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
-  };
+      return arr.map(() => {
+        i += 1;
+        if (i >= 7) { i = 0; }
 
-  // computed
-  get formatedDay() {
-    return dayjs(new Date(this.currentDay));
-  }
+        return arr[i];
+      });
+    },
 
-  get titleArray() {
-    const arr = this.weekDateShort || this.weekLocaleData || this.localeData[this.locale];
-    let i = this.firstDay - 1;
+    monthData() {
+      const {
+        dateData,
+        formatedDay,
+        firstDay,
+        mode,
+        matchKey
+      } = this;
 
-    return arr.map(() => {
-      if (++i >= 7) { i = 0; }
+      if (!formatedDay) { return []; }
 
-      return arr[i];
-    });
-  }
+      let monthViewStartDate = getMonthViewStartDay(
+        formatedDay,
+        firstDay,
+        mode,
+      );
+      const monthData = [];
+      let row = 6;
 
-  get monthData() {
-    const {
-      dateData,
-      formatedDay,
-      firstDay,
-      mode,
-      matchKey,
-    } = this;
+      if (this.mode === 'week') { row = 1; }
 
-    if (!formatedDay) { return []; }
+      for (let day = 0; day < 7 * row; day += 1) {
+        let data = [];
 
-    let monthViewStartDate = getMonthViewStartDay(
-      formatedDay,
-      firstDay,
-      mode,
-    );
-    const monthData = [];
-    let row = 6;
+        /* eslint no-loop-func: 0 */
+        if (dateData instanceof Array) {
+          data = dateData.filter((item) => {
+            const date = item[matchKey].replace('-', '/');
+            return monthViewStartDate.isSame(
+              dayjs(new Date(date)),
+            );
+          });
+        } else {
+          Object.keys(dateData).forEach((key) => {
+            const date = key.replace('-', '/');
+            if (monthViewStartDate.isSame(dayjs(new Date(date)))) {
+              data.push(dateData[key]);
+            }
+          });
+        }
 
-    if (this.mode === 'week') { row = 1; }
-
-    for (let day = 0; day < 7 * row; day++) {
-      let data: any[] = [];
-
-      if (dateData instanceof Array) {
-        data = dateData.filter((item: any) => {
-          const date = item[matchKey].replace('-', '/');
-          return monthViewStartDate.isSame(
-            dayjs(new Date(date)),
-          );
-        });
-      } else {
-        Object.keys(dateData).forEach((key: string) => {
-          const date = key.replace('-', '/');
-          if (monthViewStartDate.isSame(dayjs(new Date(date)))) {
-            data.push(dateData[key]);
+        monthData.push({
+          ...this.getItemStatus(monthViewStartDate),
+          data: data || {},
+          date: {
+            year: monthViewStartDate.year(),
+            month: monthViewStartDate.month() + 1,
+            date: monthViewStartDate.date(),
+            day: monthViewStartDate.day(),
+            full: monthViewStartDate.format('YYYY-MM-DD')
           }
         });
+
+        monthViewStartDate = monthViewStartDate.add(1, 'day');
       }
 
-      monthData.push({
-        ...this.getItemStatus(monthViewStartDate),
-        data: data || {},
-        date: {
-          year: monthViewStartDate.year(),
-          month: monthViewStartDate.month() + 1,
-          date: monthViewStartDate.date(),
-          day: monthViewStartDate.day(),
-          full: monthViewStartDate.format('YYYY-MM-DD'),
-        },
+      return monthData;
+    }
+  },
+  watch: {
+    startDate: {
+      immediate: true,
+      handler(val) {
+        this.currentDay = val ? new Date(val) : new Date();
+
+        if (!this.today) {
+          this.today = this.currentDay;
+        }
+      }
+    },
+    currentDay: {
+      immediate: true,
+      handler: 'onMonthChange'
+    },
+    mode: 'onMonthChange'
+  },
+  methods: {
+    getItemStatus(date) {
+      const tempDate = dayjs(date);
+      const {
+        formatedDay
+      } = this;
+
+      const isCurMonth = tempDate.month() === formatedDay.month();
+
+      const isPrevMonth = !isCurMonth && tempDate.isBefore(this.formatedDay, 'month');
+      const isNextMonth = !isCurMonth && tempDate.isAfter(this.formatedDay, 'month');
+
+      const isPrevLastDay = isPrevMonth ? tempDate.isSame(tempDate.endOf('month')) : false;
+      const isNextFirstDay = isNextMonth ? tempDate.isSame(tempDate.startOf('month')) : false;
+
+      return {
+        isPrevMonth,
+        isPrevLastDay,
+        isNextMonth,
+        isNextFirstDay,
+        // isToday: date.isSame(dayjs(this.today), 'day'),
+        isToday: date.format('YYYY-MM-DD') === dayjs(this.today).format('YYYY-MM-DD'),
+        isCurMonth
+      };
+    },
+
+    onMonthChange() {
+      this.$emit('onMonthChange', {
+        startDay: this.monthData[0].date,
+        endDay: this.monthData[this.monthData.length - 1].date
       });
+    },
 
-      monthViewStartDate = monthViewStartDate.add(1, 'day');
-    }
+    changeDate(date) {
+      if (typeof date !== 'string' && Object.prototype.toString.call(date) !== '[object Date]') {
+        /* tslint:disable: no-console */
+        console.error('invalied date!');
+        return;
+      }
 
-    return monthData;
-  }
+      this.currentDay = date;
+    },
 
-  // methods
-  getItemStatus(date: any) {
-    const tempDate = dayjs(date);
-    const {
-      formatedDay,
-    } = this;
+    prev() {
+      const {
+        formatedDay,
+        mode,
+        monthData
+      } = this;
 
-    const isCurMonth = tempDate.month() === formatedDay.month();
+      this.currentDay = formatedDay
+        .subtract(1, mode)
+        .startOf(mode)
+        .format('YYYY-MM-DD');
 
-    const isPrevMonth = !isCurMonth && tempDate.isBefore(this.formatedDay, 'month');
-    const isNextMonth = !isCurMonth && tempDate.isAfter(this.formatedDay, 'month');
+      this.$emit('prev', {
+        startDay: monthData[0].date,
+        endDay: monthData[monthData.length - 1].date
+      });
+    },
 
-    const isPrevLastDay = isPrevMonth ? tempDate.isSame(tempDate.endOf('month')) : false;
-    const isNextFirstDay = isNextMonth ? tempDate.isSame(tempDate.startOf('month')) : false;
+    next() {
+      const {
+        formatedDay,
+        mode,
+        monthData
+      } = this;
 
-    return {
-      isPrevMonth,
-      isPrevLastDay,
-      isNextMonth,
-      isNextFirstDay,
-      // isToday: date.isSame(dayjs(this.today), 'day'),
-      isToday: date.format('YYYY-MM-DD') === dayjs(this.today).format('YYYY-MM-DD'),
-      isCurMonth,
-    };
-  }
+      this.currentDay = formatedDay
+        .add(1, mode)
+        .startOf(mode)
+        .format('YYYY-MM-DD');
 
-  @Emit()
-  onMonthChange() {
-    return {
-      startDay: this.monthData[0].date,
-      endDay: this.monthData[this.monthData.length - 1].date,
-    };
-  }
-
-  changeDate(date: Date) {
-    if (typeof date !== 'string' && Object.prototype.toString.call(date) !== '[object Date]') {
-      /* tslint:disable: no-console */
-      console.error('invalied date!');
-      return false;
-    }
-
-    this.currentDay = date;
-  }
-
-  @Emit()
-  prev() {
-    const {
-      formatedDay,
-      mode,
-      monthData,
-    } = this;
-
-    this.currentDay = formatedDay
-      .subtract(1, mode)
-      .startOf(mode)
-      .format('YYYY-MM-DD');
-
-    return {
-      startDay: monthData[0].date,
-      endDay: monthData[monthData.length - 1].date,
-    };
-  }
-
-  @Emit()
-  next() {
-    const {
-      formatedDay,
-      mode,
-      monthData,
-    } = this;
-
-    this.currentDay = formatedDay
-      .add(1, mode)
-      .startOf(mode)
-      .format('YYYY-MM-DD');
-
-    return {
-      startDay: monthData[0].date,
-      endDay: monthData[monthData.length - 1].date,
-    };
-  }
-
-  // watch
-  @Watch('startDate', { immediate: true })
-  private onStartDateChange(val: string) {
-    this.currentDay = val ? new Date(val) : new Date();
-
-    if (!this.today) {
-      this.today = this.currentDay;
+      this.$emit('next', {
+        startDay: monthData[0].date,
+        endDay: monthData[monthData.length - 1].date
+      });
     }
   }
-
-  @Watch('currentDay', { immediate: true })
-  private onCurrentDatyChange() {
-    this.onMonthChange();
-  }
-
-  @Watch('mode')
-  private onModeChange() {
-    this.onMonthChange();
-  }
-}
+};
 </script>
 
 <style lang="less">
