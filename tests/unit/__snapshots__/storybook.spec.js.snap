@@ -1,6 +1,2001 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Locale cn 1`] = `
+exports[`Storyshots Calendar change firstday 1`] = `
+<div
+  class="calendar is-month"
+>
+  <div
+    class="calendar-header"
+  >
+    <div
+      class="calendar-header-left"
+    />
+    <div
+      class="calendar-header-center"
+    >
+      <a
+        class="calendar-control calendar-prev"
+      >
+        &lt;
+      </a>
+      <span
+        class="calendar-header-date"
+      >
+        2019-04
+      </span>
+      <a
+        class="calendar-control calendar-next"
+      >
+        &gt;
+      </a>
+    </div>
+    <div
+      class="calendar-header-right"
+    />
+  </div>
+   
+  <div
+    class="calendar-week"
+  >
+    <div
+      class="calendar-week__item"
+    >
+      
+      Sun
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Mon
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Tue
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Wed
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Thu
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Fri
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Sat
+    
+    </div>
+  </div>
+   
+  <div
+    class="calendar-body"
+  >
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            31
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            12
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            13
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            14
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            15
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-today"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            16
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            17
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            18
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            19
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            20
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            21
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            22
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            23
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            24
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            25
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            26
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            27
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            28
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            29
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            30
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Calendar custom week header 1`] = `
+<div
+  class="calendar is-month"
+>
+  <div
+    class="calendar-header"
+  >
+    <div
+      class="calendar-header-left"
+    />
+    <div
+      class="calendar-header-center"
+    >
+      <a
+        class="calendar-control calendar-prev"
+      >
+        &lt;
+      </a>
+      <span
+        class="calendar-header-date"
+      >
+        2019-04
+      </span>
+      <a
+        class="calendar-control calendar-next"
+      >
+        &gt;
+      </a>
+    </div>
+    <div
+      class="calendar-header-right"
+    />
+  </div>
+   
+  <div
+    class="calendar-week"
+  >
+    <div
+      class="calendar-week__item"
+    >
+      
+      Dimanche
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Lundi
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Mardi
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Mercredi
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Jeudi
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Vendredi
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Samedi
+    
+    </div>
+  </div>
+   
+  <div
+    class="calendar-body"
+  >
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            31
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            12
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            13
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            14
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            15
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-today"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            16
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            17
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            18
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            19
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            20
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            21
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            22
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            23
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            24
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            25
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            26
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            27
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            28
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            29
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            30
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Calendar default 1`] = `
+<div
+  class="calendar is-month"
+>
+  <div
+    class="calendar-header"
+  >
+    <div
+      class="calendar-header-left"
+    />
+    <div
+      class="calendar-header-center"
+    >
+      <a
+        class="calendar-control calendar-prev"
+      >
+        &lt;
+      </a>
+      <span
+        class="calendar-header-date"
+      >
+        2019-04
+      </span>
+      <a
+        class="calendar-control calendar-next"
+      >
+        &gt;
+      </a>
+    </div>
+    <div
+      class="calendar-header-right"
+    />
+  </div>
+   
+  <div
+    class="calendar-week"
+  >
+    <div
+      class="calendar-week__item"
+    >
+      
+      Sun
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Mon
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Tue
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Wed
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Thu
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Fri
+    
+    </div>
+    <div
+      class="calendar-week__item"
+    >
+      
+      Sat
+    
+    </div>
+  </div>
+   
+  <div
+    class="calendar-body"
+  >
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            31
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            12
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            13
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            14
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            15
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-today"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            16
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            17
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            18
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            19
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            20
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            21
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            22
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            23
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            24
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            25
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            26
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            27
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            28
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            29
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            30
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            1
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            2
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            3
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            4
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-body-row"
+    >
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            6
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            7
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            8
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            9
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            10
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item is-otherMonth"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            11
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Calendar locale 1`] = `
 <div
   class="calendar is-month"
 >
@@ -103,11 +2098,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             31
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -119,11 +2111,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             1
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -135,11 +2124,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             2
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -151,11 +2137,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             3
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -167,11 +2150,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             4
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -183,11 +2163,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             5
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -199,11 +2176,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             6
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -219,11 +2193,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             7
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -235,11 +2206,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             8
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -251,11 +2219,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             9
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -267,11 +2232,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             10
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -283,11 +2245,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             11
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -299,11 +2258,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             12
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -315,11 +2271,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             13
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -335,11 +2288,21 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             14
-          
           </div>
-           
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            15
+          </div>
         </div>
       </div>
       <div
@@ -351,34 +2314,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
-            15
-          
-          </div>
-           
-          <div
-            class="ui-calendar-item-name"
-          >
-            <span>
-              shopping
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
             16
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -390,11 +2327,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             17
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -406,11 +2340,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             18
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -422,11 +2353,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             19
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -438,11 +2366,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             20
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -458,11 +2383,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             21
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -474,11 +2396,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             22
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -490,11 +2409,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             23
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -506,11 +2422,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             24
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -522,11 +2435,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             25
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -538,11 +2448,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             26
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -554,11 +2461,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             27
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -574,11 +2478,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             28
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -590,11 +2491,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             29
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -606,11 +2504,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             30
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -622,11 +2517,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             1
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -638,17 +2530,7 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             2
-          
-          </div>
-           
-          <div
-            class="ui-calendar-item-name"
-          >
-            <span>
-              remember homework
-            </span>
           </div>
         </div>
       </div>
@@ -661,11 +2543,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             3
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -677,11 +2556,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             4
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -697,11 +2573,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             5
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -713,11 +2586,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             6
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -729,11 +2599,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             7
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -745,11 +2612,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             8
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -761,11 +2625,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             9
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -777,11 +2638,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             10
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -793,11 +2651,8 @@ exports[`Storyshots Locale cn 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             11
-          
           </div>
-           
         </div>
       </div>
     </div>
@@ -805,812 +2660,7 @@ exports[`Storyshots Locale cn 1`] = `
 </div>
 `;
 
-exports[`Storyshots Mode month 1`] = `
-<div
-  class="calendar is-month"
->
-  <div
-    class="calendar-header"
-  >
-    <div
-      class="calendar-header-left"
-    />
-    <div
-      class="calendar-header-center"
-    >
-      <a
-        class="calendar-control calendar-prev"
-      >
-        &lt;
-      </a>
-      <span
-        class="calendar-header-date"
-      >
-        2019-04
-      </span>
-      <a
-        class="calendar-control calendar-next"
-      >
-        &gt;
-      </a>
-    </div>
-    <div
-      class="calendar-header-right"
-    />
-  </div>
-   
-  <div
-    class="calendar-week"
-  >
-    <div
-      class="calendar-week__item"
-    >
-      
-      Sun
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Mon
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Tue
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Wed
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Thu
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Fri
-    
-    </div>
-    <div
-      class="calendar-week__item"
-    >
-      
-      Sat
-    
-    </div>
-  </div>
-   
-  <div
-    class="calendar-body"
-  >
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            31
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            1
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            2
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            3
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            4
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            5
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            6
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            7
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            8
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            9
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            10
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            11
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            12
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            13
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            14
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-today"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            15
-          
-          </div>
-           
-          <div
-            class="ui-calendar-item-name"
-          >
-            <span>
-              shopping
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            16
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            17
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            18
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            19
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            20
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            21
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            22
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            23
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            24
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            25
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            26
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            27
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            28
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            29
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            30
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            1
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            2
-          
-          </div>
-           
-          <div
-            class="ui-calendar-item-name"
-          >
-            <span>
-              remember homework
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            3
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            4
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-    <div
-      class="calendar-body-row"
-    >
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            5
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            6
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            7
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            8
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            9
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            10
-          
-          </div>
-           
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item is-otherMonth"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
-            11
-          
-          </div>
-           
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Mode week 1`] = `
+exports[`Storyshots Calendar week mode 1`] = `
 <div
   class="calendar is-week"
 >
@@ -1713,11 +2763,21 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             14
-          
           </div>
-           
+        </div>
+      </div>
+      <div
+        class="calendar-day-item"
+      >
+        <div
+          class="ui-calendar-item"
+        >
+          <div
+            class="ui-calendar-item-date"
+          >
+            15
+          </div>
         </div>
       </div>
       <div
@@ -1729,34 +2789,8 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
-            15
-          
-          </div>
-           
-          <div
-            class="ui-calendar-item-name"
-          >
-            <span>
-              shopping
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="calendar-day-item"
-      >
-        <div
-          class="ui-calendar-item"
-        >
-          <div
-            class="ui-calendar-item-date"
-          >
-            
             16
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -1768,11 +2802,8 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             17
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -1784,11 +2815,8 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             18
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -1800,11 +2828,8 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             19
-          
           </div>
-           
         </div>
       </div>
       <div
@@ -1816,11 +2841,8 @@ exports[`Storyshots Mode week 1`] = `
           <div
             class="ui-calendar-item-date"
           >
-            
             20
-          
           </div>
-           
         </div>
       </div>
     </div>

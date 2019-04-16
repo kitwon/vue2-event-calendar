@@ -1,4 +1,4 @@
-import { configure } from '@storybook/vue';
+import { configure, setAddon } from '@storybook/vue';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../src', true, /.stories.(j|t)sx?$/);

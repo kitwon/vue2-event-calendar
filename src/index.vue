@@ -72,7 +72,10 @@ export default {
       default: 'month',
       validator: val => val === 'month' || val === 'week'
     },
-    weekDateShort: Array,
+    weekDateShort: {
+      type: Array,
+      validator: val => val.length === 7
+    },
     renderHeader: Function,
     weekLocaleData: Array
   },
@@ -114,7 +117,8 @@ export default {
 
       if (!formatedDay) { return []; }
 
-      let monthViewStartDate = getMonthViewStartDay(
+      // start date of view, and it will be
+      let startDate = getMonthViewStartDay(
         formatedDay,
         firstDay,
         mode,
@@ -122,41 +126,43 @@ export default {
       const monthData = [];
       let row = 6;
 
+      // change row lenght when mode changing
       if (this.mode === 'week') { row = 1; }
 
+      // loop view item and get date data
       for (let day = 0; day < 7 * row; day += 1) {
         let data = [];
 
+        // TODO:
+        // opmize ALG
+
         /* eslint no-loop-func: 0 */
+        // get data if date matched
         if (dateData instanceof Array) {
           data = dateData.filter((item) => {
             const date = item[matchKey].replace('-', '/');
-            return monthViewStartDate.isSame(
+            return startDate.isSame(
               dayjs(new Date(date)),
             );
           });
         } else {
           Object.keys(dateData).forEach((key) => {
             const date = key.replace('-', '/');
-            if (monthViewStartDate.isSame(dayjs(new Date(date)))) {
+            if (startDate.isSame(dayjs(new Date(date)))) {
               data.push(dateData[key]);
             }
           });
         }
 
+        // get date info
         monthData.push({
-          ...this.getItemStatus(monthViewStartDate),
+          ...this.getItemStatus(startDate),
           data: data || {},
-          date: {
-            year: monthViewStartDate.year(),
-            month: monthViewStartDate.month() + 1,
-            date: monthViewStartDate.date(),
-            day: monthViewStartDate.day(),
-            full: monthViewStartDate.format('YYYY-MM-DD')
-          }
+          date: this.getDate(startDate)
         });
 
-        monthViewStartDate = monthViewStartDate.add(1, 'day');
+        // increase date
+        startDate = startDate.add(1, 'day');
       }
 
       return monthData;
@@ -205,10 +211,22 @@ export default {
       };
     },
 
+    getDate(date) {
+      return {
+        year: date.year(),
+        month: date.month() + 1,
+        date: date.date(),
+        day: date.day(),
+        full: date.format('YYYY-MM-DD')
+      }
+    },
+
     onMonthChange() {
+      console.log(this.getItemStatus(this.formatedDay))
       this.$emit('onMonthChange', {
         startDay: this.monthData[0].date,
-        endDay: this.monthData[this.monthData.length - 1].date
+        endDay: this.monthData[this.monthData.length - 1].date,
+        now: this.getDate(this.formatedDay)
       });
     },
 
@@ -236,7 +254,8 @@ export default {
 
       this.$emit('prev', {
         startDay: monthData[0].date,
-        endDay: monthData[monthData.length - 1].date
+        endDay: monthData[monthData.length - 1].date,
+        now: this.getDate(formatedDay)
       });
     },
 
@@ -254,7 +273,8 @@ export default {
 
       this.$emit('next', {
         startDay: monthData[0].date,
-        endDay: monthData[monthData.length - 1].date
+        endDay: monthData[monthData.length - 1].date,
+        now: this.getDate(formatedDay)
       });
     }
   }

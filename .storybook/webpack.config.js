@@ -13,6 +13,6 @@ module.exports = ({ config }) => {
     test: /\.less$/,
     use: ['vue-style-loader', 'css-loader', 'postcss-loader', 'less-loader']
   });
-  config.resolve.extensions.push('.vue', '.css', '.less', '.html');
+  config.resolve.extensions.push('.css', '.less', '.html');
   return config;
 };
