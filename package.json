@@ -17,7 +17,7 @@
     "vue",
     "calendar"
   ],
-  "typings": "./src/index.d.ts",
+  "types": "types/index.d.ts",
   "author": "kitwang chan",
   "license": "MIT",
   "repository": "https://github.com/kitwon/vue2-calendar",
