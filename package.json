@@ -8,7 +8,7 @@
     "build": "rvue-cli-service build --target lib --name vue2-event-calendar src/index.vue",
     "deploy": "npm run test && node build/build && npm run build",
     "lint": "vue-cli-service lint src",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit --coverage",
     "test": "npm run lint && npm run test:unit",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook"

@@ -218,11 +218,10 @@ export default {
         date: date.date(),
         day: date.day(),
         full: date.format('YYYY-MM-DD')
-      }
+      };
     },
 
     onMonthChange() {
-      console.log(this.getItemStatus(this.formatedDay))
       this.$emit('onMonthChange', {
         startDay: this.monthData[0].date,
         endDay: this.monthData[this.monthData.length - 1].date,

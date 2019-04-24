@@ -13,4 +13,4 @@ yarn-debug.log*
 *.njsproj
 *.sln
 
-test/coverage/
+tests/unit/__coverage__
