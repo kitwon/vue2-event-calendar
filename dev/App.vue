@@ -57,8 +57,9 @@
 </template>
 
 <script>
-import Calendar from '../src'
-import data from './data'
+// import Calendar from '../src/index.vue';
+import Calendar from '../dist/vue2-event-calendar.umd';
+import data from './data';
 
 export default {
   name: 'App',
@@ -70,19 +71,17 @@ export default {
       currMonth: '',
       dateData: data.Array,
       mode: 'month'
-    }
+    };
   },
   methods: {
     onMonthChange(val) {
-      // console.log(val);
+      console.log(val);
     },
     changeDate() {
-      this.$refs.calendar.changeDate('2017-12-12')
+      this.$refs.calendar.changeDate('2017-12-12');
     },
     deleteItem(title) {
-      this.dateData = this.dateData.filter(item => {
-        return item.title !== title
-      })
+      this.dateData = this.dateData.filter(item => item.title !== title);
     },
     renderHeader({ prev, next, selectedDate }) {
       // console.log(selectedDate)
@@ -93,20 +92,20 @@ export default {
         on: {
           click: prev
         }
-      }, ['prev'])
+      }, ['prev']);
 
       const nextButton = h('div', {
         class: ['ui-calendar-modeBtn'],
         on: {
           click: next
         }
-      }, ['next'])
+      }, ['next']);
 
-      const dateText = h('div', { class: ['ui-calendar-modeBtn'] }, [selectedDate])
-      return h('div', [prevButton, dateText, nextButton])
+      const dateText = h('div', { class: ['ui-calendar-modeBtn'] }, [selectedDate]);
+      return h('div', [prevButton, dateText, nextButton]);
     }
   }
-}
+};
 </script>
 
 <style lang="less">
@@ -270,4 +269,3 @@ h1 {
   }
 }
 </style>
-
