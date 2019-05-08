@@ -1,4 +1,4 @@
-import { CreateElement, VNode } from "vue";
+import Vue, { CreateElement, VNode } from "vue";
 
 export interface HeaderRenderContext {
   prev: Function;
@@ -13,7 +13,10 @@ export interface CalendarDataObject {
 export type CalendarLocaleType = 'en' | 'zh-cn'
 export type CalendarModeType = 'month' | 'week'
 
-export declare class Calenadr {
+export class Calenadr extends Vue {
+  /** Install component into Vue */
+  static install (vue: typeof Vue): void
+
   /** Calendar style namespace */
   prefixCls: string
 
