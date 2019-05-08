@@ -188,12 +188,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a83156a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=c89f712e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a83156a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=6e0ae55c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[("" + _vm.prefixCls), ("is-" + _vm.mode)]},[_c('calendar-header',{attrs:{"mode":_vm.mode,"prefix-cls":_vm.prefixCls,"render-header":_vm.renderHeader,"header-left":_vm.$slots['header-left'],"header-right":_vm.$slots['header-right'],"current-date":_vm.formatedDay},on:{"prev":_vm.prev,"next":_vm.next}}),_c('div',{class:(_vm.prefixCls + "-week")},_vm._l((_vm.titleArray),function(item){return _c('div',{key:item,class:(_vm.prefixCls + "-week__item")},[_vm._v("\n      "+_vm._s(item)+"\n    ")])}),0),_c('div',{class:(_vm.prefixCls + "-body")},_vm._l(((_vm.monthData.length / _vm.titleArray.length)),function(row,index){return _c('div',{key:index,class:(_vm.prefixCls + "-body-row")},[_vm._l((7),function(i){return [(_vm.monthData[(i - 1) + index * 7])?_c('div',{key:i,class:(_vm.prefixCls + "-day-item")},[_vm._t("default",[_c('span',[_vm._v(_vm._s(_vm.monthData[(i - 1) + index * 7].date.date))])],{"date":_vm.monthData[(i - 1) + index * 7]})],2):_vm._e()]})],2)}),0)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=c89f712e&
+// CONCATENATED MODULE: ./src/index.vue?vue&type=template&id=6e0ae55c&
 
 // EXTERNAL MODULE: ./node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__("5a0c");
@@ -333,6 +333,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 /* harmony default export */ var lib_vue_loader_options_srcvue_type_script_lang_js_ = ({
+  name: 'VueCalendar',
   components: {
     CalendarHeader: header
   },
@@ -670,15 +671,24 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var src = (component.exports);
+// CONCATENATED MODULE: ./src/index.js
+
+
+/* harmony default export */ var src_0 = ({
+  install: function install(Vue) {
+    Vue.component(src.name, src);
+  }
+});
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport Calendar */__webpack_require__.d(__webpack_exports__, "Calendar", function() { return src; });
 
 
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_0);
 
 
 
 /***/ })
 
-/******/ })["default"];
+/******/ });
 });
 //# sourceMappingURL=vue2-event-calendar.umd.js.map

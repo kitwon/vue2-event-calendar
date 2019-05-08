@@ -58,7 +58,7 @@
 
 <script>
 // import Calendar from '../src/index.vue';
-import Calendar from '../dist/vue2-event-calendar.umd';
+import { Calendar } from '../dist/vue2-event-calendar.umd';
 import data from './data';
 
 export default {
@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       currMonth: '',
-      dateData: data.Array,
+      dateData: data().Array,
       mode: 'month'
     };
   },

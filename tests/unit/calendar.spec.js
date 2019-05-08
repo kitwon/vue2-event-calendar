@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Calendar from '../../src/index.vue';
+import { Calendar } from '../../src';
 import Header from '../../src/header';
 // import data from '../../dev/data';
 

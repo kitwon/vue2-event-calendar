@@ -3,8 +3,10 @@
 import { storiesOf } from '@storybook/vue';
 import { actions } from '@storybook/addon-actions';
 
-import Calendar from './index.vue';
-import Data from '../dev/data';
+import { Calendar } from './index';
+import getCalendarData from '../dev/data';
+
+const Data = getCalendarData(new Date(2019, 4, 28));
 
 const defaultSlots = (createElement) => {
   // eslint-disable-next-line

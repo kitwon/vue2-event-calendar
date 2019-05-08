@@ -42,6 +42,7 @@ import getMonthViewStartDay from './date-func';
 import CalendarHeader from './header';
 
 export default {
+  name: 'VueCalendar',
   components: {
     CalendarHeader
   },
