@@ -10,10 +10,10 @@ Full calendar base on Vue2 and dayjs. Support month and week view. Custom date i
 
 ```shell
 // npm
-npm install vue2-event-calendar --save
+npm install vue2-event-calendar@next --save
 
 // yarn
-yarn add vue2-event-calendar
+yarn add vue2-event-calendar@next
 ```
 
 ## Import and Usage
