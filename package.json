@@ -23,19 +23,19 @@
   "license": "MIT",
   "repository": "https://github.com/kitwon/vue2-calendar",
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@storybook/addon-actions": "^5.0.7",
-    "@storybook/addon-links": "^5.0.7",
-    "@storybook/addon-storyshots": "^5.0.8",
-    "@storybook/addon-storysource": "^5.0.8",
-    "@storybook/addons": "^5.0.7",
-    "@storybook/vue": "^5.0.7",
-    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
-    "@vue/babel-preset-jsx": "^1.0.0-beta.3",
-    "@vue/cli-plugin-babel": "^3.6.0",
-    "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-plugin-unit-jest": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-storyshots": "^5.0.11",
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/vue": "^5.0.11",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.0.0",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-plugin-unit-jest": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
@@ -49,9 +49,9 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "dayjs": "^1.8.12",
+    "dayjs": "^1.8.14",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.1.0"
+    "vue-property-decorator": "^8.1.1"
   }
 }
