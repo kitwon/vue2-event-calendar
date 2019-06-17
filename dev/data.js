@@ -1,5 +1,5 @@
 export default function getCalendarData(d) {
-  const date = new Date(d);
+  const date = d ? new Date(d) : new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();

@@ -42,6 +42,9 @@ import dayjs from 'dayjs';
 import getMonthViewStartDay from './date-func';
 import CalendarHeader from './header';
 
+const DATE_FORMATE_STRING = 'YYYY/MM/DD';
+const getVaildDate = date => new Date(date.replace(/-/g, '/'));
+
 export default {
   name: 'VueCalendar',
   components: {
@@ -108,13 +111,37 @@ export default {
       });
     },
 
+    userData() {
+      const result = {};
+      const { dateData, matchKey } = this;
+      if (Array.isArray(dateData)) {
+        dateData.forEach((item) => {
+          // const date = item[matchKey].replace(/-/g, '/');
+          const date = dayjs(getVaildDate(item[matchKey])).format(DATE_FORMATE_STRING);
+          if (result[date]) {
+            result[date].push(item);
+          } else {
+            result[date] = [item];
+          }
+        });
+      } else {
+        // object data
+        Object.keys(dateData).forEach((key) => {
+          // const date = key.replace(/-/g, '/');
+          const date = dayjs(getVaildDate(key)).format(DATE_FORMATE_STRING);
+          result[date] = [dateData[key]];
+        });
+      }
+
+      return result;
+    },
+
     monthData() {
       const {
-        dateData,
         formatedDay,
         firstDay,
         mode,
-        matchKey
+        userData
       } = this;
 
       if (!formatedDay) { return []; }
@@ -133,33 +160,33 @@ export default {
 
       // loop view item and get date data
       for (let day = 0; day < 7 * row; day += 1) {
-        let data = [];
-
+        // const data = [];
         // TODO:
         // opmize ALG
 
         /* eslint no-loop-func: 0 */
         // get data if date matched
-        if (dateData instanceof Array) {
-          data = dateData.filter((item) => {
-            const date = item[matchKey].replace('-', '/');
-            return startDate.isSame(
-              dayjs(new Date(date)),
-            );
-          });
-        } else {
-          Object.keys(dateData).forEach((key) => {
-            const date = key.replace('-', '/');
-            if (startDate.isSame(dayjs(new Date(date)))) {
-              data.push(dateData[key]);
-            }
-          });
-        }
+        // if (dateData instanceof Array) {
+        //   data = dateData.filter((item) => {
+        //     const date = item[matchKey].replace('-', '/');
+        //     return startDate.isSame(
+        //       dayjs(new Date(date)),
+        //     );
+        //   });
+        // } else {
+        //   Object.keys(dateData).forEach((key) => {
+        //     const date = key.replace('-', '/');
+        //     if (startDate.isSame(dayjs(new Date(date)))) {
+        //       data.push(dateData[key]);
+        //     }
+        //   });
+        // }
 
         // get date info
         monthData.push({
           ...this.getItemStatus(startDate),
-          data: data || {},
+          // data: data || [],
+          data: userData[startDate.format('YYYY/MM/DD')] || [],
           date: this.getDate(startDate)
         });
 

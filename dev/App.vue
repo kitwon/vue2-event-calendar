@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import Calendar from '../src/index.vue';
+import { Calendar } from '../src/index';
 import data from './data';
 
 export default {
@@ -68,7 +68,7 @@ export default {
   data() {
     return {
       currMonth: '',
-      dateData: data().Array,
+      dateData: data().Object,
       mode: 'month'
     };
   },

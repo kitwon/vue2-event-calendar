@@ -69,7 +69,7 @@ storiesOf('Calendar', module)
   }))
 
   .add('change firstday', () => ({
-    render: h => <Calendar startDate={new Date(2019, 7)} firstDay={1} {...defaultProps(h)} />
+    render: h => <Calendar firstDay={1} {...defaultProps(h)} />
   }))
 
   .add('change firstday in week mode', () => ({
