@@ -19,9 +19,10 @@
     "calendar"
   ],
   "types": "types/index.d.ts",
+  "module": "src/index.js",
   "author": "kitwang chan",
   "license": "MIT",
-  "repository": "https://github.com/kitwon/vue2-calendar",
+  "repository": "https://github.com/kitwon/vue2-event-calendar",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
@@ -49,9 +50,10 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "dayjs": "^1.8.14",
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.1.1"
+    "core-js": "2",
+    "vue": "^2.6.10"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.8.14"
   }
 }

@@ -57,8 +57,7 @@
 </template>
 
 <script>
-// import Calendar from '../src/index.vue';
-import { Calendar } from '../dist/vue2-event-calendar.umd';
+import Calendar from '../src/index.vue';
 import data from './data';
 
 export default {

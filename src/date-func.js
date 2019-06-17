@@ -8,12 +8,11 @@ export default function getMonthViewStartDay(date, firstDay, mode) {
   // start = start.subtract(startTemp.day(), 'day')
   // console.log(startTemp.day())
 
-  // if (start.day() < firstDay) {
-  // if (start.day() !== first) {
+  if (start.day() < firstDay) {
   // if start day back of the view's first day
   // view start should substrat a week
-  // start = start.subtract(start.day(), 'day');
-  // }
+    start = start.subtract(1, 'week');
+  }
 
   // set final start day
   start = start.add(firstDay - start.day(), 'day');

@@ -3,6 +3,7 @@
     <calendar-header
       :mode="mode"
       :prefix-cls="prefixCls"
+      :first-day="firstDay"
       :render-header="renderHeader"
       :header-left="$slots['header-left']"
       :header-right="$slots['header-right']"

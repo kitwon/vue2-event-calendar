@@ -59,42 +59,4 @@ describe('Calendar component', () => {
 
     await createDefaultWrapper({ buttonPrefix: 'custom-header', props });
   });
-
-  // it('scoped-slot should match snapshot', () => {
-  //   const component = {
-  //     components: { Calendar },
-  //     template: `
-  //       <Calendar :startDate="startDate" :dateData="data">
-  //         <template v-slot="dateItem">
-  //           <div>
-  //             <span>{{dateItem.date.date}} {{dateItem}}</span>
-  //             <div
-  //               v-for="(item, index) in dateItem.data"
-  //               :key="index">
-  //               {{ item.title }}
-  //             </div>
-  //           </div>
-  //         </template>
-  //       </Calendar>
-  //     `,
-  //     data() {
-  //       return {
-  //         startDate: '2018-1-1',
-  //         data: [
-  //           {
-  //             date: '2018-1-1',
-  //             title: 'test scope-slot1'
-  //           },
-  //           {
-  //             date: '2018-1-5',
-  //             title: 'test scope-slot2'
-  //           }
-  //         ]
-  //       };
-  //     }
-  //   };
-
-  //   // console.log(shallow(component).element)
-  //   expect(mount(component).element).toMatchSnapshot();
-  // });
 });

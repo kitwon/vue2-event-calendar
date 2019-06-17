@@ -1,3 +1,5 @@
+import getMonthViewStartDay from './date-func';
+
 export default {
   props: {
     prefixCls: {
@@ -5,6 +7,9 @@ export default {
       required: true
     },
     mode: String,
+    firstDay: {
+      required: true
+    },
     renderHeader: Function,
     headerLeft: [Object, Array],
     headerRight: [Object, Array],
@@ -13,17 +18,19 @@ export default {
   computed: {
     pre: vm => `${vm.prefixCls}-header`,
     headerDateText() {
+      const { currentDate, firstDay, mode } = this;
       if (this.mode === 'week') {
-        const s = this.currentDate
-          .startOf('week')
-          .format('YYYY-MM-DD');
-        const e = this.currentDate
-          .endOf('week')
-          .format('YYYY-MM-DD');
+        const startDate = getMonthViewStartDay(
+          currentDate,
+          firstDay,
+          mode,
+        );
+        const s = startDate.format('YYYY-MM-DD');
+        const e = startDate.add(6, 'd').format('YYYY-MM-DD');
         return `${s} - ${e}`;
       }
 
-      return this.currentDate.format('YYYY-MM');
+      return currentDate.format('YYYY-MM');
     },
     HeaderCenter() {
       const p = this.$parent;
