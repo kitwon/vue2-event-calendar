@@ -1,6 +1,6 @@
 {
   "name": "vue2-event-calendar",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "dist/vue2-event-calendar.umd.js",
   "scripts": {
