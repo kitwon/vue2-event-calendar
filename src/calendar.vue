@@ -20,19 +20,21 @@
     </div>
 
     <div :class="`${prefixCls}-body`">
-      <div v-for="(row, index) in (monthData.length / titleArray.length)"
-        :key="index"
-        :class="`${prefixCls}-body-row`">
-        <template v-for="i in 7">
-          <div :class="`${prefixCls}-day-item`"
-            v-if="monthData[(i - 1) + index * 7]"
-            :key="i">
-            <slot :date="monthData[(i - 1) + index * 7]">
-              <span>{{ monthData[(i - 1) + index * 7].date.date }}</span>
-            </slot>
-          </div>
-        </template>
-       </div>
+      <div :class="`${prefixCls}-body-grid`">
+        <div v-for="(row, index) in (monthData.length / titleArray.length)"
+          :key="index"
+          :class="`${prefixCls}-body-row`">
+          <template v-for="i in 7">
+            <div :class="`${prefixCls}-day-item`"
+              v-if="monthData[(i - 1) + index * 7]"
+              :key="i">
+              <slot :date="monthData[(i - 1) + index * 7]">
+                <span>{{ monthData[(i - 1) + index * 7].date.date }}</span>
+              </slot>
+            </div>
+          </template>
+        </div>
+      </div>
     </div>
   </div>
 </template>

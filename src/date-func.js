@@ -9,8 +9,9 @@ export default function getMonthViewStartDay(date, firstDay, mode) {
   // console.log(startTemp.day())
 
   if (start.day() < firstDay) {
-  // if start day back of the view's first day
-  // view start should substrat a week
+  // if start day behind of the view's first day,
+  // start day should subtract a week -
+  // to include all days of the month
     start = start.subtract(1, 'week');
   }
 

@@ -54,9 +54,14 @@
   }
 
   &-body {
-    display: flex;
-    flex-direction: column;
+    position: relative;
     flex: 1;
+
+    &-grid {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
 
     &-row {
       flex: 1;
