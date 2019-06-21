@@ -61,15 +61,15 @@ const defaultProps = (createElement) => {
 
 storiesOf('Calendar', module)
   .add('default', () => ({
-    render: h => <Calendar {...defaultProps(h)} />
+    render: h => <Calendar startDate={new Date(2019, 5, 16)} {...defaultProps(h)} />
   }))
 
   .add('week mode', () => ({
-    render: h => <Calendar mode="week" {...defaultProps(h)} />
+    render: h => <Calendar startDate={new Date(2019, 5, 16)} mode="week" {...defaultProps(h)} />
   }))
 
   .add('change firstday', () => ({
-    render: h => <Calendar firstDay={1} {...defaultProps(h)} />
+    render: h => <Calendar startDate={new Date(2019, 5, 16)} firstDay={1} {...defaultProps(h)} />
   }))
 
   .add('change firstday in week mode', () => ({
@@ -77,11 +77,11 @@ storiesOf('Calendar', module)
   }))
 
   .add('custom week header', () => ({
-    render: h => <Calendar weekLocaleData={'Dimanche_Lundi_Mardi_Mercredi_Jeudi_Vendredi_Samedi'.split('_')} {...defaultProps(h)} />
+    render: h => <Calendar startDate={new Date(2019, 5, 16)} weekLocaleData={'Dimanche_Lundi_Mardi_Mercredi_Jeudi_Vendredi_Samedi'.split('_')} {...defaultProps(h)} />
   }))
 
   .add('locale', () => ({
-    render: h => <Calendar locale="zh-cn" {...defaultProps(h)} />
+    render: h => <Calendar startDate={new Date(2019, 5, 16)} locale="zh-cn" {...defaultProps(h)} />
   }))
 
   .add('custom header', () => ({
@@ -94,6 +94,11 @@ storiesOf('Calendar', module)
         </div>
       );
 
-      return (<Calendar renderHeader={createheader} {...defaultProps(h)} />);
+      return (
+        <Calendar
+          startDate={new Date(2019, 5, 16)}
+          renderHeader={createheader}
+          {...defaultProps(h)} />
+      );
     }
   }));

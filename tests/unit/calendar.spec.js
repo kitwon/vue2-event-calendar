@@ -1,12 +1,10 @@
 import { mount } from '@vue/test-utils';
+import { wrap } from 'module';
 import { Calendar } from '../../src';
 import Header from '../../src/header';
-// import data from '../../dev/data';
 
-async function createDefaultWrapper({
-  buttonPrefix, props, mountOptions, handleMounted
-}) {
-  const wrapper = mount(Calendar, {
+function createDefaultWrapper({ props, mountOptions }) {
+  return mount(Calendar, {
     ...mountOptions,
     sync: false,
     attachToDocument: true,
@@ -15,23 +13,21 @@ async function createDefaultWrapper({
       ...props
     }
   });
+}
 
-  if (!handleMounted) {
-    const header = wrapper.find(Header);
-    const prev = header.find(`.${buttonPrefix}-prev`);
-    const next = header.find(`.${buttonPrefix}-next`);
-    // const title = header.find(`.${buttonPrefix}-header-date`);
+async function runDefaultTest(wrapper, prefix) {
+  const header = wrapper.find(Header);
+  const prev = header.find(`.${prefix}-prev`);
+  const next = header.find(`.${prefix}-next`);
+  // const title = header.find(`.${buttonPrefix}-header-date`);
 
-    next.trigger('click');
-    await header.vm.$nextTick();
-    expect(wrapper.vm.$data.currentDay).toBe('2018-02-01');
+  next.trigger('click');
+  await header.vm.$nextTick();
+  expect(wrapper.vm.$data.currentDay).toBe('2018-02-01');
 
-    prev.trigger('click');
-    await wrapper.vm.$nextTick();
-    expect(wrapper.vm.$data.currentDay).toBe('2018-01-01');
-  } else {
-    handleMounted(wrapper);
-  }
+  prev.trigger('click');
+  await wrapper.vm.$nextTick();
+  expect(wrapper.vm.$data.currentDay).toBe('2018-01-01');
 }
 
 // TODO:
@@ -41,7 +37,8 @@ describe('Calendar component', () => {
     const prefixCls = 'kit-calendar';
     const props = { prefixCls };
 
-    await createDefaultWrapper({ buttonPrefix: prefixCls, props });
+    const wrapper = createDefaultWrapper({ props });
+    runDefaultTest(wrapper, prefixCls);
   });
 
   it('should render exactly when set renderHeader props ', async () => {
@@ -57,6 +54,32 @@ describe('Calendar component', () => {
       }
     };
 
-    await createDefaultWrapper({ buttonPrefix: 'custom-header', props });
+    const wrapper = createDefaultWrapper({ props });
+    runDefaultTest(wrapper, 'custom-header');
+  });
+
+  it('Event should return valid args', async () => {
+    let results = [];
+
+    const listeners = {
+      next(args) {
+        results = results.concat(Object.keys(args).map(k => args[k]));
+      },
+      prev(args) {
+        results = results.concat(Object.keys(args).map(k => args[k]));
+      },
+      onMonthChange(args) {
+        results = results.concat(Object.keys(args).map(k => args[k]));
+      }
+    };
+
+    const wrapper = createDefaultWrapper({ mountOptions: { listeners } });
+    wrapper.vm.next();
+    wrapper.vm.prev();
+    wrapper.vm.onMonthChange();
+    await wrapper.vm.$nextTick();
+
+    expect(results.length).not.toBe(0);
+    expect(results).toEqual(expect.not.arrayContaining([undefined]));
   });
 });

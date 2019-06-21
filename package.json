@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve dev/index.js",
     "deploy": "npm run test && npm run build && npm run build-storybook && npm run build:docs",
-    "lint": "vue-cli-service lint src dev",
+    "lint": "vue-cli-service lint src dev tests/*.js",
     "test:unit": "vue-cli-service test:unit --coverage",
     "test": "npm run lint && npm run test:unit",
     "storybook": "start-storybook -p 6006 -s public",
@@ -47,13 +47,14 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "postcss-flexbugs-fixes": "^4.1.0",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
     "core-js": "2",
-    "vue": "^2.6.10"
+    "dayjs": "^1.8.14"
   },
   "peerDependencies": {
-    "dayjs": "^1.8.14"
+    "vue": "^2.6.10"
   }
 }

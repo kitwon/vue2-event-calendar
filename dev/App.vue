@@ -5,11 +5,12 @@
     <div class="container">
       <Calendar
         class="ui-calendar"
-        :start-day="currMonth"
         :dateData="dateData"
-        :on-month-change="onMonthChange"
+        @onMonthChange="onMonthChange"
         :mode="mode"
         :render-header="renderHeader"
+        @next="onNext"
+        @prev="onPrev"
         ref="calendar"
       >
         <div slot="header-left" class="ui-calendar-header__left">
@@ -27,7 +28,7 @@
           </button>
         </div>
 
-        <template v-slot="{date: { date, data, isPrevMonth, isNextMonth, isToday }}">
+        <!-- <template v-slot="{date: { date, data, isPrevMonth, isNextMonth, isToday }}">
           <div
             :class="[
               'ui-calendar-item',
@@ -50,6 +51,40 @@
               <span class="del" @click="deleteItem(item.title)">✖️</span>
             </div>
           </div>
+        </template> -->
+        <template v-slot:body="{ data }">
+          <transition :name="transitionName">
+            <div class="calendar-body-grid" :key="indentifier">
+              <div v-for="(row, index) in data"
+                :key="index"
+                class="calendar-body-row">
+                <div v-for="col in row"
+                  class="calendar-day-item"
+                  v-if="col"
+                  :key="col.date.full">
+                  <div
+                    :class="[
+                      'ui-calendar-item',
+                      {
+                        'is-otherMonth': col.isPrevMonth || col.isNextMonth,
+                        'is-today': col.isToday
+                      },
+                    ]">
+                    <div class="ui-calendar-item-date">
+                      {{col.date.date}}
+                    </div>
+                    <div
+                      class="ui-calendar-item-name"
+                      v-for="(item, index) in col.data"
+                      :key="index">
+                      <span>{{item.title}}</span>
+                      <span class="del" @click="deleteItem(item.title)">✖️</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </transition>
         </template>
       </Calendar>
     </div>
@@ -67,14 +102,22 @@ export default {
   },
   data() {
     return {
-      currMonth: '',
-      dateData: data().Object,
+      indentifier: '',
+      dateData: data().Array,
+      transitionName: 'slide-left',
       mode: 'month'
     };
   },
   methods: {
     onMonthChange(val) {
       console.log(val);
+      this.indentifier = val.now.full;
+    },
+    onNext() {
+      this.transitionName = 'slide-left';
+    },
+    onPrev() {
+      this.transitionName = 'slide-right';
     },
     changeDate() {
       this.$refs.calendar.changeDate('2017-12-12');
@@ -108,8 +151,6 @@ export default {
 </script>
 
 <style lang="less">
-@import "../src/style/calendar.less";
-
 * {
   box-sizing: border-box;
 }
@@ -213,15 +254,15 @@ h1 {
     }
   }
 
-  & .k-calendar {
-    &-header-center {
-      color: #ff7dc5;
-    }
+  // & .k-calendar {
+  //   &-header-center {
+  //     color: #ff7dc5;
+  //   }
 
-    &-week-title-item {
-      color: #ff7dc5;
-    }
-  }
+  //   &-week-title-item {
+  //     color: #ff7dc5;
+  //   }
+  // }
 
   &-item {
     padding: 5px 10px;
@@ -263,8 +304,49 @@ h1 {
     }
   }
 
-  .vue-calendar-body-row {
+  .calendar-body-row {
     height: auto;
   }
+
+  .calendar-body {
+    overflow: hidden;
+  }
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.fade-enter-active,
+.fade-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all .2s ease-out;
+  transform: translate3d(0, 0, 0);
+}
+.slide-left-enter,
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translate3d(-50px, 0, 0);
+}
+.slide-right-enter,
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translate3d(50px, 0, 0);
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
