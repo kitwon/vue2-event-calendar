@@ -18,7 +18,7 @@ yarn add vue2-event-calendar@next
 
 ## Import and Usage
 
-### Common usage.
+### Import
 
 ```javascript
 // import component
@@ -27,19 +27,19 @@ import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
 
-If your project also use `moment` or `dayjs`, you can use the independence version.
+Or import as component
 
 ```javascript
 import 'vue2-event-calendar/default.css'
-// moment
-import Calendar from 'vue2-event-calendar/dist/calendar-nodep.js'
-
-// dayjs
-import Calendar from 'vue2-event-calendar/dist/dayjs-nodep.js'
-
-Vue.component('Calendar', Calendar)
+import { Calendar } from 'vue2-event-calendar'
 // ...
+
+export default {
+  components: { Calendar }
+}
 ```
+
+### Common usage
 
 ```html
 <!-- template -->
@@ -62,7 +62,41 @@ Vue.component('Calendar', Calendar)
 </Calendar>
 ```
 
-### Customize header
+Get full control use body slot.
+
+```html
+<Calendar startDate="2018-03-07" :dateData="data">
+  <div slot="header-left">
+    <Button>month</Button>
+    <Button>week</Button>
+  </div>
+
+  <template v-slot:body="{ data }">
+    <transition name="fade">
+      <div class="calendar-body-grid" :key="indentifier">
+        <div v-for="(row, index) in data"
+          :key="index"
+          class="calendar-body-row">
+          <div v-for="col in row">
+          </div>
+        </div>
+      </div>
+    </transition>
+  </template>
+  <div
+    :class="['calendar-item', { 'is-otherMonth': !isCurMonth }]"
+    slot-scope="item"
+  >
+    <div
+      :class="['calendar-item-date']">
+      {{item.date.date}}
+    </div>
+    <div class="calendar-item-name">{{item.data.title}}</div>
+  </div>
+</Calendar>
+```
+
+### Customize header use renderHeader props
 
 ```html
 <!-- template -->
