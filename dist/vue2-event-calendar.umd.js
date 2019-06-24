@@ -188,12 +188,12 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5eb2728b-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/calendar.vue?vue&type=template&id=0efe01be&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[("" + _vm.prefixCls), ("is-" + _vm.mode)]},[_c('calendar-header',{attrs:{"mode":_vm.mode,"prefix-cls":_vm.prefixCls,"first-day":_vm.firstDay,"render-header":_vm.renderHeader,"header-left":_vm.$slots['header-left'],"header-right":_vm.$slots['header-right'],"current-date":_vm.formatedDay},on:{"prev":_vm.prev,"next":_vm.next}}),_c('div',{class:(_vm.prefixCls + "-week")},_vm._l((_vm.titleArray),function(item){return _c('div',{key:item,class:(_vm.prefixCls + "-week__item")},[_vm._v("\n      "+_vm._s(item)+"\n    ")])}),0),_c('div',{class:(_vm.prefixCls + "-body")},_vm._l(((_vm.monthData.length / _vm.titleArray.length)),function(row,index){return _c('div',{key:index,class:(_vm.prefixCls + "-body-row")},[_vm._l((7),function(i){return [(_vm.monthData[(i - 1) + index * 7])?_c('div',{key:i,class:(_vm.prefixCls + "-day-item")},[_vm._t("default",[_c('span',[_vm._v(_vm._s(_vm.monthData[(i - 1) + index * 7].date.date))])],{"date":_vm.monthData[(i - 1) + index * 7]})],2):_vm._e()]})],2)}),0)],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d2a8af6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/calendar.vue?vue&type=template&id=1bbc2648&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[("" + _vm.prefixCls), ("is-" + _vm.mode)]},[_c('calendar-header',{attrs:{"mode":_vm.mode,"prefix-cls":_vm.prefixCls,"first-day":_vm.firstDay,"render-header":_vm.renderHeader,"header-left":_vm.$slots['header-left'],"header-right":_vm.$slots['header-right'],"current-date":_vm.formatedDay},on:{"prev":_vm.prev,"next":_vm.next}}),_c('div',{class:(_vm.prefixCls + "-week")},_vm._l((_vm.titleArray),function(item){return _c('div',{key:item,class:(_vm.prefixCls + "-week__item")},[_vm._v("\n      "+_vm._s(item)+"\n    ")])}),0),_c('div',{class:(_vm.prefixCls + "-body")},[_vm._t("body",[_c('div',{class:(_vm.prefixCls + "-body-grid")},_vm._l((_vm.monthData),function(row,index){return _c('div',{key:index,class:(_vm.prefixCls + "-body-row")},[_vm._l((row),function(col){return [(col)?_c('div',{key:col.date.full,class:(_vm.prefixCls + "-day-item")},[_vm._t("default",[_c('span',[_vm._v(_vm._s(col.date.date))])],{"date":col})],2):_vm._e()]})],2)}),0)],{"data":_vm.monthData})],2)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/calendar.vue?vue&type=template&id=0efe01be&
+// CONCATENATED MODULE: ./src/calendar.vue?vue&type=template&id=1bbc2648&
 
 // EXTERNAL MODULE: ./node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__("5a0c");
@@ -209,8 +209,9 @@ function getMonthViewStartDay(date, firstDay, mode) {
   // console.log(startTemp.day())
 
   if (start.day() < firstDay) {
-    // if start day back of the view's first day
-    // view start should substrat a week
+    // if start day behind of the view's first day,
+    // start day should subtract a week -
+    // to include all days of the month
     start = start.subtract(1, 'week');
   } // set final start day
 
@@ -339,10 +340,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
 var DATE_FORMATE_STRING = 'YYYY/MM/DD';
+var COL_NUM = 7;
 
 var getVaildDate = function getVaildDate(date) {
   return new Date(date.replace(/-/g, '/'));
@@ -396,14 +402,17 @@ var getVaildDate = function getVaildDate(date) {
   data: function data() {
     return {
       today: this.currentDay,
-      currentDay: null,
-      localeData: {
-        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
-        en: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
-      }
+      rowNum: 6,
+      currentDay: null
     };
   },
   computed: {
+    localeData: function localeData() {
+      return {
+        'zh-cn': '周日_周一_周二_周三_周四_周五_周六'.split('_'),
+        en: 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_')
+      };
+    },
     formatedDay: function formatedDay() {
       return dayjs_min_default()(new Date(this.currentDay));
     },
@@ -421,13 +430,17 @@ var getVaildDate = function getVaildDate(date) {
       });
     },
     userData: function userData() {
+      // get calendar data map
+      // data model is:
+      // {
+      //   "2018/03/01": []
+      // }
       var result = {};
       var dateData = this.dateData,
           matchKey = this.matchKey;
 
       if (Array.isArray(dateData)) {
         dateData.forEach(function (item) {
-          // const date = item[matchKey].replace(/-/g, '/');
           var date = dayjs_min_default()(getVaildDate(item[matchKey])).format(DATE_FORMATE_STRING);
 
           if (result[date]) {
@@ -439,7 +452,6 @@ var getVaildDate = function getVaildDate(date) {
       } else {
         // object data
         Object.keys(dateData).forEach(function (key) {
-          // const date = key.replace(/-/g, '/');
           var date = dayjs_min_default()(getVaildDate(key)).format(DATE_FORMATE_STRING);
           result[date] = [dateData[key]];
         });
@@ -451,7 +463,8 @@ var getVaildDate = function getVaildDate(date) {
       var formatedDay = this.formatedDay,
           firstDay = this.firstDay,
           mode = this.mode,
-          userData = this.userData;
+          userData = this.userData,
+          rowNum = this.rowNum;
 
       if (!formatedDay) {
         return [];
@@ -459,44 +472,20 @@ var getVaildDate = function getVaildDate(date) {
 
 
       var startDate = getMonthViewStartDay(formatedDay, firstDay, mode);
-      var monthData = [];
-      var row = 6; // change row lenght when mode changing
+      var monthData = []; // loop view item and get date data
 
-      if (this.mode === 'week') {
-        row = 1;
-      } // loop view item and get date data
+      for (var row = 0; row < rowNum; row += 1) {
+        for (var col = 0; col < COL_NUM; col += 1) {
+          // init array
+          if (!monthData[row]) monthData[row] = [];
+          monthData[row].push(_objectSpread({}, this.getItemStatus(startDate), {
+            // data: data || [],
+            data: userData[startDate.format(DATE_FORMATE_STRING)] || [],
+            date: this.getDate(startDate)
+          })); // increase date
 
-
-      for (var day = 0; day < 7 * row; day += 1) {
-        // const data = [];
-        // TODO:
-        // opmize ALG
-
-        /* eslint no-loop-func: 0 */
-        // get data if date matched
-        // if (dateData instanceof Array) {
-        //   data = dateData.filter((item) => {
-        //     const date = item[matchKey].replace('-', '/');
-        //     return startDate.isSame(
-        //       dayjs(new Date(date)),
-        //     );
-        //   });
-        // } else {
-        //   Object.keys(dateData).forEach((key) => {
-        //     const date = key.replace('-', '/');
-        //     if (startDate.isSame(dayjs(new Date(date)))) {
-        //       data.push(dateData[key]);
-        //     }
-        //   });
-        // }
-        // get date info
-        monthData.push(_objectSpread({}, this.getItemStatus(startDate), {
-          // data: data || [],
-          data: userData[startDate.format('YYYY/MM/DD')] || [],
-          date: this.getDate(startDate)
-        })); // increase date
-
-        startDate = startDate.add(1, 'day');
+          startDate = startDate.add(1, 'day');
+        }
       }
 
       return monthData;
@@ -507,17 +496,20 @@ var getVaildDate = function getVaildDate(date) {
       immediate: true,
       handler: function handler(val) {
         this.currentDay = val ? new Date(val) : new Date();
-
-        if (!this.today) {
-          this.today = this.currentDay;
-        }
+        if (!this.today) this.today = this.currentDay;
       }
     },
     currentDay: {
       immediate: true,
       handler: 'onMonthChange'
     },
-    mode: 'onMonthChange'
+    mode: {
+      immediate: true,
+      handler: function handler(val) {
+        this.rowNum = val === 'week' ? 1 : 6;
+        this.onMonthChange();
+      }
+    }
   },
   methods: {
     getItemStatus: function getItemStatus(date) {
@@ -547,12 +539,18 @@ var getVaildDate = function getVaildDate(date) {
         full: date.format('YYYY-MM-DD')
       };
     },
+    getEventArgs: function getEventArgs() {
+      var d = this.monthData,
+          formatedDay = this.formatedDay,
+          rowNum = this.rowNum;
+      return {
+        startDate: d[0][0].date,
+        endDay: d[rowNum - 1][COL_NUM - 1].date,
+        now: this.getDate(formatedDay)
+      };
+    },
     onMonthChange: function onMonthChange() {
-      this.$emit('onMonthChange', {
-        startDay: this.monthData[0].date,
-        endDay: this.monthData[this.monthData.length - 1].date,
-        now: this.getDate(this.formatedDay)
-      });
+      this.$emit('onMonthChange', this.getEventArgs());
     },
     changeDate: function changeDate(date) {
       if (typeof date !== 'string' && Object.prototype.toString.call(date) !== '[object Date]') {
@@ -565,25 +563,15 @@ var getVaildDate = function getVaildDate(date) {
     },
     prev: function prev() {
       var formatedDay = this.formatedDay,
-          mode = this.mode,
-          monthData = this.monthData;
+          mode = this.mode;
       this.currentDay = formatedDay.subtract(1, mode).startOf(mode).format('YYYY-MM-DD');
-      this.$emit('prev', {
-        startDay: monthData[0].date,
-        endDay: monthData[monthData.length - 1].date,
-        now: this.getDate(formatedDay)
-      });
+      this.$emit('prev', this.getEventArgs());
     },
     next: function next() {
       var formatedDay = this.formatedDay,
-          mode = this.mode,
-          monthData = this.monthData;
+          mode = this.mode;
       this.currentDay = formatedDay.add(1, mode).startOf(mode).format('YYYY-MM-DD');
-      this.$emit('next', {
-        startDay: monthData[0].date,
-        endDay: monthData[monthData.length - 1].date,
-        now: this.getDate(formatedDay)
-      });
+      this.$emit('next', this.getEventArgs());
     }
   }
 });

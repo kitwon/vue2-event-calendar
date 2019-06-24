@@ -27,7 +27,7 @@ import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
 
-Or import as component
+Or import as a component
 
 ```javascript
 import 'vue2-event-calendar/default.css'
@@ -62,7 +62,7 @@ export default {
 </Calendar>
 ```
 
-Get full control use body slot.
+> Get full control use body slot. Data structure is a matrix and the size is **6*7**.
 
 ```html
 <Calendar startDate="2018-03-07" :dateData="data">
@@ -77,22 +77,19 @@ Get full control use body slot.
         <div v-for="(row, index) in data"
           :key="index"
           class="calendar-body-row">
-          <div v-for="col in row">
+          <div v-for="col in row"
+            :key="col.date.date"
+            :class="['calendar-item', { 'is-otherMonth': !col.isCurMonth }]">
+            <div
+              :class="['calendar-item-date']">
+              {{col.date.date}}
+            </div>
+            <div class="calendar-item-name">{{col.data.title}}</div>
           </div>
         </div>
       </div>
     </transition>
   </template>
-  <div
-    :class="['calendar-item', { 'is-otherMonth': !isCurMonth }]"
-    slot-scope="item"
-  >
-    <div
-      :class="['calendar-item-date']">
-      {{item.date.date}}
-    </div>
-    <div class="calendar-item-name">{{item.data.title}}</div>
-  </div>
 </Calendar>
 ```
 
@@ -170,12 +167,7 @@ export default {
 
 ## Scope-slots
 
-| name | description                                                                                                                                                                                         |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      | custom content for date item, the scope param is { isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date }, { data } is an Array, include all matching date data |
-
-## TODO
-
-1.  not depend on momentjs
-2.  improve unit test coverage
-3.  add animation
+| name    | description                                                                                                                                                                                         |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| default | custom content for date item, the scope param is { isPrevMonth, isPrevLastDay, isNextMonth, isNextFirstDay, isToday, isCurMonth, data, date }, { data } is an Array, include all matching date data |
+| body    | return all date item in scope param, data structure is a 6*7 matrix, and the date item is same as default scope slot                                                                                |
