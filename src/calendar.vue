@@ -48,7 +48,12 @@ import CalendarHeader from './header';
 
 const DATE_FORMATE_STRING = 'YYYY/MM/DD';
 const COL_NUM = 7;
-const getVaildDate = date => new Date(date.replace(/-/g, '/'));
+const getVaildDate = (date) => {
+  if (typeof date === 'string') {
+    return new Date(date.replace(/-/g, '/'));
+  }
+  return date;
+};
 
 export default {
   name: 'VueCalendar',
