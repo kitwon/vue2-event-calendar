@@ -292,6 +292,6 @@ export default {
 };
 </script>
 
-<style lang="less">
-@import "./style/calendar";
+<style>
+@import "./style/calendar.css";
 </style>
