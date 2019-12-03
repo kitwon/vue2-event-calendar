@@ -1,6 +1,6 @@
 {
   "name": "vue2-event-calendar",
-  "version": "1.1.80",
+  "version": "1.1.81",
   "description": "A vue2 calendar component, have week and month two mode, custom render event",
   "main": "dist/vue2-event-calendar.umd.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "test": "npm run lint && npm run test:unit",
     "storybook": "start-storybook -p 6006 -s public",
     "build": "vue-cli-service build --target lib --name vue2-event-calendar src/index.js --report",
+    "build:cjs": "rollup --config build/rollup.config.js",
     "build:docs": "vue-cli-service build dev/index.js --dest docs --mode docs",
     "build-storybook": "build-storybook"
   },
@@ -19,7 +20,7 @@
     "calendar"
   ],
   "types": "types/index.d.ts",
-  "module": "src/index.js",
+  "module": "dist/vue2-event-calendar.esm.js",
   "author": "kitwang chan",
   "license": "MIT",
   "repository": "https://github.com/kitwon/vue2-event-calendar",
@@ -43,18 +44,23 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-vue": "^2.0.2",
+    "dayjs": "^1.8.17",
     "jest-vue-preprocessor": "^1.5.0",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "postcss-flexbugs-fixes": "^4.1.0",
+    "rollup": "^1.27.8",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-vue": "^5.1.4",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "core-js": "2",
-    "dayjs": "^1.8.14"
+    "core-js": "2"
   },
   "peerDependencies": {
+    "dayjs": "^1.8.17",
     "vue": "^2.6.10"
   }
 }

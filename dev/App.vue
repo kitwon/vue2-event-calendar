@@ -11,6 +11,7 @@
         :render-header="renderHeader"
         @next="onNext"
         @prev="onPrev"
+        firstDay="1"
         ref="calendar"
       >
         <div slot="header-left" class="ui-calendar-header__left">
@@ -28,30 +29,6 @@
           </button>
         </div>
 
-        <!-- <template v-slot="{date: { date, data, isPrevMonth, isNextMonth, isToday }}">
-          <div
-            :class="[
-              'ui-calendar-item',
-              {
-                'is-otherMonth': isPrevMonth || isNextMonth,
-                'is-today': isToday
-              },
-            ]"
-          >
-            <div
-              :class="['ui-calendar-item-date']">
-              {{date.date}}
-            </div>
-            <div
-              class="ui-calendar-item-name"
-              v-for="(item, index) in data"
-              :key="index"
-            >
-              <span>{{item.title}}</span>
-              <span class="del" @click="deleteItem(item.title)">✖️</span>
-            </div>
-          </div>
-        </template> -->
         <template v-slot:body="{ data }">
           <transition :name="transitionName">
             <div class="calendar-body-grid" :key="indentifier">
@@ -92,8 +69,10 @@
 </template>
 
 <script>
-import { Calendar } from '../src/index';
+import { Calendar } from '../dist/vue2-event-calendar.esm';
 import data from './data';
+
+import '../dist/vue2-event-calendar.css';
 
 export default {
   name: 'App',
