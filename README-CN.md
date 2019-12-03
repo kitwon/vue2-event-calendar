@@ -20,7 +20,7 @@ yarn add vue2-event-calendar
 
 ```javascript
 // import component
-import 'vue2-event-calendar/default.css'
+import 'vue2-event-calendar/dist/vue2-event-calendar.css'
 import Calendar from 'vue2-event-calendar'
 Vue.component('Calendar', Calendar)
 ```
@@ -28,7 +28,7 @@ Vue.component('Calendar', Calendar)
 或者作为一个组件引入
 
 ```javascript
-import 'vue2-event-calendar/default.css'
+import 'vue2-event-calendar/dist/vue2-event-calendar.css'
 import { Calendar } from 'vue2-event-calendar'
 // ...
 
