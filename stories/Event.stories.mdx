@@ -1,0 +1,21 @@
+import { Story, Canvas } from '@storybook/addon-docs/blocks'
+import { h } from 'vue'
+import Calendar from '../src'
+import { Common } from './components'
+import genEvents from './utils/gen-events.ts'
+
+<Meta
+  title="Event"
+  components={Calendar}
+/>
+
+# 使用日历事件
+
+export const Template = (args) => h(Common, args)
+export const events = genEvents('2020-12-20', '2020-12-30', 30)
+
+<Canvas>
+  <Story name="Event">
+    {Template({ type: 'day', events })}
+  </Story>
+</Canvas>

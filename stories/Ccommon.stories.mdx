@@ -1,0 +1,38 @@
+import { Story, Canvas } from '@storybook/addon-docs/blocks'
+import { h } from 'vue'
+import Calendar from '../src'
+import { WithInterval, WithDraggable } from './components.tsx'
+import { Common } from './components'
+import { CalendarArgs } from './utils/gen-args'
+
+<Meta
+  title="Common"
+  components={Calendar}
+  argTypes={CalendarArgs}
+/>
+
+# 普通使用
+
+export const Template = (args) => h(Common, args)
+
+<Canvas>
+  <Story name="Common">
+    {Template()}
+  </Story>
+</Canvas>
+
+# Slots
+
+使用`day-body`slot可以自定义日历的内容。这里可以配合`useCurrentInterval`hook添加当前时间的提示线，或者使用`useInterval`添加拖动和新建事件。
+ 
+export const BodySlotWithInterval = (args) => h(WithInterval, args);
+export const BodySlotWithDraggable = (args) => h(WithDraggable, args);
+
+<Canvas>
+  <Story name="DayBodySlotWithInterval" args={{type: 'day'}}>
+    {BodySlotWithInterval()}
+  </Story>
+  <Story name="DayBodySlotWithDraggable" args={{type: 'day'}}>
+    {BodySlotWithDraggable()}
+  </Story>
+</Canvas>

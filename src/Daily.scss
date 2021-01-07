@@ -1,0 +1,73 @@
+@import "./var";
+
+@include b(calendar-daily) {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  
+  // Head
+  @include e(head) {
+    display: flex;
+    box-shadow: 0 2px 5px rgba($color: #000000, $alpha: .07);
+  }
+  @include e(head-day) {
+    padding: $spacer * 2;
+    flex: 1;
+    border-right: $border;
+    border-bottom: $border;
+
+    @include when(outside) {
+      color: $gray-300;
+    }
+  }
+  @include e(head-day-label) {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  // Body
+  @include e(body) {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  @include e(scroll-area) {
+    width: 100%;
+    flex: 1;
+    align-items: flex-start;
+  }
+
+  // Day column
+  @include e(day-container) {
+    display: flex;
+  }
+  @include e(day) {
+    position: relative;
+    flex: 1;
+    border-right: $border;
+    border-bottom: $border;
+  }
+  @include e(day-interval) {
+    border-top: $border;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  // Interval
+  @include e(intervals-head) {
+    border-right: $border;
+    border-bottom: $border;
+  }
+  @include e(intervals-body) {
+    border-right: $border;
+  }
+  @include e(interval-text) {
+    position: relative;
+    top: -6px;
+    font-size: 10px;
+    color: $gray-400;
+  }
+}

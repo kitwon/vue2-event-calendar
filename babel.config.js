@@ -1,8 +1,11 @@
-module.exports = api => ({
-  ...(api.env('test') && { plugins: ['require-context-hook'] }),
-  presets: [
-    ['@vue/app', {
-      useBuiltIns: process.env.BABEL_BUILDIN ? 'usage' : false
-    }]
+module.exports = {
+  presets: ['@vue/cli-plugin-babel/preset'],
+  plugins: [
+    [
+      '@vue/babel-plugin-jsx',
+      {
+        transformOn: true
+      }
+    ]
   ]
-});
+}

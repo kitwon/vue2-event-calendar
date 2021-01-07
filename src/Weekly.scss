@@ -1,0 +1,41 @@
+@import "./var";
+
+@include b(calendar-weekly) {
+  display: flex;
+  flex-direction: column;
+  color: $gray-600;
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  @include e(head) {
+    display: flex;
+    user-select: none;
+  }
+
+  @include e(head-weekday) {
+    flex: 1;
+    line-height: 1;
+    padding: $spacer * 2 $spacer;
+
+    @include when(outside) {
+      color: $gray-300;
+    }
+  }
+
+  @include e(week) {
+    display: flex;
+    flex: auto;
+    border-top: $border;
+  }
+
+  @include e(day) {
+    flex: 1;
+    padding: $spacer;
+
+    @include when(outside) {
+      color: $gray-300;
+    }
+  }
+}

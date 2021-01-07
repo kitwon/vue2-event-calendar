@@ -1,0 +1,23 @@
+@import "../var";
+
+@include b(current-time) {
+  position: absolute;
+  height: 2px;
+  background-color: $red-300;
+  left: -1px;
+  right: 0;
+  pointer-events: none;
+
+  @include when(first) {
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $red-300;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: -4px;
+      margin-left: -5px;
+    }
+  }
+}

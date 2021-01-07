@@ -1,31 +1,19 @@
 module.exports = {
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'json',
-    'vue',
-    'ts',
-    'tsx'
-  ],
-  transform: {
-    '^.+\\.vue$': 'vue-jest',
-    '.+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
-    '^.+\\.(js|jsx)?$': 'babel-jest'
-  },
-  transformIgnorePatterns: [
-    '/node_modules/',
-    'node_modules/(?!(babel-jest|jest-vue-preprocessor)/)',
-    '/node_modules/(?!(@storybook/.*\\.vue$))'
-  ],
+  preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel',
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|)$': '<rootDir>/tests/__mocks__/styleMock.js'
   },
-  snapshotSerializers: [
-    'jest-serializer-vue'
-  ],
-  testMatch: [
-    '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
-  ],
-  coverageDirectory: '<rootDir>tests/unit/__coverage__',
-  testURL: 'http://localhost/'
-};
+  transform: {
+    '^.+\\.vue$': 'vue-jest'
+  },
+  globals: {
+    'ts-jest': {
+      babelConfig: true,
+      diagnostics: {
+        ignoreCodes: [2345]
+      }
+    }
+  }
+}

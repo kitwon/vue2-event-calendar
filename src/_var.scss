@@ -1,0 +1,19 @@
+@import "~merely.css/src/base/index.scss";
+
+$namespace: 'v-';
+
+/* -------- border --------- */
+$primary: #4186fa;
+
+// -------- event ---------- */
+$event-default: mix(white, $primary, 75%);
+$event-text-default: mix(black, $primary, 15%);
+$event-border: 1px solid #fff;
+
+$interval_width: 30px !default;
+
+/* -------- border --------- */
+$border-color: $gray-100 !default;
+$border-width: 1px !default;
+$border-style: solid !default;
+$border: $border-width $border-style $border-color !default;
